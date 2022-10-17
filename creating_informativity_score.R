@@ -8,7 +8,7 @@ if (!file.exists(here(OUTPUTDIR2, "informativity_score.tsv"))) {
 
 GB_wide <- read_tsv(file.path("data", "GB_wide", "GB_wide_strict.tsv"), col_types=WIDE_COLSPEC)	
 
-#read in sheet with scores for whether a feature denotes boudness
+#read in sheet with scores for whether a feature denotes informativity
 GB_informativity_points <- read.csv(file.path("data", "GB_wide", "parameters.csv")) %>%		dplyr::select(Parameter_ID = ID, informativity) %>%
   mutate(informativity = replace(informativity, Parameter_ID == "GB177", "argumentanimacy")) #manually adding another parameter: assigning the parameter of GB177 ("Can the verb carry a marker of animacy of argument, unrelated to any gender/noun class of the argument visible in the NP domain?") feature to be informative
 
@@ -53,9 +53,6 @@ lg_df_informativity_score <- GB_long_for_calc %>%
   group_by(Language_level_ID) %>% 
   summarise(`Informativity`= mean(informativity_score, na.rm = T)) %>% 
   dplyr::select(Language_ID = Language_level_ID, `Informativity`) 
-
-informativity_st = scale(lg_df_informativity_score$Informativity)
-lg_df_informativity_score <- cbind(lg_df_informativity_score, informativity_st)
 
 lg_df_informativity_score  %>% 		
   write_tsv(here(OUTPUTDIR2, "informativity_score.tsv"))	}
