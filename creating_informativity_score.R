@@ -54,5 +54,8 @@ lg_df_informativity_score <- GB_long_for_calc %>%
   summarise(`Informativity`= mean(informativity_score, na.rm = T)) %>% 
   dplyr::select(Language_ID = Language_level_ID, `Informativity`) 
 
+informativity_st = scale(lg_df_informativity_score$Informativity)
+lg_df_informativity_score <- cbind(lg_df_informativity_score, informativity_st)
+
 lg_df_informativity_score  %>% 		
   write_tsv(here(OUTPUTDIR2, "informativity_score.tsv"))	}

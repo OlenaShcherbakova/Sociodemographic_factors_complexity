@@ -31,6 +31,9 @@ df_morph_count <- GB_wide %>%
   dplyr::summarise(mean_morph = mean(value_weighted))  %>% 
   dplyr::select(Language_ID, boundness =mean_morph) 
 
+boundness_st = scale(df_morph_count$boundness)
+df_morph_count <- cbind(df_morph_count, boundness_st)
+
 df_morph_count  %>% 		
   write_tsv(file.path(OUTPUTDIR1, "bound_morph_score.tsv"))		
 
