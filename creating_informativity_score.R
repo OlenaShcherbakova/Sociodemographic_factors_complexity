@@ -18,7 +18,7 @@ GB_informativity_points <-  GB_informativity_points %>%
   filter(!is.na(informativity))
 
 #reading in glottolog cdf for language levelling
-glottolog_df<- read_tsv("data/glottolog_cldf_wide_df.tsv", col_types = cols()) %>% 
+glottolog_df<- read_tsv("data_wrangling/glottolog_cldf_wide_df.tsv", col_types = cols()) %>% 
   dplyr::select(Language_ID = Glottocode, Language_level_ID)
 
 #calculating na_prop only for boundess features
