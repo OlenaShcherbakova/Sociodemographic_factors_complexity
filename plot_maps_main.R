@@ -98,8 +98,8 @@ b <- basemap + geom_point(data=combination, aes(x=Longitude, y=Latitude, fill=bo
   guides(fill = guide_colourbar()) +
   labs(fill="fusion") 
 
-#two_maps <- b/i 
-#ggsave(file="output/maps.svg", plot=two_maps, width=6, height=10)
+two_maps <- b/i 
+ggsave(file="output/maps_vertical.svg", plot=two_maps, width=7, height=10)
 
 two_maps <- b|i 
 ggsave(file="output/maps.svg", plot=two_maps, width=10, height=5)
