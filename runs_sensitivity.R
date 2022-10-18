@@ -17,8 +17,7 @@ WAIC_0.99 <- read.csv("output_tables/ waics Boundness_social_models prior_0.99 .
 sensitivity_B <- as.data.frame(rbind(WAIC_0.1, WAIC_0.01, WAIC_0.5, WAIC_0.99)) %>%
   mutate(response="boundness")
 
-source('check_I_lacking_family_priors.R')
-source('check_B_lacking_family_priors.R')
+
 source('sensitivity_testing_I_001.R')
 source('sensitivity_testing_I_05.R')
 source('sensitivity_testing_I_099.R')

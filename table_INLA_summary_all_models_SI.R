@@ -1,8 +1,6 @@
 #generate summary tables of WAIC values and effects for all boundess and informativity models (including social-only models and models including non-linear effects)
 
-effs_B_SP <- read.csv("output_tables/ effects Boundness_phylogenetic_spatial_models .csv") %>%
-  rename("X2.5." = "X2.50.",
-          "X97.5." = "X97.50.")
+effs_B_SP <- read.csv("output_tables/ effects Boundness_phylogenetic_spatial_models .csv") 
 effs_B_social <- read.csv("output_tables/ effects Boundness_social_models .csv")
 effs_B_social_only <- read.csv("output_tables/ effects Boundness_social_only_models .csv")
 
