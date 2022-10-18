@@ -1,5 +1,4 @@
 source("requirements.R")
-source("set_up_general.R")
 
 #parameters
 kappa = 1 
