@@ -48,6 +48,7 @@ effs_main_plot_bw <- effs_main %>%
                                 (lower < 0 & upper > 0) | 
                                 (lower < 0 & upper == 0) | (lower == 0 & upper > 0) ~ "0")) %>%
   mutate(importance = as.factor(importance)) %>%
+  mutate(importance = factor(importance, levels=c("0", "1"), ordered = TRUE)) %>%
   mutate(control = factor(control, levels=c("yes", "no"), ordered = TRUE)) %>%
   ggplot(.,
          aes(y = effect,
@@ -56,7 +57,7 @@ effs_main_plot_bw <- effs_main %>%
   geom_point(size = 10, position=position_dodge(w = 0.8)) +
   geom_line(position=position_dodge(w = 0.8)) +
   geom_vline(aes(xintercept = 0),lty = 2) + 
-  scale_color_manual(values=c("gray65", "red3")) +
+  scale_color_manual(values=c("black", "red3")) +
   #geom_line(linetype = 2) +
   #scale_linetype_manual(values=c("yes"="solid","no"="dashed")) +
   ylab("") + 
