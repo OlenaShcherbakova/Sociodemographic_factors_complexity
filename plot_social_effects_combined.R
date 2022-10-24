@@ -1,3 +1,8 @@
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(ggplot2)
+})
+
 effs_I <- read.csv("output_tables/ effects Informativity_social_models .csv")
 effs_I$variable <- "informativity"
 
@@ -40,36 +45,46 @@ effs_main <- effs_main %>%
                        "L1*L2 proportion" = "L1*L2",
                        "L2 proportion" = "L2"))
 
-effs_main_plot_bw <- effs_main %>%
+eff_main_plot_df = effs_main %>%
   as.data.frame() %>%
   mutate_if(is.character, as.factor) %>%
   mutate(effect = factor(effect, levels=c("Education", "Neighbours", "Official status", "L1*L2", "L2 (combined)", "L1 (combined)", "L2", "L1"))) %>%
   mutate(importance = case_when((lower < 0 & upper < 0)  ~ "negative",
                                 (lower > 0 & upper > 0)  ~ "positive",
                                 (lower < 0 & upper > 0) | 
-                                (lower < 0 & upper == 0) | (lower == 0 & upper > 0) ~ "no")) %>%
+                                  (lower < 0 & upper == 0) | (lower == 0 & upper > 0) ~ "no")) %>%
   mutate(importance = as.factor(importance)) %>%
   mutate(importance = factor(importance, levels=c("no", "positive", "negative"), ordered = TRUE)) %>%
-  mutate(control = factor(control, levels=c("yes", "no"), ordered = TRUE)) %>%
-  ggplot(.,
+  mutate(control = factor(control, levels=c("yes", "no"), ordered = TRUE)) 
+
+levels(eff_main_plot_df$importance)
+eff_main_plot_df %>% dplyr::filter(effect == "L1")
+
+effs_main_plot_bw = ggplot(eff_main_plot_df,
          aes(y = effect,
-             x = mean, color = as.factor(importance), linetype=control)) +
-  geom_errorbar(aes(xmin = lower, xmax = upper), width=0.6, size=3, position = position_dodge(w = 0.8)) + 
-  geom_point(size = 10, position=position_dodge(w = 0.8)) +
+             x = mean, 
+             linetype=control,
+             color = importance)) +
+  geom_errorbar(aes(xmin = lower, xmax = upper), 
+                width=0.6, 
+                size=1, 
+                position = position_dodge(w = 0.8)) + 
+  geom_point(size = 10, 
+             position=position_dodge(w = 0.8)) +
   geom_line(position=position_dodge(w = 0.8)) +
-  geom_vline(aes(xintercept = 0),lty = 2) + 
+  geom_vline(aes(xintercept = 0),
+             lty = 2) + 
   scale_color_manual(values=c("black", "red3", "steelblue")) +
-  #geom_line(linetype = 2) +
-  #scale_linetype_manual(values=c("yes"="solid","no"="dashed")) +
   ylab("") + 
   xlab("Estimate: 95% credible interval") + 
-  theme_classic() + facet_grid(. ~ variable, scales="free_x", space="free") +
+  theme_classic() + 
+  facet_grid(. ~ variable, scales="free_x", space="free") +
   theme(axis.text=element_text(size=65),
         legend.text=element_text(size=65),
         axis.title=element_text(size=65),
         legend.title=element_text(size=65),
         strip.text.x = element_text(size = 65),
-        legend.spacing.y = unit(2.7, 'cm'), 
+        legend.spacing.y = unit(2.7, 'cm'),
         legend.key.size = unit(2, 'cm'),
         legend.direction="horizontal",
         legend.position="bottom",
@@ -77,4 +92,6 @@ effs_main_plot_bw <- effs_main %>%
   guides(color="none")
 
 effs_main_plot_bw
-ggsave(file="output/effects_plot.svg", plot=effs_main_plot_bw, height = 22, width = 36)
+# ggsave(file="output/effects_plot.svg", plot=effs_main_plot_bw, height = 22, width = 36)
+ggsave(file="output/effects_plot.jpeg", plot=effs_main_plot_bw, height = 22, width = 36)
+
