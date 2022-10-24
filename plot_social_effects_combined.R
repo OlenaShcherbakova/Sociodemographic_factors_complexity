@@ -57,9 +57,6 @@ eff_main_plot_df = effs_main %>%
   mutate(importance = factor(importance, levels=c("no", "positive", "negative"), ordered = TRUE)) %>%
   mutate(control = factor(control, levels=c("yes", "no"), ordered = TRUE)) 
 
-levels(eff_main_plot_df$importance)
-eff_main_plot_df %>% dplyr::filter(effect == "L1")
-
 effs_main_plot_bw = ggplot(eff_main_plot_df,
          aes(y = effect,
              x = mean, 
@@ -93,5 +90,4 @@ effs_main_plot_bw = ggplot(eff_main_plot_df,
 
 effs_main_plot_bw
 # ggsave(file="output/effects_plot.svg", plot=effs_main_plot_bw, height = 22, width = 36)
-ggsave(file="output/effects_plot.jpeg", plot=effs_main_plot_bw, height = 22, width = 36)
 
