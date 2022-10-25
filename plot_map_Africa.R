@@ -36,11 +36,11 @@ lakes <- map_data("lakes", col="white", border="gray", margin=T, ylim=c(-45,80),
 world <- map_data("world", wrap=c(-25,335), ylim=c(-45,80), xlim=c(-30, 180), margin=T)
 
 world <- subset(world, !(region %in% c("USA","Brazil","Mexico", "Colombia", "Argentina", "Canada",
-                                     "Peru","Venezuela","Chile","Guatemala","Ecuador", "Bolivia", "Cuba",
-                                     "Honduras", "Paraguay", "Nicaragua","El Salvador", "Costa Rica", "Panama",
-                                     "Uruguay",  "Jamaica",  "Trinidad and Tobago", "Guyana", "Suriname", "Belize",
-                                     "Barbados", "Saint Lucia", "Grenada", "Saint Vincent and the Grenadines", 
-                                     "Antigua and Barbuda", "Saint Kitts and Nevis", "Greenland")))
+                                       "Peru","Venezuela","Chile","Guatemala","Ecuador", "Bolivia", "Cuba",
+                                       "Honduras", "Paraguay", "Nicaragua","El Salvador", "Costa Rica", "Panama",
+                                       "Uruguay",  "Jamaica",  "Trinidad and Tobago", "Guyana", "Suriname", "Belize",
+                                       "Barbados", "Saint Lucia", "Grenada", "Saint Vincent and the Grenadines", 
+                                       "Antigua and Barbuda", "Saint Kitts and Nevis", "Greenland")))
 
 #shifting the longlat of the dataframe to match the pacific centered map
 combination <- metrics_joined %>%
@@ -82,12 +82,12 @@ combination_ordered_0 <- combination %>%
   mutate(plotted_last = case_when(Language_ID == "hoaa1235" ~ 1,
                                   Language_ID != "hoaa1235" ~ 0)) %>%
   arrange(plotted_last) %>%
-  mutate(langs_of_interest = case_when(Language_ID == "hoaa1235" | Language_ID == "nuuu1241" |
+  mutate(langs_of_interest = case_when(Language_ID == "hoaa1235" |
                                          Language_ID == "huaa1248" | Language_ID == "tswa1255" |
-                                         Language_ID == "tson1249" | Language_ID == "xhos1239" ~ 1,
-                                       Language_ID != "hoaa1235" & Language_ID != "nuuu1241" &
+                                         Language_ID == "tson1249" | Language_ID == "sout2807" ~ 1,
+                                       Language_ID != "hoaa1235" &
                                          Language_ID != "huaa1248" & Language_ID != "tswa1255" &
-                                         Language_ID != "tson1249" & Language_ID != "xhos1239" ~ 0)) %>%
+                                         Language_ID != "tson1249" & Language_ID != "sout2807" ~ 0)) %>%
   mutate(langs_of_interest=as.factor(langs_of_interest)) %>%
   filter(langs_of_interest == "0")
 
@@ -95,17 +95,17 @@ combination_ordered_1 <- combination %>%
   mutate(plotted_last = case_when(Language_ID == "hoaa1235" ~ 1,
                                   Language_ID != "hoaa1235" ~ 0)) %>%
   arrange(plotted_last) %>%
-  mutate(langs_of_interest = case_when(Language_ID == "hoaa1235" | Language_ID == "nuuu1241" |
+  mutate(langs_of_interest = case_when(Language_ID == "hoaa1235" |
                                          Language_ID == "huaa1248" | Language_ID == "tswa1255" |
-                                         Language_ID == "tson1249" | Language_ID == "xhos1239" ~ 1,
-                                       Language_ID != "hoaa1235" & Language_ID != "nuuu1241" &
+                                         Language_ID == "tson1249" | Language_ID == "sout2807" ~ 1,
+                                       Language_ID != "hoaa1235" &
                                          Language_ID != "huaa1248" & Language_ID != "tswa1255" &
-                                         Language_ID != "tson1249" & Language_ID != "xhos1239" ~ 0)) %>%
+                                         Language_ID != "tson1249" & Language_ID != "sout2807" ~ 0)) %>%
   mutate(langs_of_interest=as.factor(langs_of_interest)) %>%
   filter(langs_of_interest != "0")
 
 b_labelled <- basemap + geom_point(data=combination_ordered_0, aes(x=Longitude, y=Latitude, color=boundness_st, fill=boundness_st), size=1, pch=21,# stroke=NA,
-                       position = position_jitter(width = 1, height = 1, seed=123)) + 
+                                   position = position_jitter(width = 1, height = 1, seed=123)) + 
   geom_point(data=combination_ordered_1, aes(x=Longitude, y=Latitude, fill=boundness_st), pch=21, size=2.5, colour = "black",   
              position = position_jitter(width = 1, height = 1, seed=123)) +
   #scale_fill_gradient2(low = muted("blue"), mid = "white", high = muted("red"), midpoint=0) + 
@@ -116,7 +116,7 @@ b_labelled <- basemap + geom_point(data=combination_ordered_0, aes(x=Longitude, 
   guides(fill = guide_colourbar()) +
   labs(fill="fusion") +
   geom_text_repel(aes(x=Longitude, y=Latitude, label=Name), #size=5,
-                  data  = subset(combination, AUTOTYP_area == "S Africa" & Latitude < -23 & boundness_st < 0 | Language_ID == "xhos1239" | Language_ID == "tswa1255"), 
+                  data  = subset(combination, AUTOTYP_area == "S Africa" & Latitude < -23 & boundness_st < 0 | Language_ID == "sout2807" | Language_ID == "tswa1255"), 
                   size          = 5,
                   box.padding   = 0.7,
                   max.overlaps = Inf,
