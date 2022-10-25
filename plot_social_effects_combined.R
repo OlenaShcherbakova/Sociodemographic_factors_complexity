@@ -64,7 +64,7 @@ effs_main_plot_bw = ggplot(eff_main_plot_df,
              color = importance)) +
   geom_errorbar(aes(xmin = lower, xmax = upper), 
                 width=0.6, 
-                size=1, 
+                size=2.5, 
                 position = position_dodge(w = 0.8)) + 
   geom_point(size = 10, 
              position=position_dodge(w = 0.8)) +
@@ -89,5 +89,5 @@ effs_main_plot_bw = ggplot(eff_main_plot_df,
   guides(color="none")
 
 effs_main_plot_bw
-# ggsave(file="output/effects_plot.svg", plot=effs_main_plot_bw, height = 22, width = 36)
+ggsave(file="output/effects_plot.svg", plot=effs_main_plot_bw, height = 22, width = 36)
 
