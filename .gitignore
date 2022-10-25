@@ -11,7 +11,7 @@ pop.tsv
 GB_wide_strict.tsv
 EDGE6635-merged-relabelled.tree
 *.png
-*.xlsx
+.xlsx
 *.jpg
 *.svg
 *.pptx
