@@ -15,10 +15,14 @@ if(!(file.exists("output/Informativity/informativity_score.tsv"))){
   source("creating_informativity_score.R")
 }
 
-if(!(file.exists("data_wrangling/pop.tsv"))) {
-  cat("Wrangling population table.\n")
-  source("create_pop_table.R")
-}  
+full_or_reduced <- "full"
+#if you don't have this file run 
+#@Olena update the exact hardcoded filenames
+if(full_or_reduced == "full"){
+  pop_file_fn <- "data_wrangling/pop.tsv"
+  }else{
+  pop_file_fn <- "data_wrangling/pop_reduced.tsv"
+  }
 
 if(!(file.exists("data_wrangling/wrangled.tree"))){
   cat("Pruning EDGE-tree.\n")
