@@ -24,7 +24,7 @@ data_ethnologue <- data_ethnologue %>%
                 L2_prop = L2/ All_Users, 
                 #calculating the proportion of L2 users out of the entire population
                 L1_log10 = log10(L1_Users+1),
-                All_Users_log10 = log10(All_Users+1)) %>% 
+                All_Users_log10 = log10(All_Users+1)) %>% #adding a 1 for cases where pop is 0
   mutate(L2_prop = ifelse(All_Users == 0, 0, L2_prop)) %>% #if All users is 0, L2_prop would be NA if we didn't do this (can't divide by 0). It should be 0
   dplyr::select(ISO_639, Glottocode, L1_log10, L2_prop, L1_Users, All_Users_log10, All_Users)
 
