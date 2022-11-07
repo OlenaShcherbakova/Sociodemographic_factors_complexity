@@ -10,10 +10,10 @@ data_ethnologue <- read_tsv("data/Table_of_Languages.tab", show_col_types = F) %
   filter(!is.na("All_Users")) %>% #remove rows with missing data for pop of all users
   mutate(L1_Users = ifelse(is.na(L1_Users), All_Users, L1_Users)) %>% #assume that if L1 Users aren't listed, all users are L1 users
   left_join(glottolog_df, by = "ISO_639" ) %>% 
-  group_by(Language_level_ID) %>% #join dialects
-  summarise(L1_Users = sum(L1_Users), 
-            All_Users = sum(All_Users), 
-            ISO_639 = paste0(ISO_639, collapse = ", ")) %>% 
+ # group_by(Language_level_ID) %>% #join dialects
+ # summarise(L1_Users = sum(L1_Users), 
+ #           All_Users = sum(All_Users), 
+ #           ISO_639 = paste0(ISO_639, collapse = ", ")) %>% 
   rename(Glottocode = Language_level_ID)
 
 #do some the subsettting to GB and log10 and L2 prop
