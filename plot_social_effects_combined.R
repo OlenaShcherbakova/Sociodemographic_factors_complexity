@@ -84,7 +84,7 @@ effs_main_plot_bw = ggplot(eff_main_plot_df,
         legend.spacing.y = unit(2.7, 'cm'),
         legend.key.size = unit(2, 'cm'),
         legend.direction="horizontal",
-        legend.position="bottom",
+        legend.position="top",
         panel.spacing.x = unit(15, "mm")) +
   guides(color="none")
 
