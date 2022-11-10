@@ -1,5 +1,4 @@
-library(geoR)
-library(geosphere)
+#plotting the assumptions of different versions of spatial control and how their parameters relate to distances in km
 
 #script written by X
 
@@ -65,33 +64,11 @@ spatialkappa_lines = lapply(spatial_parameters, function(x) {
   d[sample_idx]
 })
 
-legend_text = c(paste0("local: kappa = ", parameters[1,1],"; phi = ", parameters[1,2]),
-                paste0("regional: kappa = ", parameters[2,1],"; phi = ", parameters[2,2]))
+legend_text = c(bquote("local:" ~ kappa == .(parameters[1,1]) ~ "; " ~ phi == .(parameters[1,2])),
+                bquote("regional:" ~ kappa == .(parameters[2,1]) ~ "; " ~ phi == .(parameters[2,2])))
 
-png("output/plot_spatial_pars_km.png", width = 8, height = 8, res = 400, units = "in")
-plot(x = plot_ss$distance, y = plot_ss$covariance, 
-     type = "l", main = "Spatial parameters", col = "white", #not plotting these lines; just keeping to axis
-     ylim = c(0, 1),
-     xlim = c(0, 15000),
-     xlab = "Distance (km)",
-     ylab = "Covariance",
-     frame.plot = TRUE,
-     cex.main=1.7, 
-     axes=FALSE,
-     cex.lab=1.5)
-axis(1, at = seq(0,15000,by=2500), labels = seq(0,15000,by=2500), tick = TRUE, cex.axis=1.4)
-axis(2, at = seq(0,1,by=0.2), labels = seq(0,1,by=0.2), tick = TRUE, cex.axis=1.4)
-for(i in seq_along(spatialkappa_lines)){
-  lines(x = plot_ss$distance, y = spatialkappa_lines[[i]], col = cols[i], lwd = 2)
-}
-
-legend("topright", 
-       legend=legend_text,
-       col=cols, lty=1, cex=1.5, lwd = 3)
-x <- dev.off()
-
-
-png("output/plot_spatial_pars_km_zoomed.png", width = 8, height = 8, res = 400, units = "in")
+#final version: zoomed in on the distances of up to 10000 km
+svg("output/plot_spatial_pars_km_zoomed.svg", width = 8, height = 8)
 plot(x = plot_ss$distance, y = plot_ss$covariance, 
      type = "l", main = "Spatial parameters", col = "white", #not plotting these lines; just keeping to axis
      ylim = c(0, 1),
@@ -115,4 +92,28 @@ legend("topright",
        col=cols, lty=1, cex=1.5, lwd = 3)
 x <- dev.off()
 
+
+
+#full version
+svg("output/plot_spatial_pars_km.svg", width = 8, height = 8)
+plot(x = plot_ss$distance, y = plot_ss$covariance, 
+     type = "l", main = "Spatial parameters", col = "white", #not plotting these lines; just keeping to axis
+     ylim = c(0, 1),
+     xlim = c(0, 15000),
+     xlab = "Distance (km)",
+     ylab = "Covariance",
+     frame.plot = TRUE,
+     cex.main=1.7, 
+     axes=FALSE,
+     cex.lab=1.5)
+axis(1, at = seq(0,15000,by=2500), labels = seq(0,15000,by=2500), tick = TRUE, cex.axis=1.4)
+axis(2, at = seq(0,1,by=0.2), labels = seq(0,1,by=0.2), tick = TRUE, cex.axis=1.4)
+for(i in seq_along(spatialkappa_lines)){
+  lines(x = plot_ss$distance, y = spatialkappa_lines[[i]], col = cols[i], lwd = 2)
+}
+
+legend("topright", 
+       legend=legend_text,
+       col=cols, lty=1, cex=1.5, lwd = 3)
+x <- dev.off()
 
