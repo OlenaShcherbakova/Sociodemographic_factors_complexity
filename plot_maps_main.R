@@ -66,7 +66,7 @@ basemap <- ggplot(combination) +
   coord_map(projection = "vandergrinten", ylim=c(-56,67))
 
 #plotting informativity map
-i <- basemap + geom_point(data=combination, aes(x=Longitude, y=Latitude, fill=informativity_st), pch=21, colour = "black", size=2.5, alpha=1, position = position_jitter(width = 1, height = 1, seed=123)) + 
+i <- basemap + geom_point(data=combination, aes(x=Longitude, y=Latitude, fill=informativity_st), pch=21, colour = "black", size=1.5, alpha=1, position = position_jitter(width = 1, height = 1, seed=123)) + 
   scale_fill_viridis_c(option="viridis", direction=-1) +
   theme(plot.title = element_text(size=20), legend.title = element_text(size=20), legend.text = element_text(size=20), legend.key.size = unit(0.7, units="cm"), legend.position="bottom") + 
   guides(fill = guide_colourbar()) +
@@ -76,7 +76,7 @@ ggsave(file="output/map_informativity.svg", plot=i, width=10, height=9)
 
 
 #plotting boudnness map
-b <- basemap + geom_point(data=combination, aes(x=Longitude, y=Latitude, fill=boundness_st), pch=21, colour = "black", size=2.5, alpha=1, position = position_jitter(width = 1, height = 1, seed=123)) + 
+b <- basemap + geom_point(data=combination, aes(x=Longitude, y=Latitude, fill=boundness_st), pch=21, colour = "black", size=1.5, alpha=1, position = position_jitter(width = 1, height = 1, seed=123)) + 
   scale_fill_viridis_c(option="magma", direction=-1) + 
   theme(plot.title = element_text(size=20), legend.title = element_text(size=20), legend.text = element_text(size=20), legend.key.size = unit(0.7, units="cm"), legend.position="bottom") + 
   guides(fill = guide_colourbar()) +
@@ -86,16 +86,18 @@ ggsave(file="output/map_boundness.svg", plot=b, width=10, height=9)
 
 
 
-i <- basemap + geom_point(data=combination, aes(x=Longitude, y=Latitude, fill=informativity_st), pch=21, colour = "black", size=2.5, alpha=1, position = position_jitter(width = 1, height = 1, seed=123)) + 
+i <- basemap + geom_point(data=combination, aes(x=Longitude, y=Latitude, fill=informativity_st, color=informativity_st), pch=21, size=1.5, alpha=1, position = position_jitter(width = 1, height = 1, seed=123)) + 
   scale_fill_viridis_c(option="viridis", direction=-1) +
+  scale_color_viridis_c(option="viridis", direction=-1) +
   theme(text = element_text(size = 20), legend.text = element_text(size = 20), legend.key.size = unit(0.8, units="cm"), legend.position="bottom") + 
-  guides(fill = guide_colourbar()) +
+  guides(fill = guide_colourbar(), color="none") +
   labs(fill="informativity")
 
-b <- basemap + geom_point(data=combination, aes(x=Longitude, y=Latitude, fill=boundness_st), pch=21, colour = "black", size=2.5, alpha=1, position = position_jitter(width = 1, height = 1, seed=123)) + 
+b <- basemap + geom_point(data=combination, aes(x=Longitude, y=Latitude, fill=boundness_st, color=boundness_st), pch=21, size=1.5, alpha=1, position = position_jitter(width = 1, height = 1, seed=123)) + 
   scale_fill_viridis_c(option="magma", direction=-1) + 
+  scale_color_viridis_c(option="magma", direction=-1) + 
   theme(text = element_text(size = 20), legend.text = element_text(size = 20), legend.key.size = unit(0.8, units="cm"), legend.position="bottom") + 
-  guides(fill = guide_colourbar()) +
+  guides(fill = guide_colourbar(), color="none") +
   labs(fill="fusion") 
 
 two_maps <- b/i 
