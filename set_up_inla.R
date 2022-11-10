@@ -44,7 +44,7 @@ glottolog_df <- glottolog_df %>%
 #   .[1:10,]
 
 
-metrics_joined <- read_tsv("data_wrangling/pop.tsv", show_col_types = F ) %>% 
+metrics_joined <- read_tsv(pop_file_fn, show_col_types = F ) %>% 
   full_join(read_tsv("output/Informativity/informativity_score.tsv", show_col_types = F), by = "Language_ID" ) %>% 
   full_join(read_tsv("output/Bound_morph/bound_morph_score.tsv", show_col_types = F), by = "Language_ID" ) %>%
   full_join(glottolog_df, by = "Language_ID") %>%
