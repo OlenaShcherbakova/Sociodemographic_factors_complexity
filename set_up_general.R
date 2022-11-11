@@ -16,8 +16,7 @@ if(!(file.exists("output/Informativity/informativity_score.tsv"))){
 }
 
 full_or_reduced <- "full"
-#if you don't have this file run 
-#@Olena update the exact hardcoded filenames
+
 if(full_or_reduced == "full"){
   pop_file_fn <- "data_wrangling/pop.tsv"
   }else{

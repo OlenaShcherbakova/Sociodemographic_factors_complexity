@@ -43,6 +43,13 @@ glottolog_df <- glottolog_df %>%
 #   arrange(value) %>%
 #   .[1:10,]
 
+full_or_reduced <- "full"
+
+if(full_or_reduced == "full"){
+  pop_file_fn <- "data_wrangling/pop.tsv"
+}else{
+  pop_file_fn <- "data_wrangling/pop_reduced.tsv"
+}
 
 metrics_joined <- read_tsv(pop_file_fn, show_col_types = F ) %>% 
   full_join(read_tsv("output/Informativity/informativity_score.tsv", show_col_types = F), by = "Language_ID" ) %>% 
