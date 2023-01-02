@@ -4,11 +4,12 @@ Consult and run ```all_scripts.R``` that will execute all necessary scripts to:
 
 - download packages and create folders 
 - generate Glottolog table from Glottolog v.4.4 (Hammarström et al. 2021)
-- calculate metric scores from Grambank v.1.0 (The Grambank Consortium 2022)
+- calculate metric scores from Grambank v.1.0 (The Grambank Consortium 2022): fusion (previously: boundness) metric and informativity metric
 - generate population table (all sociodemographic variables in one dataframe): data from Ethnologue e24 (Eberhard et al. 2020) and Supplementary Materials in ```data\lang_endangerment_predictors.xlsx``` from Bromham et al. (2022) 
 - wrangle EDGE tree
 - generating AUTOTYP v.1.1.0 (Bickel et al. 2022) areas table
 - prepare everything for and run INLA analysis, including sensitivity analyses
+- measure phylogenetic signal in fusion and informativity
 - generate tables from INLA analyses, including sensitivity analyses
 - make plots
 

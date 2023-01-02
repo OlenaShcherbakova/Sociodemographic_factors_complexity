@@ -19,6 +19,9 @@ source("runs.R")
 #conduct sensitivity testing + extract the corresponding table
 source("runs_sensitivity.R")
 
+#measure phylogenetic signal in two fusion and informativity
+source("measuring_phylosignal.R")
+
 #extract tables from INLA analyses
 source("table_INLA_summary_all_models_SI.R")
 source("variance_top_ranking_models.R")

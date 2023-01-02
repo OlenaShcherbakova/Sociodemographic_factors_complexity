@@ -3,7 +3,7 @@ source("requirements.R")
 #creating basic dfs for general use
 
 #optional script that generates grambank dataset, parameters file, and glottolog -- the files that have already been made available
-source("generating_GB_input_file.R")
+#source("generating_GB_input_file.R")
 
 if(!(file.exists("output/Bound_morph/bound_morph_score.tsv"))){
   cat("Calculating boundness score.\n")
