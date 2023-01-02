@@ -13,7 +13,8 @@ data_ethnologue <- read_tsv("data/Table_of_Languages.tab", show_col_types = F) %
  # group_by(Language_level_ID) %>% #join dialects
  # summarise(L1_Users = sum(L1_Users), 
  #           All_Users = sum(All_Users), 
- #           ISO_639 = paste0(ISO_639, collapse = ", ")) %>% 
+ #           ISO_639 = paste0(ISO_639, collapse = ", ")) %>%
+  select(-Glottocode) %>% #removing old Glottocode column
   rename(Glottocode = Language_level_ID)
 
 #do some the subsettting to GB and log10 and L2 prop
