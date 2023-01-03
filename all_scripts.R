@@ -10,6 +10,12 @@ source("set_up_general.R")
 
 #setup for INLA analysis
 source("install_and_load_INLA.R")
+#choosing whether to use the full dataset (possible only for reviewers and if one has own access to Ethnologue and saved the dataset in the data folder on their own) or to only to the subset of Ethnologue with transformed variables made available in this repostiory after running create_pop_table.R
+
+#sample <- "full"
+sample <- "reduced" #default
+
+source("create_pop_table.R")
 source("set_up_inla.R")
 
 #run all INLA models + extract main results tables 
