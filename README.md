@@ -1,11 +1,11 @@
 # Sociodemographic_factors_complexity
 
-Consult and run ```all_scripts.R``` that will execute all necessary scripts to:
+Consult and run `all_scripts.R` that will execute all necessary scripts to:
 
 - download packages and create folders 
 - generate Glottolog table from Glottolog v.4.4 (Hammarström et al. 2021)
 - calculate metric scores from Grambank v.1.0 (The Grambank Consortium 2022): fusion (previously: boundness) metric and informativity metric
-- generate population table (all sociodemographic variables in one dataframe): data from Ethnologue e24 (Eberhard et al. 2020) and Supplementary Materials in ```data\lang_endangerment_predictors.xlsx``` from Bromham et al. (2022) 
+- generate population table (all sociodemographic variables in one dataframe): data from Ethnologue e24 (Eberhard et al. 2020) and Supplementary Materials in ```data\lang_endangerment_predictors.xlsx``` from Bromham et al. (2022). Based on data availability, within `set_up_inla.R`, it is necessary to specify whether `sample` is `"full"` (full access to both Ethnologue variables in transformed and non-transformed form and running all models; possible only for users with their own access to Ethnologue) and `"reduced"` (access to both Ethnologue variables in transformed form and all models except for one including interaction between L1 and L2 proportion; the dataset is already provided within the repository).
 - wrangle EDGE tree
 - generating AUTOTYP v.1.1.0 (Bickel et al. 2022) areas table
 - prepare everything for and run INLA analysis, including sensitivity analyses
