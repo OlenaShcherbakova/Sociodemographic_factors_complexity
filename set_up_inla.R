@@ -43,12 +43,10 @@ glottolog_df <- glottolog_df %>%
 #   arrange(value) %>%
 #   .[1:10,]
 
-full_or_reduced <- "full"
-
-if(full_or_reduced == "full"){
-  pop_file_fn <- "data_wrangling/pop.tsv"
-}else{
-  pop_file_fn <- "data_wrangling/pop_reduced.tsv"
+if(sample == "reduced"){
+  pop_file_fn <- "data_wrangling/pop_reduced.tsv" 
+} else {
+  pop_file_fn <- "data_wrangling/pop_full.tsv"
 }
 
 metrics_joined <- read_tsv(pop_file_fn, show_col_types = F ) %>% 
@@ -57,15 +55,24 @@ metrics_joined <- read_tsv(pop_file_fn, show_col_types = F ) %>%
   full_join(glottolog_df, by = "Language_ID") %>%
   #full_join(mean_size, by = "Language_ID") %>%
   #full_join(hierarchy, by = "Language_ID") %>%
-  full_join(areas, by = "Language_ID") %>%
-  dplyr::select(Language_ID, Name, Family_ID, Macroarea, Latitude, Longitude, boundness_st, informativity_st, boundness, Informativity, L1_log10_st, L1_log10, L2_prop, Education, Official, neighboring_languages_st, AUTOTYP_area, Shifting_or_Extinct) %>%
+  full_join(areas, by = "Language_ID") 
+
+if(sample == "reduced"){
+  metrics_joined <- metrics_joined %>% 
+    dplyr::select(Language_ID, Name, Family_ID, Macroarea, Latitude, Longitude, boundness_st, informativity_st, boundness, Informativity, L1_log10_st, L2_prop, Education, Official, neighboring_languages_st, AUTOTYP_area)
+} else {
+  metrics_joined <- metrics_joined %>% 
+    dplyr::select(Language_ID, Name, Family_ID, Macroarea, Latitude, Longitude, boundness_st, informativity_st, boundness, Informativity, L1_log10_st, L1_log10, L2_prop, Education, Official, neighboring_languages_st, AUTOTYP_area)
+}
+
+metrics_joined <- metrics_joined %>% 
   #discarding languages with no or low numbers of L1 speakers and L2 speakers resulting primarily from language revival efforts
   filter(!Language_ID == "gami1243") %>%
   filter(!Language_ID == "tuni1252") %>%
   filter(!Language_ID == "yuch1247") %>%
   filter(!Language_ID == "mari1424") %>%
   filter(!Language_ID == "natc1249") %>%
-  filter(!Language_ID == "poli1260") 
+  filter(!Language_ID == "poli1260") #removing Polish due to problems with coding
       
 tree <- read.tree(file.path("data_wrangling/wrangled.tree"))   
          
