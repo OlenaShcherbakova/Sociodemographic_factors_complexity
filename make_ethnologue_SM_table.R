@@ -1,4 +1,7 @@
-library(tidyverse)
+source("requirements.R")
+
+#this script necessitates that grambank and glottolog files exist. if they do not, run generate_GB_input_file.R
+#this script generates the Ethnologue file that can be published based on the raw ethnologue file from SIL. The raw file CANNOT be shared publicly, but derived information that cannot be transformed back to the original values can, such as scaled and log-transformed values
 
 glottolog_df <- read_tsv("data_wrangling/glottolog_cldf_wide_df.tsv", show_col_types = F) %>% 
   dplyr::select(ISO_639 = ISO639P3code, Glottocode, Language_level_ID)
@@ -6,16 +9,15 @@ glottolog_df <- read_tsv("data_wrangling/glottolog_cldf_wide_df.tsv", show_col_t
 GB <- read_tsv("data/GB_wide/GB_wide_strict.tsv", show_col_types = F) %>% 
   dplyr::select(Glottocode = "Language_ID")
 
+#this script needs the Table_of_languages.tab file to exists, which is only available to people with an SIL lisence
 data_ethnologue <- read_tsv("data/Table_of_Languages.tab", show_col_types = F) %>%
   filter(!is.na("All_Users")) %>% #remove rows with missing data for pop of all users
   mutate(L1_Users = ifelse(is.na(L1_Users), All_Users, L1_Users)) %>% #assume that if L1 Users aren't listed, all users are L1 users
   left_join(glottolog_df, by = "ISO_639" ) %>% 
- # group_by(Language_level_ID) %>% #join dialects
- # summarise(L1_Users = sum(L1_Users), 
- #           All_Users = sum(All_Users), 
- #           ISO_639 = paste0(ISO_639, collapse = ", ")) %>%
-  select(-Glottocode) %>% #removing old Glottocode column
+  dplyr::select(-Glottocode) %>% #removing old Glottocode column
   rename(Glottocode = Language_level_ID)
+
+#at this point there will be duplicates. these will be removed before analysis by
 
 #do some the subsettting to GB and log10 and L2 prop
 data_ethnologue <- data_ethnologue %>% 
