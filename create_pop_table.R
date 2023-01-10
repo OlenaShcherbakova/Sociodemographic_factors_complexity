@@ -13,7 +13,7 @@ if (!dir.exists(OUTPUTDIR_data_wrangling)) { dir.create(OUTPUTDIR_data_wrangling
     dplyr::select(Glottocode, Language_ID, ISO_639, Language_level_ID, level, Family_ID, Longitude, Latitude) 
   
   
-  if(full_or_reduced == "full"){
+  if(sample == "full"){
     data_ethnologue <- read_tsv("data/Table_of_Languages.tab", show_col_types = F) %>%
     dplyr::select(!c(Longitude, Latitude)) %>%
     left_join(glottolog_df, by = "ISO_639") %>% 
@@ -30,7 +30,8 @@ if (!dir.exists(OUTPUTDIR_data_wrangling)) { dir.create(OUTPUTDIR_data_wrangling
   }
   
   
-  if(full_or_reduced == "reduced"){
+  if(sample == "reduced"){
+    #double check if the file below needs to be changed
     data_ethnologue <- read_tsv("data_wrangling/ethnologue_pop_SM.tsv", show_col_types = F) %>% 
       rename(L1_log10_st = L1_log10_scaled) %>%
       dplyr::select(ISO_639, Glottocode, L1_log10_st, L2_prop)
@@ -50,7 +51,7 @@ social_vars <- readxl::read_xlsx("data/lang_endangerment_predictors.xlsx", sheet
     #dplyr::mutate(neighboring_languages_log10_st  = scale(neighboring_languages_log10)[,1]) %>%
     dplyr::select(Language_ID, Education, Official, neighboring_languages_st)
   
-  if(full_or_reduced == "full"){
+  if(sample == "full"){
     social_vars  %>% 		
       left_join(data_ethnologue, by=c("Language_ID")) %>% 
       dplyr::select(Language_ID, L1_log10_st, L1_log10, L2_prop, Education, Official, neighboring_languages_st) %>% 
