@@ -51,23 +51,16 @@ if(sample == "full"){
 full <- read_tsv("data_wrangling/full_analysis_sample.tsv")
 reduced <- read_tsv("data_wrangling/reduced_analysis_sample.tsv")
 
-#finding duplicates: 10 duplicates in reduced
-reduced_dup <- reduced[duplicated(reduced$Language_ID),]
-#no duplicates in full
-full_dup <- full[duplicated(full$Language_ID),]
-
-reduced_dup <- reduced %>% 
-  duplicated(Language_ID) %>% 
-  as.data.frame()
-
-ab <- data.frame(a=c(full$Language_ID, rep(NA, times=19)), 
+ab <- data.frame(a=c(full$Language_ID, rep(NA, times=8)), 
                  b=reduced$Language_ID,
-                 boundness_full=c(full$boundness_st, rep(NA, times=19)),
+                 boundness_full=c(full$boundness_st, rep(NA, times=8)),
                  boundness_reduced=reduced$boundness_st)
 
 #the discrepancies are found in extra languages present in the reduced sample
 in_full_not_in_reduced <- ab$a[!(ab$a %in% ab$b)]
 in_reduced_not_in_full <-ab$b[!(ab$a %in% ab$b)]
+
+non_overlapping_languages <- c(in_full_not_in_reduced, in_reduced_not_in_full)
 
 #Are transformed scores the same?
 reduced[!(reduced$Language_ID %in% 
@@ -79,3 +72,5 @@ reduced <- reduced %>%
          
          
       
+pop_full <- read_tsv("data_wrangling/pop_full.tsv")
+pop_reduced <- read_tsv("data_wrangling/pop_reduced.tsv")
