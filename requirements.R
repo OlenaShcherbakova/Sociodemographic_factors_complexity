@@ -67,7 +67,7 @@ pacman::p_load(
 	mapdata,
 	maptools,
 	maps,
-  geoR,
+#  geoR,
   geosphere,
   fields,
 	
