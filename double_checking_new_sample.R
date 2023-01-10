@@ -51,6 +51,8 @@ if(sample == "full"){
 full <- read_tsv("data_wrangling/full_analysis_sample.tsv")
 reduced <- read_tsv("data_wrangling/reduced_analysis_sample.tsv")
 
+sum(duplicated(reduced$Language_ID))
+
 ab <- data.frame(a=c(full$Language_ID, rep(NA, times=8)), 
                  b=reduced$Language_ID,
                  boundness_full=c(full$boundness_st, rep(NA, times=8)),
