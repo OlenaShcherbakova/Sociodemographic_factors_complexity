@@ -34,8 +34,8 @@ if (!dir.exists(OUTPUTDIR_data_wrangling)) { dir.create(OUTPUTDIR_data_wrangling
     #double check if the file below needs to be changed
     data_ethnologue <- read_tsv("data_wrangling/ethnologue_pop_SM.tsv", show_col_types = F) %>% 
       rename(L1_log10_st = L1_log10_scaled) %>%
-      dplyr::select(ISO_639, Glottocode, L1_log10_st, L2_prop) %>% 
-      distinct(Glottocode, .keep_all=TRUE)
+      dplyr::select(ISO_639, Glottocode, L1_log10_st, L2_prop) #%>% 
+      #distinct(Glottocode, .keep_all=TRUE)
       
     
   }
