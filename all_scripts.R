@@ -21,9 +21,29 @@ source("set_up_inla.R")
 
 #run all INLA models + extract main results tables 
 #Note that previously "fusion" was called "boundness", and this is how it is referenced in all scripts
+
+#predictors: random effects - phylogenetic and spatial (same scripts for "full" and "reduced" versions)
+source("models_Boundness_phylogenetic_spatial.R")
+source("models_Informativity_phylogenetic_spatial.R")
+
 if(sample == "full"){
-  source("runs.R") else{
-    source("runs_on_reduced.R")
+  
+  #predictors: phylogenetic and spatial random effects + sociodemograhic variables as fixed effects
+  source("models_Boundness_social.R")
+  source("models_Informativity_social.R")
+  
+  #predictors: sociodemographic variables as fixed effects
+  source("models_Boundness_social_only.R")
+  source("models_Informativity_social_only.R") else{
+    
+    #predictors: phylogenetic and spatial random effects + sociodemograhic variables as fixed effects 
+    #(on reduced set of social variables: without log10 transformed L1 speakers)
+    source("models_Boundness_reduced_social.R")
+    source("models_Informativity_reduced_social.R")
+    
+    #predictors: sociodemographic variables as fixed effects
+    source("models_Boundness_reduced_social_only.R")
+    source("models_Informativity_reduced_social_only.R")
   }
 }
 
