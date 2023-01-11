@@ -137,98 +137,98 @@ education_element <- data.frame("judgement" = grepl("Education", predterms_short
                                 number = 1:length(predterms_short))
 education_element <- education_element[education_element$judgement == TRUE,]$number
 
-
+models_number <- length(predterms_short)
 
 #preparing empty matrices to be filled with effect estimates (quantiles), model name, and WAIC value
-phy_effects_matrix <- matrix(NA, 10, 5)
+phy_effects_matrix <- matrix(NA, models_number, 5)
 colnames(phy_effects_matrix) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-spa_effects_matrix <- matrix(NA, 10, 5)
+spa_effects_matrix <- matrix(NA, models_number, 5)
 colnames(spa_effects_matrix) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
 
-intercept_matrix <- matrix(NA, 10, 5)
+intercept_matrix <- matrix(NA, models_number, 5)
 colnames(intercept_matrix) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
 
-social_effects_matrix_L1 <- matrix(NA, 10, 5)
+social_effects_matrix_L1 <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_L1) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_L1_nl <- matrix(NA, 10, 5)
+social_effects_matrix_L1_nl <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_L1_nl) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_L2_prop <- matrix(NA, 10, 5)
+social_effects_matrix_L2_prop <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_L2_prop) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_L2_prop_nl <- matrix(NA, 10, 5)
+social_effects_matrix_L2_prop_nl <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_L2_prop_nl) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_N <- matrix(NA, 10, 5)
+social_effects_matrix_N <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_N) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_O <- matrix(NA, 10, 5)
+social_effects_matrix_O <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_O) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_E <- matrix(NA, 10, 5)
+social_effects_matrix_E <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_E) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_L1_L2_prop <- matrix(NA, 10, 5)
+social_effects_matrix_L1_L2_prop <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_L1_L2_prop) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
 
 #fitted values
-fitted_list <- vector("list", 10)
+fitted_list <- vector("list", models_number)
 names(fitted_list) <- predterms_short
 
 #marginals of hyperparameters
-marginals_hyperpar_list_gaussian <- vector("list", 10)
+marginals_hyperpar_list_gaussian <- vector("list", models_number)
 names(marginals_hyperpar_list_gaussian) <- predterms_short
 
-marginals_hyperpar_list_phy <- vector("list", 10)
+marginals_hyperpar_list_phy <- vector("list", models_number)
 names(marginals_hyperpar_list_phy) <- predterms_short
 
-marginals_hyperpar_list_spa <- vector("list", 10)
+marginals_hyperpar_list_spa <- vector("list", models_number)
 names(marginals_hyperpar_list_spa) <- predterms_short
 
-marginals_hyperpar_list_social_L1_nl <- vector("list", 10)
+marginals_hyperpar_list_social_L1_nl <- vector("list", models_number)
 names(marginals_hyperpar_list_social_L1_nl) <- predterms_short
 
-marginals_hyperpar_list_social_L2_prop_nl <- vector("list", 10)
+marginals_hyperpar_list_social_L2_prop_nl <- vector("list", models_number)
 names(marginals_hyperpar_list_social_L2_prop_nl) <- predterms_short
 
 
 #marginals of fixed effects
-marginals_fixed_list_Intercept <- vector("list", 10)
+marginals_fixed_list_Intercept <- vector("list", models_number)
 names(marginals_fixed_list_Intercept) <- predterms_short
 
-marginals_fixed_list_L1 <- vector("list", 10)
+marginals_fixed_list_L1 <- vector("list", models_number)
 names(marginals_fixed_list_L1) <- predterms_short
 
-marginals_fixed_list_L2_prop <- vector("list", 10)
+marginals_fixed_list_L2_prop <- vector("list", models_number)
 names(marginals_fixed_list_L2_prop) <- predterms_short
 
-marginals_fixed_list_O <- vector("list", 10)
+marginals_fixed_list_O <- vector("list", models_number)
 names(marginals_fixed_list_O) <- predterms_short
 
-marginals_fixed_list_N <- vector("list", 10)
+marginals_fixed_list_N <- vector("list", models_number)
 names(marginals_fixed_list_N) <- predterms_short
 
-marginals_fixed_list_E <- vector("list", 10)
+marginals_fixed_list_E <- vector("list", models_number)
 names(marginals_fixed_list_E) <- predterms_short
 
-marginals_fixed_list_L1_L2_prop <- vector("list", 10)
+marginals_fixed_list_L1_L2_prop <- vector("list", models_number)
 names(marginals_fixed_list_L1_L2_prop) <- predterms_short
 
 
 
 
 #summary statistics of random effects
-summary_random_list_phy <- vector("list", 10)
+summary_random_list_phy <- vector("list", models_number)
 names(summary_random_list_phy) <- predterms_short
 
-summary_random_list_spa <- vector("list", 10)
+summary_random_list_spa <- vector("list", models_number)
 names(summary_random_list_spa) <- predterms_short
 
-summary_random_list_social_L1_nl <- vector("list", 10)
+summary_random_list_social_L1_nl <- vector("list", models_number)
 names(summary_random_list_social_L1_nl) <- predterms_short
 
-summary_random_list_social_L2_prop_nl <- vector("list", 10)
+summary_random_list_social_L2_prop_nl <- vector("list", models_number)
 names(summary_random_list_social_L2_prop_nl) <- predterms_short
 
 
-coefm <- matrix(NA,10,1)
-result <- vector("list",10)
+coefm <- matrix(NA,models_number,1)
+result <- vector("list",models_number)
 
-for(i in 1:10){
+for(i in 1:models_number){
   formula <- as.formula(paste("boundness_st ~ ",predterms[[i]]))
   result[[i]] <- inla(formula, family="gaussian", 
                       control.family = list(hyper = pcprior_hyper_0.5), 
