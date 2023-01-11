@@ -2,8 +2,8 @@ source("requirements.R")
 
 #creating basic dfs for general use
 
-#optional script that generates grambank dataset, parameters file, and glottolog from git submodules -- the files that have already been made available to authors.
-#this script is only runnable if the submodules are correctly clone and initalized.
+#optional script that generates grambank dataset, parameters file, and glottolog from git submodules -- the files that have already been made available by authors.
+#this script is only runnable if the submodules are correctly cloned and initialized.
 #source("generating_GB_input_file.R")
 
 if(!(file.exists("output/Bound_morph/bound_morph_score.tsv"))){
