@@ -21,10 +21,18 @@ source("set_up_inla.R")
 
 #run all INLA models + extract main results tables 
 #Note that previously "fusion" was called "boundness", and this is how it is referenced in all scripts
-source("runs.R")
+if(sample == "full"){
+  source("runs.R") else{
+    source("runs_on_reduced.R")
+  }
+}
 
 #conduct sensitivity testing + extract the corresponding table
-source("runs_sensitivity.R")
+if(sample == "full"){
+  source("runs_sensitivity.R") else{
+    source("runs_sensitivity_on_reduced.R")
+  }
+}
 
 #measure phylogenetic signal in two fusion and informativity
 source("measuring_phylosignal.R")
