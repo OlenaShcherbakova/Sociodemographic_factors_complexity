@@ -15,6 +15,7 @@ source("install_and_load_INLA.R")
 #sample <- "full"
 sample <- "reduced" #default
 
+source("make_ethnologue_SM_and_merging_tables.R")
 source("create_pop_table.R")
 source("set_up_inla.R")
 
