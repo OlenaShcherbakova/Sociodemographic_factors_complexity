@@ -7,6 +7,7 @@
 
 *.RData
 Table_of_Languages.tab
+ethnologue_pop_full.tsv
 pop.tsv
 pop_full.tsv
 GB_wide_strict.tsv
