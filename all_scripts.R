@@ -38,11 +38,20 @@ if(sample == "full"){
 source("measuring_phylosignal.R")
 
 #extract tables from INLA analyses
-source("table_INLA_summary_all_models_SI.R")
-source("variance_top_ranking_models.R")
+if(sample == "full"){
+  source("table_INLA_summary_all_models_SI.R")
+  source("variance_top_ranking_models.R") else{
+    source("table_INLA_summary_all_models_SI_reduced.R")
+    source("variance_top_ranking_models_reduced.R")
+  }
+}
 
 #plotting
-source("plot_social_effects_combined.R") #main results figure 
+if(sample == "full"){ #main results figure 
+  source("plot_social_effects_combined.R") else{
+    source("plots_social_effects_combined_on_reduced.R")
+  }
+} 
 source("plot_maps_main.R") #maps of scores
 source("plot_heatmap_B_I.R") #phylogenetic tree with a heatmap 
 source("plot_map_Africa.R")
