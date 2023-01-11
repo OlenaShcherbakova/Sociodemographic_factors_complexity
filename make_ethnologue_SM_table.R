@@ -1,7 +1,8 @@
 source("requirements.R")
 
-#this script necessitates that grambank and glottolog files exist. if they do not, run generate_GB_input_file.R
-#this script generates the Ethnologue file that can be published based on the raw ethnologue file from SIL. The raw file CANNOT be shared publicly, but derived information that cannot be transformed back to the original values can, such as scaled and log-transformed values
+#this script necessitates that Grambank and Glottolog files exist
+
+#this script generates the Ethnologue file that can be published based on the raw Ethnologue file from SIL. The raw file CANNOT be shared publicly, but derived information that cannot be transformed back to the original values can, such as scaled values, log-transformed and scaled values, and proportions
 
 glottolog_df <- read_tsv("data_wrangling/glottolog_cldf_wide_df.tsv", show_col_types = F) %>% 
   dplyr::select(ISO_639 = ISO639P3code, Glottocode, Language_level_ID)
@@ -38,8 +39,24 @@ data_ethnologue$L1_log10_scaled <- scale(data_ethnologue$L1_log10)[,1]
 data_ethnologue$All_Users_scaled <- scale(data_ethnologue$All_Users)[,1]
 data_ethnologue$All_Users_log10_scaled <- scale(data_ethnologue$All_Users_log10)[,1]
 
-#write to file
+#write to file: Ethnologue data for supplementary materials and merging into "reduced" version of the final dataset with social variables (excluding L1_log10)
 data_ethnologue %>% 
-  dplyr::select(ISO_639, Glottocode, L2_prop, L1_scaled, L1_log10_scaled , All_Users_scaled , All_Users_log10_scaled) %>% 
+  dplyr::select(ISO_639, Language_ID=Glottocode, L2_prop, L1_scaled, L1_log10_scaled , All_Users_scaled , All_Users_log10_scaled) %>% 
+  group_by(Language_ID) %>% #join dialects
+  mutate(dupe = n() > 1) %>% 
+  filter(dupe != TRUE) %>% 
+  dplyr::select(-dupe) %>% 
+  ungroup(Language_ID) %>% 
   #removing the columns with L1 users and log10-transformed L1 users
   write_tsv("data_wrangling/ethnologue_pop_SM.tsv")
+
+#write to file: Ethnologue data for merging into "full" version of the final dataset with social variables (including L1_log10) - won't be available to public
+data_ethnologue %>% 
+  dplyr::select(ISO_639, Language_ID=Glottocode, L1_log10_st=L1_log10_scaled, L1_log10, L1_st=L1_scaled, L2_prop) %>% 
+  group_by(Language_ID) %>% #join dialects
+  mutate(dupe = n() > 1) %>% 
+  filter(dupe != TRUE) %>% 
+  dplyr::select(-dupe) %>% 
+  ungroup(Language_ID) %>% 
+  #removing the columns with L1 users and log10-transformed L1 users
+  write_tsv("data_wrangling/ethnologue_pop_full.tsv")

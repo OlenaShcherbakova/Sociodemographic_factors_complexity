@@ -53,9 +53,12 @@ reduced <- read_tsv("data_wrangling/reduced_analysis_sample.tsv")
 
 sum(duplicated(reduced$Language_ID))
 
-ab <- data.frame(a=c(full$Language_ID, rep(NA, times=8)), 
-                 b=reduced$Language_ID,
-                 boundness_full=c(full$boundness_st, rep(NA, times=8)),
+sum(duplicated(reduced$Language_ID))
+sum(duplicated(full$Language_ID))
+
+ab <- data.frame(a=c(full$Language_ID), 
+                 b=reduced$Language_ID,#,
+                 boundness_full=c(full$boundness_st),
                  boundness_reduced=reduced$boundness_st)
 
 #the discrepancies are found in extra languages present in the reduced sample
