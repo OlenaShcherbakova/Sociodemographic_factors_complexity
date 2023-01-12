@@ -39,24 +39,27 @@ data_ethnologue$L1_log10_scaled <- scale(data_ethnologue$L1_log10)[,1]
 data_ethnologue$All_Users_scaled <- scale(data_ethnologue$All_Users)[,1]
 data_ethnologue$All_Users_log10_scaled <- scale(data_ethnologue$All_Users_log10)[,1]
 
+data_ethnologue <- data_ethnologue %>% 
+  group_by(Glottocode) %>% 
+  slice_sample(n=1) %>% 
+  ungroup(Glottocode)
+
 #write to file: Ethnologue data for supplementary materials and merging into "reduced" version of the final dataset with social variables (excluding L1_log10)
 data_ethnologue %>% 
   dplyr::select(ISO_639, Language_ID=Glottocode, L2_prop, L1_scaled, L1_log10_scaled , All_Users_scaled , All_Users_log10_scaled) %>% 
-  group_by(Language_ID) %>% #join dialects
-  mutate(dupe = n() > 1) %>% 
-  filter(dupe != TRUE) %>% 
-  dplyr::select(-dupe) %>% 
-  ungroup(Language_ID) %>% 
-  #removing the columns with L1 users and log10-transformed L1 users
+  # group_by(Language_ID) %>% #join dialects
+  # mutate(dupe = n() > 1) %>% 
+  # filter(dupe != TRUE) %>% 
+  # dplyr::select(-dupe) %>% 
+  # ungroup(Language_ID) %>% 
   write_tsv("data_wrangling/ethnologue_pop_SM.tsv")
 
 #write to file: Ethnologue data for merging into "full" version of the final dataset with social variables (including L1_log10) - won't be available to public
 data_ethnologue %>% 
   dplyr::select(ISO_639, Language_ID=Glottocode, L1_log10_st=L1_log10_scaled, L1_log10, L1_st=L1_scaled, L2_prop) %>% 
-  group_by(Language_ID) %>% #join dialects
-  mutate(dupe = n() > 1) %>% 
-  filter(dupe != TRUE) %>% 
-  dplyr::select(-dupe) %>% 
-  ungroup(Language_ID) %>% 
-  #removing the columns with L1 users and log10-transformed L1 users
+  # group_by(Language_ID) %>% #join dialects
+  # mutate(dupe = n() > 1) %>% 
+  # filter(dupe != TRUE) %>% 
+  # dplyr::select(-dupe) %>% 
+  # ungroup(Language_ID) %>% 
   write_tsv("data_wrangling/ethnologue_pop_full.tsv")
