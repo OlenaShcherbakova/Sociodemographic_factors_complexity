@@ -12,6 +12,7 @@ GB <- read_tsv("data/GB_wide/GB_wide_strict.tsv", show_col_types = F) %>%
 #this script needs the Table_of_languages.tab file to exists, which is only available to people with an SIL lisence
 data_ethnologue <- read_tsv("data/Table_of_Languages.tab", show_col_types = F) %>%
   filter(!is.na("All_Users")) %>% #remove rows with missing data for pop of all users
+  filter(!is.na("L1_Users")) %>% 
   left_join(glottolog_df, by = "ISO_639" ) %>% 
   dplyr::select(-Glottocode) %>% #removing old Glottocode column
   rename(Glottocode = Language_level_ID) %>% 
@@ -41,20 +42,10 @@ data_ethnologue$All_Users_log10_scaled <- scale(data_ethnologue$All_Users_log10)
 
 #write to file: Ethnologue data for supplementary materials and merging into "reduced" version of the final dataset with social variables (excluding L1_log10)
 data_ethnologue %>% 
-  dplyr::select(ISO_639, Language_ID=Glottocode, L2_prop, L1_scaled, L1_log10_scaled , All_Users_scaled , All_Users_log10_scaled) %>% 
-  # group_by(Language_ID) %>% #join dialects
-  # mutate(dupe = n() > 1) %>% 
-  # filter(dupe != TRUE) %>% 
-  # dplyr::select(-dupe) %>% 
-  # ungroup(Language_ID) %>% 
+  dplyr::select(ISO_639, Language_ID=Glottocode, L2_prop, L1_scaled, L1_log10_scaled, All_Users_scaled, All_Users_log10_scaled) %>% 
   write_tsv("data_wrangling/ethnologue_pop_SM.tsv")
 
 #write to file: Ethnologue data for merging into "full" version of the final dataset with social variables (including L1_log10) - won't be available to public
 data_ethnologue %>% 
-  dplyr::select(ISO_639, Language_ID=Glottocode, L1_log10_st=L1_log10_scaled, L1_log10, L1_st=L1_scaled, L2_prop) %>% 
-  # group_by(Language_ID) %>% #join dialects
-  # mutate(dupe = n() > 1) %>% 
-  # filter(dupe != TRUE) %>% 
-  # dplyr::select(-dupe) %>% 
-  # ungroup(Language_ID) %>% 
+  dplyr::select(ISO_639, Language_ID=Glottocode,L2_prop, L1_st = L1_scaled, L1_log10_st=L1_log10_scaled, L1_log10 ) %>% 
   write_tsv("data_wrangling/ethnologue_pop_full.tsv")
