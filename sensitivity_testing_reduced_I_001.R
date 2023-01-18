@@ -1,4 +1,4 @@
-#model fitting: Boundness predicted by social effects on top of random phylogenetic and spatial factors
+#model fitting: Informativity predicted by social effects on top of random phylogenetic and spatial factors
 
 source("requirements.R")
 
@@ -30,7 +30,6 @@ tree_scaled <- tree
 tree_vcv = vcv.phylo(tree_scaled)
 typical_phylogenetic_variance = exp(mean(log(diag(tree_vcv))))
 
-#We opt for a sparse phylogenetic precision matrix (i.e. it is quantified using all nodes and tips), since sparse matrices make the analysis in INLA less time-intensive
 tree_scaled$edge.length <- tree_scaled$edge.length/typical_phylogenetic_variance
 phylo_prec_mat <- MCMCglmm::inverseA(tree_scaled,
                                      nodes = "ALL",
@@ -55,27 +54,27 @@ metrics_joined$phy_id = phy_id
 ## Other effects are in the same order they appear in the dataset
 metrics_joined$sp_id = 1:nrow(spatial_prec_mat_1)
 
+pcprior_hyper_0.01 = list(prec =list(prior="pc.prec", param = c(1, 0.01)))
+
 #Preparing the formulas for 10 competing models to be used in inla() call
 listcombo <- list( 
-  c("L1_log_st"), 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "L1_log_st"), 
   
-  c("f(inla.group(L1_copy), model='rw2', scale.model = TRUE)"), 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(inla.group(L1_copy), model='rw2', scale.model = TRUE)"), 
   
-  c("L2_prop"), 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "L2_prop"), 
   
-  c("f(inla.group(L2_copy), model='rw2', scale.model = TRUE)"),
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(inla.group(L2_copy), model='rw2', scale.model = TRUE)"),
   
-  c("f(inla.group(L1_copy), model='rw2', scale.model = TRUE)", "f(inla.group(L2_copy), model='rw2', scale.model = TRUE)"),
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(inla.group(L1_copy), model='rw2', scale.model = TRUE)", "f(inla.group(L2_copy), model='rw2', scale.model = TRUE)"),
   
-  c("L1_log_st", "L2_prop"), 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "L1_log_st", "L2_prop"), 
   
-  c("L1_log10:L2_prop"),
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)",  "neighboring_languages_st"), 
   
-  c("neighboring_languages_st"), 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "Official"),
   
-  c("Official"),
-  
-  c("Education"))
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "Education"))
 
 
 predterms <- lapply(listcombo, function(x) paste(x, collapse="+"))
@@ -83,12 +82,29 @@ predterms <- lapply(listcombo, function(x) paste(x, collapse="+"))
 predterms <- t(as.data.frame(predterms))
 
 predterms_short <- predterms
+predterms_short <- gsub("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "Phylogenetic", predterms_short, fixed=TRUE)
+predterms_short <- gsub("f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "Spatial: local", predterms_short, fixed=TRUE)
 
 predterms_short <- gsub("f(inla.group(L1_copy), model='rw2', scale.model = TRUE)", "L1 speakers (nonlinear)", predterms_short, fixed=TRUE)
 predterms_short <- gsub("L1_log_st", "L1 speakers (linear)", predterms_short, fixed=TRUE)
 predterms_short <- gsub("f(inla.group(L2_copy), model='rw2', scale.model = TRUE)", "L2 proportion (nonlinear)", predterms_short, fixed=TRUE)
 predterms_short <- gsub("L2_prop", "L2 proportion (linear)", predterms_short, fixed=TRUE)
 predterms_short <- gsub("neighboring_languages_st", "Neighbours", predterms_short, fixed=TRUE)
+
+
+phylogenetic_element <- data.frame("judgement" = grepl("Phylogenetic", predterms_short),
+                                   number = 1:length(predterms_short))
+phylogenetic_element <- phylogenetic_element[phylogenetic_element$judgement == TRUE,]$number
+
+spatial_element_local <- data.frame("judgement" = grepl("local", predterms_short),
+                                    number = 1:length(predterms_short))
+spatial_element_local <- spatial_element_local[spatial_element_local$judgement == TRUE,]$number
+
+spatial_element_regional <- data.frame("judgement" = grepl("regional", predterms_short),
+                                       number = 1:length(predterms_short))
+spatial_element_regional <- spatial_element_regional[spatial_element_regional$judgement == TRUE,]$number
+
+spatial_element <- c(spatial_element_local, spatial_element_regional)
 
 L1_element <- data.frame("judgement" = grepl("L1 speakers (linear)", predterms_short, fixed=TRUE),
                          number = 1:length(predterms_short))
@@ -102,16 +118,10 @@ L1_nl_element <- L1_nl_element[L1_nl_element$judgement == TRUE,]$number
 L2_prop_element <- data.frame("judgement" = grepl("L2 proportion (linear)", predterms_short, fixed=TRUE),
                               number = 1:length(predterms_short))
 L2_prop_element <- L2_prop_element[L2_prop_element$judgement == TRUE,]$number
-L2_prop_element <- L2_prop_element[-length(L2_prop_element)] #making sure that the interaction term (introduced below) is not treated as belonging to this isolated element
 
 L2_prop_nl_element <- data.frame("judgement" = grepl("L2 proportion (nonlinear)", predterms_short, fixed=TRUE),
                                  number = 1:length(predterms_short))
 L2_prop_nl_element <- L2_prop_nl_element[L2_prop_nl_element$judgement == TRUE,]$number
-
-#can use only part of the interaction term within grepl() function
-interaction_element <- data.frame("judgement" = grepl(":L2 proportion", predterms_short),
-                                  number = 1:length(predterms_short))
-interaction_element <- interaction_element[interaction_element$judgement == TRUE,]$number
 
 neighbour_element <- data.frame("judgement" = grepl("Neighbours", predterms_short),
                                 number = 1:length(predterms_short))
@@ -125,82 +135,101 @@ education_element <- data.frame("judgement" = grepl("Education", predterms_short
                                 number = 1:length(predterms_short))
 education_element <- education_element[education_element$judgement == TRUE,]$number
 
-
+models_number <- length(predterms_short)
 
 #preparing empty matrices to be filled with effect estimates (quantiles), model name, and WAIC value
-intercept_matrix <- matrix(NA, 10, 5)
+phy_effects_matrix <- matrix(NA, models_number, 5)
+colnames(phy_effects_matrix) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
+spa_effects_matrix <- matrix(NA, models_number, 5)
+colnames(spa_effects_matrix) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
+
+intercept_matrix <- matrix(NA, models_number, 5)
 colnames(intercept_matrix) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
 
-social_effects_matrix_L1 <- matrix(NA, 10, 5)
+social_effects_matrix_L1 <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_L1) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_L1_nl <- matrix(NA, 10, 5)
+social_effects_matrix_L1_nl <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_L1_nl) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_L2_prop <- matrix(NA, 10, 5)
+social_effects_matrix_L2_prop <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_L2_prop) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_L2_prop_nl <- matrix(NA, 10, 5)
+social_effects_matrix_L2_prop_nl <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_L2_prop_nl) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_N <- matrix(NA, 10, 5)
+social_effects_matrix_N <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_N) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_O <- matrix(NA, 10, 5)
+social_effects_matrix_O <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_O) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_E <- matrix(NA, 10, 5)
+social_effects_matrix_E <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_E) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_L1_L2_prop <- matrix(NA, 10, 5)
+social_effects_matrix_L1_L2_prop <- matrix(NA, models_number, 5)
 colnames(social_effects_matrix_L1_L2_prop) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
 
 #fitted values
-fitted_list <- vector("list", 10)
+fitted_list <- vector("list", models_number)
 names(fitted_list) <- predterms_short
 
 #marginals of hyperparameters
-marginals_hyperpar_list_gaussian <- vector("list", 10)
+marginals_hyperpar_list_gaussian <- vector("list", models_number)
 names(marginals_hyperpar_list_gaussian) <- predterms_short
 
-marginals_hyperpar_list_social_L1_nl <- vector("list", 10)
+marginals_hyperpar_list_phy <- vector("list", models_number)
+names(marginals_hyperpar_list_phy) <- predterms_short
+
+marginals_hyperpar_list_spa <- vector("list", models_number)
+names(marginals_hyperpar_list_spa) <- predterms_short
+
+marginals_hyperpar_list_social_L1_nl <- vector("list", models_number)
 names(marginals_hyperpar_list_social_L1_nl) <- predterms_short
 
-marginals_hyperpar_list_social_L2_prop_nl <- vector("list", 10)
+marginals_hyperpar_list_social_L2_prop_nl <- vector("list", models_number)
 names(marginals_hyperpar_list_social_L2_prop_nl) <- predterms_short
 
 
 #marginals of fixed effects
-marginals_fixed_list_Intercept <- vector("list", 10)
+marginals_fixed_list_Intercept <- vector("list", models_number)
 names(marginals_fixed_list_Intercept) <- predterms_short
 
-marginals_fixed_list_L1 <- vector("list", 10)
+marginals_fixed_list_L1 <- vector("list", models_number)
 names(marginals_fixed_list_L1) <- predterms_short
 
-marginals_fixed_list_L2_prop <- vector("list", 10)
+marginals_fixed_list_L2_prop <- vector("list", models_number)
 names(marginals_fixed_list_L2_prop) <- predterms_short
 
-marginals_fixed_list_O <- vector("list", 10)
+marginals_fixed_list_O <- vector("list", models_number)
 names(marginals_fixed_list_O) <- predterms_short
 
-marginals_fixed_list_N <- vector("list", 10)
+marginals_fixed_list_N <- vector("list", models_number)
 names(marginals_fixed_list_N) <- predterms_short
 
-marginals_fixed_list_E <- vector("list", 10)
+marginals_fixed_list_E <- vector("list", models_number)
 names(marginals_fixed_list_E) <- predterms_short
 
-marginals_fixed_list_L1_L2_prop <- vector("list", 10)
+marginals_fixed_list_L1_L2_prop <- vector("list", models_number)
 names(marginals_fixed_list_L1_L2_prop) <- predterms_short
 
 
+
+
 #summary statistics of random effects
-summary_random_list_social_L1_nl <- vector("list", 10)
+summary_random_list_phy <- vector("list", models_number)
+names(summary_random_list_phy) <- predterms_short
+
+summary_random_list_spa <- vector("list", models_number)
+names(summary_random_list_spa) <- predterms_short
+
+summary_random_list_social_L1_nl <- vector("list", models_number)
 names(summary_random_list_social_L1_nl) <- predterms_short
 
-summary_random_list_social_L2_prop_nl <- vector("list", 10)
+summary_random_list_social_L2_prop_nl <- vector("list", models_number)
 names(summary_random_list_social_L2_prop_nl) <- predterms_short
 
 
-coefm <- matrix(NA,10,1)
-result <- vector("list",10)
+coefm <- matrix(NA,models_number,1)
+result <- vector("list",models_number)
 
-for(i in 1:10){
-  formula <- as.formula(paste("boundness_st ~ ",predterms[[i]]))
+for(i in 1:models_number){
+  formula <- as.formula(paste("informativity_st ~ ",predterms[[i]]))
   result[[i]] <- inla(formula, family="gaussian", 
-                      control.family = list(hyper = pcprior_hyper), 
+                      control.family = list(hyper = pcprior_hyper_0.01), 
                       #control.inla = list(tolerance = 1e-8, h = 0.0001), 
                       #tolerance: the tolerance for the optimisation of the hyperparameters
                       #h: the step-length for the gradient calculations for the hyperparameters.
@@ -214,6 +243,25 @@ for(i in 1:10){
   
   marginals_fixed_list_Intercept[[i]] <- as.data.frame(cbind(result[[i]][["marginals.fixed"]][["(Intercept)"]]))
   colnames(marginals_fixed_list_Intercept[[i]]) <- c("x for Intercept", "y for Intercept")
+  
+  if(i %in% phylogenetic_element) {
+    phy_effects_matrix[i, 1:3] <- inla.tmarginal(function(x) 1/sqrt(x),
+                                                 result[[i]]$marginals.hyperpar$`Precision for phy_id`,
+                                                 method = "linear") %>%
+      inla.qmarginal(c(0.025, 0.5, 0.975), .)
+    phy_effects_matrix[i, 4] <- predterms_short[[i]]
+    phy_effects_matrix[i, 5] <- result[[i]]$waic$waic
+  } 
+  
+  if(i %in% spatial_element) {
+    spa_effects_matrix[i, 1:3] <- inla.tmarginal(function(x) 1/sqrt(x),
+                                                 result[[i]]$marginals.hyperpar$`Precision for sp_id`,
+                                                 method = "linear") %>%
+      inla.qmarginal(c(0.025, 0.5, 0.975), .)
+    spa_effects_matrix[i, 4] <- predterms_short[[i]]
+    spa_effects_matrix[i, 5] <- result[[i]]$waic$waic
+  }
+  
   
   if(i %in% L1_nl_element){
     social_effects_matrix_L1_nl[i, 1:3] <- inla.tmarginal(function(x) 1/sqrt(x),
@@ -251,15 +299,6 @@ for(i in 1:10){
     colnames(marginals_fixed_list_L2_prop[[i]]) <- c("x for L2 proportion", "y for L2 proportion")
   }
   
-  if(i %in% interaction_element) {
-    social_effects_matrix_L1_L2_prop[i, 1:3] <- c(result[[i]]$summary.fixed["L1_log10:L2_prop",]$`0.025quant`, result[[i]]$summary.fixed["L1_log10:L2_prop",]$`0.5quant`, result[[i]]$summary.fixed["L1_log10:L2_prop",]$`0.975quant`)
-    social_effects_matrix_L1_L2_prop[i, 4] <- predterms_short[[i]]
-    social_effects_matrix_L1_L2_prop[i, 5] <- result[[i]]$waic$waic
-    
-    marginals_fixed_list_L1_L2_prop[[i]] <- as.data.frame(cbind(result[[i]][["marginals.fixed"]][["L1_log10:L2_prop"]]))
-    colnames(marginals_fixed_list_L1_L2_prop[[i]]) <- c("x for L1*L2 proportion", "y for L1*L2 proportion")
-  }
-  
   if(i %in% neighbour_element) {
     social_effects_matrix_N[i, 1:3] <- c(result[[i]]$summary.fixed[2,]$`0.025quant`, result[[i]]$summary.fixed[2,]$`0.5quant`, result[[i]]$summary.fixed[2,]$`0.975quant`)
     social_effects_matrix_N[i, 4] <- predterms_short[[i]]
@@ -294,6 +333,16 @@ for(i in 1:10){
   marginals_hyperpar_list_gaussian[[i]] <- as.data.frame(cbind(result[[i]]$marginals.hyperpar[["Precision for the Gaussian observations"]]))
   colnames(marginals_hyperpar_list_gaussian[[i]]) <- c("x for the Gaussian observations", "y for the Gaussian observations")
   
+  if(i %in% phylogenetic_element){
+    marginals_hyperpar_list_phy[[i]] <- as.data.frame(cbind(result[[i]]$marginals.hyperpar[["Precision for phy_id"]]))
+    colnames(marginals_hyperpar_list_phy[[i]]) <- c("x for phy_id", "y for phy_id")
+  }
+  
+  if(i %in% spatial_element){
+    marginals_hyperpar_list_spa[[i]] <- as.data.frame(cbind(result[[i]]$marginals.hyperpar[["Precision for sp_id"]]))
+    colnames(marginals_hyperpar_list_spa[[i]]) <- c("x for sp_id", "y for sp_id")
+  }
+  
   if(i %in% L1_nl_element){
     marginals_hyperpar_list_social_L1_nl[[i]] <- as.data.frame(cbind(result[[i]]$marginals.hyperpar[["Precision for inla.group(L1_copy)"]]))
     colnames(marginals_hyperpar_list_social_L1_nl[[i]]) <- c("x for inla.group(L1_copy)", "y for inla.group(L1_copy)")
@@ -303,12 +352,26 @@ for(i in 1:10){
     marginals_hyperpar_list_social_L2_prop_nl[[i]] <- as.data.frame(cbind(result[[i]]$marginals.hyperpar[["Precision for inla.group(L2_copy)"]]))
     colnames(marginals_hyperpar_list_social_L2_prop_nl[[i]]) <- c("x for inla.group(L2_copy)", "y for inla.group(L2_copy)")
   }
+  
+  if(i %in% phylogenetic_element){
+    summary_random_list_phy[[i]] <- cbind(result[[i]]$summary.random$phy_id) %>%
+      rename(phy_id = ID) %>%
+      as.data.frame() %>%
+      mutate(across(where(is.numeric), round, 2))
+  }
+  
+  if(i %in% spatial_element){
+    summary_random_list_spa[[i]] <- cbind(result[[i]]$summary.random$sp_id) %>%
+      rename(sp_id = ID) %>%
+      as.data.frame() %>%
+      mutate(across(where(is.numeric), round, 2))
+  }
 }
 
 #beepr::beep(5)
 
-save(result, file = "output_models/models_Boundness_social_only.RData")
-#load("output_models/models_Boundness_social_only.RData")
+save(result, file = "output_models_reduced/models_Informativity_social_0.01.RData")
+
 
 coefm <- as.data.frame(cbind(predterms_short, coefm))
 colnames(coefm) <- c("model", "WAIC")
@@ -320,16 +383,12 @@ coefm <- coefm %>%
 coefm$WAIC <- as.numeric(coefm$WAIC)
 coefm <- coefm[order(coefm$WAIC),]
 
-coefm_path <- paste("output_tables/", "waics", "Boundness_social_only_models", ".csv", collapse = "")
+coefm_path <- paste("output_tables_reduced/", "waics", "Informativity_social_models", "prior_0.01", ".csv", collapse = "")
 write.csv(coefm, coefm_path, row.names=FALSE)
 
-for (i in 1:length(fitted_list)) {
-  fitted_list[[i]]$model <- names(fitted_list)[i]
-}
-fitted_list <- dplyr::bind_rows(fitted_list)
-fitted_list_path <- paste("output_tables/", "fitted_list", "Boundness_social_only_models", ".csv", collapse = "")
-write.csv(fitted_list, fitted_list_path) 
 
+phy_effects<-as.data.frame(phy_effects_matrix)
+spa_effects<-as.data.frame(spa_effects_matrix)
 intercept_effects <- as.data.frame(intercept_matrix)
 L1_effects <- as.data.frame(social_effects_matrix_L1)
 L1_nl_effects <- as.data.frame(social_effects_matrix_L1_nl)
@@ -338,8 +397,9 @@ L2_prop_nl_effects <- as.data.frame(social_effects_matrix_L2_prop_nl)
 N_effects<-as.data.frame(social_effects_matrix_N)
 E_effects<-as.data.frame(social_effects_matrix_E)
 O_effects<-as.data.frame(social_effects_matrix_O)
-interaction_effects <- as.data.frame(social_effects_matrix_L1_L2_prop)
 
+phy_effects$effect <- "phylogenetic SD"
+spa_effects$effect <- "spatial SD"
 intercept_effects$effect <- "Intercept"
 L1_effects$effect <- "L1"
 L1_nl_effects$effect <- "social SD:\nL1"
@@ -348,9 +408,8 @@ L2_prop_nl_effects$effect <- "social SD:\nL2 proportion"
 N_effects$effect <- "Neighbours"
 E_effects$effect <- "Education"
 O_effects$effect <- "Official status"
-interaction_effects$effect <- "L1*L2 proportion"
 
-effs <- as.data.frame(rbind(intercept_effects, L1_effects, L1_nl_effects, L2_prop_effects, L2_prop_nl_effects, N_effects, O_effects, E_effects, interaction_effects))
+effs <- as.data.frame(rbind(phy_effects, spa_effects, intercept_effects, L1_effects, L1_nl_effects, L2_prop_effects, L2_prop_nl_effects, N_effects, O_effects, E_effects))
 effs <- effs %>%
   mutate(across(.cols=c(1:3, 5), as.numeric)) %>%
   mutate(across(where(is.numeric), round, 2)) %>%
@@ -358,93 +417,6 @@ effs <- effs %>%
   arrange(WAIC) %>%
   relocate(model)
 
-effs_path <- paste("output_tables/", "effects", "Boundness_social_only_models", ".csv", collapse = "")
+effs_path <- paste("output_tables_reduced/", "effects", "Informativity_social_models", "prior_0.01", ".csv", collapse = "")
 write.csv(effs, effs_path, row.names=FALSE)
 
-effs <- read.csv("output_tables/ effects Boundness_social_only_models .csv")
-
-effs_table_SM <- effs %>%
-  rename("2.5%"=2,
-         "50%" = 4,
-         "97.5%" = 3) %>%
-  flextable() %>%
-  autofit() %>%
-  merge_v(j=c("model", "WAIC")) %>%
-  fix_border_issues() %>%
-  border_inner_h()
-
-save_as_docx(
-  "Effects in boundness models with fixed and random effects (including non-linear implementations of some fixed effects)" = effs_table_SM, 
-  path = "output_tables/table_SM_effects_Boundness_social_only_models.docx")
-
-effs_table_Main <- effs %>%
-  rename("2.5%"=2,
-         "50%" = 4,
-         "97.5%" = 3) %>%
-  filter(!grepl("nonlinear", model))
-
-effs_table_Main$model <- gsub("(\\s*\\(\\w+\\))", "", effs_table_Main$model)
-
-effs_table_Main <- effs_table_Main %>%
-  flextable() %>%
-  autofit() %>%
-  merge_v(j=c("model", "WAIC")) %>%
-  fix_border_issues() %>%
-  border_inner_h()
-
-save_as_docx(
-  "Effects in boundness models with fixed and random effects" = effs_table_Main, 
-  path = "output_tables/table_Main_effects_Boundness_social_only_models.docx")
-
-
-effs_plot <- effs %>%
-  #filter(WAIC <= top_9) %>%
-  rename(lower=2,
-         upper = 4,
-         mean = 3) %>% #mean here refers to 0.5 quantile 
-  #filter(!effect == "Intercept") %>%
-  mutate(effect = factor(effect, levels=c("Intercept", "social SD:\nL1", "L1", "social SD:\nL2 proportion", "L2 proportion", "Neighbours", "Education", "Official status", "L1*L2 proportion"))) %>%
-  mutate(WAIC = round(WAIC, 2)) %>%
-  unite("model", model, WAIC, sep = ",\nWAIC: ", remove=FALSE) %>%
-  group_by(WAIC) %>%
-  arrange(WAIC) %>%
-  mutate(model = forcats::fct_reorder(as.factor(model), WAIC)) %>% #reordering levels within model based on WAIC values
-  mutate(model = factor(model, levels=rev(levels(model)))) #reversing the order
-
-
-#plot modified from function ggregplot::Efxplot
-cols = c(brewer.pal(12, "Paired"))
-cols = c("gray50", cols[c(1:8)])
-
-show_col(cols)
-
-plot_1 <- ggplot(effs_plot,
-                 aes(y = as.factor(model),
-                     x = mean,
-                     group = effect,
-                     colour = effect)) +
-  geom_pointrangeh(aes(xmin = lower, xmax = upper), position = position_dodge(w = 0.9), size = 1.5) +
-  geom_vline(aes(xintercept = 0),lty = 2) + labs(x = NULL) + #coord_flip() +
-  scale_color_manual(values=cols) +
-  ylab("Model of boundness") + xlab("Estimate") + labs(color = "Effect") + theme_classic() +
-  theme(axis.text=element_text(size=50),
-        legend.text=element_text(size=50),
-        axis.title=element_text(size=50),
-        legend.title=element_text(size=50),
-        legend.spacing.y = unit(1.5, 'cm')) +
-  guides(color = guide_legend(reverse = TRUE, byrow = TRUE))
-
-
-
-#plot_1
-ggsave(filename = 'output/SP_models_plot_Boundness_social_only_models.jpg',
-       plot_1, height = 20, width = 45)
-
-
-#saving hyperparameters: Gaussian observations
-for (i in 1:length(marginals_hyperpar_list_gaussian)) {
-  marginals_hyperpar_list_gaussian[[i]]$model <- names(marginals_hyperpar_list_gaussian)[i]
-}
-marginals_hyperpar_list_gaussian <- dplyr::bind_rows(marginals_hyperpar_list_gaussian)
-
-write.csv(marginals_hyperpar_list_gaussian, "output_tables/Boundness_social_only_models_marginals_hyperpar_gaussian.csv") 

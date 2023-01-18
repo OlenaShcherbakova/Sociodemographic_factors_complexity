@@ -11,7 +11,6 @@ metrics_joined <- metrics_joined %>%
   rename(L1_log_st = L1_log10_st) %>%
   mutate(L1_copy = L1_log_st) %>%
   filter(!is.na(L2_prop)) %>%
-  dplyr::mutate(L2_prop  = scale(L2_prop)[,1]) %>%
   mutate(L2_copy = L2_prop) %>%
   filter(!is.na(neighboring_languages_st)) %>%
   filter(!is.na(Official)) %>%

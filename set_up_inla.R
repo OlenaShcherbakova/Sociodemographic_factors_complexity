@@ -72,7 +72,7 @@ metrics_joined <- metrics_joined %>%
   filter(!Language_ID == "yuch1247") %>%
   filter(!Language_ID == "mari1424") %>%
   filter(!Language_ID == "natc1249") %>%
-  filter(!Language_ID == "poli1260") #removing Polish due to problems with coding
-      
+  filter(!Language_ID == "poli1260")  #removing Polish due to problems with coding
+
 tree <- read.tree(file.path("data_wrangling/wrangled.tree"))   
          

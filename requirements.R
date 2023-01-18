@@ -67,7 +67,7 @@ pacman::p_load(
 	mapdata,
 	maptools,
 	maps,
-  geoR,
+#  geoR,
   geosphere,
   fields,
 	
@@ -157,7 +157,17 @@ if (!dir.exists(OUTPUTDIR_output)) { dir.create(OUTPUTDIR_output) }
 
 OUTPUTDIR_data_wrangling<- here("data_wrangling")		
 # create output dir if it does not exist.		
-if (!dir.exists(OUTPUTDIR_data_wrangling)) { dir.create(OUTPUTDIR_data_wrangling) }	
+if (!dir.exists(OUTPUTDIR_data_wrangling)) { dir.create(OUTPUTDIR_data_wrangling) }
+
+OUTPUTDIR_models_reduced <- here("output_models_reduced")		
+# create output dir if it does not exist.		
+if (!dir.exists(OUTPUTDIR_models_reduced)) { dir.create(OUTPUTDIR_models_reduced) }	
+OUTPUTDIR_tables_reduced <- here("output_tables_reduced")		
+# create output dir if it does not exist.		
+if (!dir.exists(OUTPUTDIR_tables_reduced)) { dir.create(OUTPUTDIR_tables_reduced) }	
+OUTPUTDIR_output_reduced <- here("output_reduced")		
+# create output dir if it does not exist.		
+if (!dir.exists(OUTPUTDIR_output_reduced)) { dir.create(OUTPUTDIR_output_reduced) }	
 
 #source custom functions to have them at hand
 source("varcov.spatial_function.R")
