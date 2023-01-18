@@ -47,5 +47,5 @@ data_ethnologue %>%
 
 #write to file: Ethnologue data for merging into "full" version of the final dataset with social variables (including L1_log10) - won't be available to public
 data_ethnologue %>% 
-  dplyr::select(ISO_639, Language_ID=Glottocode,L2_prop, L1_st = L1_scaled, L1_log10_st=L1_log10_scaled, L1_log10 ) %>% 
+  dplyr::select(ISO_639, Language_ID=Glottocode, L2_prop, L1_st = L1_scaled, L1_log10_st=L1_log10_scaled, L1_log10 ) %>% 
   write_tsv("data_wrangling/ethnologue_pop_full.tsv")

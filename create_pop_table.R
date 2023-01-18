@@ -15,21 +15,7 @@ if (!dir.exists(OUTPUTDIR_data_wrangling)) { dir.create(OUTPUTDIR_data_wrangling
   
   if(sample == "full"){
     data_ethnologue <- read_tsv("data_wrangling/ethnologue_pop_full.tsv")
-    # data_ethnologue <- read_tsv("data/Table_of_Languages.tab", show_col_types = F) %>%
-    # dplyr::select(!c(Longitude, Latitude)) %>%
-    # left_join(glottolog_df, by = "ISO_639") %>% 
-    # rename(ISO = ISO_639) %>%
-    # dplyr::select(Language_ID = Glottocode, ISO, L1 = L1_Users, All_Users) %>% 
-    # dplyr::mutate(L2 = All_Users - L1, 
-    #               #calculating the number of L2 users by subtracting the number of L1 from All users
-    #               L2_prop = L2/ All_Users, 
-    #               #calculating the proportion of L2 users out of the entire population
-    #               L1_log10 = log10(L1+1)) %>%
-    # dplyr::select("Language_ID", "ISO", "L1_log10", "L2_prop", "L1", "L2") %>% 
-    # dplyr::mutate(L1_log10_st = scale(L1_log10)[,1])
-  
   }
-  
   
   if(sample == "reduced"){
     #double check if the file below needs to be changed
