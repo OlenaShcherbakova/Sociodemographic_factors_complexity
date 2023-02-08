@@ -131,3 +131,12 @@ ggsave(
   width = 36,
   dpi = 300
 )
+
+effs_main_plot_bw
+ggsave(
+  file = "output_reduced/effects_plot.jpeg",
+  plot = effs_main_plot_bw,
+  height = 22,
+  width = 36,
+  dpi = 300
+)
