@@ -50,13 +50,17 @@ colnames(variance) <- c("response", "sociodemographic predictor(s)", "variance f
  
 variance_csv <- variance %>% 
   mutate(across(.cols=c(3:6), as.numeric)) %>% 
-  mutate(across(where(is.numeric), round, 2)) 
+  mutate(across(where(is.numeric), round, 2)) %>% 
+  mutate(across(.cols=c(3:5), function(x) x*100)) %>% 
+  rename_with(.cols=c(3:5), ~ paste0(.x, " in %"))
 
 write.csv(variance_csv, "output_tables_reduced/Table_variance_top_ranking_models.csv")
 
 variance_flextable <- variance %>% 
   mutate(across(.cols=c(3:6), as.numeric)) %>% 
   mutate(across(where(is.numeric), round, 2)) %>%
+  mutate(across(.cols=c(3:5), function(x) x*100)) %>% 
+  rename_with(.cols=c(3:5), ~ paste0(.x, " in %")) %>% 
   flextable() %>%
   autofit() %>%
   merge_v(j=c("response")) %>%
