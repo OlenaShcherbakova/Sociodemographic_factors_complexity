@@ -34,44 +34,48 @@ if(sample == "full"){
   
   #predictors: sociodemographic variables as fixed effects
   source("models_Boundness_social_only.R")
-  source("models_Informativity_social_only.R") else{
-    
-    #predictors: phylogenetic and spatial random effects + sociodemograhic variables as fixed effects 
-    #(on reduced set of social variables: without log10 transformed L1 speakers)
-    source("models_Boundness_reduced_social.R")
-    source("models_Informativity_reduced_social.R")
-    
-    #predictors: sociodemographic variables as fixed effects
-    source("models_Boundness_reduced_social_only.R")
-    source("models_Informativity_reduced_social_only.R")
-  }
+  source("models_Informativity_social_only.R") 
+  
+  #conduct sensitivity testing + extract the corresponding table
+  source("runs_sensitivity.R") 
+  
+  #extract tables from INLA analyses
+  source("table_INLA_summary_all_models_SI.R")
+  source("variance_top_ranking_models.R")
+  
+  #plotting main results
+  source("plot_social_effects_combined.R")
 }
 
-#conduct sensitivity testing + extract the corresponding table
-if(sample == "full"){
-  source("runs_sensitivity.R") else{
-    source("runs_sensitivity_on_reduced.R")
-  }
+
+
+if(sample == "reduced"){
+  
+  #predictors: phylogenetic and spatial random effects + sociodemograhic variables as fixed effects 
+  #(on reduced set of social variables: without log10 transformed L1 speakers)
+  source("models_Boundness_reduced_social.R")
+  source("models_Informativity_reduced_social.R")
+  
+  #predictors: sociodemographic variables as fixed effects
+  source("models_Boundness_reduced_social_only.R")
+  source("models_Informativity_reduced_social_only.R")
+  
+  #conduct sensitivity testing + extract the corresponding table
+  source("runs_sensitivity_on_reduced.R")
+  
+  #extract tables from INLA analyses
+  source("table_INLA_summary_all_models_SI_reduced.R")
+  source("variance_top_ranking_models_reduced.R")
+  
+  #plotting main results
+  source("plots_social_effects_combined_on_reduced.R")
 }
 
 #measure phylogenetic signal in two fusion and informativity
 source("measuring_phylosignal.R")
 
-#extract tables from INLA analyses
-if(sample == "full"){
-  source("table_INLA_summary_all_models_SI.R")
-  source("variance_top_ranking_models.R") else{
-    source("table_INLA_summary_all_models_SI_reduced.R")
-    source("variance_top_ranking_models_reduced.R")
-  }
-}
 
 #plotting
-if(sample == "full"){ #main results figure 
-  source("plot_social_effects_combined.R") else{
-    source("plots_social_effects_combined_on_reduced.R")
-  }
-} 
 source("plot_maps_main.R") #maps of scores
 source("plot_heatmap_B_I.R") #phylogenetic tree with a heatmap 
 source("plot_map_Africa.R")
