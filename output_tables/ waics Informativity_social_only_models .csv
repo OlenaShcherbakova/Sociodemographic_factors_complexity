@@ -1,11 +1,11 @@
 "model","WAIC"
-"Official",3558.78
-"Education",3559.56
-"Neighbours",3562.17
-"L1 speakers (nonlinear)",3565.31
-"L1 speakers (linear)",3566.8
-"L1_log10:L2 proportion (linear)",3567.12
-"L1 speakers (nonlinear)+L2 proportion (nonlinear)",3567.35
-"L2 proportion (nonlinear)",3567.74
-"L2 proportion (linear)",3568.13
-"L1 speakers (linear)+L2 proportion (linear)",3568.86
+"Official",3627
+"Education",3627.77
+"Neighbours",3631.27
+"L1_log10:L2 proportion (linear)",3635.78
+"L1 speakers (nonlinear)",3635.84
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",3636.25
+"L2 proportion (nonlinear)",3636.26
+"L1 speakers (linear)",3636.44
+"L2 proportion (linear)",3636.57
+"L1 speakers (linear)+L2 proportion (linear)",3638.24

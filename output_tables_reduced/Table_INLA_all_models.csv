@@ -1,0 +1,167 @@
+"","model","response","effect","2.5%","50%","97.5%","WAIC"
+"1","Phylogenetic+Spatial: local","boundness","phylogenetic SD",1.47,1.71,1.98,1836.01
+"2","Phylogenetic+Spatial: local","boundness","spatial SD",0.29,0.35,0.42,1836.01
+"3","Phylogenetic+Spatial: local","boundness","Intercept",-0.01,0.01,0.03,1836.01
+"4","Phylogenetic","boundness","phylogenetic SD",2.01,2.22,2.45,1939.91
+"5","Phylogenetic","boundness","Intercept",-0.02,0.01,0.04,1939.91
+"6","Phylogenetic+Areal","boundness","phylogenetic SD",1.82,2.04,2.3,2014.1
+"7","Phylogenetic+Areal","boundness","areal SD",0.08,0.16,0.27,2014.1
+"8","Phylogenetic+Areal","boundness","Intercept",-0.05,0.03,0.13,2014.1
+"9","Phylogenetic+Spatial: regional","boundness","phylogenetic SD",1.25,1.5,1.8,2067.67
+"10","Phylogenetic+Spatial: regional","boundness","spatial SD",0.47,0.61,0.79,2067.67
+"11","Phylogenetic+Spatial: regional","boundness","Intercept",-0.02,0.01,0.04,2067.67
+"12","Spatial: local","boundness","spatial SD",0.73,0.78,0.84,2282.31
+"13","Spatial: local","boundness","Intercept",-0.01,0.01,0.04,2282.31
+"14","Spatial: regional","boundness","spatial SD",0.9,1.07,1.25,2433.17
+"15","Spatial: regional","boundness","Intercept",-0.02,0.01,0.04,2433.17
+"16","Areal","boundness","areal SD",0.43,0.58,0.79,2871.28
+"17","Areal","boundness","Intercept",0.08,0.32,0.54,2871.28
+"18","Phylogenetic+Spatial: local+L1 speakers (nonlinear)","boundness","phylogenetic SD",1.49,1.72,2,1805.37
+"19","Phylogenetic+Spatial: local+L1 speakers (nonlinear)","boundness","spatial SD",0.29,0.35,0.42,1805.37
+"20","Phylogenetic+Spatial: local+L1 speakers (nonlinear)","boundness","Intercept",-0.02,0.01,0.04,1805.37
+"21","Phylogenetic+Spatial: local+L1 speakers (nonlinear)","boundness","social SD:
+L1",0,0.01,0.03,1805.37
+"22","Phylogenetic+Spatial: local+L1 speakers (linear)","boundness","phylogenetic SD",1.49,1.72,2,1806.23
+"23","Phylogenetic+Spatial: local+L1 speakers (linear)","boundness","spatial SD",0.29,0.35,0.42,1806.23
+"24","Phylogenetic+Spatial: local+L1 speakers (linear)","boundness","Intercept",-0.03,0,0.02,1806.23
+"25","Phylogenetic+Spatial: local+L1 speakers (linear)","boundness","L1",0.04,0.09,0.14,1806.23
+"26","Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)","boundness","phylogenetic SD",1.49,1.72,2,1806.96
+"27","Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)","boundness","spatial SD",0.29,0.35,0.42,1806.96
+"28","Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)","boundness","Intercept",-0.17,0,0.16,1806.96
+"29","Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)","boundness","social SD:
+L1",0,0.01,0.03,1806.96
+"30","Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)","boundness","social SD:
+L2 proportion",0,0.01,0.03,1806.96
+"31","Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)","boundness","phylogenetic SD",1.49,1.72,2,1808.47
+"32","Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)","boundness","spatial SD",0.29,0.35,0.42,1808.47
+"33","Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)","boundness","Intercept",-0.03,0,0.02,1808.47
+"34","Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)","boundness","L1",0.04,0.09,0.14,1808.47
+"35","Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)","boundness","L2 proportion",-0.37,-0.03,0.31,1808.47
+"36","Phylogenetic+Spatial: local+Neighbours","boundness","phylogenetic SD",1.48,1.71,1.98,1832.51
+"37","Phylogenetic+Spatial: local+Neighbours","boundness","spatial SD",0.29,0.35,0.42,1832.51
+"38","Phylogenetic+Spatial: local+Neighbours","boundness","Intercept",-0.02,0.01,0.03,1832.51
+"39","Phylogenetic+Spatial: local+Neighbours","boundness","Neighbours",-0.01,0.02,0.05,1832.51
+"40","Phylogenetic+Spatial: local+Official","boundness","phylogenetic SD",1.46,1.68,1.96,1837.48
+"41","Phylogenetic+Spatial: local+Official","boundness","spatial SD",0.29,0.35,0.42,1837.48
+"42","Phylogenetic+Spatial: local+Official","boundness","Intercept",-0.02,0,0.03,1837.48
+"43","Phylogenetic+Spatial: local+Official","boundness","Official status",-0.01,0.16,0.33,1837.48
+"44","Phylogenetic+Spatial: local+L2 proportion (nonlinear)","boundness","phylogenetic SD",1.47,1.7,1.98,1837.66
+"45","Phylogenetic+Spatial: local+L2 proportion (nonlinear)","boundness","spatial SD",0.29,0.35,0.42,1837.66
+"46","Phylogenetic+Spatial: local+L2 proportion (nonlinear)","boundness","Intercept",-0.15,0.01,0.17,1837.66
+"47","Phylogenetic+Spatial: local+L2 proportion (nonlinear)","boundness","social SD:
+L2 proportion",0,0.01,0.04,1837.66
+"48","Phylogenetic+Spatial: local+Education","boundness","phylogenetic SD",1.46,1.69,1.96,1838.34
+"49","Phylogenetic+Spatial: local+Education","boundness","spatial SD",0.29,0.35,0.42,1838.34
+"50","Phylogenetic+Spatial: local+Education","boundness","Intercept",-0.03,0,0.03,1838.34
+"51","Phylogenetic+Spatial: local+Education","boundness","Education",-0.01,0.14,0.28,1838.34
+"52","Phylogenetic+Spatial: local+L2 proportion (linear)","boundness","phylogenetic SD",1.47,1.71,1.98,1838.68
+"53","Phylogenetic+Spatial: local+L2 proportion (linear)","boundness","spatial SD",0.29,0.35,0.42,1838.68
+"54","Phylogenetic+Spatial: local+L2 proportion (linear)","boundness","Intercept",-0.01,0.01,0.03,1838.68
+"55","Phylogenetic+Spatial: local+L2 proportion (linear)","boundness","L2 proportion",-0.34,0,0.34,1838.68
+"56","L1 speakers (nonlinear)+L2 proportion (nonlinear)","boundness","Intercept",-0.04,0.25,0.53,3596.33
+"57","L1 speakers (nonlinear)+L2 proportion (nonlinear)","boundness","social SD:
+L1",0.05,0.14,0.42,3596.33
+"58","L1 speakers (nonlinear)+L2 proportion (nonlinear)","boundness","social SD:
+L2 proportion",0.03,0.13,0.47,3596.33
+"59","L1 speakers (nonlinear)","boundness","Intercept",0.09,0.17,0.25,3596.4
+"60","L1 speakers (nonlinear)","boundness","social SD:
+L1",0.06,0.19,0.57,3596.4
+"61","Education","boundness","Intercept",-0.08,-0.02,0.03,3617.23
+"62","Education","boundness","Education",0.25,0.45,0.65,3617.23
+"63","Official","boundness","Intercept",-0.07,-0.02,0.04,3620.43
+"64","Official","boundness","Official status",0.26,0.49,0.73,3620.43
+"65","L2 proportion (nonlinear)","boundness","Intercept",-0.04,0.24,0.53,3633.21
+"66","L2 proportion (nonlinear)","boundness","social SD:
+L2 proportion",0,0.01,0.03,3633.21
+"67","L2 proportion (linear)","boundness","Intercept",-0.05,0,0.06,3634.73
+"68","L2 proportion (linear)","boundness","L2 proportion",-0.08,0.52,1.12,3634.73
+"69","L1 speakers (linear)","boundness","Intercept",-0.05,0,0.06,3634.99
+"70","L1 speakers (linear)","boundness","L1",-0.02,0.05,0.11,3634.99
+"71","L1 speakers (linear)+L2 proportion (linear)","boundness","Intercept",-0.06,0,0.05,3635.07
+"72","L1 speakers (linear)+L2 proportion (linear)","boundness","L1",-0.02,0.04,0.1,3635.07
+"73","L1 speakers (linear)+L2 proportion (linear)","boundness","L2 proportion",-0.13,0.47,1.08,3635.07
+"74","Neighbours","boundness","Intercept",-0.04,0.01,0.07,3637.26
+"75","Neighbours","boundness","Neighbours",-0.06,-0.01,0.03,3637.26
+"76","Phylogenetic+Spatial: local","informativity","phylogenetic SD",0.87,1.17,1.54,3117.74
+"77","Phylogenetic+Spatial: local","informativity","spatial SD",0.38,0.46,0.55,3117.74
+"78","Phylogenetic+Spatial: local","informativity","Intercept",0,0.04,0.07,3117.74
+"79","Phylogenetic","informativity","phylogenetic SD",1.48,1.79,2.12,3180.75
+"80","Phylogenetic","informativity","Intercept",-0.01,0.04,0.08,3180.75
+"81","Phylogenetic+Areal","informativity","phylogenetic SD",1.31,1.64,2.03,3201.09
+"82","Phylogenetic+Areal","informativity","areal SD",0.06,0.14,0.29,3201.09
+"83","Phylogenetic+Areal","informativity","Intercept",-0.04,0.05,0.16,3201.09
+"84","Phylogenetic+Spatial: regional","informativity","phylogenetic SD",0.62,0.93,1.44,3206.77
+"85","Phylogenetic+Spatial: regional","informativity","spatial SD",0.49,0.65,0.85,3206.77
+"86","Phylogenetic+Spatial: regional","informativity","Intercept",-0.01,0.04,0.08,3206.77
+"87","Spatial: local","informativity","spatial SD",0.58,0.65,0.72,3271.29
+"88","Spatial: local","informativity","Intercept",-0.01,0.03,0.08,3271.29
+"89","Spatial: regional","informativity","spatial SD",0.55,0.71,0.89,3290.79
+"90","Spatial: regional","informativity","Intercept",-0.01,0.03,0.08,3290.79
+"91","Areal","informativity","areal SD",0.3,0.42,0.59,3419.55
+"92","Areal","informativity","Intercept",-0.01,0.17,0.36,3419.55
+"93","Phylogenetic+Spatial: local+L2 proportion (nonlinear)","informativity","phylogenetic SD",0.07,0.24,0.57,408.48
+"94","Phylogenetic+Spatial: local+L2 proportion (nonlinear)","informativity","spatial SD",0.13,0.32,0.6,408.48
+"95","Phylogenetic+Spatial: local+L2 proportion (nonlinear)","informativity","Intercept",-0.37,0.1,0.58,408.48
+"96","Phylogenetic+Spatial: local+L2 proportion (nonlinear)","informativity","social SD:
+L2 proportion",0,0.01,0.03,408.48
+"97","Phylogenetic+Spatial: local+Official","informativity","phylogenetic SD",0.04,0.18,0.57,408.52
+"98","Phylogenetic+Spatial: local+Official","informativity","spatial SD",0.12,0.31,0.54,408.52
+"99","Phylogenetic+Spatial: local+Official","informativity","Intercept",-0.07,0.08,0.23,408.52
+"100","Phylogenetic+Spatial: local+Official","informativity","Official status",-0.82,0.01,0.84,408.52
+"101","Phylogenetic+Spatial: local+L2 proportion (linear)","informativity","phylogenetic SD",0.07,0.24,0.6,408.66
+"102","Phylogenetic+Spatial: local+L2 proportion (linear)","informativity","spatial SD",0.11,0.29,0.52,408.66
+"103","Phylogenetic+Spatial: local+L2 proportion (linear)","informativity","Intercept",-0.07,0.08,0.23,408.66
+"104","Phylogenetic+Spatial: local+L2 proportion (linear)","informativity","L2 proportion",-2.12,0.1,2.32,408.66
+"105","Phylogenetic+Spatial: local+L1 speakers (nonlinear)","informativity","phylogenetic SD",0.03,0.18,0.57,408.71
+"106","Phylogenetic+Spatial: local+L1 speakers (nonlinear)","informativity","spatial SD",0.14,0.33,0.58,408.71
+"107","Phylogenetic+Spatial: local+L1 speakers (nonlinear)","informativity","Intercept",-0.06,0.09,0.24,408.71
+"108","Phylogenetic+Spatial: local+L1 speakers (nonlinear)","informativity","social SD:
+L1",0,0.01,0.03,408.71
+"109","Phylogenetic+Spatial: local+Education","informativity","phylogenetic SD",0.05,0.21,0.57,408.75
+"110","Phylogenetic+Spatial: local+Education","informativity","spatial SD",0.12,0.3,0.54,408.75
+"111","Phylogenetic+Spatial: local+Education","informativity","Intercept",-0.08,0.07,0.22,408.75
+"112","Phylogenetic+Spatial: local+Education","informativity","Education",-0.5,0.22,0.94,408.75
+"113","Phylogenetic+Spatial: local+Neighbours","informativity","phylogenetic SD",0.04,0.19,0.59,408.95
+"114","Phylogenetic+Spatial: local+Neighbours","informativity","spatial SD",0.13,0.31,0.54,408.95
+"115","Phylogenetic+Spatial: local+Neighbours","informativity","Intercept",-0.06,0.08,0.23,408.95
+"116","Phylogenetic+Spatial: local+Neighbours","informativity","Neighbours",-0.14,0.01,0.15,408.95
+"117","Phylogenetic+Spatial: local+L1 speakers (linear)","informativity","phylogenetic SD",0.03,0.17,0.56,408.98
+"118","Phylogenetic+Spatial: local+L1 speakers (linear)","informativity","spatial SD",0.12,0.31,0.54,408.98
+"119","Phylogenetic+Spatial: local+L1 speakers (linear)","informativity","Intercept",-0.06,0.09,0.24,408.98
+"120","Phylogenetic+Spatial: local+L1 speakers (linear)","informativity","L1",-0.23,-0.04,0.16,408.98
+"121","Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)","informativity","phylogenetic SD",0.08,0.24,0.6,410.17
+"122","Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)","informativity","spatial SD",0.11,0.3,0.52,410.17
+"123","Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)","informativity","Intercept",-0.36,0.12,0.6,410.17
+"124","Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)","informativity","social SD:
+L1",0,0.01,0.03,410.17
+"125","Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)","informativity","social SD:
+L2 proportion",0,0.01,0.03,410.17
+"126","Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)","informativity","phylogenetic SD",0.03,0.17,0.57,410.33
+"127","Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)","informativity","spatial SD",0.13,0.31,0.55,410.33
+"128","Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)","informativity","Intercept",-0.07,0.08,0.24,410.33
+"129","Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)","informativity","L1",-0.23,-0.04,0.16,410.33
+"130","Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)","informativity","L2 proportion",-2.09,0.15,2.39,410.33
+"131","Official","informativity","Intercept",-0.04,0.01,0.07,3627
+"132","Official","informativity","Official status",0.14,0.38,0.61,3627
+"133","Education","informativity","Intercept",-0.04,0.01,0.07,3627.77
+"134","Education","informativity","Education",0.11,0.31,0.51,3627.77
+"135","Neighbours","informativity","Intercept",-0.01,0.04,0.1,3631.27
+"136","Neighbours","informativity","Neighbours",-0.1,-0.05,-0.01,3631.27
+"137","L1 speakers (nonlinear)","informativity","Intercept",-0.02,0.04,0.1,3635.84
+"138","L1 speakers (nonlinear)","informativity","social SD:
+L1",0,0.01,0.03,3635.84
+"139","L1 speakers (nonlinear)+L2 proportion (nonlinear)","informativity","Intercept",-0.16,0.13,0.42,3636.25
+"140","L1 speakers (nonlinear)+L2 proportion (nonlinear)","informativity","social SD:
+L1",0.02,0.04,0.11,3636.25
+"141","L1 speakers (nonlinear)+L2 proportion (nonlinear)","informativity","social SD:
+L2 proportion",0,0.01,0.1,3636.25
+"142","L2 proportion (nonlinear)","informativity","Intercept",-0.17,0.12,0.41,3636.26
+"143","L2 proportion (nonlinear)","informativity","social SD:
+L2 proportion",0,0.01,0.03,3636.26
+"144","L1 speakers (linear)","informativity","Intercept",-0.02,0.04,0.09,3636.44
+"145","L1 speakers (linear)","informativity","L1",-0.08,-0.02,0.05,3636.44
+"146","L2 proportion (linear)","informativity","Intercept",-0.02,0.03,0.09,3636.57
+"147","L2 proportion (linear)","informativity","L2 proportion",-0.41,0.19,0.79,3636.57
+"148","L1 speakers (linear)+L2 proportion (linear)","informativity","Intercept",-0.02,0.03,0.09,3638.24
+"149","L1 speakers (linear)+L2 proportion (linear)","informativity","L1",-0.08,-0.02,0.04,3638.24
+"150","L1 speakers (linear)+L2 proportion (linear)","informativity","L2 proportion",-0.39,0.21,0.81,3638.24

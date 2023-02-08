@@ -1,5 +1,5 @@
-"","response","sociodemographic predictor(s)","variance for the Gaussian observations","variance for phy_id","variance for sp_id","WAIC"
-"B_L1","boundness","L1 speakers",0.05,0.92,0.04,1782.77
-"B_L1_L2_prop","boundness","L1 speakers + L2 proportion",0.04,0.92,0.04,1785.49
-"I_L1","informativity","L1 speakers",0.21,0.69,0.09,3028.53
-"I_L1_L2_prop","informativity","L1 speakers + L2 proportion",0.22,0.69,0.09,3030.18
+"","response","sociodemographic predictor(s)","variance for the Gaussian observations in %","variance for phy_id in %","variance for sp_id in %","WAIC"
+"B_L1","boundness","L1 speakers",5,92,4,1806.23
+"B_L1_L2_prop","boundness","L1 speakers + L2 proportion",4,92,4,1808.47
+"I_L1","informativity","L1 speakers",21,70,9,3097.43
+"I_L1_L2_prop","informativity","L1 speakers + L2 proportion",21,69,9,3100.73
