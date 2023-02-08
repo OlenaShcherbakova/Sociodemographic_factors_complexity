@@ -1,6 +1,6 @@
 #plotting the assumptions of different versions of spatial control and how their parameters relate to distances in km
 
-#script written by X
+#script written by Sam Passmore
 
 #two sets
 cols = c(brewer.pal(6, "Dark2"))
@@ -68,7 +68,7 @@ legend_text = c(bquote("local:" ~ kappa == .(parameters[1,1]) ~ "; " ~ phi == .(
                 bquote("regional:" ~ kappa == .(parameters[2,1]) ~ "; " ~ phi == .(parameters[2,2])))
 
 #final version: zoomed in on the distances of up to 10000 km
-svg("output/plot_spatial_pars_km_zoomed.svg", width = 8, height = 8)
+svg("output/plot_spatial_pars_km_zoomed.svg", width = 8, height = 8, dpi=300)
 plot(x = plot_ss$distance, y = plot_ss$covariance, 
      type = "l", main = "Spatial parameters", col = "white", #not plotting these lines; just keeping to axis
      ylim = c(0, 1),
@@ -95,7 +95,7 @@ x <- dev.off()
 
 
 #full version
-svg("output/plot_spatial_pars_km.svg", width = 8, height = 8)
+svg("output/plot_spatial_pars_km.svg", width = 8, height = 8, dpi=300)
 plot(x = plot_ss$distance, y = plot_ss$covariance, 
      type = "l", main = "Spatial parameters", col = "white", #not plotting these lines; just keeping to axis
      ylim = c(0, 1),
