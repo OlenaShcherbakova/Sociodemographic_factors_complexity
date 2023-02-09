@@ -16,8 +16,7 @@ metrics_joined <- metrics_joined %>%
   filter(!is.na(Official)) %>%
   filter(!is.na(Education)) %>%
   filter(!is.na(boundness_st)) %>%
-  filter(!is.na(informativity_st)) %>% 
-  slice_sample(n=150)
+  filter(!is.na(informativity_st))
 
 #dropping tips not in Grambank
 metrics_joined <- metrics_joined[metrics_joined$Language_ID %in% tree$tip.label, ]
