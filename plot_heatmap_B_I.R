@@ -278,3 +278,11 @@ ggsave(
   height = 25,
   dpi = 300
 )
+
+ggsave(
+  file = "output/plot_heatmap_B_I.jpeg",
+  plot = p3,
+  width = 25,
+  height = 25,
+  dpi = 300
+)
