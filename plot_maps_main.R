@@ -97,7 +97,7 @@ i <-
     data = combination,
     aes(x = Longitude, y = Latitude, colour = informativity_st, fill = informativity_st),
     pch = 21,
-    size = 1.5,
+    size = 1.1,
     alpha = 1,
     position = position_jitter(
       width = 1,
@@ -110,14 +110,16 @@ i <-
                         guide = "none",
                         direction = -1) +
   theme(
-    plot.title = element_text(size = 20),
-    legend.title = element_text(size = 20),
-    legend.text = element_text(size = 20),
-    legend.key.size = unit(0.7, units = "cm"),
-    legend.position = "bottom"
+    plot.title = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.text = element_text(size = 15),
+    legend.key.size = unit(0.5, units = "cm"),
+    legend.direction = "horizontal",
+    legend.position = c(.4, .07)
   ) +
   guides(fill = guide_colourbar()) +
   labs(title = "Informativity", fill = "score")
+i
 
 ggsave(
   file = "output/map_informativity.svg",
@@ -134,7 +136,7 @@ b <-
     data = combination,
     aes(x = Longitude, y = Latitude, colour = boundness_st, fill = boundness_st),
     pch = 21,
-    size = 1.5,
+    size = 1.1,
     alpha = 1,
     position = position_jitter(
       width = 1,
@@ -147,11 +149,12 @@ b <-
                         guide = "none",
                         direction = -1) +
   theme(
-    plot.title = element_text(size = 20),
-    legend.title = element_text(size = 20),
-    legend.text = element_text(size = 20),
-    legend.key.size = unit(0.7, units = "cm"),
-    legend.position = "bottom"
+    plot.title = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.text = element_text(size = 15),
+    legend.key.size = unit(0.5, units = "cm"),
+    legend.direction = "horizontal",
+    legend.position = c(.4, .07)
   ) +
   guides(fill = guide_colourbar()) +
   labs(title = "Boundness", fill = "score")
@@ -176,7 +179,7 @@ i <-
       color = informativity_st
     ),
     pch = 21,
-    size = 1.5,
+    size = 1.1,
     alpha = 1,
     position = position_jitter(
       width = 1,
@@ -187,10 +190,11 @@ i <-
   scale_fill_viridis_c(option = "viridis", direction = -1) +
   scale_color_viridis_c(option = "viridis", direction = -1) +
   theme(
-    text = element_text(size = 20),
-    legend.text = element_text(size = 20),
-    legend.key.size = unit(0.8, units = "cm"),
-    legend.position = "bottom"
+    text = element_text(size = 15),
+    legend.text = element_text(size = 15),
+    legend.key.size = unit(0.5, units = "cm"),
+    legend.direction = "horizontal",
+    legend.position = c(.4, .07)
   ) +
   guides(fill = guide_colourbar(), color = "none") +
   labs(fill = "informativity")
@@ -205,7 +209,7 @@ b <-
       color = boundness_st
     ),
     pch = 21,
-    size = 1.5,
+    size = 1.1,
     alpha = 1,
     position = position_jitter(
       width = 1,
@@ -216,56 +220,66 @@ b <-
   scale_fill_viridis_c(option = "magma", direction = -1) +
   scale_color_viridis_c(option = "magma", direction = -1) +
   theme(
-    text = element_text(size = 20),
-    legend.text = element_text(size = 20),
-    legend.key.size = unit(0.8, units = "cm"),
-    legend.position = "bottom"
+    text = element_text(size = 15),
+    legend.text = element_text(size = 15),
+    legend.key.size = unit(0.5, units = "cm"),
+    legend.direction = "horizontal",
+    legend.position = c(.4, .07)
   ) +
   guides(fill = guide_colourbar(), color = "none") +
   labs(fill = "fusion")
 
-two_maps <- b | i
+two_maps <- b / i
 ggsave(
   file = "output/maps.svg",
   plot = two_maps,
-  width = 10,
-  height = 5, 
+  width = 5,
+  height = 7, 
   dpi=300
 )
 
 ggsave(
   file = "output/maps.pdf",
   plot = two_maps,
-  width = 10,
-  height = 5, 
+  width = 5,
+  height = 7, 
   dpi=300
 )
+
+ggsave(
+  file = "output/maps.jpeg",
+  plot = two_maps,
+  width = 5,
+  height = 7, 
+  dpi=300
+)
+
 
 
 #histograms
-hist_b <- ggplot(metrics_joined, aes(x = boundness_st)) +
-  geom_histogram(color = "black", aes(fill = ..x..)) +
-  scale_fill_viridis_c(option = "magma", direction = -1) +
-  labs(x = "fusion", fill = "score") +
-  theme_classic(base_size = 22)
-
-hist_i <- ggplot(metrics_joined, aes(x = informativity_st)) +
-  geom_histogram(color = "black", aes(fill = ..x..)) +
-  scale_fill_viridis_c(option = "viridis", direction = -1) +
-  labs(x = "informativity", fill = "score") +
-  theme_classic(base_size = 22)
-
-ggsave(
-  file = "output/hist_boundness.svg",
-  plot = hist_b,
-  width = 7,
-  height = 5, 
-  dpi=300
-)
-ggsave(
-  file = "output/hist_informativity.svg",
-  plot = hist_i,
-  width = 7,
-  height = 5, 
-  dpi=300
-)
+# hist_b <- ggplot(metrics_joined, aes(x = boundness_st)) +
+#   geom_histogram(color = "black", aes(fill = ..x..)) +
+#   scale_fill_viridis_c(option = "magma", direction = -1) +
+#   labs(x = "fusion", fill = "score") +
+#   theme_classic(base_size = 22)
+# 
+# hist_i <- ggplot(metrics_joined, aes(x = informativity_st)) +
+#   geom_histogram(color = "black", aes(fill = ..x..)) +
+#   scale_fill_viridis_c(option = "viridis", direction = -1) +
+#   labs(x = "informativity", fill = "score") +
+#   theme_classic(base_size = 22)
+# 
+# ggsave(
+#   file = "output/hist_boundness.svg",
+#   plot = hist_b,
+#   width = 7,
+#   height = 5, 
+#   dpi=300
+# )
+# ggsave(
+#   file = "output/hist_informativity.svg",
+#   plot = hist_i,
+#   width = 7,
+#   height = 5, 
+#   dpi=300
+# )
