@@ -1,5 +1,7 @@
 #boundness/fusion
 
+#Script was written by Hedvig Skirgård
+
 source("requirements.R")
 
 OUTPUTDIR1 <- file.path('.', "output", "Bound_morph")		

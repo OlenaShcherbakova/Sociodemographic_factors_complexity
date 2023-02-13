@@ -1,3 +1,7 @@
+#installing and loading INLA
+
+# script was written by Hedvig Skirgård and Sam Passmore
+
 # 1. Install/update and load BiocManager and other necessary packages
 source("requirements.R")
 

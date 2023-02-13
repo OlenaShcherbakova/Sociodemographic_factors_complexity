@@ -3,6 +3,8 @@ suppressPackageStartupMessages({
   library(ggplot2)
 })
 
+# script was written by Olena Shcherbakova and modified by Sam Passmore
+
 effs_I <-
   read.csv("output_tables/ effects Informativity_social_models .csv")
 effs_I$variable <- "informativity"

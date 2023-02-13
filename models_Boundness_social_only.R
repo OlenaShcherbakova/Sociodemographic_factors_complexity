@@ -1,5 +1,7 @@
 #model fitting: Boundness predicted by social effects on top of random phylogenetic and spatial factors
 
+#Script was written by Sam Passmore and modified by Olena Shcherbakova
+
 source("requirements.R")
 
 source("install_and_load_INLA.R")

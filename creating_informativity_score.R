@@ -1,5 +1,7 @@
 #informativity
 
+#Script was written by Hedvig Skirgård
+
 OUTPUTDIR2 <- file.path('.', "output", "Informativity")		
 # create output dir if it does not exist.		
 if (!dir.exists(OUTPUTDIR2)) { dir.create(OUTPUTDIR2) }	

@@ -16,14 +16,6 @@ if(!(file.exists("output/Informativity/informativity_score.tsv"))){
   source("creating_informativity_score.R")
 }
 
-# full_or_reduced <- "full"
-# 
-# if(full_or_reduced == "full"){
-#   pop_file_fn <- "data_wrangling/pop.tsv"
-#   }else{
-#   pop_file_fn <- "data_wrangling/pop_reduced.tsv"
-#   }
-
 if(!(file.exists("data_wrangling/wrangled.tree"))){
   cat("Pruning EDGE-tree.\n")
   source("wrangling_tree.R")

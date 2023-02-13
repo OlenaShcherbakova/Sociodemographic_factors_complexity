@@ -1,4 +1,4 @@
-# script was written by X 
+# script was written by Hedvig Skirgård
 
 #Glottolog-cldf table for aggregating dialects
 OUTPUTDIR_data_wrangling<- here("data_wrangling")		

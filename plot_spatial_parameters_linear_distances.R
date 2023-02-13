@@ -1,6 +1,6 @@
 #plotting the assumptions of different versions of spatial control and how their parameters relate to distances in km
 
-#script written by Sam Passmore
+#script written by Sam Passmore and modified by Olena Shcherbakova
 
 #two sets
 cols = c(brewer.pal(6, "Dark2"))

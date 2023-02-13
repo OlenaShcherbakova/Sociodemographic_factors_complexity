@@ -5,14 +5,14 @@
 "Education",0.11,0.31,0.51,3627.77,"Education"
 "Neighbours",-0.01,0.04,0.1,3631.27,"Intercept"
 "Neighbours",-0.1,-0.05,-0.01,3631.27,"Neighbours"
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",-0.16,0.13,0.42,3633.81,"Intercept"
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0.04,0.16,0.41,3633.81,"social SD:
+L1"
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0,0.01,0.03,3633.81,"social SD:
+L2 proportion"
 "L1 speakers (nonlinear)",-0.02,0.04,0.1,3635.84,"Intercept"
 "L1 speakers (nonlinear)",0,0.01,0.03,3635.84,"social SD:
 L1"
-"L1 speakers (nonlinear)+L2 proportion (nonlinear)",-0.16,0.13,0.42,3636.25,"Intercept"
-"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0.02,0.04,0.11,3636.25,"social SD:
-L1"
-"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0,0.01,0.1,3636.25,"social SD:
-L2 proportion"
 "L2 proportion (nonlinear)",-0.17,0.12,0.41,3636.26,"Intercept"
 "L2 proportion (nonlinear)",0,0.01,0.03,3636.26,"social SD:
 L2 proportion"

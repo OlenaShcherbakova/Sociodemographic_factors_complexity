@@ -1,5 +1,7 @@
 #picking the top 2 models of boundness (with social predictors that improve the fit of the random-effects-only model) and top 4 models of informativity (with WAIC difference from the top model no lower than 10) to calculate the percentages of variance of random effects
 
+# script was written by Sam Passmore and Olena Shcherbakova
+
 n_samples = 100
 
 load("output_models_reduced/models_Boundness_social.RData")

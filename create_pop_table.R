@@ -35,15 +35,15 @@ social_vars <- readxl::read_xlsx("data/lang_endangerment_predictors.xlsx", sheet
     #dplyr::mutate(neighboring_languages_log10 = log10(neighboring_languages+1)) %>%
     dplyr::mutate(neighboring_languages_st  = scale(neighboring_languages)[,1]) %>%
     #dplyr::mutate(neighboring_languages_log10_st  = scale(neighboring_languages_log10)[,1]) %>%
-    dplyr::select(Language_ID, Education, Official, neighboring_languages_st)
+    dplyr::select(Language_ID, ISO_639, Education, Official, neighboring_languages_st)
   
   if(sample == "full"){
     social_vars  %>% 		
       left_join(data_ethnologue, by=c("Language_ID")) %>% 
-      dplyr::select(Language_ID, L1_log10_st, L1_log10, L2_prop, Education, Official, neighboring_languages_st) %>% 
+      dplyr::select(Language_ID, ISO_639, L1_log10_st, L1_log10, L2_prop, Education, Official, neighboring_languages_st) %>% 
             write_tsv(here(OUTPUTDIR_data_wrangling, "pop_full.tsv")) }	else{
         social_vars  %>% 	
                 left_join(data_ethnologue, by=c("Language_ID")) %>% 
-                dplyr::select(Language_ID, L1_log10_st, L2_prop, Education, Official, neighboring_languages_st) %>% 
+                dplyr::select(Language_ID, ISO_639, L1_log10_st, L2_prop, Education, Official, neighboring_languages_st) %>% 
                     write_tsv(here(OUTPUTDIR_data_wrangling, "pop_reduced.tsv"))
             }
