@@ -5,7 +5,7 @@ if(!dir.exists("./grambank-analysed/R_grambank/output")){
 
 #creating a full Grambank file: first, within the submodule itself, and next placing it in the data folder within the repository 
 
-setwd("./grambank-analysed/R_grambank")
+setwd("grambank-analysed/R_grambank")
 
 if(!(file.exists("./../../data/GB_wide/GB_wide_strict.tsv"))){
   cat("Generating GB_wide_strict.\n")
@@ -36,4 +36,6 @@ read_csv("../grambank/cldf/parameters.csv",show_col_types = F) %>%
 }
 
 
-setwd("./../")
+setwd("../../")
+
+
