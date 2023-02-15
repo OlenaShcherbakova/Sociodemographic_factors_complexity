@@ -6,7 +6,8 @@ source("requirements.R")
 #this script generates the Ethnologue file that can be published based on the raw ethnologue file from SIL. The raw file CANNOT be shared publicly, but derived information that cannot be transformed back to the original values can, such as scaled and log-transformed values
 
 glottolog_df <- read_tsv("data_wrangling/glottolog_cldf_wide_df.tsv", show_col_types = F) %>% 
-  dplyr::select(ISO_639 = ISO639P3code, Glottocode, Language_level_ID)
+  dplyr::select(ISO_639 = ISO639P3code, Glottocode, Language_level_ID) %>% 
+  mutate(Language_level_ID = ifelse(is.na(Language_level_ID), Glottocode, Language_level_ID))
 
 GB <- read_tsv("data/GB_wide/GB_wide_strict.tsv", show_col_types = F) %>% 
   dplyr::select(Glottocode = "Language_ID")
