@@ -8,7 +8,7 @@ OUTPUTDIR1 <- file.path('.', "output", "Bound_morph")
 # create output dir if it does not exist.		
 if (!dir.exists(OUTPUTDIR1)) { dir.create(OUTPUTDIR1) }	
 
-if (!file.exists(here(OUTPUTDIR1, "bound_morph_score.tsv"))) {
+#if (!file.exists(here(OUTPUTDIR1, "bound_morph_score.tsv"))) {
 	
 GB_wide <- read_tsv(file.path("data", "GB_wide", "GB_wide_strict.tsv"), col_types=WIDE_COLSPEC)	
 
@@ -39,4 +39,4 @@ df_morph_count <- cbind(df_morph_count, boundness_st)
 df_morph_count  %>% 		
   write_tsv(file.path(OUTPUTDIR1, "bound_morph_score.tsv"))		
 
-}
+#}
