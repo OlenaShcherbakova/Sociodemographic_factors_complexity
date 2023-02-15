@@ -1,0 +1,3 @@
+[submodule "raw/Grambank"]
+	path = grambank-analysed
+	url = https://github.com/grambank/grambank-analysed
