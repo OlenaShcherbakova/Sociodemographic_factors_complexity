@@ -1,18 +1,18 @@
-"model","2.5%","50%","97.5%","WAIC","effect"
-"Phylogenetic+Spatial: local",1.47,1.7,1.97,1851.48,"phylogenetic SD"
-"Phylogenetic+Spatial: local",0.29,0.35,0.42,1851.48,"spatial SD"
-"Phylogenetic+Spatial: local",-0.02,0,0.03,1851.48,"Intercept"
-"Phylogenetic",2.01,2.22,2.45,1956.18,"phylogenetic SD"
-"Phylogenetic",-0.02,0,0.03,1956.18,"Intercept"
-"Phylogenetic+Areal",1.82,2.04,2.3,2032.46,"phylogenetic SD"
-"Phylogenetic+Areal",0.08,0.15,0.27,2032.46,"areal SD"
-"Phylogenetic+Areal",-0.06,0.03,0.13,2032.46,"Intercept"
-"Phylogenetic+Spatial: regional",1.25,1.49,1.79,2086.63,"phylogenetic SD"
-"Phylogenetic+Spatial: regional",0.48,0.62,0.8,2086.63,"spatial SD"
-"Phylogenetic+Spatial: regional",-0.02,0,0.03,2086.63,"Intercept"
-"Spatial: local",0.73,0.78,0.84,2304.12,"spatial SD"
-"Spatial: local",-0.02,0,0.03,2304.12,"Intercept"
-"Spatial: regional",0.9,1.07,1.25,2456.76,"spatial SD"
-"Spatial: regional",-0.03,0,0.04,2456.76,"Intercept"
-"Areal",0.44,0.58,0.79,2909.68,"areal SD"
-"Areal",0.08,0.31,0.54,2909.68,"Intercept"
+model,2.50%,50%,97.50%,WAIC,effect
+Phylogenetic+Spatial: local,1.47,1.7,1.97,1851.48,phylogenetic SD
+Phylogenetic+Spatial: local,0.29,0.35,0.42,1851.48,spatial SD
+Phylogenetic+Spatial: local,-0.02,0,0.03,1851.48,Intercept
+Phylogenetic,2.01,2.22,2.45,1956.18,phylogenetic SD
+Phylogenetic,-0.02,0,0.03,1956.18,Intercept
+Phylogenetic+Areal,1.82,2.04,2.3,2032.46,phylogenetic SD
+Phylogenetic+Areal,0.08,0.15,0.27,2032.46,areal SD
+Phylogenetic+Areal,-0.06,0.03,0.13,2032.46,Intercept
+Phylogenetic+Spatial: regional,1.25,1.49,1.79,2086.63,phylogenetic SD
+Phylogenetic+Spatial: regional,0.48,0.62,0.8,2086.63,spatial SD
+Phylogenetic+Spatial: regional,-0.02,0,0.03,2086.63,Intercept
+Spatial: local,0.73,0.78,0.84,2304.12,spatial SD
+Spatial: local,-0.02,0,0.03,2304.12,Intercept
+Spatial: regional,0.9,1.07,1.25,2456.76,spatial SD
+Spatial: regional,-0.03,0,0.04,2456.76,Intercept
+Areal,0.44,0.58,0.79,2909.68,areal SD
+Areal,0.08,0.31,0.54,2909.68,Intercept

@@ -1,47 +1,47 @@
-"model","2.5%","50%","97.5%","WAIC","effect"
-"Phylogenetic+Spatial: local+L1 speakers (linear)",0.97,1.28,1.65,3207.14,"phylogenetic SD"
-"Phylogenetic+Spatial: local+L1 speakers (linear)",0.35,0.43,0.53,3207.14,"spatial SD"
-"Phylogenetic+Spatial: local+L1 speakers (linear)",-0.03,0.01,0.05,3207.14,"Intercept"
-"Phylogenetic+Spatial: local+L1 speakers (linear)",0.05,0.13,0.2,3207.14,"L1"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",0.97,1.29,1.65,3207.49,"phylogenetic SD"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",0.35,0.43,0.53,3207.49,"spatial SD"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",-0.01,0.03,0.07,3207.49,"Intercept"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",0,0.01,0.03,3207.49,"social SD:
+model,2.50%,50%,97.50%,WAIC,effect
+Phylogenetic+Spatial: local+L1 speakers (linear),0.97,1.28,1.65,3207.14,phylogenetic SD
+Phylogenetic+Spatial: local+L1 speakers (linear),0.35,0.43,0.53,3207.14,spatial SD
+Phylogenetic+Spatial: local+L1 speakers (linear),-0.03,0.01,0.05,3207.14,Intercept
+Phylogenetic+Spatial: local+L1 speakers (linear),0.05,0.13,0.2,3207.14,L1
+Phylogenetic+Spatial: local+L1 speakers (nonlinear),0.97,1.29,1.65,3207.49,phylogenetic SD
+Phylogenetic+Spatial: local+L1 speakers (nonlinear),0.35,0.43,0.53,3207.49,spatial SD
+Phylogenetic+Spatial: local+L1 speakers (nonlinear),-0.01,0.03,0.07,3207.49,Intercept
+Phylogenetic+Spatial: local+L1 speakers (nonlinear),0,0.01,0.03,3207.49,"social SD:
 L1"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)",0.98,1.3,1.65,3208.11,"phylogenetic SD"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)",0.35,0.43,0.53,3208.11,"spatial SD"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)",-0.24,0.01,0.26,3208.11,"Intercept"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)",0,0.01,0.03,3208.11,"social SD:
+Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear),0.98,1.3,1.65,3208.11,phylogenetic SD
+Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear),0.35,0.43,0.53,3208.11,spatial SD
+Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear),-0.24,0.01,0.26,3208.11,Intercept
+Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear),0,0.01,0.03,3208.11,"social SD:
 L1"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)",0,0.01,0.03,3208.11,"social SD:
+Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear),0,0.01,0.03,3208.11,"social SD:
 L2 proportion"
-"Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)",0.97,1.28,1.65,3209.11,"phylogenetic SD"
-"Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)",0.35,0.43,0.53,3209.11,"spatial SD"
-"Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)",-0.03,0.01,0.05,3209.11,"Intercept"
-"Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)",0.05,0.13,0.2,3209.11,"L1"
-"Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)",-0.54,-0.02,0.5,3209.11,"L2 proportion"
-"Phylogenetic+Spatial: local+Neighbours",0.88,1.2,1.57,3229.76,"phylogenetic SD"
-"Phylogenetic+Spatial: local+Neighbours",0.36,0.44,0.54,3229.76,"spatial SD"
-"Phylogenetic+Spatial: local+Neighbours",-0.01,0.03,0.07,3229.76,"Intercept"
-"Phylogenetic+Spatial: local+Neighbours",-0.04,0.01,0.06,3229.76,"Neighbours"
-"Phylogenetic+Spatial: local+L2 proportion (linear)",0.88,1.2,1.56,3229.95,"phylogenetic SD"
-"Phylogenetic+Spatial: local+L2 proportion (linear)",0.36,0.44,0.54,3229.95,"spatial SD"
-"Phylogenetic+Spatial: local+L2 proportion (linear)",-0.01,0.03,0.07,3229.95,"Intercept"
-"Phylogenetic+Spatial: local+L2 proportion (linear)",-0.49,0.03,0.55,3229.95,"L2 proportion"
-"Phylogenetic+Spatial: local+L1_log10:L2 proportion (linear)",0.88,1.19,1.56,3230.07,"phylogenetic SD"
-"Phylogenetic+Spatial: local+L1_log10:L2 proportion (linear)",0.36,0.45,0.54,3230.07,"spatial SD"
-"Phylogenetic+Spatial: local+L1_log10:L2 proportion (linear)",-0.01,0.03,0.07,3230.07,"Intercept"
-"Phylogenetic+Spatial: local+L1_log10:L2 proportion (linear)",-0.08,0.03,0.13,3230.07,"L1*L2 proportion"
-"Phylogenetic+Spatial: local+L2 proportion (nonlinear)",0.88,1.19,1.56,3230.77,"phylogenetic SD"
-"Phylogenetic+Spatial: local+L2 proportion (nonlinear)",0.36,0.44,0.54,3230.77,"spatial SD"
-"Phylogenetic+Spatial: local+L2 proportion (nonlinear)",-0.22,0.03,0.28,3230.77,"Intercept"
-"Phylogenetic+Spatial: local+L2 proportion (nonlinear)",0,0.01,0.03,3230.77,"social SD:
+Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear),0.97,1.28,1.65,3209.11,phylogenetic SD
+Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear),0.35,0.43,0.53,3209.11,spatial SD
+Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear),-0.03,0.01,0.05,3209.11,Intercept
+Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear),0.05,0.13,0.2,3209.11,L1
+Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear),-0.54,-0.02,0.5,3209.11,L2 proportion
+Phylogenetic+Spatial: local+Neighbours,0.88,1.2,1.57,3229.76,phylogenetic SD
+Phylogenetic+Spatial: local+Neighbours,0.36,0.44,0.54,3229.76,spatial SD
+Phylogenetic+Spatial: local+Neighbours,-0.01,0.03,0.07,3229.76,Intercept
+Phylogenetic+Spatial: local+Neighbours,-0.04,0.01,0.06,3229.76,Neighbours
+Phylogenetic+Spatial: local+L2 proportion (linear),0.88,1.2,1.56,3229.95,phylogenetic SD
+Phylogenetic+Spatial: local+L2 proportion (linear),0.36,0.44,0.54,3229.95,spatial SD
+Phylogenetic+Spatial: local+L2 proportion (linear),-0.01,0.03,0.07,3229.95,Intercept
+Phylogenetic+Spatial: local+L2 proportion (linear),-0.49,0.03,0.55,3229.95,L2 proportion
+Phylogenetic+Spatial: local+L1_log10:L2 proportion (linear),0.88,1.19,1.56,3230.07,phylogenetic SD
+Phylogenetic+Spatial: local+L1_log10:L2 proportion (linear),0.36,0.45,0.54,3230.07,spatial SD
+Phylogenetic+Spatial: local+L1_log10:L2 proportion (linear),-0.01,0.03,0.07,3230.07,Intercept
+Phylogenetic+Spatial: local+L1_log10:L2 proportion (linear),-0.08,0.03,0.13,3230.07,L1*L2 proportion
+Phylogenetic+Spatial: local+L2 proportion (nonlinear),0.88,1.19,1.56,3230.77,phylogenetic SD
+Phylogenetic+Spatial: local+L2 proportion (nonlinear),0.36,0.44,0.54,3230.77,spatial SD
+Phylogenetic+Spatial: local+L2 proportion (nonlinear),-0.22,0.03,0.28,3230.77,Intercept
+Phylogenetic+Spatial: local+L2 proportion (nonlinear),0,0.01,0.03,3230.77,"social SD:
 L2 proportion"
-"Phylogenetic+Spatial: local+Education",0.85,1.16,1.53,3233.24,"phylogenetic SD"
-"Phylogenetic+Spatial: local+Education",0.36,0.44,0.54,3233.24,"spatial SD"
-"Phylogenetic+Spatial: local+Education",-0.03,0.01,0.06,3233.24,"Intercept"
-"Phylogenetic+Spatial: local+Education",-0.02,0.19,0.39,3233.24,"Education"
-"Phylogenetic+Spatial: local+Official",0.83,1.14,1.52,3233.87,"phylogenetic SD"
-"Phylogenetic+Spatial: local+Official",0.37,0.45,0.54,3233.87,"spatial SD"
-"Phylogenetic+Spatial: local+Official",-0.03,0.02,0.06,3233.87,"Intercept"
-"Phylogenetic+Spatial: local+Official",-0.01,0.22,0.46,3233.87,"Official status"
+Phylogenetic+Spatial: local+Education,0.85,1.16,1.53,3233.24,phylogenetic SD
+Phylogenetic+Spatial: local+Education,0.36,0.44,0.54,3233.24,spatial SD
+Phylogenetic+Spatial: local+Education,-0.03,0.01,0.06,3233.24,Intercept
+Phylogenetic+Spatial: local+Education,-0.02,0.19,0.39,3233.24,Education
+Phylogenetic+Spatial: local+Official,0.83,1.14,1.52,3233.87,phylogenetic SD
+Phylogenetic+Spatial: local+Official,0.37,0.45,0.54,3233.87,spatial SD
+Phylogenetic+Spatial: local+Official,-0.03,0.02,0.06,3233.87,Intercept
+Phylogenetic+Spatial: local+Official,-0.01,0.22,0.46,3233.87,Official status
