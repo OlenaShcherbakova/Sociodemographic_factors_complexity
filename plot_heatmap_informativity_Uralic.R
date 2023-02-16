@@ -88,21 +88,21 @@ p1 <-
     legend.key.size = unit(0.9, 'cm')
   )
 
-svg(
-  "output/heatmap_Uralic_informativity.svg",
+ggsave(
+  file = "output/heatmap_Uralic_informativity.svg",
+  plot = p1,
   width = 7,
-  height = 7
+  height = 7,
+  dpi=300
 )
-p1
-dev.off()
 
 triple_plot <-
   b_labelled / i_labelled | p1 #+ plot_annotation(tag_levels = '1')
 
-svg(
-  "output/triple_plot.svg",
+ggsave(
+  file = "output/triple_plot.svg",
+  plot = triple_plot,
   width = 12,
-  height = 7
+  height = 7,
+  dpi=300
 )
-triple_plot
-dev.off()

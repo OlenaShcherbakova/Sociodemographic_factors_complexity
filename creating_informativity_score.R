@@ -7,7 +7,7 @@ OUTPUTDIR2 <- file.path('.', "output", "Informativity")
 # create output dir if it does not exist.		
 if (!dir.exists(OUTPUTDIR2)) { dir.create(OUTPUTDIR2) }	
 
-#if (!file.exists(here(OUTPUTDIR2, "informativity_score.tsv"))) { 
+if (!file.exists(here(OUTPUTDIR2, "informativity_score.tsv"))) { 
 
 GB_wide <-
   read_tsv(file.path("data", "GB_wide", "GB_wide_strict.tsv"),
@@ -49,4 +49,4 @@ lg_df_informativity_score <-
 
 lg_df_informativity_score  %>%
   write_tsv(here(OUTPUTDIR2, "informativity_score.tsv"))
-#}
+}

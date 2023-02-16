@@ -292,7 +292,7 @@ effs <- read.csv("output_tables/ effects Informativity_phylogenetic_spatial_mode
 
 effs_table_SM <- effs %>%
   mutate(effect = 
-           recode(effect,
+           dplyr::recode(effect,
                   "areal SD" = "spatial SD")) %>%
   rename("2.5%"=2,
          "50%" = 4,
@@ -315,7 +315,7 @@ effs_plot <- effs %>%
          mean = 3) %>% #mean here refers to 0.5 quantile 
   #filter(!effect == "Intercept") %>%
   mutate(effect = 
-           recode(effect,
+           dplyr::recode(effect,
                   "areal SD" = "spatial SD")) %>%
   mutate(effect = factor(effect, levels=c("phylogenetic SD", "spatial SD", "areal SD", "Intercept"))) %>%
   mutate(WAIC = round(WAIC, 2)) %>%

@@ -47,8 +47,6 @@ if(sample == "full"){
   source("plot_social_effects_combined.R")
 }
 
-
-
 if(sample == "reduced"){
   
   #predictors: phylogenetic and spatial random effects + sociodemograhic variables as fixed effects 

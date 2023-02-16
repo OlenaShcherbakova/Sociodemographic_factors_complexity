@@ -24,13 +24,9 @@ if (!(file.exists("../../../data_wrangling/glottolog_cldf_wide_df.tsv"))) {
   
   source("make_glottolog-cldf_table.R")
   
-  cldf_wide_df <- cldf_wide_df %>%
-    #taking the final dataframe cldf_wide_df from the previous script and saving it in our datafolder
-    write_tsv(file="./../../data/glottolog-cldf_wide_df.tsv") 
-  
-  # read_tsv("output/non_GB_datasets/glottolog-cldf_wide_df.tsv",
-  #          show_col_types = F) %>%
-  #   write_tsv(file = "./../../data_wrangling/glottolog_cldf_wide_df.tsv") 
+  read_tsv("output/non_GB_datasets/glottolog-cldf_wide_df.tsv",
+           show_col_types = F) %>%
+    write_tsv(file = "./../../data_wrangling/glottolog_cldf_wide_df.tsv")
 }
 
 if (!(file.exists("./../data/GB_wide/parameters.csv"))) {

@@ -53,7 +53,7 @@ unique(metrics_joined$family_status)
 metrics_joined <- metrics_joined %>%
   mutate(
     family =
-      recode(
+      dplyr::recode(
         family_status,
         "aust1307"  = "Austronesian",
         "aust1305"  = "Austroasiatic",
@@ -87,10 +87,12 @@ tips_lists <- vector(mode = "list", length = 12)
 for (f in 1:length(biggest_families)) {
   tips_lists[[f]] <-
     metrics_joined[metrics_joined$Family_ID == biggest_families[f], ]$Language_ID
-}
+  tips_lists[[f]] <- na.omit(tips_lists[[f]])
+  
+  }
 
 #the correct order within biggest families is preserved and the Glottocodes are replaced with suitable family name labels
-biggest_families_verbose <- recode(
+biggest_families_verbose <- dplyr::recode(
   biggest_families,
   "aust1307"  = "Austronesian",
   "aust1305"  = "Austroasiatic",
@@ -267,7 +269,7 @@ ggsave(
   file = "output/plot_heatmap_B_I.svg",
   plot = p3,
   width = 25,
-  height = 25,
+  height = 27,
   dpi = 300
 )
 
@@ -275,7 +277,7 @@ ggsave(
   file = "output/plot_heatmap_B_I.pdf",
   plot = p3,
   width = 25,
-  height = 25,
+  height = 27,
   dpi = 300
 )
 
@@ -283,6 +285,6 @@ ggsave(
   file = "output/plot_heatmap_B_I.jpeg",
   plot = p3,
   width = 25,
-  height = 25,
+  height = 27,
   dpi = 300
 )

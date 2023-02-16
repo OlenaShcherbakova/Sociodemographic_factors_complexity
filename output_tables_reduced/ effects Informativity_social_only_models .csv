@@ -1,25 +1,25 @@
 "model","2.5%","50%","97.5%","WAIC","effect"
-"Official",-0.04,0.01,0.07,3627,"Intercept"
-"Official",0.14,0.38,0.61,3627,"Official status"
-"Education",-0.04,0.01,0.07,3627.77,"Intercept"
-"Education",0.11,0.31,0.51,3627.77,"Education"
-"Neighbours",-0.01,0.04,0.1,3631.27,"Intercept"
-"Neighbours",-0.1,-0.05,-0.01,3631.27,"Neighbours"
-"L1 speakers (nonlinear)+L2 proportion (nonlinear)",-0.16,0.13,0.42,3633.81,"Intercept"
-"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0.04,0.16,0.41,3633.81,"social SD:
+"Official",-0.05,0.01,0.06,3713.84,"Intercept"
+"Official",0.16,0.39,0.63,3713.84,"Official status"
+"Education",-0.05,0,0.06,3714.79,"Intercept"
+"Education",0.12,0.32,0.52,3714.79,"Education"
+"Neighbours",-0.02,0.03,0.09,3718.7,"Intercept"
+"Neighbours",-0.1,-0.06,-0.01,3718.7,"Neighbours"
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",-0.18,0.11,0.41,3722.85,"Intercept"
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0.03,0.04,0.05,3722.85,"social SD:
 L1"
-"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0,0.01,0.03,3633.81,"social SD:
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0.05,0.05,0.06,3722.85,"social SD:
 L2 proportion"
-"L1 speakers (nonlinear)",-0.02,0.04,0.1,3635.84,"Intercept"
-"L1 speakers (nonlinear)",0,0.01,0.03,3635.84,"social SD:
+"L1 speakers (nonlinear)",-0.02,0.03,0.1,3723.58,"Intercept"
+"L1 speakers (nonlinear)",0,0.01,0.03,3723.58,"social SD:
 L1"
-"L2 proportion (nonlinear)",-0.17,0.12,0.41,3636.26,"Intercept"
-"L2 proportion (nonlinear)",0,0.01,0.03,3636.26,"social SD:
+"L2 proportion (nonlinear)",-0.18,0.11,0.4,3723.94,"Intercept"
+"L2 proportion (nonlinear)",0,0.01,0.03,3723.94,"social SD:
 L2 proportion"
-"L1 speakers (linear)",-0.02,0.04,0.09,3636.44,"Intercept"
-"L1 speakers (linear)",-0.08,-0.02,0.05,3636.44,"L1"
-"L2 proportion (linear)",-0.02,0.03,0.09,3636.57,"Intercept"
-"L2 proportion (linear)",-0.41,0.19,0.79,3636.57,"L2 proportion"
-"L1 speakers (linear)+L2 proportion (linear)",-0.02,0.03,0.09,3638.24,"Intercept"
-"L1 speakers (linear)+L2 proportion (linear)",-0.08,-0.02,0.04,3638.24,"L1"
-"L1 speakers (linear)+L2 proportion (linear)",-0.39,0.21,0.81,3638.24,"L2 proportion"
+"L1 speakers (linear)",-0.03,0.03,0.08,3724.21,"Intercept"
+"L1 speakers (linear)",-0.08,-0.01,0.05,3724.21,"L1"
+"L2 proportion (linear)",-0.03,0.02,0.08,3724.24,"Intercept"
+"L2 proportion (linear)",-0.42,0.19,0.79,3724.24,"L2 proportion"
+"L1 speakers (linear)+L2 proportion (linear)",-0.03,0.03,0.08,3726.04,"Intercept"
+"L1 speakers (linear)+L2 proportion (linear)",-0.08,-0.02,0.05,3726.04,"L1"
+"L1 speakers (linear)+L2 proportion (linear)",-0.4,0.2,0.81,3726.04,"L2 proportion"

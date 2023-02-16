@@ -51,7 +51,7 @@ effs_main$effect <-
   )
 
 effs_main <- effs_main %>%
-  mutate(effect = recode(
+  mutate(effect = dplyr::recode(
     effect,
     "L2 proportion (combined)" = "L2 (combined)",
     "L2 proportion" = "L2"

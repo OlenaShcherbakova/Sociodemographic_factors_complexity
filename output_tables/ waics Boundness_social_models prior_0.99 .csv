@@ -1,11 +1,11 @@
 "model","WAIC"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",1796.18
-"Phylogenetic+Spatial: local+L1 speakers (linear)",1797.04
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)",1799.06
-"Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)",1799.27
-"Phylogenetic+Spatial: local+Neighbours",1823.74
-"Phylogenetic+Spatial: local+L1_log10:L2 proportion (linear)",1828.29
-"Phylogenetic+Spatial: local+L2 proportion (nonlinear)",1828.36
-"Phylogenetic+Spatial: local+Official",1828.9
-"Phylogenetic+Spatial: local+Education",1829.73
-"Phylogenetic+Spatial: local+L2 proportion (linear)",1831.95
+"Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)",1811.03
+"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",1814.38
+"Phylogenetic+Spatial: local+L1 speakers (linear)",1814.79
+"Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)",1816.96
+"Phylogenetic+Spatial: local+L2 proportion (nonlinear)",1840.19
+"Phylogenetic+Spatial: local+Neighbours",1841.26
+"Phylogenetic+Spatial: local+Official",1845.83
+"Phylogenetic+Spatial: local+L1_log10:L2 proportion (linear)",1845.95
+"Phylogenetic+Spatial: local+Education",1846.8
+"Phylogenetic+Spatial: local+L2 proportion (linear)",1847.04
