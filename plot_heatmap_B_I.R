@@ -270,7 +270,7 @@ ggsave(
   plot = p3,
   width = 25,
   height = 27,
-  dpi = 300
+  dpi = 600
 )
 
 ggsave(
@@ -278,7 +278,7 @@ ggsave(
   plot = p3,
   width = 25,
   height = 27,
-  dpi = 300
+  dpi = 600
 )
 
 ggsave(
@@ -286,5 +286,5 @@ ggsave(
   plot = p3,
   width = 25,
   height = 27,
-  dpi = 300
+  dpi = 600
 )
