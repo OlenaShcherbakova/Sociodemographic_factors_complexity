@@ -14,7 +14,7 @@ Consult and run `all_scripts.R` that will execute all necessary scripts to:
 - make plots
 
 
-NB. The necessary files, such as metrics scores obtained from the Grambank dataset and parameters of metrics (these determine the inclusion of Grambank into the metrics), are already made available. But the scripts that generate these rely on the submodule ```grambank_analysed``` that incorporates data from Grambank v.1.0 and Glottolog v.4.4. These scripts can only be run when one has access to ```grambank-analysed``` repository and/or when this repository has been released and made publicly available. If this is the case, one needs to first clone the repository and then include and update the submodule by running ```git submodule update —init``` (More on using submodules: https://git-scm.com/book/en/v2/Git-Tools-Submodules#_cloning_submodules). 
+NB. The necessary files, such as metrics scores obtained from the Grambank dataset and parameters of metrics (these determine the inclusion of Grambank into the metrics), are already made available. The script that generates these ```generating_GB_input_file.R``` relies on the submodule ```grambank_analysed``` (can also be found on Zenodo: https://doi.org/10.5281/zenodo.7740822) that incorporates data from Grambank v.1.0 and Glottolog v.4.4. To run this script, one needs to first clone the repository and then include and update the submodule by running ```git submodule update —init``` (More on using submodules: https://git-scm.com/book/en/v2/Git-Tools-Submodules#_cloning_submodules). 
 
 
 
