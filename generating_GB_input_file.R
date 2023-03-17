@@ -15,6 +15,7 @@ if (!(file.exists("./../../data/GB_wide/GB_wide_strict.tsv"))) {
   
   read_tsv("output/GB_wide/GB_wide_strict.tsv", show_col_types = F) %>%
     write_tsv(file = "../../data/GB_wide/GB_wide_strict.tsv")
+
 }
 
 #extracting glottolog: first, within the submodule itself, and next placing it in the data folder within the repository
