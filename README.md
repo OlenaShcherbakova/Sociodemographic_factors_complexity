@@ -86,7 +86,7 @@ inclusion of Grambank into the metrics), are already made available. The
 script that generates these `generating_GB_input_file.R` relies on the
 submodule `grambank_analysed` (can also be found on Zenodo:
 <https://doi.org/10.5281/zenodo.7740822>) that incorporates data from
-Grambank v.1.0 and Glottolog v.4.4. To run this script, one needs to
+Grambank v.1.0 and Glottolog v.4.5. To run this script, one needs to
 first clone the repository and then include and update the submodule by
 running `git submodule update —init` (More on using submodules:
 <https://git-scm.com/book/en/v2/Git-Tools-Submodules#_cloning_submodules>).
@@ -109,9 +109,7 @@ Eberhard, David M., Gary F. Simons & Charles D. Fennig (eds.). 2020.
 Ethnologue: Languages of the World. Dallas, Texas: SIL International.
 www.ethnologue.com.
 
-Hammarström, Harald, Robert Forkel, Martin Haspelmath & Sebastian Bank.
-2021. glottolog: Glottolog database 4.4.
-<https://doi.org/10.5281/zenodo.4761960>.
+Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian. 2021. Glottolog 4.5. Leipzig: Max Planck Institute for Evolutionary Anthropology. (Available online at https://glottolog.org)
 
 Skirgård, H., Haynie, H. J., Blasi, D. E., Hammarström, H., Collins, J., Latarche, J., Lesage, J., Weber, T., Witzlack-Makarevich, A., Passmore, S., Chira, A., Dinnage, R., Maurits, L., Dinnage, R., Dunn, M., Reesink, G., Singer, R., Bowern, C., Epps, P., Hill, J., Vesakoski, O., Robbeets, M., Abbas, K., Auer, D., Bakker, N., Barbos, G., Borges, R., Danielsen, S., Dorenbusch, L., Dorn, E., Elliott, J., Falcone, G., Fischer, J., Ghanggo Ate, Y., Gibson, H., Göbel, H., Goodall, J., Gruner, V., Harvey, A., Hayes, R., Heer, L., Herrera Miranda, R., Hübler, N., Huntington-Rainey, B., Ivani, J., Johns, M., Just, E., Kashima, E., Kipf, C., Klingenberg, J., König, N., Koti, K., Kowalik, R., Krasnoukhova, O., Lindvall, N., Lorenzen, M., Lutzenberger, H., Martins, T., Mata German, C., Meer, S., Montoya Samamé, J., Müller, M., Muradoglu, S., Neely, K., Nickel, J., Norvik, M., Oluoch, C. A., Peacock, J., Pearey , I., Peck, N., Petit, S., Pieper, S., Poblete, M., Prestipino, D., Raabe, L., Raja, A., Reimringer, J., Rey, S., Rizaew, J., Ruppert, E., Salmon, K., Sammet, J., Schembri, R., Schlabbach, L., Schmidt, F., Skilton, A., Smith, W. D., Sousa, H., Sverredal, K., Valle, D., Vera, J., Voß, J., Witte, T., Wu, H., Yam, S., Ye 葉婧婷, J., Yong, M., Yuditha, T., Zariquiey, R., Forkel, R., Evans, N., Levinson, S. C., Haspelmath, M., Greenhill, S. J., Atkinson, Q. D. and Gray, R. D. (in prep) "Grambank reveals the importance of genealogical constraints on linguistic diversity and highlights the impact of language loss". Science Advances
 
