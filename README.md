@@ -12,7 +12,7 @@ With the exception of the Ethnologue data, all the data is available
 openly via the science archive Zenodo and/or public GitHub repositories. A
 modified version of the Ethnologue data is available in this repository, it contains
 transformed population numbers that cannot be transformed back into the
-raw numbers.
+raw numbers. The MCCT EDGE-tree is found in a file inside grambank-analysed.
 
 Zenodo locations:
 
@@ -22,28 +22,14 @@ Zenodo locations:
 *   AUTOTYP (v1.0.1) <https://doi.org/10.5281/zenodo.6255206>
 
 GitHub locations:
+
 * EDGE-tree (v1.0.0) <https://github.com/rbouckaert/global-language-tree-pipeline/tree/v1.0.0>
 * Grambank (v1.0) <https://github.com/grambank/grambank/tree/v1.0>
 * Grambank-analysed (v1.0) <https://github.com/grambank/grambank-analysed/tree/v1.0>
 * Glottolog (v4.5) <https://github.com/glottolog/glottolog-cldf/tree/v4.5>
 * AUTOTYP (v1.01) <https://github.com/autotyp/autotyp-data/tree/v1.0.1>
 
-In this project, we use git submodules for data access for Grambank,
-AUTOTYP and Glottolog. In order to run all analysis "from scratch", it is necessary to
-initalise the submodules of this git repos. 
-
-* grambank-analysed (v1.0), which in turn contains submodules for
-    - grambank (v1.0)
-    - AUTOTYP (v1.0.1)
-    - glottolog (v4.5)
-    - and a file with the MCCT EDGE-tree (v1.0.0)    
-
-It is necessary that the git repos is cloned and that the above 4
-submodules are initialised in order to run all scripts. The submodules
-are not checked out at the latest commit, but particular commits
-relevant for their versions.
-
-However, we have also made tables and files available derived from these sources in this repos so that users may run the analysis without engaging with git submodules. The scripts that generate these files are also found in this repository and can be run by users if they would like.
+In this project, we fetch the data from the Zenodo locations by downloading a zip file and expanding it. We have also made tables and files available derived from these sources in this repos so that users may run the analysis without engaging with fetching from Zenodo. The scripts that generate these files are also found in this repository and can be run by users if they would like.
 
 ## Running data-wrangling, analysis and plotting scripts
 All scripts are written in R. The necessary scripts can be called
@@ -84,12 +70,9 @@ Please note: the necessary files, such as metrics scores obtained from the
 Grambank dataset and parameters of metrics (these determine the
 inclusion of Grambank into the metrics), are already made available. The
 script that generates these `generating_GB_input_file.R` relies on the
-submodule `grambank_analysed` (can also be found on Zenodo:
-<https://doi.org/10.5281/zenodo.7740822>) that incorporates data from
-Grambank v.1.0 and Glottolog v.4.5. To run this script, one needs to
-first clone the repository and then include and update the submodule by
-running `git submodule update —init` (More on using submodules:
-<https://git-scm.com/book/en/v2/Git-Tools-Submodules#_cloning_submodules>).
+folder `grambank_analysed` which incorporates data from
+Grambank v.1.0, AUTOTYP (v1.0.1) and Glottolog v.4.5. To run this script, one needs to
+first clone the repository and then run the R-script `get_external_data.R`.
 
 # References
 
