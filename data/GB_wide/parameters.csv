@@ -1,5 +1,5 @@
-"","ID","Name","Description","boundness","informativity"
-"1","GB020","Are there definite or specific articles?","## Are there definite or specific articles?
+ID,Name,Description,boundness,informativity
+GB020,Are there definite or specific articles?,"## Are there definite or specific articles?
 
 ## Summary
 An article is a marker that accompanies the noun and expresses notions such as (non-)specificity and (in)definiteness. Sometimes these notions of specificity and definiteness are summed up in the term 'identifiability'. The formal expression is irrelevant; articles can be free, bound, or marked by suprasegmental markers such as tone.
@@ -70,8 +70,8 @@ Viljoen, Melanie Helen. 2013. *A grammatical description of the Buwal language*.
 
 ## Patron
 Jay Latarche and Jeremy Collins
-",NA,"definitearticles"
-"2","GB021","Do indefinite nominals commonly have indefinite articles?","## Do indefinite/non-specific nominals commonly have indefinite/non-specific articles?
+",NA,definitearticles
+GB021,Do indefinite nominals commonly have indefinite articles?,"## Do indefinite/non-specific nominals commonly have indefinite/non-specific articles?
 
 ## Summary
 For this feature, we need explicit support that indefinite/non-specific NPs commonly occur with an indefinite/non-specific article. Three or more examples of indefinite/non-specific nominals occurring with an indefinite/non-specific article is sufficient to code 1. 
@@ -161,8 +161,8 @@ van Driem, George. 1987. *A grammar of Limbu*. (Mouton Grammar Library, 4.) Berl
 * [GB023 Are there postnominal articles?](https://github.com/grambank/Grambank/wiki/GB023)
 
 ## Patron
-Jay Latarche and Jeremy Collins",NA,"indef"
-"3","GB022","Are there prenominal articles?","## Are there prenominal articles?
+Jay Latarche and Jeremy Collins",NA,indef
+GB022,Are there prenominal articles?,"## Are there prenominal articles?
 
 ## Summary
 All questions concerning the order of elements aim to capture a pragmatically unmarked order. If both GB022 and GB023 are coded 1, please write a comment. Articles cover both definite or indefinite articles as defined in [GB020](https://github.com/grambank/grambank/wiki/GB020) and [GB021](https://github.com/grambank/grambank/wiki/GB021) respectively. In order to answer 1 for this feature, the markers' functions need to meet one of those definitions, so 1 should also have been answered for [GB020](https://github.com/grambank/grambank/wiki/GB020) or [GB021](https://github.com/grambank/grambank/wiki/GB021).
@@ -214,7 +214,7 @@ Ryding, Karin C. 2005. *A reference grammar of Modern Standard Arabic*. Cambridg
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"4","GB023","Are there postnominal articles?","## Are there postnominal articles?
+GB023,Are there postnominal articles?,"## Are there postnominal articles?
 
 ## Summary
 All questions concerning the order of elements aim to capture a pragmatically unmarked order.If both GB022 and GB023 are coded 1, please write a comment. Articles cover both definite or indefinite articles as defined in [GB020](https://github.com/grambank/grambank/wiki/GB020) and [GB021](https://github.com/grambank/grambank/wiki/GB021) respectively. In order to answer 1 for this feature, the markers' functions need to meet one of those definitions, so 1 should also have been answered for [GB020](https://github.com/grambank/grambank/wiki/GB020) or [GB021](https://github.com/grambank/grambank/wiki/GB021).
@@ -276,7 +276,7 @@ Ryding, Karin C. 2005. *A reference grammar of Modern Standard Arabic*. Cambridg
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"5","GB024","What is the order of numeral and noun in the NP?","## What is the order of numeral and noun in the NP?
+GB024,What is the order of numeral and noun in the NP?,"## What is the order of numeral and noun in the NP?
 
 ## Summary
 This feature focuses on the order of cardinal numerals (not ordinal numerals) and nouns in quantified noun phrases. In some languages only one order (Numeral-Noun or Noun-Numeral) is possible. In other languages both orders may be possible. This can take the form of free variation (where Numeral-Noun and Noun-Numeral order can occur interchangeably). The order may also depend on some other grammatical category which is neutral with respect to pragmaticality (e.g. definiteness). If the order depends on the noun, consider only the orders that apply to an open class of nouns and disregard orders that are restricted to a specific closed class of nouns.
@@ -336,7 +336,7 @@ Morey, Stephen. 2005. *The Tai languages of Assam*. (Pacific Linguistics, 565.) 
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"6","GB025","What is the order of adnominal demonstrative and noun?","## What is the order of adnominal demonstrative and noun?
+GB025,What is the order of adnominal demonstrative and noun?,"## What is the order of adnominal demonstrative and noun?
 
 ## Summary
 This feature is concerned with the order of the noun and adnominal demonstratives (i.e. demonstratives that modify the noun). There are three possible values to code: 1, before the noun, 2, after the noun, or 3, both orders are possible. Like all questions concerning the order of elements, only the pragmatically unmarked orders are targeted.
@@ -372,7 +372,7 @@ Eko, Robert & Mack Graham. 2014. *Tentative grammar description for the Angaatah
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"7","GB026","Can adnominal property words occur discontinuously?","## Can adnominal property words occur discontinuously?
+GB026,Can adnominal property words occur discontinuously?,"## Can adnominal property words occur discontinuously?
 
 ## Summary
 This feature describes an adnominal property word denoting core adjectival concepts such as shape, value, dimension, age, color (at a minimum -- many other meanings are possible) which can be separated from the noun it modifies by some element that is not part of the nominal phrase. For example, can you say ***the man** is running **big*** to mean ‘**the big man** is running’? 
@@ -437,7 +437,7 @@ Singer, Ruth. 2006. *Agreement in Mawng: Productive and lexicalised uses of agre
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"8","GB027","Are nominal conjunction and comitative expressed by different elements?","## Are nominal conjunction and comitative expressed by different elements?
+GB027,Are nominal conjunction and comitative expressed by different elements?,"## Are nominal conjunction and comitative expressed by different elements?
 
 ## Summary
 Is there a difference between the marking of NP coordination (*John **and** Mary went to market.*) and the marking of comitative phrases (*John **with** Mary went to market.*)? In some languages the only way to coordinate noun phrases is with a comitative phrase, i.e. the only way to say ‘X **and** Y’ is ‘X **with** Y’. To see whether an element is comitative or coordinating you can check case marking and agreement. For example, if X is the element in question and in the dative you get ‘John-DAT X Mary-DAT’, then X is likely coordinating. If you get ‘John-DAT X Mary’, X is likely comitative. If there is agreement, if you get ‘John X Mary verb-PL’ rather than 'John X Mary verb-SG' (just like ‘John X suitcase verb-SG’), this suggests that X is coordinating.
@@ -490,8 +490,8 @@ Kornfilt, Jaklin. 1997. *Turkish*. (Descriptive Grammars Series.) London: Routle
 
 ## Patron
 Hedvig Skirgård
-",NA,"comitative"
-"9","GB028","Is there a distinction between inclusive and exclusive?","## Is there a distinction between inclusive and exclusive?
+",NA,comitative
+GB028,Is there a distinction between inclusive and exclusive?,"## Is there a distinction between inclusive and exclusive?
 
 ## Summary
 Is there a pronoun or other marker that explicitly marks the inclusion of an interlocutor? This feature is not restricted to the pronominal system but includes person [indexing](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) as well. If inclusive is marked overtly in either the pronominal system or through verbal marking this is sufficient to trigger a 1 for this feature, even if exclusive has no overt morphological marking.
@@ -563,8 +563,8 @@ Macaulay, Monica A. 1996. *A grammar of Chalcatongo Mixtec.* (University of Cali
 
 ## Patron
 Hannah J. Haynie
-",NA,"clusivity"
-"10","GB030","Is there a gender distinction in independent 3rd person pronouns?","## Is there a gender distinction in phonologically independent third person pronouns?
+",NA,clusivity
+GB030,Is there a gender distinction in independent 3rd person pronouns?,"## Is there a gender distinction in phonologically independent third person pronouns?
 
 ## Summary
 This question targets the existence of any [gender distinction](https://github.com/grambank/grambank/wiki/Noun-Classes-and-Classifiers) in [phonologically independent third person pronouns](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns). For the purposes of this feature we define third person pronouns as including demonstratives. A masculine/feminine distinction is commonly encoded in third person pronouns, but distinctions in any other noun class/gender categories such as animacy also satisfy the criterion for coding a 1 for this feature. For languages with no third person independent pronouns or no noun class/gender distinctions in third person pronouns, a gender distinction in demonstratives would be sufficient to trigger a 1 here. If pronouns with just inanimate referents (or alternatively, just animate referents) agree with the noun class/gender of the corresponding noun that also suffices for 1. If a language has any gender distinction for third person pronouns but not for demonstratives, this is also sufficient for a 1. For more information on the difference between grammatical gender and social, cultural, and biological constructs or traits, see the [gender wiki page](https://github.com/grambank/grambank/wiki/Grammatical-gender-and-other-notions-of-gender).
@@ -621,8 +621,8 @@ van den Heuvel, Wilco. 2006. *Biak: Description of an Austronesian language of P
 
 ## Patron
 Hannah J. Haynie
-",NA,"pronoungender3"
-"11","GB031","Is there a dual or unit augmented form (in addition to plural or augmented) for all person categories in the pronoun system?","## Is there a dual or unit augmented form (in addition to plural or augmented) for all person categories in the pronoun or person index system?
+",NA,pronoungender3
+GB031,Is there a dual or unit augmented form (in addition to plural or augmented) for all person categories in the pronoun system?,"## Is there a dual or unit augmented form (in addition to plural or augmented) for all person categories in the pronoun or person index system?
 
 ## Summary
 A dual or unit augmented form must be present throughout the paradigm (i.e. for all person categories) for this feature to be coded as 1. Both [independent pronouns and bound person indexes](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) are to be considered in coding this feature. Inclusive and exclusive categories of first person are not considered separate person categories for the purposes of coding this feature (e.g. if a language has dual number in third, second, and any first person category it is sufficient for triggering a 1). A dual or unit augmented form for a single person category in the paradigm is *not* sufficient for a 1 code.
@@ -688,8 +688,8 @@ Round, Erich Ross. 2009. *Kayardild morphology, phonology and morphosyntax.* New
 
 ## Patron
 Hannah J. Haynie
-",NA,"pronoundualaug"
-"12","GB035","Are there three or more distance contrasts in demonstratives?","## Are there three or more distance contrasts in adnominal demonstratives?
+",NA,pronoundualaug
+GB035,Are there three or more distance contrasts in demonstratives?,"## Are there three or more distance contrasts in adnominal demonstratives?
 
 ## Summary
 Demonstratives are modifiers that can modify nouns (of any type and not just a restricted set such as location nouns) to mark position (e.g. deixis or reference within discourse). This doesn't have to be only Euclidean distance (meters, inches etc.), it could also be concerned with near or far in relation to the interlocutors (cf. Wolof). If the system of adnominal demonstratives includes an anaphoric demonstrative this does not count as a third distance.
@@ -740,8 +740,8 @@ Gippert, Jost, Wolfgang Schulze, Zaza Aleksidze & Jean-Pierre Mahe. 2008. *The C
 
 ## Patron
 Jay Latarche and Jeremy Collins
-",NA,"demonstartivedistance"
-"13","GB036","Do demonstratives show an elevation distinction?","## Do adnominal demonstratives show an elevation distinction?
+",NA,demonstartivedistance
+GB036,Do demonstratives show an elevation distinction?,"## Do adnominal demonstratives show an elevation distinction?
 
 ## Summary
 Elevation is concerned with how high or how low an object is (in altitude).
@@ -798,8 +798,8 @@ Reesink, Ger P. 1999. *A grammar of Hatam: Bird's Head Peninsula, Irian Jaya*. (
 
 ## Patron
 Jay Latarche and Jeremy Collins
-",NA,"demonstrativeelevation"
-"14","GB037","Do demonstratives show a visible-nonvisible distinction?","## Do adnominal demonstratives show a visible-nonvisible distinction?
+",NA,demonstrativeelevation
+GB037,Do demonstratives show a visible-nonvisible distinction?,"## Do adnominal demonstratives show a visible-nonvisible distinction?
 
 ## Summary
 Is there a distinction visible vs. non-visible when referencing to items that are the same relative distance? It is not relevant that adnominal demonstratives denoting far away reference often also imply non-visibility.
@@ -842,8 +842,8 @@ Yang, Tongyin & Jerold A. Edmondson. 2008. Kam. In Anthony V. N. Diller, Jerold 
 
 ## Patron
 Jay Latarche and Jeremy Collins
-",NA,"demonstrativevisibility"
-"15","GB038","Are there demonstrative classifiers?","## Are there demonstrative classifiers?
+",NA,demonstrativevisibility
+GB038,Are there demonstrative classifiers?,"## Are there demonstrative classifiers?
 
 ## Summary
 This question asks whether there is a [classifier system](https://github.com/grambank/grambank/wiki/Noun-classes-and-classifiers) in which classifiers appear with demonstratives to classify the noun. This classifier system can be symmetrical with numeral, possessive or verbal classifiers. It is sufficient if they sometimes occur. Please note, this feature does not concern gender/noun classes and agreement with the noun class, but a separate nominal classifier system.
@@ -907,8 +907,8 @@ Tseng, Shu-Chuan. 2017. [Chinese demonstratives and their spoken forms in a conv
 
 ## Patron
 Jay Latarche and Jeremy Collins
-",NA,"demonstrative classifiers"
-"16","GB039","Is there nonphonological allomorphy of noun number markers?","## Is there nonphonological allomorphy of noun number markers?
+",NA,demonstrative classifiers
+GB039,Is there nonphonological allomorphy of noun number markers?,"## Is there nonphonological allomorphy of noun number markers?
 
 ## Summary
 Are there different number markers for a single number category? And is the choice between these markers unpredictable from the marker a noun receives in another number category? For example, are there different plural markers while there is only one (or no) singular marker? Or do two nouns receive different singular markers but the same plural marker? This feature targets bound number markers, free number markers, and clitics.
@@ -1019,7 +1019,7 @@ McLaughlin, Fiona. 1997. Noun classification in Wolof: When affixes are not rene
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"17","GB041","Are there several nouns (more than three) which are suppletive for number?","## Are there several nouns (more than three) which are suppletive for number?
+GB041,Are there several nouns (more than three) which are suppletive for number?,"## Are there several nouns (more than three) which are suppletive for number?
 
 ## Summary
 Suppletion is a process where a lexeme is changed in such a way that the new form does not resemble the previous when it appears in a different position in the paradigm. An example of this is English _went_ and _go_. In this case, the verb is suppletive for tense. Only so called 'strong suppletion' counts here, 'weak' suppletion is not included. 
@@ -1080,7 +1080,7 @@ Georg, Stefan. 2007. *A descriptive grammar of Ket: Part I: Introduction, phonol
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"18","GB042","Is there productive overt morphological singular marking on nouns?","## Is there a productive overt morphological singular marker on nouns?
+GB042,Is there productive overt morphological singular marking on nouns?,"## Is there a productive overt morphological singular marker on nouns?
 
 ## Summary
 This question concerns a bound grammatical marker of singular number on nouns. The marker should occur with an [open set of nouns](https://github.com/grambank/grambank/wiki/Productivity), not with a restricted set. Absence of plural marking does not count for a 1 here (hence the emphasis on ‘overt’ in the feature question). This feature contrasts with [GB316 Is singular number regularly marked in the noun phrase by a phonologically free element?](https://github.com/grambank/Grambank/wiki/GB316) which focuses on the non-bound marking of singular number. For more on bound marking, please see this [page](https://github.com/grambank/Grambank/wiki/%27on-the-verb-noun%27-or-%27by-morphology%27). Bound marking of number on nouns derived from other word classes (such as adjectives or verbs) does not suffice for a 1.
@@ -1153,8 +1153,8 @@ Osam, Emmanuel Kweku Ahen. 1994. *Aspects of Akan grammar: A functional perspect
 
 ## Patron
 Hedvig Skirgård
-",1,"singular"
-"19","GB043","Is there productive morphological dual marking on nouns?","## Is there a productive morphological dual marker on nouns?
+",1,singular
+GB043,Is there productive morphological dual marking on nouns?,"## Is there a productive morphological dual marker on nouns?
 
 ## Summary
 This question concerns a bound grammatical marker of dual number on nouns. The marker should occur with an [open set of nouns](https://github.com/grambank/grambank/wiki/Productivity), not with a restricted set. This feature contrasts with [GB317 Is dual number regularly marked in the noun phrase by a phonologically free element?
@@ -1221,8 +1221,8 @@ Breen, Gavan 2003. [Wanyi and Garrwa comparative data](https://core.ac.uk/downlo
 
 ## Patron
 Hedvig Skirgård
-",1,"dual"
-"20","GB044","Is there productive morphological plural marking on nouns?","## Is there a productive morphological plural marker on nouns?
+",1,dual
+GB044,Is there productive morphological plural marking on nouns?,"## Is there a productive morphological plural marker on nouns?
 
 ## Summary
 This question concerns a bound grammatical marker of plural number on nouns. This feature contrasts with [GB318	Is plural number regularly marked in the noun phrase by a phonologically free element?](https://github.com/grambank/Grambank/wiki/GB318) which focuses on non-bound marking of plural number. For more on bound marking, please see [this page](https://github.com/grambank/Grambank/wiki/%27on-the-verb-noun%27-or-%27by-morphology%27). Bound marking of number on nouns derived from other word classes (such as adjectives or verbs) does not suffice for a 1. Reduplication (full or partial) does not count for this feature.
@@ -1304,8 +1304,8 @@ Teleman, Ulf, Staffan Hellberg & Erik Andersson. 1999. *Svenska Akademiens gramm
 
 ## Patron
 Hedvig Skirgård
-",1,"plural"
-"21","GB046","Is there an associative plural marker for nouns?","## Is there an associative plural marker for nouns?
+",1,plural
+GB046,Is there an associative plural marker for nouns?,"## Is there an associative plural marker for nouns?
 
 ## Summary
 This feature aims to cover any marking that marks that the reference contains entities associated with an entity X ('X and other people/things associated with X') instead of indicating additive plural ('several instances of X'). For example, _the King_**_-s_** _went to the market_ means several kings went. An associative plural interpretation of *-s* would be 'the King and his entourage went to the market'. This marking does not need to be bound to the noun. If the additive plural also has this function, this also counts.
@@ -1380,8 +1380,8 @@ Poulos, George & Christian T. Msimang. 1998. *A linguistic analysis of Zulu*. Ca
 
 ## Patron
 Hedvig Skirgård
-",NA,"assocplural"
-"22","GB047","Is there a productive morphological pattern for deriving an action/state noun from a verb?","## Is there a productive morphological pattern for deriving an action/state noun from a verb?
+",NA,assocplural
+GB047,Is there a productive morphological pattern for deriving an action/state noun from a verb?,"## Is there a productive morphological pattern for deriving an action/state noun from a verb?
 
 ## Summary
 An action nominalization derives from a verb and functions like a noun or noun phrase. The result denotes an action or state. In English, we can exemplify this with *the enemy’s **destruction** of the city*. *Arrive* - ***arriving*** could also serves as an example, or, in Spanish, *La **concentración** de Sherlock Holmes duró cinco horas.* ‘Sherlock Holmes’ **concentration** lasted five hours’. This feature targets [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) overt nominalizers, including affixes, clitics, tonal markers, reduplication, ablaut, etc. There needs to be [productive](https://github.com/grambank/grambank/wiki/Productivity) derivation. The derived noun may also refer to states or events in addition to actions. The nominalization strategy may also derive other types of nominalization. Compounds of a verb root and a noun meaning 'action', 'state' or 'event are not action nominalizations unless further grammaticalized. 
@@ -1425,7 +1425,7 @@ Dunn,  Michael J.  1999. *A Grammar of Chukchi*. Canberra: Australian National U
 ## Patron
 Hedvig Skirgård
 ",0.5,NA
-"23","GB048","Is there a productive morphological pattern for deriving an agent noun from a verb?","## Is there a productive morphological pattern for deriving an agent noun from a verb?
+GB048,Is there a productive morphological pattern for deriving an agent noun from a verb?,"## Is there a productive morphological pattern for deriving an agent noun from a verb?
 
 ## Summary
 
@@ -1468,7 +1468,7 @@ Dunn, Michael J. 1999. *A grammar of Chukchi*. Canberra: Australian National Uni
 ## Patron
 Hedvig Skirgård
 ",0.5,NA
-"24","GB049","Is there a productive morphological pattern for deriving an object noun from a verb?","## Is there a productive morphological pattern for deriving an object noun from a verb?
+GB049,Is there a productive morphological pattern for deriving an object noun from a verb?,"## Is there a productive morphological pattern for deriving an object noun from a verb?
 
 ## Summary
 An object nominalization derives from a verb and functions like a noun or noun phrase. The result denotes the object or result of an action (e.g. *song* is derived from *to sing*). This feature targets [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) overt nominalizers, including affixes, clitics, tonal markers, reduplication, ablaut, etc. There needs to be [productive](https://github.com/grambank/grambank/wiki/Productivity) derivation for this feature to be coded 1. The nominalization strategy may also derive other types of nominalization. A compound of a verb root and a noun meaning 'thing' is not an object nominalization unless there is evidence that the noun has grammaticalized into an affix. Instrument derivations are not relevant since they do not denote the object resulting from the action/state.
@@ -1503,7 +1503,7 @@ Kruspe, Nicole. 2004. *A grammar of Semelai*. Cambridge: Cambridge University Pr
 ## Patron
 Hedvig Skirgård
 ",0.5,NA
-"25","GB051","Is there a gender/noun class system where sex is a factor in class assignment?","## Is there a noun class/gender system where masculine and feminine categories are a factor in class assignment?
+GB051,Is there a gender/noun class system where sex is a factor in class assignment?,"## Is there a noun class/gender system where masculine and feminine categories are a factor in class assignment?
 
 ## Summary
 A noun class/gender system categorizes nouns for the purposes of grammatical [agreement](https://github.com/grambank/grambank/wiki/Agreement) with other constituents in the noun phrase or other inflectional morphology. See the [classification wiki page](https://github.com/grambank/grambank/wiki/Noun-Classes-and-Classifiers) for more information on our definition of noun class/gender. Noun class/gender assignment may be based on one or several factors. This feature focuses on whether the categories _masculine_ and _feminine_ are relevant for noun class/gender assignment in a given language. A contrast between these categories in a noun class/gender system serves as a minimal criterion for this feature to be coded 1. Languages that overtly mark only one of these categories (e.g. feminine, with an unmarked class interpreted as non-feminine) do encode the relevant distinction and should be coded 1. A language may encode other socially or culturally relevant gender distinctions, and there may be cross-linguistic and cross-cultural differences in the semantics and membership of masculine and feminine categories. A language may also categorize nouns based on other factors entirely (e.g. shape, animacy, phonological properties). For the purposes of this feature, grammatical categories other than masculine and feminine should be disregarded. 
@@ -1560,8 +1560,8 @@ Lovestrand, Joseph. 2012. *The Linguistic Structure of Baraïn (Chadic)*. (MA th
 * [GB197 Is there a masculine/feminine distinction in phonologically independent first person pronouns?](https://github.com/grambank/Grambank/wiki/GB197)
 ## Patron
 Hannah J. Haynie
-",NA,"gendersex"
-"26","GB052","Is there a gender/noun class system where shape is a factor in class assignment?","## Is there a noun class/gender system where shape is a factor in class assignment?
+",NA,gendersex
+GB052,Is there a gender/noun class system where shape is a factor in class assignment?,"## Is there a noun class/gender system where shape is a factor in class assignment?
 
 ## Summary
 A noun class/gender system categorizes nouns for the purposes of grammatical [agreement](https://github.com/grambank/grambank/wiki/Agreement) with other constituents in the noun phrase or other inflectional morphology. See the [classification wiki page](https://github.com/grambank/grambank/wiki/Noun-Classes-and-Classifiers) for more information on our definition of noun class/gender. Noun class/gender assignment may be based on one or several factors. This feature focuses on whether the shape of an object is one of these factors for a given language. There must be a clear preference for certain nouns to be classified to certain gender categories as a result of their _shape_ for this feature to be coded 1. That is, shape must be one relevant factor in the assignment of gender; however it does not need to be an absolute deciding factor or the only relevant factor in gender/class assignment. 
@@ -1626,8 +1626,8 @@ Wegener, Claudia U. 2012. *A grammar of Savosavo*. (Mouton Grammar Library, 61.)
 
 ## Patron
 Hannah J. Haynie
-",NA,"gendershape"
-"27","GB053","Is there a gender/noun class system where animacy is a factor in class assignment?","## Is there a noun class/gender system where animacy is a factor in class assignment?
+",NA,gendershape
+GB053,Is there a gender/noun class system where animacy is a factor in class assignment?,"## Is there a noun class/gender system where animacy is a factor in class assignment?
 
 ## Summary
 A noun class/gender system categorizes nouns for the purposes of grammatical [agreement](https://github.com/grambank/grambank/wiki/Agreement) with other constituents in the noun phrase or other inflectional morphology. See the [classification wiki page](https://github.com/grambank/grambank/wiki/Noun-Classes-and-Classifiers) for more information on our definition of noun class/gender. Noun class/gender assignment may be based on one or several factors. This feature focuses on whether the animacy of a noun is one of these factors for a given language. There must be a clear preference for certain nouns to be classified in certain gender categories as a result of their animacy for this feature to be coded 1. That is, animacy must be a relevant factor in the assignment of gender; however it does not need to be an absolute deciding factor or the only relevant factor in gender/class assignment. 
@@ -1695,8 +1695,8 @@ Linn, Mary Sarah. 2000. *A grammar of Euchee (Yuchi)*. (Doctoral dissertation, U
 
 ## Patron
 Hannah J. Haynie
-",NA,"genderanimacy"
-"28","GB054","Is there a gender/noun class system where plant status is a factor in class assignment?","## Is there a noun class/gender system where plant status is a factor in class assignment?
+",NA,genderanimacy
+GB054,Is there a gender/noun class system where plant status is a factor in class assignment?,"## Is there a noun class/gender system where plant status is a factor in class assignment?
 
 ## Summary
 A noun class/gender system categorizes nouns for the purposes of grammatical [agreement](https://github.com/grambank/grambank/wiki/Agreement) with other constituents in the noun phrase or other inflectional morphology. See the [classification wiki page](https://github.com/grambank/grambank/wiki/Noun-Classes-and-Classifiers) for more information on our definition of noun class/gender. Noun class/gender assignment may be based on one or several factors. This feature focuses on whether one of these factors distinguishes plants from other concepts. For this feature to be coded 1, there must be a clear pattern in which nouns that refer to plants or some subset of plant referents are assigned to one or more specific noun classes. 
@@ -1751,8 +1751,8 @@ Prins, Maria Clazina. 2011. *A web of relations: a grammar of rGyalrong Jiăomù
 * [GB197 Is there a masculine/feminine distinction in phonologically independent first person pronouns?](https://github.com/grambank/Grambank/wiki/GB197)
 ## Patron
 Hannah J. Haynie
-",NA,"genderplant"
-"29","GB057","Are there numeral classifiers?","## Are there numeral classifiers?
+",NA,genderplant
+GB057,Are there numeral classifiers?,"## Are there numeral classifiers?
 
 ## Summary
 This question concerns whether some cardinal numerals [obligatorily](https://github.com/grambank/Grambank/wiki/Obligatoriness) occur with a marker that varies depending on the modified noun. This marker should not be the same as a marker of a [noun class/gender system](https://github.com/grambank/grambank/wiki/Noun-classes-and-classifiers) used also on noun modifiers other than cardinal numerals (e.g. demonstratives) or on predicates. The nouns in question should be of high countability, such as people, animals and objects, rather than of low countability, such as water, sand and smoke.
@@ -1810,8 +1810,8 @@ Loveless, Robert. 1963. *The Okinawan language.* Ann Arbor: University of Michig
 
 ## Patron
 Jay Latarche and Jeremy Collins
-",NA,"numera classifers"
-"30","GB058","Are there possessive classifiers?","## Are there possessive classifiers?
+",NA,numera classifers
+GB058,Are there possessive classifiers?,"## Are there possessive classifiers?
 
 ## Summary
 This question concerns whether there is an independent [classifier](https://github.com/grambank/grambank/wiki/Noun-classes-and-classifiers) system in possessive constructions that is not related to other nominal classification systems such as the gender/noun class of the language or numeral classifiers. 
@@ -1890,8 +1890,8 @@ Pawley, Andrew and Timoci Sayaba. 1990. Possessive-marking in Wayan, a western F
 
 ## Patron
 Jay Latarche and Jeremy Collins
-",NA,"possessive classifiers"
-"31","GB059","Is the adnominal possessive construction different for alienable and inalienable nouns?","## Is the adnominal possessive construction different for alienable and inalienable nouns?
+",NA,possessive classifiers
+GB059,Is the adnominal possessive construction different for alienable and inalienable nouns?,"## Is the adnominal possessive construction different for alienable and inalienable nouns?
 
 ## Summary
 Is there a morpho-syntactic difference in attributive possession that can be ascribed to alienability? 
@@ -1975,8 +1975,8 @@ Johnston, Raymond L. 1980. [Nakani of New Britain: The grammar of an Oceanic lan
 
 ## Patron
 Hannah J. Haynie
-",NA,"alienability"
-"32","GB065","What is the pragmatically unmarked order of adnominal possessor noun and possessed noun?","## What is the pragmatically unmarked order of adnominal possessor and possessed noun?
+",NA,alienability
+GB065,What is the pragmatically unmarked order of adnominal possessor noun and possessed noun?,"## What is the pragmatically unmarked order of adnominal possessor and possessed noun?
 
 ## Summary
 This feature focuses on the relative order of possessor and possessum (i.e. that which is possessed) in an adnominal possession construction. Coding should take into consideration only those possession constructions that are pragmatically unmarked (e.g. not focus). This feature applies to both nominal possessors and [independent pronominal](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) possessors. [Affixal](https://github.com/grambank/grambank/wiki/Affixes-and-clitics) marking of possession, by contrast, is coded in features [GB430](https://github.com/grambank/Grambank/wiki/GB430)-[GB433](https://github.com/grambank/Grambank/wiki/GB433).
@@ -2071,7 +2071,7 @@ Moshinsky, Julius. 1974. *A Grammar of Southeastern Pomo.* (University of Califo
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"33","GB068","Do core adjectives (defined semantically as property concepts such as value, shape, age, dimension) act like verbs in predicative position?","## Do property words (defined semantically as property concepts such as value, shape, age, dimension) act like verbs in predicative position?
+GB068,"Do core adjectives (defined semantically as property concepts such as value, shape, age, dimension) act like verbs in predicative position?","## Do property words (defined semantically as property concepts such as value, shape, age, dimension) act like verbs in predicative position?
 
 ## Summary
 Do property words used as predicates take on verbal morphology? The predicative property word need not take exactly all verbal marking. If there is at least some marking that verbs and predicative property words share, this counts as 1 (for example, if a language has *he runs* and *he greens*). However, if there is additional morphology or there are additional elements that the property word requires, then this feature should be coded as 0. This should apply to most property words in the language. Property words semantically roughly correspond to adjectives in those languages that have a separate adjective word class. We want to include elements that mark ‘adjectival’ function but that might not be described as ‘adjectives’.
@@ -2145,7 +2145,7 @@ Vari-Bogiri, Hannah. 2011. *Phonology and morpho-syntax of Raga, Vanuatu*. Port 
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"34","GB069","Do core adjectives (defined semantically as property concepts; value, shape, age, dimension) used attributively require the same morphological treatment as verbs?","## Do adnominal property words (defined semantically as property concepts; value, shape, age, dimension) used attributively require the same morphological treatment as verbs?
+GB069,"Do core adjectives (defined semantically as property concepts; value, shape, age, dimension) used attributively require the same morphological treatment as verbs?","## Do adnominal property words (defined semantically as property concepts; value, shape, age, dimension) used attributively require the same morphological treatment as verbs?
 
 
 ## Summary
@@ -2199,7 +2199,7 @@ Hansson, Inga-Lill. 2017. Akha. In Graham Thurgood & Randy J. LaPolla (eds), *Th
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"35","GB070","Are there morphological cases for non-pronominal core arguments (i.e. S/A/P)?","## Are there morphological cases for non-pronominal core arguments (i.e. S, A or P)?
+GB070,Are there morphological cases for non-pronominal core arguments (i.e. S/A/P)?,"## Are there morphological cases for non-pronominal core arguments (i.e. S, A or P)?
 
 ## Summary
 
@@ -2280,7 +2280,7 @@ Tsunoda, Tasaku. 2011. *A grammar of Warrongo.* (Mouton Grammar Library, 53.) Be
 ## Patron
 Jakob Lesage
 ",1,NA
-"36","GB071","Are there morphological cases for pronominal core arguments (i.e. S/A/P)?","## Are there morphological cases for phonologically independent personal pronominal core arguments (i.e. S, A or P)?
+GB071,Are there morphological cases for pronominal core arguments (i.e. S/A/P)?,"## Are there morphological cases for phonologically independent personal pronominal core arguments (i.e. S, A or P)?
 
 ## Summary
 This question is about [phonologically independent pronouns](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) only; indexes are irrelevant. Morphological case involves any type of case marking that is [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) (affixes, clitics, tone, alternation, vowel lengthening, etc.). Core arguments are those having [S, A or P function](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)). If a bound marker distinguishes S from non-S pronouns, this counts as 1. Optional marking and marking with portmanteau morphemes (e.g. a marker both indicates that a noun phrase is plural and that it has P function) also count.
@@ -2364,7 +2364,7 @@ Klokeid, Terry J. 1976. *Topics in Lardil grammar*. Cambridge: MIT. (Doctoral di
 ## Patron
 Jakob Lesage
 ",0.5,NA
-"37","GB072","Are there morphological cases for oblique non-pronominal NPs (i.e. not S/A/P)?","## Are there morphological cases for oblique non-pronominal NPs (i.e. not S, A or P)?
+GB072,Are there morphological cases for oblique non-pronominal NPs (i.e. not S/A/P)?,"## Are there morphological cases for oblique non-pronominal NPs (i.e. not S, A or P)?
 
 
 ## Summary
@@ -2505,7 +2505,7 @@ Tsunoda, Tasaku. 2011. *A grammar of Warrongo*. (Mouton Grammar Library, 53.) Be
 ## Patron
 Jakob Lesage
 ",1,NA
-"38","GB073","Are there morphological cases for independent oblique personal pronominal arguments (i.e. not S/A/P)?","## Are there morphological cases for phonologically independent oblique personal pronouns (i.e. not S, A or P)?
+GB073,Are there morphological cases for independent oblique personal pronominal arguments (i.e. not S/A/P)?,"## Are there morphological cases for phonologically independent oblique personal pronouns (i.e. not S, A or P)?
 
 ## Summary
 
@@ -2587,7 +2587,7 @@ Lynch, John. 2000. *A grammar of Anejom̃*. (Pacific Linguistics, 507.) Canberra
 ## Patron
 Jakob Lesage
 ",0.5,NA
-"39","GB074","Are there prepositions?","## Are there prepositions?
+GB074,Are there prepositions?,"## Are there prepositions?
 
 ## Summary
 
@@ -2699,7 +2699,7 @@ Luo, Yongxian. 2008. Zhuang. In Anthony V. N. Diller, Jerold A. Edmondson & Yong
 
 Jakob Lesage
 ",0,NA
-"40","GB075","Are there postpositions?","## Are there postpositions?
+GB075,Are there postpositions?,"## Are there postpositions?
 
 
 ## Summary
@@ -2797,7 +2797,7 @@ Souag, Mostafa Lameen. 2010. *Grammatical contact in the Sahara: Arabic, Berber,
 ## Patron
 Jakob Lesage
 ",0,NA
-"41","GB079","Do verbs have prefixes/proclitics, other than those that only mark A, S or P (do include portmanteau: A & S + TAM)?","## Do verbs have prefixes or proclitics other than S, A or P indexes (do include indexes that also mark TAM or negation)?
+GB079,"Do verbs have prefixes/proclitics, other than those that only mark A, S or P (do include portmanteau: A & S + TAM)?","## Do verbs have prefixes or proclitics other than S, A or P indexes (do include indexes that also mark TAM or negation)?
 
 ## Summary
 
@@ -2876,7 +2876,7 @@ Toews, Carmela I. P. 2015. *Topics in Siamou tense and aspect.* (Doctoral disser
 ## Patron
 Jakob Lesage
 ",1,NA
-"42","GB080","Do verbs have suffixes/enclitics, other than those that only mark A, S or P (do include portmanteau: A & S + TAM)?","## Do verbs have suffixes or enclitics other than S, A or P indexes (do include indexes that also mark TAM or negation)?
+GB080,"Do verbs have suffixes/enclitics, other than those that only mark A, S or P (do include portmanteau: A & S + TAM)?","## Do verbs have suffixes or enclitics other than S, A or P indexes (do include indexes that also mark TAM or negation)?
 
 
 ## Summary
@@ -2957,7 +2957,7 @@ Toews, Carmela I. P. 2015. *Topics in Siamou tense and aspect.* (Doctoral disser
 
 Jakob Lesage
 ",1,NA
-"43","GB081","Is there productive infixation in verbs?","## Is there productive infixation in verbs?
+GB081,Is there productive infixation in verbs?,"## Is there productive infixation in verbs?
 
 
 ## Summary
@@ -3021,7 +3021,7 @@ Yu, Allan. 2003. *The morphology and phonology of infixation*. (Ph.D. dissertati
 ## Patron
 Hannah J. Haynie
 ",1,NA
-"44","GB082","Is there overt morphological marking of present tense on verbs?","## Is there overt morphological marking of present tense on verbs?
+GB082,Is there overt morphological marking of present tense on verbs?,"## Is there overt morphological marking of present tense on verbs?
 
 ## Summary
 This question aims to capture productive paradigms of overt tense marking. 'Morphological marking on the verb' means that the marker has to form a [phonological unit](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) with the verb. The marking of tense can involve affixes, clitics, suppletion, tonal marking and/or reduplication. This feature aims to capture overt marking of present tense on the verb. Lack of other marking is not enough. There are instances where TAM can be expressed by a combination of an affix and auxiliary or particle. For example some grammarians state that present tense is expressed by a certain aspect on the verbal root and an auxiliary. If this is a [productive](https://github.com/grambank/grambank/wiki/Productivity) and [obligatory](https://github.com/grambank/grambank/wiki/Obligatoriness) way of expressing present tense then such a construction triggers 1 for both this feature (GB082) and the feature on tense auxiliaries ([GB121](https://github.com/grambank/Grambank/wiki/GB121)). If not all parts of the discontinuous marking are necessary for expressing present tense, then only consider the marking that is obligatory.
@@ -3071,8 +3071,8 @@ Dahl, Östen. 1985. *[Tense and aspect systems.](https://www2.ling.su.se/staff/o
 
 ## Patron
 Hedvig Skirgård
-",1,"tense"
-"45","GB083","Is there overt morphological marking on the verb dedicated to past tense?","## Is there overt morphological marking on the verb dedicated to past tense?
+",1,tense
+GB083,Is there overt morphological marking on the verb dedicated to past tense?,"## Is there overt morphological marking on the verb dedicated to past tense?
 
 ## Summary
 This question aims to capture [productive](https://github.com/grambank/grambank/wiki/Productivity) paradigms of overt tense marking. ‘Morphological marking on the verb’ means that the marker has to form a [phonological unit](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) with the verb. The marking of tense can involve affixes, clitics, suppletion, tonal marking and/or reduplication. This feature aims to capture overt marking of past tense on the verb. Lack of other marking is not enough. There are instances where TAM can be expressed by a combination of an affix and auxiliary or particle. For example some grammarians state that past tense is expressed by a certain aspect on the verbal root and an auxiliary. If this is a [productive](https://github.com/grambank/grambank/wiki/Productivity) and [obligatory](https://github.com/grambank/grambank/wiki/Obligatoriness) way of expression past tense then this construction triggers 1 for both this feature (GB083) and the feature on tense auxiliaries ([GB121](https://github.com/grambank/Grambank/wiki/GB121)). If the marking of past tense is accomplished by more than one marker and at least one is bound, code 1. If not all parts of the discontinuous marking are necessary for expressing past tense, then only consider the marking that is obligatory.
@@ -3122,8 +3122,8 @@ Teleman, Ulf, Staffan Hellberg & Erik Andersson. 1999. *Svenska akademiens gramm
 
 ## Patron
 Hedvig Skirgård
-",1,"tense"
-"46","GB084","Is there overt morphological marking on the verb dedicated to future tense?","## Is there overt morphological marking on the verb dedicated to future tense?
+",1,tense
+GB084,Is there overt morphological marking on the verb dedicated to future tense?,"## Is there overt morphological marking on the verb dedicated to future tense?
 
 ## Summary
 This question aims to capture [productive](https://github.com/grambank/grambank/wiki/Productivity) paradigms of overt tense marking. 'Morphological marking on the verb' means that the marker has to form a [phonological unit](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) with the verb. The marking of tense can involve affixes, clitics, suppletion, tonal marking and/or reduplication. This feature aims to capture overt marking of future tense on the verb. Lack of other marking is not enough. There are instances where TAM can be expressed by a combination of an affix and an auxiliary or particle. For example, some grammarians state that future tense is expressed by a certain marker on the verbal root and an auxiliary. If this is a [productive](https://github.com/grambank/grambank/wiki/Productivity) and [obligatory](https://github.com/grambank/grambank/wiki/Obligatoriness) way of expressing future tense then this construction triggers 1 for both this feature (GB084) and the feature on tense auxiliaries ([GB121](https://github.com/grambank/Grambank/wiki/GB121)). If not all parts of the discontinuous marking are necessary for expressing future tense, only consider the marking that is obligatory.
@@ -3183,8 +3183,8 @@ Malandra, Alfred. 1952. *A new Acholi grammar.* (Eagle language study serie, gle
 
 ## Patron
 Hedvig Skirgård
-",1,"tense"
-"47","GB086","Is a morphological distinction between perfective and imperfective aspect available on verbs?","## Is a morphological distinction between perfective and imperfective aspect available on verbs?
+",1,tense
+GB086,Is a morphological distinction between perfective and imperfective aspect available on verbs?,"## Is a morphological distinction between perfective and imperfective aspect available on verbs?
 
 ## Summary
 This feature is concerned with [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) marking of imperfective and perfective grammatical aspects. These categories could go by the name of punctual and continuous, preterit and progressive, etc. The answer could be 1 even if only one of these is overtly marked, e.g. if the imperfective is marked by an affix and the perfective is marked by an auxiliary. 
@@ -3240,8 +3240,8 @@ Dunn, Michael J. 1999. *A grammar of Chukchi*. Canberra: Australian National Uni
 
 ## Patron
 Hedvig Skirgård
-",1,"aspect"
-"48","GB089","Can the S argument be indexed by a suffix/enclitic on the verb in the simple main clause?","## Can the S argument be indexed by a suffix/enclitic on the verb in the simple independent clause?
+",1,aspect
+GB089,Can the S argument be indexed by a suffix/enclitic on the verb in the simple main clause?,"## Can the S argument be indexed by a suffix/enclitic on the verb in the simple independent clause?
 
 
 ## Summary
@@ -3390,7 +3390,7 @@ Montag, Richard. 2005. Participant referencing in Cashinahua. (2005-013.) *SIL E
 ## Patron
 Alena Witzlack-Makarevich
 ",1,NA
-"49","GB090","Can the S argument be indexed by a prefix/proclitic on the verb in the simple main clause?","## Can the S argument be indexed by a prefix/proclitic on the verb in the simple independent clause?
+GB090,Can the S argument be indexed by a prefix/proclitic on the verb in the simple main clause?,"## Can the S argument be indexed by a prefix/proclitic on the verb in the simple independent clause?
 
 ## Summary
 Is there a [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) [S argument](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) [index](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) that precedes its verbal host (i.e. attaches to it as a [prefix or a proclitic](https://github.com/grambank/grambank/wiki/Affixes-and-clitics))?
@@ -3483,7 +3483,7 @@ Huber, Juliette. 2011. *A grammar of Makalero: A Papuan language of East Timor*.
 ## Patron
 Alena Witzlack-Makarevich
 ",1,NA
-"50","GB091","Can the A argument be indexed by a suffix/enclitic on the verb in the simple main clause?","## Can the A argument be indexed by a suffix/enclitic on the verb in the simple independent clause?
+GB091,Can the A argument be indexed by a suffix/enclitic on the verb in the simple main clause?,"## Can the A argument be indexed by a suffix/enclitic on the verb in the simple independent clause?
 
 
 ## Summary
@@ -3607,7 +3607,7 @@ Montag, Richard. 2005. *Participant referencing in Cashinahua*. SIL Electronic W
 ## Patron
 Alena Witzlack-Makarevich
 ",1,NA
-"51","GB092","Can the A argument be indexed by a prefix/proclitic on the verb in the simple main clause?","## Can the A argument be indexed by a prefix/proclitic on the verb in the simple independent clause?
+GB092,Can the A argument be indexed by a prefix/proclitic on the verb in the simple main clause?,"## Can the A argument be indexed by a prefix/proclitic on the verb in the simple independent clause?
 
 
 ## Summary
@@ -3678,7 +3678,7 @@ Huber, Juliette. 2011. *A grammar of Makalero: A Papuan language of East Timor*.
 ## Patron
 Alena Witzlack-Makarevich
 ",1,NA
-"52","GB093","Can the P argument be indexed by a suffix/enclitic on the verb in the simple main clause?","## Can the P argument be indexed by a suffix/enclitic on the verb in the simple independent clause?
+GB093,Can the P argument be indexed by a suffix/enclitic on the verb in the simple main clause?,"## Can the P argument be indexed by a suffix/enclitic on the verb in the simple independent clause?
 
 
 ## Summary
@@ -3745,7 +3745,7 @@ de Vries, Lourens & Gerrit J. van Enk. 1997. *The Korowai of Irian Jaya: Their l
 ## Patron
 Alena Witzlack-Makarevich
 ",1,NA
-"53","GB094","Can the P argument be indexed by a prefix/proclitic on the verb in the simple main clause?","## Can the P argument be indexed by a prefix/proclitic on the verb in the simple independent clause?
+GB094,Can the P argument be indexed by a prefix/proclitic on the verb in the simple main clause?,"## Can the P argument be indexed by a prefix/proclitic on the verb in the simple independent clause?
 
 ## Summary
 Is there a [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) [P argument](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) [index](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) that precedes its verbal host (i.e. attaches to it as a [prefix or a proclitic](https://github.com/grambank/grambank/wiki/Affixes-and-clitics))?
@@ -3822,7 +3822,7 @@ van Gijn, Erik. 2006. *A grammar of Yurakaré.* Nijmegen: Radboud University. (D
 ## Patron
 Alena Witzlack-Makarevich
 ",1,NA
-"54","GB095","Are variations in marking strategies of core participants based on TAM distinctions?","## Are variations in marking strategies of core participants based on TAM distinctions?
+GB095,Are variations in marking strategies of core participants based on TAM distinctions?,"## Are variations in marking strategies of core participants based on TAM distinctions?
 
 
 ## Summary
@@ -3924,7 +3924,7 @@ Harris, Alice C. 1981. *Georgian syntax: A study in Relational Grammar*. Cambrid
 ## Patron
 Alena Witzlack-Makarevich
 ",NA,NA
-"55","GB096","Are variations in marking strategies of core participants based on verb classes?","## Are variations in marking strategies of core participants based on verb classes?
+GB096,Are variations in marking strategies of core participants based on verb classes?,"## Are variations in marking strategies of core participants based on verb classes?
 
 ## Summary
 
@@ -4095,7 +4095,7 @@ Features on flagging
 
 Alena Witzlack-Makarevich
 ",NA,NA
-"56","GB098","Are variations in marking strategies of core participants based on person distinctions?","## Are variations in marking strategies of core participants based on person distinctions?
+GB098,Are variations in marking strategies of core participants based on person distinctions?,"## Are variations in marking strategies of core participants based on person distinctions?
 
 ## Summary
 Marking strategies of core participants include both marking by [indexing](https://github.com/grambank/Grambank/wiki/Indexing-vs.-pronouns) and by flagging (i.e. case or adposition marking). Variations in marking strategies include both variations in the alignment patterns and variations in position (e.g. suffixing vs. prefixing) in case of indexes. Mere differences in forms of the indexes triggered by various conjugation classes are not sufficient for a 1. This question includes cases referred to as person-based (alignment) split and hierarchical alignment in the literature. 
@@ -4168,7 +4168,7 @@ Selcan, Zülfü. 1998. *Grammatik der Zaza-Sprache: Nord-Dialekt (Dersim-Dialekt
 ## Patron
 Alena Witzlack-Makarevich
 ",NA,NA
-"57","GB099","Can verb stems alter according to the person of a core participant?","## Is there verb suppletion for participant person?
+GB099,Can verb stems alter according to the person of a core participant?,"## Is there verb suppletion for participant person?
 
 
 ## Summary
@@ -4229,7 +4229,7 @@ Features GB089-GB090 coding indexing patterns:
 ## Patron
 Alena Witzlack-Makarevich
 ",NA,NA
-"58","GB103","Is there a benefactive applicative marker on the verb (including indexing)?","## Can a verb have a benefactive marker (applicative marker or index)?
+GB103,Is there a benefactive applicative marker on the verb (including indexing)?,"## Can a verb have a benefactive marker (applicative marker or index)?
 
 ## Summary
 This question concerns a [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) verbal marker that signals that the verb has a beneficiary. The marker could be analyzed in the language-specific case as voice, [indexing](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) or a 'bound pronoun'. In some languages, applicative markers may be used to topicalize, focalize or background a beneficiary. This type of marking also counts for this feature. The marker does not have to index the beneficiary. Autobenefactive markers do not count and serial verb constructions that include a benefactive verb (typically 'give') do not count. 
@@ -4302,8 +4302,8 @@ Schmidt, Bodil Kappel, David Odden & Anders Holmberg. 2002. *Some aspects of the
 
 ## Patron
 Jakob Lesage
-",1,"benefactive"
-"59","GB104","Is there an instrumental applicative marker on the verb (including indexing)?","## Can a verb have an instrumental marker (applicative marker or index)?
+",1,benefactive
+GB104,Is there an instrumental applicative marker on the verb (including indexing)?,"## Can a verb have an instrumental marker (applicative marker or index)?
 
 ## Summary
 This question concerns a [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) verbal marker that signals that the verb has an instrument. In some languages, applicative markers may be used to topicalize, focalize or background the instrument. This type of marking also counts for this feature. The marker could be analyzed in the language-specific case as voice, [indexing](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) or a ‘bound pronoun’. The marker does not have to index the instrument. 
@@ -4357,8 +4357,8 @@ van der Wal, Jenneke. 2009. *Word order and information structure in Makhuwa-Ena
 
 ## Patron
 Jakob Lesage
-",1,"instrumental"
-"60","GB105","Can the recipient in a ditransitive construction be marked like the monotransitive patient?","## Can the recipient in a ditransitive construction be marked like the transitive patient?
+",1,instrumental
+GB105,Can the recipient in a ditransitive construction be marked like the monotransitive patient?,"## Can the recipient in a ditransitive construction be marked like the transitive patient?
 
 ## Summary
 As a ditransitive construction we consider constructions with verbs expressing a physical transfer of possession or a mental transfer of messages (*give*, *lend*, *hand*, *feed*, *send*, *bring*, *show*, *tell*, *teach*). A ditransitive construction must allow overt expression of an agent, a theme and a recipient/addressee as separate NPs. The morphological marking of these arguments (e.g. accusative case, dative case vs. adposition marking) is irrelevant for counting a construction as ditransitive.
@@ -4416,7 +4416,7 @@ Curnow, Timothy. 1997. *A grammar of Awa Pit (Cuaiquier): An indigenous language
 
 ## Patron
 Alena Witzlack-Makarevich",NA,NA
-"61","GB107","Can standard negation be marked by an affix, clitic or modification of the verb?","## Can standard negation be marked by an affix, clitic or modification of the verb?
+GB107,"Can standard negation be marked by an affix, clitic or modification of the verb?","## Can standard negation be marked by an affix, clitic or modification of the verb?
 
 ## Summary
 This feature refers to Standard Negation, i.e. the constructions that mark negation of (at least) dynamic (not-stative) verbal predicates in declarative mood. The marker has to form a [phonological unit](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) with the verbal root, be it by affixation, cliticization, suppletion, reduplication, tone, etc. For markers bound to auxiliaries, see [GB298](https://github.com/grambank/Grambank/wiki/GB298). If there is negative marking on the verb and elsewhere (for example by a particle) in the same construction, this is included in this feature. If there is a clitic that attaches to anything in its vicinity, this doesn't count.
@@ -4502,7 +4502,7 @@ Kornfilt, Jaklin. 1997. *Turkish*. (Descriptive Grammars Series, Descriptive Gra
 ## Patron
 Hedvig Skirgård
 ",1,NA
-"62","GB108","Is there directional or locative morphological marking on verbs?","## Is there directional or locative morphological marking on verbs?
+GB108,Is there directional or locative morphological marking on verbs?,"## Is there directional or locative morphological marking on verbs?
 
 ## Summary
 This question concerns a [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) verbal marker that signals the direction or location of the event/state/action. A marker that indicates that something happens in multiple directions does not count here.
@@ -4550,8 +4550,8 @@ van der Wal, Johanna. 2009. *Word order and information structure in Makhuwa-Ena
 
 ## Patron
 Jakob Lesage
-",1,"directional"
-"63","GB109","Is there verb suppletion for participant number?","## Is there verb suppletion for participant number?
+",1,directional
+GB109,Is there verb suppletion for participant number?,"## Is there verb suppletion for participant number?
 
 ## Summary
 Are there verbs that use a different stem depending on the number (singular, dual, plural, etc.) of a core participant? The participant triggering the suppletive choice could be [A, P, or S](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)). Auxiliary verbs are also considered verbs for the purpose of this feature. 
@@ -4603,7 +4603,7 @@ Kimball, Geoffrey D. 1991. *Koasati grammar*. (Studies in the Anthropology of No
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"64","GB110","Is there verb suppletion for tense or aspect?","## Is there verb suppletion for tense or aspect?
+GB110,Is there verb suppletion for tense or aspect?,"## Is there verb suppletion for tense or aspect?
 
 ## Summary
 Are there verbs that use a different stem depending on the tense or aspect (present, past, perfective etc.) they occur in? Suppletion is a process where a lexeme is changed in such a way that the new form does not resemble the previous when it appears in a different position in the paradigm. An example of this is English *went* and *go*. In this case, the verb is suppletive for tense. Only strong suppletion (different stems) counts, ‘weak’ suppletion is not included. At least three verbal concepts should indicate different tense or aspect values with suppletive stems to trigger a 1. 
@@ -4646,7 +4646,7 @@ The other verb suppletion features are:
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"65","GB111","Are there conjugation classes?","## Are there conjugation classes?
+GB111,Are there conjugation classes?,"## Are there conjugation classes?
 
 ## Summary
 Are there multiple sets of verbs that each combine with different sets of (inflectional) markers in finite forms? We are concerned with whether there is non-phonological allomorphy of finiteness marking on verbs depending on which verb is chosen. Phonological rules are not considered here but they may correlate with non-phonological allomorphy. Conjugation classes that are lexically assigned are relevant for coding this feature. Please note that a class of suppletive verbs does not count.
@@ -4728,7 +4728,7 @@ Samely, Ursula. 1991. *Kedang (Eastern Indonesia): some aspects of its grammar*.
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"66","GB113","Are there verbal affixes or clitics that turn intransitive verbs into transitive ones?","## Are there verbal affixes or clitics that turn intransitive verbs into transitive ones?
+GB113,Are there verbal affixes or clitics that turn intransitive verbs into transitive ones?,"## Are there verbal affixes or clitics that turn intransitive verbs into transitive ones?
 
 ## Summary
 
@@ -4811,7 +4811,7 @@ Lovestrand, Joseph. 2012. *The linguistic structure of Baraïn (Chadic)*. Dallas
 ## Patron
 Jakob Lesage
 ",1,NA
-"67","GB114","Is there a phonologically bound reflexive marker on the verb?","## Is there a phonologically bound reflexive marker on the verb?
+GB114,Is there a phonologically bound reflexive marker on the verb?,"## Is there a phonologically bound reflexive marker on the verb?
 
 ## Summary
 
@@ -4885,8 +4885,8 @@ Tamura, Suzuko. 2000. *The Ainu language*. (ICHEL Linguistic Studies, 2.) Tokyo:
 
 ## Patron
 Jakob Lesage
-",1,"reflexivity"
-"68","GB115","Is there a phonologically bound reciprocal marker on the verb?","## Is there a phonologically bound reciprocal marker on the verb?
+",1,reflexivity
+GB115,Is there a phonologically bound reciprocal marker on the verb?,"## Is there a phonologically bound reciprocal marker on the verb?
 
 ## Summary
 
@@ -4961,8 +4961,8 @@ Stover, Wesley Maier. 1885. *Observations upon the grammatical structure and use
 
 ## Patron
 Jakob Lesage
-",1,"reciprocity"
-"69","GB116","Do verbs classify the shape, size or consistency of absolutive arguments by means of incorporated nouns, verbal affixes or suppletive verb stems?","## Do verbs classify the shape, size or consistency of absolutive arguments by means of incorporated nouns, verbal affixes or suppletive verb stems?
+",1,reciprocity
+GB116,"Do verbs classify the shape, size or consistency of absolutive arguments by means of incorporated nouns, verbal affixes or suppletive verb stems?","## Do verbs classify the shape, size or consistency of absolutive arguments by means of incorporated nouns, verbal affixes or suppletive verb stems?
 
 ## Summary
 This question aims to capture the classification of shape, size or consistency of absolutive arguments with verbal classifiers. Incorporated nouns, verbal affixes or suppletive verb stems are types of [verbal classifiers](https://github.com/grambank/grambank/wiki/Noun-classes-and-classifiers). This feature is concerned with verbal classifiers and not whether the verb agrees with the [gender/noun class](https://github.com/grambank/grambank/wiki/Noun-classes-and-classifiers) of the noun. Verbal classifiers can, however, be identical or very similar to possessive, numeral or demonstrative classifier systems.
@@ -5021,8 +5021,8 @@ Williams, Jay Scott. 2009. *An intermediate grammar of Navajo: A guide for bilin
 
 ## Patron
 Jay Latarche and Jeremy Collins
-",NA,"verbclassify"
-"70","GB117","Is there a copula for predicate nominals?","## Is there a copula for predicate nominals?
+",NA,verbclassify
+GB117,Is there a copula for predicate nominals?,"## Is there a copula for predicate nominals?
 
 ## Summary
 
@@ -5089,8 +5089,8 @@ Valdman, Albert. 1988. *Ann Pale Kreyol: An introductory course in Haitian Creol
 
 ## Patron
 Jay Latarche and Jeremy Collins
-",NA,"copulaprednom"
-"71","GB118","Are there serial verb constructions?","## Are there serial verb constructions?
+",NA,copulaprednom
+GB118,Are there serial verb constructions?,"## Are there serial verb constructions?
 
 ## Summary
 This summary of serial verb constructions from [Haspelmath (2016: 296)](http://www.ling.sinica.edu.tw/Files/LL/Docments/Journals/17.3/LLN17.3-Haspelmath.pdf) serves as a good clarification: ""A serial verb construction is a monoclausal construction consisting of multiple independent verbs with no element linking them and with no predicate–argument relation between the verbs.""
@@ -5150,7 +5150,7 @@ Haspelmath, Martin. 2016. [The serial verb construction: Comparative concept and
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"72","GB119","Can mood be marked by an inflecting word (""auxiliary verb"")?","## Can mood be marked by an inflecting word (‘auxiliary verb’)?
+GB119,"Can mood be marked by an inflecting word (""auxiliary verb"")?","## Can mood be marked by an inflecting word (‘auxiliary verb’)?
 
 ## Summary
 This feature covers all grammatical moods (the relationship between the referred event/state/action and other possible worlds, or speaker's attitude) and aims to capture [phonologically free](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) elements that inflect (i.e. change form depending on person, number and other categories of the core arguments). These markers are often described as ‘auxiliary verbs’ in the literature, but are also analyzed under other labels by some authors (such as STAMP morphemes (STAM = Subject-Tense-Aspect-Mood-Polarity) or inflecting pronouns). We are interested in grammatical marking, i.e. [dedicated](https://github.com/grambank/grambank/wiki/Dedicated-marking), [productive](https://github.com/grambank/grambank/wiki/Productivity) and [obligatory](https://github.com/grambank/grambank/wiki/Obligatoriness) marking. 
@@ -5208,8 +5208,8 @@ Kornfilt, Jaklin. 1997. *Turkish.* (Descriptive Grammars Series.) London: Routle
 
 ## Patron
 Hedvig Skirgård
-",1,"mood"
-"73","GB120","Can aspect be marked by an inflecting word (""auxiliary verb"")?","## Can aspect be marked by an inflecting word (‘auxiliary verb’)?
+",1,mood
+GB120,"Can aspect be marked by an inflecting word (""auxiliary verb"")?","## Can aspect be marked by an inflecting word (‘auxiliary verb’)?
 
 ## Summary
 This feature covers all grammatical aspects (internal temporal constitution of events/actions/states) and aims to capture [phonologically free](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) elements that inflect (i.e. change form depending on person, number and other categories of the core arguments). These markers are often described as ‘auxiliary verbs’ in the literature, but they are also analyzed under other labels by some authors (such as STAMP morphemes (STAM = Subject-Tense-Aspect-Mood-Polarity) or inflecting pronouns). We are interested in grammatical marking, that is, [dedicated](https://github.com/grambank/grambank/wiki/Dedicated-marking), [productive](https://github.com/grambank/grambank/wiki/Productivity) and [obligatory](https://github.com/grambank/grambank/wiki/Obligatoriness) marking. 
@@ -5257,8 +5257,8 @@ Teleman, Ulf, Staffan Hellberg & Erik Andersson. 1999. *Svenska akademiens gramm
 
 ## Patron
 Hedvig Skirgård
-",1,"aspect"
-"74","GB121","Can tense be marked by an inflecting word (""auxiliary verb"")?","## Can tense be marked by an inflecting word (‘auxiliary verb’)?
+",1,aspect
+GB121,"Can tense be marked by an inflecting word (""auxiliary verb"")?","## Can tense be marked by an inflecting word (‘auxiliary verb’)?
 
 ## Summary
 This feature covers all tenses (present, past, and future) and aims to capture [phonologically free](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) elements that inflect (i.e. change form depending on person, number and other categories of the core arguments). These markers are often described as ‘auxiliary verbs’ in the literature, but are also analyzed under other labels by some authors (such as STAMP morphemes (STAM = Subject-Tense-Aspect-Mood-Polarity) or inflecting pronouns). We are interested in grammatical marking, i.e. [dedicated](https://github.com/grambank/grambank/wiki/Dedicated-marking), [productive](https://github.com/grambank/grambank/wiki/Productivity) and [obligatory](https://github.com/grambank/grambank/wiki/Obligatoriness) marking. 
@@ -5310,8 +5310,8 @@ Teleman, Ulf, Staffan Hellberg & Erik Andersson. 1999. *Svenska akademiens gramm
 
 ## Patron
 Hedvig Skirgård
-",1,"tense"
-"75","GB122","Is verb compounding a regular process?","## Is verb compounding a regular process?
+",1,tense
+GB122,Is verb compounding a regular process?,"## Is verb compounding a regular process?
 
 ## Summary
 Verbal compounds are lexicalized, often non-compositional, constructions which combine two or more verb stems.  Languages with [serial verb constructions](https://github.com/grambank/Grambank/wiki/GB118) can often have verb compounds too, however they might not always be described as such.
@@ -5412,7 +5412,7 @@ Yin, Hui. 2010. [The so-called Chinese VV compounds — a continuum between lexi
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"76","GB123","Are there verb-adjunct (aka light-verb) constructions?","## Are there verb-adjunct (aka light-verb) constructions?
+GB123,Are there verb-adjunct (aka light-verb) constructions?,"## Are there verb-adjunct (aka light-verb) constructions?
 
 ## Summary
 
@@ -5482,7 +5482,7 @@ Farr, Cynthia J. M. 1999. *The interface between syntax and discourse in Korafe:
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"77","GB124","Is incorporation of nouns into verbs a productive intransitivizing process?","## Is incorporation of nouns into verbs a productive intransitivizing process?
+GB124,Is incorporation of nouns into verbs a productive intransitivizing process?,"## Is incorporation of nouns into verbs a productive intransitivizing process?
 
 ## Summary
 Noun incorporation is defined as a construction where obligatorily bare (i.e. articleless, numberless, modifierless) nouns must occur adjacent to or inside of the verb, in a fixed order. This feature essentially asks whether transitive verbs may be rendered intransitive by means of noun incorporation, and whether this process is productive. This need not be the default way of intransitivizing verbs, but the process must be [productive](https://github.com/grambank/grambank/wiki/Productivity). The incorporated noun in the construction of interest for this feature is semantically an argument of the verb. For example: *he was painting the bike* = *he was bike-painting*. Noun incorporation where the relevant noun functions as an adjunct or modifier does not count, e.g. *she was running like Jacob runs* = *she was Jacob-running*. A construction where it is necessary to overtly represent the relevant argument with an additional form other than the incorporated noun, for example with a pronoun, also does not count.
@@ -5559,7 +5559,7 @@ Gaby, Alice Rose. 2006. *A grammar of Kuuk Thaayorre*. Melbourne: University of 
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"78","GB126","Is there an existential verb?","## Is there an existential verb?
+GB126,Is there an existential verb?,"## Is there an existential verb?
 
 ## Summary
 Is there an element expressing existential predication (*A book on that topic **exists**.*/*There **is** a book on that topic.*), that is **different from the equative or attributive copula**? It is possible that there are various existential verbs making further distinctions, temporary versus permanent existence, or that there is a special negative existential verb. The existential marker can be used for the expression of other functions, such as aspect, as long as it is **not** identical to the copula of identity or attribution (as is the case with *is*, *That book **is** part of a series.* and *That book **is** great*). The existential element need not fulfill all formal criteria to qualify as a verb. The existence of a negative existential alone is not sufficient for a 1. Locational or positional verbs are also not enough for a 1.
@@ -5609,8 +5609,8 @@ Svenska Akademien. 2015. *Svenska Akademiens Ordlista*. Stockholm: Svenska akade
 
 ## Patron
 Hedvig Skirgård
-",NA,"existentialverb"
-"79","GB127","Are different posture verbs used obligatorily depending on an inanimate locatum's shape or position (e.g. 'to lie' vs. 'to stand')?","## Are different posture verbs used obligatorily depending on an inanimate locatum's shape or position (e.g. ‘to lie’ vs. ‘to stand’)?
+",NA,existentialverb
+GB127,Are different posture verbs used obligatorily depending on an inanimate locatum's shape or position (e.g. 'to lie' vs. 'to stand')?,"## Are different posture verbs used obligatorily depending on an inanimate locatum's shape or position (e.g. ‘to lie’ vs. ‘to stand’)?
 
 ## Summary
 
@@ -5719,8 +5719,8 @@ Reesink, Ger P. 1999. *A grammar of Hatam: Bird's Head Peninsula Irian Jaya.* (P
 * [GB116 Do verbs classify the shape, size or consistency of absolutive arguments by means of incorporated nouns, verbal affixes or suppletive verb stems?](https://github.com/grambank/Grambank/wiki/GB116)
 
 ## Patron
-Jakob Lesage",NA,"postureverbs"
-"80","GB129","Is there a notably small number, i.e. about 100 or less, of verb roots in the language?","## Is there a notably small number of verb roots in the language?
+Jakob Lesage",NA,postureverbs
+GB129,"Is there a notably small number, i.e. about 100 or less, of verb roots in the language?","## Is there a notably small number of verb roots in the language?
 
 ## Summary
 This feature tracks languages with few members in the word class which is most commonly known as ‘verbs’. If the word class ‘verbs’ contains approximately 100 roots or less, the language qualifies for this feature.  
@@ -5755,7 +5755,7 @@ Schultze-Berndt, Eva. 2000. *[Simple and complex verbs in Jaminjung: A study of 
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"81","GB130","What is the pragmatically unmarked order of S and V in intransitive clauses?","## What is the pragmatically unmarked order of S and V in intransitive clauses?
+GB130,What is the pragmatically unmarked order of S and V in intransitive clauses?,"## What is the pragmatically unmarked order of S and V in intransitive clauses?
 
 ## Summary
 This feature focuses on the relative order of subject and verb in intransitive clauses. All questions concerning order of constituents aim to capture the pragmatically unmarked order between full NP constituents (not pronouns). Do not consider ‘left or right-dislocation’, accompanied by intonational signals, or pragmatically marked constructions such as focus. If the verb phrase consists of several elements it is the lexical verb that counts. The position of auxiliaries/TAME marking elements can be ignored.
@@ -5836,7 +5836,7 @@ van der Wal, Johanna. 2009. *Word order and information structure in Makhuwa-Ena
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"82","GB131","Is a pragmatically unmarked constituent order verb-initial for transitive clauses?","## Is a pragmatically unmarked constituent order verb-initial for transitive clauses?
+GB131,Is a pragmatically unmarked constituent order verb-initial for transitive clauses?,"## Is a pragmatically unmarked constituent order verb-initial for transitive clauses?
 
 ## Summary
 This feature focuses on the relative order of the verb and its [core arguments](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) in a transitive clause. Any constituents other than the core arguments (A, P) and the verb of a transitive clause should be ignored. All questions concerning order of constituents aim to capture the pragmatically unmarked order between full NP constituents (not pronouns). Do not consider ‘left or right-dislocation’, accompanied by intonational signals or pragmatically marked constructions such as focus. If the verb phrase consists of several elements it is the lexical verb that counts. The position of auxiliaries/TAME marking elements can be ignored. 
@@ -5917,7 +5917,7 @@ Enfield, Nick J. 2007. *A grammar of Lao*. (Mouton grammar library, 38.) Berlin:
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"83","GB132","Is a pragmatically unmarked constituent order verb-medial for transitive clauses?","## Is a pragmatically unmarked constituent order verb-medial for transitive clauses?
+GB132,Is a pragmatically unmarked constituent order verb-medial for transitive clauses?,"## Is a pragmatically unmarked constituent order verb-medial for transitive clauses?
 
 ## Summary
 This feature focuses on the relative order of the verb and its [core arguments](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) in a transitive clause. Any constituents other than the core arguments (A, P) and the verb of a transitive clause should be ignored. All questions concerning order of constituents aim to capture the pragmatically unmarked order between full NP constituents (not pronouns). Do not consider ‘left or right-dislocation’, accompanied by intonational signals or pragmatically marked constructions such as focus. If the verb phrase consists of several elements it is the lexical verb that counts. The position of auxiliaries/TAME marking elements can be ignored.
@@ -6037,7 +6037,7 @@ Schultze-Berndt, Eva. 2000. *[Simple and complex verbs in Jaminjung: A study of 
 Hannah J. Haynie
 
 ",NA,NA
-"84","GB133","Is a pragmatically unmarked constituent order verb-final for transitive clauses?","## Is a pragmatically unmarked constituent order verb-final for transitive clauses?
+GB133,Is a pragmatically unmarked constituent order verb-final for transitive clauses?,"## Is a pragmatically unmarked constituent order verb-final for transitive clauses?
 
 ## Summary
 This feature focuses on the relative order of the verb and its [core arguments](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) in a transitive clause. Any constituents other than the core arguments (A, P) and the verb of a transitive clause should be ignored. All questions concerning order of constituents aim to capture the pragmatically unmarked order between full NP constituents (not pronouns). Do not consider ‘left or right-dislocation', accompanied by intonational signals or pragmatically marked constructions such as focus. If the verb phrase consists of several elements it is the lexical verb that counts. The position of auxiliaries/TAME marking elements can be ignored.
@@ -6133,7 +6133,7 @@ Merlan, Francesca. 1989. *Mangarayi*. (Lingua Descriptive Studies, 4.) London: R
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"85","GB134","Is the order of constituents the same in main and subordinate clauses?","## Is the order of constituents the same in main and subordinate clauses?
+GB134,Is the order of constituents the same in main and subordinate clauses?,"## Is the order of constituents the same in main and subordinate clauses?
 
 ## Summary
 This feature focuses on whether the basic word order(s) of main clauses are possible in subordinate clauses. A ‘yes’ response for this feature indicates that subjects, verbs, and objects occur in the same order in subordinate clauses as in main clauses. For example, the order between ‘woman’, ‘man’, and ‘chases’ is the same in the simple clause *the woman chases the man* as in the subordinate clause of *I think that the woman chases the man* in English, and this feature asks if it is the same in target languages. In languages with flexible word order it is sufficient for a 1 if all pragmatically unmarked main clause orders are possible in subordinate clauses, even if there are additional word order alternatives in subordinate clauses that are not available in main clauses. Subordinate clauses involving reported speech (e.g. *He said that the woman chases the man.*) should be disregarded.
@@ -6213,7 +6213,7 @@ Woollams, Geoff. 1996. *A grammar of Karo Batak, Sumatra*. (Pacific Linguistics:
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"86","GB135","Do clausal objects usually occur in the same position as nominal objects?","## Do clausal objects usually occur in the same position as nominal objects?
+GB135,Do clausal objects usually occur in the same position as nominal objects?,"## Do clausal objects usually occur in the same position as nominal objects?
 
 ## Summary
 This feature involves a comparison of the word order in transitive clauses with nominal objects with order in clauses with clausal objects. By clausal objects here we mean clauses that are directly governed by a finite verb (typically verbs of ‘wanting’, ‘saying’, etc.). In other words, complement clauses are a specific type of subordinate clauses and are not relative clauses. For example, the objects in _I like **apples**_ (nominal object) and _I like **that you play the piano every morning**_ (clausal object) are in the same position (SVO). Many of the languages that do not place clausal objects in the same position as nominal objects are SOV languages that use SVO order for (long) clausal objects. This question aims to discern whether these clausal objects are treated like prototypical nominal direct objects (not indirect or obliques). This is not always explicitly stated by the descriptive work, but an investigation into the examples and perhaps even appended text of the grammar should typically reveals evidence for answering this question.
@@ -6293,7 +6293,7 @@ McKay, Graham. 2000. Ndjébbana. In R. M. W. Dixon & Barry Blake (eds), *Handboo
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"87","GB136","Is the order of core argument (i.e. S/A/P) constituents fixed?","## Is the order of core argument (i.e. S, A, and P) constituents fixed?
+GB136,Is the order of core argument (i.e. S/A/P) constituents fixed?,"## Is the order of core argument (i.e. S, A, and P) constituents fixed?
 
 ## Summary
 The order of core arguments is fixed if you cannot permute the order of core constituents (S, A, and P) and the verb without either i) changing the propositional content of the clause or ii) requiring intonational signaling or further elements (particles, cleft components, adjuncts).
@@ -6362,7 +6362,7 @@ Nichols, Lynn. 1997. *Topics in Zuni syntax*. Cambridge, MA: Harvard University.
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"88","GB137","Can standard negation be marked clause-finally?","## Can standard negation be marked clause-finally?
+GB137,Can standard negation be marked clause-finally?,"## Can standard negation be marked clause-finally?
 
 ## Summary
 This feature refers to standard negation, or the construction(s) that mark negation of (at least) dynamic (i.e. non-stative) verbal predicates in declarative mood. It is possible that the same negation construction will be used for other purposes as well (e.g. with stative or non-verbal predicates), but clauses involving predicates other than the aforementioned dynamic verbal predicates in declarative mood should be disregarded. 
@@ -6471,7 +6471,7 @@ Whitacre, Steve. 1986. *Arop/Sissano grammar essentials*. Ms.
 
 ## Patron
 Hannah J. Haynie",NA,NA
-"89","GB138","Can standard negation be marked clause-initially?","## Can standard negation be marked clause-initially?
+GB138,Can standard negation be marked clause-initially?,"## Can standard negation be marked clause-initially?
 
 ## Summary
 This feature focuses on standard negation, or the construction(s) that mark negation of (at least) dynamic (i.e. non-stative) verbal predicates in declarative mood. It is possible that the same negation construction will be used for other purposes as well (e.g. with stative or non-verbal predicates), but clauses involving predicates other than the aforementioned dynamic verbal predicates in declarative mood should be disregarded.
@@ -6559,7 +6559,7 @@ Rosero, Michael Wilson I. 2014. *A grammatical sketch of Masbatenyo*. Quezon Cit
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"90","GB139","Is there a difference between imperative (prohibitive) and declarative negation constructions?","## Is there a difference between imperative (prohibitive) and declarative negation constructions?
+GB139,Is there a difference between imperative (prohibitive) and declarative negation constructions?,"## Is there a difference between imperative (prohibitive) and declarative negation constructions?
 
 ## Summary
 Is the negative construction for declarative negation (e.g. *I don't drink.*) different from the negative imperative (e.g. *don't drink!*). This feature covers more than only different negators: a different order, loss of finiteness or the addition of new elements also count as differences. If a language-specific analysis indicates two different constructions for negative imperative and prohibitive, then we are only concerned with the construction that negates the traditional imperative function here.
@@ -6633,8 +6633,8 @@ Karlsson, Fred. 1999. *Finnish: An essential grammar*. (Routledge Grammars.) Lon
 
 ## Patron
 Hedvig Skirgård
-",NA,"prohibitive"
-"91","GB140","Is verbal predication marked by the same negator as all of the following types of predication: locational, existential and nominal?","## Is verbal predication marked by the same negator as all of the following types of predication: locational, existential and nominal?
+",NA,prohibitive
+GB140,"Is verbal predication marked by the same negator as all of the following types of predication: locational, existential and nominal?","## Is verbal predication marked by the same negator as all of the following types of predication: locational, existential and nominal?
 
 ## Summary
 This feature pertains only to the negative marker itself, be it an independent particle, verb, auxiliary, clitic or affix. This feature covers three kinds of non-verbal negation: locational (*The dog is not in the kitchen.*), existential (*Hogwarts does not exist.*) or nominal predication (*Ursula is not a witch.*). 
@@ -6692,8 +6692,8 @@ Kornfilt, Jaklin. 1997. _Turkish_. (Descriptive Grammars.) London: Routledge.
 
 ## Patron
 Hedvig Skirgård
-",NA,"differentneg"
-"92","GB146","Is there a morpho-syntactic distinction between predicates expressing controlled versus uncontrolled events or states?","## Is there a morphosyntactic distinction between predicates expressing controlled versus uncontrolled events or states?
+",NA,differentneg
+GB146,Is there a morpho-syntactic distinction between predicates expressing controlled versus uncontrolled events or states?,"## Is there a morphosyntactic distinction between predicates expressing controlled versus uncontrolled events or states?
 
 ## Summary
 
@@ -6776,8 +6776,8 @@ Onishi, Masayuki. 1994. *A grammar of Motuna (Bougainville, Papua New Guinea).* 
 
 ## Patron
 Jakob Lesage
-",0.5,"control"
-"93","GB147","Is there a morphological passive marked on the lexical verb?","## Is there a morphological passive marked on the lexical verb?
+",0.5,control
+GB147,Is there a morphological passive marked on the lexical verb?,"## Is there a morphological passive marked on the lexical verb?
 
 ## Summary
 
@@ -6873,8 +6873,8 @@ Smith, Ian & Steve Johnson. 2000. Kugu Nganhcara. In R. M. W. Dixon & Barry Blak
 * [GB400 Are all person categories neutralized in some voice, tense, aspect, mood and/or negation?](https://github.com/grambank/Grambank/wiki/GB400)
 
 ## Patron
-Jakob Lesage",1,"passive"
-"94","GB148","Is there a morphological antipassive marked on the lexical verb?","## Is there a morphological antipassive marked on the lexical verb?
+Jakob Lesage",1,passive
+GB148,Is there a morphological antipassive marked on the lexical verb?,"## Is there a morphological antipassive marked on the lexical verb?
 
 ## Summary
 
@@ -6973,8 +6973,8 @@ Patz, Elisabeth. 2002. *A grammar of the Kuku Yalanji language of North Queensla
 
 ## Patron
 Jakob Lesage
-",1,"antipassive"
-"95","GB149","Is there a morphologically marked inverse on verbs?","## Is there a morphologically marked inverse on verbs?
+",1,antipassive
+GB149,Is there a morphologically marked inverse on verbs?,"## Is there a morphologically marked inverse on verbs?
 
 ## Summary
 
@@ -7042,8 +7042,8 @@ Scancarelli, Janine. 1987. *Grammatical relations and verb agreement in Cherokee
 
 ## Patron
 Jakob Lesage
-",1,"inverse"
-"96","GB150","Is there clause chaining?","## Is there clause chaining?
+",1,inverse
+GB150,Is there clause chaining?,"## Is there clause chaining?
 
 ## Summary
 Clause-chaining involves sequences of medial clauses (i.e. formally reduced or restricted clauses that do not have the full marking that usually occurs on the verb) which are dependent on a single, fully inflected verb that often (but not always) occurs in final clause. Clause chains may also be referred to as topic chains or as sequences of medial clauses/medial verbs. Crucially, this construction involves a single clause with a full, unrestricted, finite verb form and medial clauses that are dependent on it for specification of inflectional categories (e.g. TAM). 
@@ -7156,7 +7156,7 @@ Toosarvandani, Maziar. 2016. [The temporal interpretation of clause chaining in 
 
 ## Patron
 Hannah J. Haynie",NA,NA
-"97","GB151","Is there an overt verb marker dedicated to signalling coreference or noncoreference between the subject of one clause and an argument of an adjacent clause (""switch reference"")?","## Is there an overt verb marker dedicated to signaling coreference or noncoreference between the subject of one clause and an argument of an adjacent clause (‘switch reference’)?
+GB151,"Is there an overt verb marker dedicated to signalling coreference or noncoreference between the subject of one clause and an argument of an adjacent clause (""switch reference"")?","## Is there an overt verb marker dedicated to signaling coreference or noncoreference between the subject of one clause and an argument of an adjacent clause (‘switch reference’)?
 
 ## Summary
 Is there an overt marker [on the verb](https://github.com/grambank/grambank/wiki/%27on-the-verb-noun%27-or-%27by-morphology%27) that marks whether the argument has the same/a different referent as/than an argument of the following clause? Some languages (e.g. Kashaya) signal switch reference by using different allomorphs of TAM markers depending on whether the subject of the following clause is the same or different. Some systems (e.g. Southeastern Pomo) only have special morphology to indicate different subjects, whereas the contrasting morphological pattern that is used for coreferential subjects can also be used for some combinations of clauses with different referents.
@@ -7258,8 +7258,8 @@ Moshinsky, Julius. 1974. *A grammar of Southeastern Pomo.* (University of Califo
 
 ## Patron
 Hannah J. Haynie
-",1,"switch reference"
-"98","GB152","Is there a morphologically marked distinction between simultaneous and sequential clauses?","## Is there a morphologically marked distinction between simultaneous and sequential clauses?
+",1,switch reference
+GB152,Is there a morphologically marked distinction between simultaneous and sequential clauses?,"## Is there a morphologically marked distinction between simultaneous and sequential clauses?
 
 ## Summary
 This question is concerned with whether there is an overt marker dedicated to signaling the distinction between temporally simultaneous and sequential actions. If sequential meaning is a secondary function of an imperfective aspect this does not count; it must be indicated by a devoted marker. The language does not need to express both sequential and simultaneous temporal relationships overtly; one marker devoted to either function is sufficient to trigger a 1.
@@ -7315,8 +7315,8 @@ Moshinsky, Julius. 1974. *A grammar of Southeastern Pomo.* (University of Califo
 * [GB151 Is there an overt verb marker dedicated to signaling coreference or noncoreference between the subject of one clause and an argument of an adjacent clause (‘switch reference’)?](https://github.com/grambank/Grambank/wiki/GB151)
 
 ## Patron
-Hannah J. Haynie",1,"simultanseq"
-"99","GB155","Are causatives formed by affixes or clitics on verbs?","## Are causatives formed by affixes or clitics on verbs?
+Hannah J. Haynie",1,simultanseq
+GB155,Are causatives formed by affixes or clitics on verbs?,"## Are causatives formed by affixes or clitics on verbs?
 
 ## Summary
 
@@ -7378,7 +7378,7 @@ Lovestrand, Joseph. 2012. *The linguistic structure of Baraïn (Chadic).* Dallas
 ## Patron
 Jakob Lesage
 ",1,NA
-"100","GB156","Is there a causative construction involving an element that is unmistakably grammaticalized from a verb for 'to say'?","## Is there a causative construction involving an element that is unmistakably grammaticalized from a verb for ‘to say’?
+GB156,Is there a causative construction involving an element that is unmistakably grammaticalized from a verb for 'to say'?,"## Is there a causative construction involving an element that is unmistakably grammaticalized from a verb for ‘to say’?
 
 ## Summary
 
@@ -7461,7 +7461,7 @@ Taylor, Matthew A. 2015. *Nukna grammar sketch.* (Data Papers on Papua New Guine
 
 ## Patron
 Jakob Lesage",NA,NA
-"101","GB158","Are verbs reduplicated?","## Are verbs reduplicated?
+GB158,Are verbs reduplicated?,"## Are verbs reduplicated?
 
 ## Summary
 
@@ -7526,7 +7526,7 @@ van Engelenhoven, Aone. 2004. *Leti: A language of Southwest Maluku.* (Verhandel
 
 Jakob Lesage
 ",NA,NA
-"102","GB159","Are nouns reduplicated?","## Are nouns reduplicated?
+GB159,Are nouns reduplicated?,"## Are nouns reduplicated?
 
 ## Summary
 
@@ -7601,7 +7601,7 @@ van Engelenhoven, Aone. 2004. *Leti: A language of Southwest Maluku.* (Verhandel
 Jakob Lesage
 
 ",NA,NA
-"103","GB160","Are elements apart from verbs or nouns reduplicated?","## Are elements apart from verbs or nouns reduplicated?
+GB160,Are elements apart from verbs or nouns reduplicated?,"## Are elements apart from verbs or nouns reduplicated?
 
 ## Summary
 
@@ -7716,7 +7716,7 @@ Wellens, Inneke. 2003. *The Nubi language of Uganda: An Arabic creole in Africa.
 Jakob Lesage
 
 ",NA,NA
-"104","GB165","Is there productive morphological trial marking on nouns?","## Is there a productive morphological trial marker on nouns?
+GB165,Is there productive morphological trial marking on nouns?,"## Is there a productive morphological trial marker on nouns?
 
 ## Summary
 This question concerns a bound grammatical marker of trial number on nouns. The marker should occur with an [open set of nouns](https://github.com/grambank/grambank/wiki/Productivity), not with a restricted set. This feature contrasts with [GB319 Is trial number regularly marked in the noun phrase by a phonologically free element?](https://github.com/grambank/Grambank/wiki/GB319) which focuses on the non-bound marking of trial number. For more on bound marking, please see [this page](https://github.com/grambank/Grambank/wiki/%27on-the-verb-noun%27-or-%27by-morphology%27). Bound marking of number on nouns derived from other word classes (such as adjectives or verbs) does not suffice for a 1.
@@ -7786,8 +7786,8 @@ Brown, Jason, Alex Muir, Kimberley Craig & Karika Anea. 2016. *A short grammar o
 
 ## Patron
 Hedvig Skirgård
-",1,"trial"
-"105","GB166","Is there productive morphological paucal marking on nouns?","## Is there a productive morphological paucal marker on nouns?
+",1,trial
+GB166,Is there productive morphological paucal marking on nouns?,"## Is there a productive morphological paucal marker on nouns?
 
 ## Summary
 This question concerns a bound grammatical marker of paucal number on nouns (From Latin _paucalis_ ‘few, little’). Paucal is a number value that refers to a non-specified small amount usually between two or more and ten or less. The exact value can depend on what is being counted. The marker should occur with an [open set of nouns](https://github.com/grambank/grambank/wiki/Productivity), not with a restricted set. This feature contrasts with [GB320 Is paucal number regularly marked in the noun phrase by a phonologically free element?](https://github.com/grambank/Grambank/wiki/GB320) which focuses on the non-bound marking of paucal number. For more on bound marking, please see [this page](https://github.com/grambank/Grambank/wiki/%27on-the-verb-noun%27-or-%27by-morphology%27). Bound marking of number on nouns derived from other word classes (such as adjectives or verbs) does not suffice for a 1.
@@ -7860,8 +7860,8 @@ Elliott, George Robert. 1976. *A description of Sa, a New Hebrides language*. Sy
 
 ## Patron
 Hedvig Skirgård
-",1,"paucal"
-"106","GB167","Is there a logophoric pronoun?","## Is there a logophoric pronoun?
+",1,paucal
+GB167,Is there a logophoric pronoun?,"## Is there a logophoric pronoun?
 
 ## Summary
 Logophoric pronouns are used to distinguish reference to an individual whose speech or thought or feeling is being reported, as opposed to other third-person referents. Unsurprisingly, then, logophoric pronouns are found in reported speech contexts. This question concerns the existence of a special pronoun that specifically refers to the speaker/thinker/feeler in a reported speech construction. This special pronominal form occurs commonly in the complement clause of a speech or thought verb to designate the speaker/thinker/feeler (who is often also the subject of the speech/thought verb) as its referent.
@@ -7913,8 +7913,8 @@ Clements, George N. 1975. The logophoric pronoun in Ewe: Its role in discourse. 
 
 ## Patron
 Hannah J. Haynie
-",NA,"pronounlog"
-"107","GB170","Can an adnominal property word agree with the noun in gender/noun class?","## Can an adnominal property word agree with the noun in noun class/gender?
+",NA,pronounlog
+GB170,Can an adnominal property word agree with the noun in gender/noun class?,"## Can an adnominal property word agree with the noun in noun class/gender?
 
 ## Summary
 For this feature, we are interested in [noun classes](https://github.com/grambank/grambank/wiki/Noun-classes-and-classifiers) (classes which nouns belong to based on properties such as gender, animacy, or shape and can be identified through [agreement](https://github.com/grambank/grambank/wiki/Agreement) with a modifier). We are not looking at noun classifiers (classifiers classify the noun and occur independently from other elements). This feature asks whether adjectives (defined semantically as ‘adnominal property words’) show agreement with the noun class/gender of nouns they modify. This should be true for [more than a small class of semantically restricted adjectives](https://github.com/grambank/grambank/wiki/Productivity); English ‘blond’ vs. ‘blonde’ for example would not be enough to answer 1 for the question. 
@@ -7970,7 +7970,7 @@ Treis, Yvonne. 2008. *A grammar of Kambaata, vol. 1: Phonology, nominal morpholo
 ## Patron
 Jay Latarche and Jeremy Collins
 ",1,NA
-"108","GB171","Can an adnominal demonstrative agree with the noun in gender/noun class?","## Can an adnominal demonstrative agree with the noun in noun class/gender?
+GB171,Can an adnominal demonstrative agree with the noun in gender/noun class?,"## Can an adnominal demonstrative agree with the noun in noun class/gender?
 
 ## Summary
 For this feature, we are interested in [noun classes](https://github.com/grambank/grambank/wiki/Noun-classes-and-classifiers) (classes which nouns belong to based on properties such as gender, animacy, or shape and can be identified through [agreement](https://github.com/grambank/grambank/wiki/Agreement) with a modifier). We are not looking at noun classifiers (classifiers classify the noun and occur independently from other elements). Demonstratives are adnominal modifiers that mark position. This feature asks whether demonstratives can agree in gender/noun class with their head noun, whether or not the head noun is overtly marked for gender/noun class. 
@@ -8017,7 +8017,7 @@ Mutzafi, Hezy. 2004. *The Jewish Neo-Aramaic Dialect of Koy Sanjaq (Iraqi Kurdis
 ## Patron
 Jay Latarche and Jeremy Collins
 ",1,NA
-"109","GB172","Can an article agree with the noun in gender/noun class?","## Can an article agree with the noun in noun class/gender?
+GB172,Can an article agree with the noun in gender/noun class?,"## Can an article agree with the noun in noun class/gender?
 
 ## Summary
 For this feature, we are interested in [noun classes](https://github.com/grambank/grambank/wiki/Noun-classes-and-classifiers) (classes which nouns belong to based on properties such as gender, animacy, or shape and can be identified through [agreement](https://github.com/grambank/grambank/wiki/Agreement) with a modifier). We are not looking at noun classifiers (classifiers classify the noun and occur independently from other elements). Articles can agree in gender/noun class with the head noun even if the head noun is not overtly marked for gender/noun class. This feature concerns both definite and indefinite articles. Features [GB020](https://github.com/grambank/grambank/wiki/GB020) and [GB021](https://github.com/grambank/grambank/wiki/GB021) both concern the absence or presence of definite and indefinite articles, please consider those features if you have coded 1 for this feature. 
@@ -8076,7 +8076,7 @@ Rennison, John R. 1997. *Koromfe*. (Descriptive Grammars Series.) London: Routle
 
 Jay Latarche and Jeremy Collins
 ",1,NA
-"110","GB177","Can the verb carry a marker of animacy of argument, unrelated to any gender/noun class of the argument visible in the NP domain?","## Can the verb carry a marker of animacy of argument, unrelated to any noun class/gender of the argument visible in the NP domain?
+GB177,"Can the verb carry a marker of animacy of argument, unrelated to any gender/noun class of the argument visible in the NP domain?","## Can the verb carry a marker of animacy of argument, unrelated to any noun class/gender of the argument visible in the NP domain?
 
 ## Summary
 Does the animacy of an argument ([S or A or P](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P))) determine the form or presence of an [index](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) on the verb. This system of marking needs to be unrelated to or not reducible to the [gender/noun class system](https://github.com/grambank/grambank/wiki/Noun-Classes-and-Classifiers) as revealed by [agreement](https://github.com/grambank/grambank/wiki/Agreement) in the noun phrase.
@@ -8132,8 +8132,8 @@ Petzell, Malin. 2008. *The Kagulu language of Tanzania: grammar, text and vocabu
 
 ## Patron
 Alena Witzlack-Makarevich
-",1,"verb_animacy"
-"111","GB184","Can an adnominal property word agree with the noun in number?","## Can an adnominal property word agree with the noun in number?
+",1,verb_animacy
+GB184,Can an adnominal property word agree with the noun in number?,"## Can an adnominal property word agree with the noun in number?
 
 ## Summary
 Adnominal property words semantically roughly correspond to adjectives in languages that have a separate adjective class. The property word can agree in number with the head noun even if the head noun is not overtly marked for number. 
@@ -8188,7 +8188,7 @@ Wilson, Jennifer. 2017. *A grammar of Yeri: A Torricelli language of Papua New G
 ## Patron
 Jay Latarche and Jeremy Collins
 ",1,NA
-"112","GB185","Can an adnominal demonstrative agree with the noun in number?","## Can an adnominal demonstrative agree with the noun in number?
+GB185,Can an adnominal demonstrative agree with the noun in number?,"## Can an adnominal demonstrative agree with the noun in number?
 
 ## Summary
 This question concerns adnominal demonstratives (not pronominal demonstratives) and whether they can agree in number with the head noun. Number marking on demonstratives counts as agreement even if the head noun is not overtly marked for number. 
@@ -8236,7 +8236,7 @@ Valdman, Albert. 1988. *Ann Pale Kreyol: An introductory course in Haitian Creol
 ## Patron
 Jay Latarche and Jeremy Collins
 ",1,NA
-"113","GB186","Can an article agree with the noun in number?","## Can an article agree with the noun in number?
+GB186,Can an article agree with the noun in number?,"## Can an article agree with the noun in number?
 
 ## Summary
 An article is a marker that accompanies the noun and expresses notions such as (non-)specificity and (in)definiteness. When an article is marked for number, this counts as agreement even if the head noun is not overtly marked for number. This includes both definite and indefinite articles.
@@ -8288,7 +8288,7 @@ Dum-Tragut, Jasmine. 2009. *Armenian: Modern Eastern Armenian*. Amsterdam: John 
 ## Patron
 Jay Latarche and Jeremy Collins
 ",1,NA
-"114","GB187","Is there any productive diminutive marking on the noun (exclude marking by system of nominal classification only)?","## Is there any productive diminutive marking on the noun (exclude marking by system of nominal classification only)?
+GB187,Is there any productive diminutive marking on the noun (exclude marking by system of nominal classification only)?,"## Is there any productive diminutive marking on the noun (exclude marking by system of nominal classification only)?
 
 ## Summary
 Diminutive marking encodes smaller size. This marker must be [phonologically bound to the noun](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence). The marker may also encode other meanings but needs to minimally encode smaller size. Reduplication and stem changes count. This needs to be a [productive](https://github.com/grambank/grambank/wiki/Productivity) pattern.
@@ -8346,8 +8346,8 @@ Tamura, Suzuko. 2000. *The Ainu language*. (ICHEL Linguistic Studies, 2.) Tokyo:
 
 ## Patron
 Jay Latarche and Jeremy Collins
-",1,"diminutive"
-"115","GB188","Is there any productive augmentative marking on the noun (exclude marking by system of nominal classification only)?","## Is there any productive augmentative marking on the noun (exclude marking by system of nominal classification only)?
+",1,diminutive
+GB188,Is there any productive augmentative marking on the noun (exclude marking by system of nominal classification only)?,"## Is there any productive augmentative marking on the noun (exclude marking by system of nominal classification only)?
 
 ## Summary
 Augmentative marking generally intensifies the noun (in various ways). To code 1, the marker needs to minimally encode a large size of the noun it is attached to. This needs to be a [productive](https://github.com/grambank/grambank/wiki/Productivity) pattern.
@@ -8396,8 +8396,8 @@ Fernández Garay, Ana. 2004. *Diccionario Tehuelche-Español / índice Español-
 
 ## Patron
 Jay Latarche and Jeremy Collins
-",1,"augmentative"
-"116","GB192","Is there a gender system where a noun's phonological properties are a factor in class assignment?","## Is there a noun class/gender system where a noun’s phonological properties are a factor in class assignment?
+",1,augmentative
+GB192,Is there a gender system where a noun's phonological properties are a factor in class assignment?,"## Is there a noun class/gender system where a noun’s phonological properties are a factor in class assignment?
 
 ## Summary
 A noun class/gender system categorizes nouns for the purposes of grammatical [agreement](https://github.com/grambank/grambank/wiki/Agreement) with other constituents in the noun phrase or other inflectional morphology. See the [classification wiki page](https://github.com/grambank/grambank/wiki/Noun-Classes-and-Classifiers) for more information on our definition of noun class/gender. Noun class/gender assignment may be based on one or several factors. This feature focuses on whether the phonological properties of a noun constitute one of these factors for a given language. For this feature to be coded 1, there must be a clear preference for certain nouns to be classified in certain gender categories as a result of specific phonological properties. That is, some phonological property of a noun must be one relevant factor in the assignment of gender; however it does not need to be an absolute deciding factor or the only relevant factor in gender/class assignment. Examples of phonological properties that may play a role in gender/class assignment include tone, initial consonants, or root-final segments. Note that noun class/gender morphology may create phonological similarities across members of a certain noun class or gender; however, this is not sufficient for a 1 coding for this feature. Phonological properties must contribute to the categorization of nouns to classes/genders, rather than simply result from associated morphology.
@@ -8457,7 +8457,7 @@ Zhang, Paiyu. 2013. *The Kilen language of Manchuria: grammar of a moribund Tung
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"117","GB193","What is the order of adnominal property word and noun?","## What is the order of adnominal property word and noun?
+GB193,What is the order of adnominal property word and noun?,"## What is the order of adnominal property word and noun?
 
 ## Summary
 Adnominal property words are also known as ""adjectives"", in particular in those languages where they make up a separate word class. We want to include elements that mark ‘adjectival’ function but that might not be described as ‘adjectives’, see [GB069](https://github.com/grambank/Grambank/wiki/GB069). The question concerns the pragmatically neutral order(s).  
@@ -8524,7 +8524,7 @@ Rosés Labrada, Jorge E. 2015. *The Mako language: Vitality, Grammar and Classif
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"118","GB196","Is there a male/female distinction in 2nd person independent pronouns?","## Is there a masculine/feminine distinction in phonologically independent second person pronouns?
+GB196,Is there a male/female distinction in 2nd person independent pronouns?,"## Is there a masculine/feminine distinction in phonologically independent second person pronouns?
 
 ## Summary
 This feature asks whether the [phonologically independent pronoun](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) forms used for second persons differ for masculine and feminine referents. This masculine/feminine distinction is a minimal contrast required for the coding of this feature, but other gender categories may also be encoded in second person pronoun forms. Pronoun systems that encode other grammatical gender/noun class categories in second person forms in the absence of a masculine/feminine distinction are not sufficient to satisfy this criterion. Languages that qualify for a 1 code for this feature will include a distinction between masculine and feminine forms in at least some categories of second person independent pronouns, but possibly not all categories. In many languages this contrast occurs only in the singular pronouns; that is, there is a contrast between masculine and feminine forms for second person singular, but not for second person plural (or dual, or any other non-singular number category). In some languages there is a contrast in multiple number categories, including singular and some non-singular number categories. It is uncommon for a language to have a masculine/feminine contrast in non-singular second person pronouns but not in the singular pronouns. However such languages would also satisfy the criteria for this feature. For more information on the difference between grammatical gender and social, cultural, and biological constructs or traits, see the [gender wiki page](https://github.com/grambank/grambank/wiki/Grammatical-gender-and-other-notions-of-gender).
@@ -8592,8 +8592,8 @@ Ryding, Karin C. 2005. *A reference grammar of modern standard Arabic*. New York
 
 ## Patron
 Hannah J. Haynie
-",NA,"pronoungender2"
-"119","GB197","Is there a male/female distinction in 1st person independent pronouns?","## Is there a masculine/feminine distinction in phonologically independent first person pronouns?
+",NA,pronoungender2
+GB197,Is there a male/female distinction in 1st person independent pronouns?,"## Is there a masculine/feminine distinction in phonologically independent first person pronouns?
 
 ## Summary
 This feature asks whether the [phonologically independent pronoun](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) forms used for first person differ for masculine and feminine referents. This masculine/feminine distinction is a minimal contrast required for the coding of this feature, but other gender categories may also be encoded in a language’s first person pronoun forms. Pronoun systems that encode other grammatical gender/noun class categories in first person forms in the absence of a masculine/feminine distinction are not sufficient to satisfy this criterion. Languages that qualify for a 1 code for this feature will include a distinction between masculine and feminine forms in at least some categories of first person independent pronouns, but possibly not all categories. In many languages this contrast occurs only in the singular pronouns; that is, there is a contrast between masculine and feminine forms for first person singular, but not for first person plural (or dual, or any other non-singular number category). In some languages there is a relevant contrast in multiple number categories, including singular and some non-singular number categories. It is uncommon for a language to have a masculine/feminine contrast in non-singular first person pronouns but not in the singular pronouns. However, such languages also satisfy the criteria for this feature. For more information on the difference between grammatical gender and social, cultural, and biological constructs or traits, see the [gender wiki page](https://github.com/grambank/grambank/wiki/Grammatical-gender-and-other-notions-of-gender).
@@ -8658,8 +8658,8 @@ Smyth, David. 2002. *Thai: An essential grammar.* London: Routledge.
 
 ## Patron
 Hannah J. Haynie
-",NA,"pronoungender1"
-"120","GB198","Can an adnominal numeral agree with the noun in gender/noun class?","## Can an adnominal numeral agree with the noun in noun class/gender?
+",NA,pronoungender1
+GB198,Can an adnominal numeral agree with the noun in gender/noun class?,"## Can an adnominal numeral agree with the noun in noun class/gender?
 
 ## Summary
 For this feature, we are interested in [gender/noun classes](https://github.com/grambank/grambank/wiki/Noun-classes-and-classifiers) (classes which nouns belong to based upon properties such as gender, animacy, or shape and can be identified through [agreement](https://github.com/grambank/grambank/wiki/Agreement) with a modifier). We are not looking at noun classifiers ([GB057](https://github.com/grambank/Grambank/wiki/GB057)) (classifiers classify the noun and occur independently from other elements). This feature asks whether adnominal numerals show agreement with the gender of nouns they modify. This system of agreement should be [productive](https://github.com/grambank/grambank/wiki/Productivity).
@@ -8734,7 +8734,7 @@ Santandrea, Stefano. 1976. *The Kresh Group, Aja and Baka languages (Sudan): A l
 ## Patron
 Jay Latarche and Jeremy Collins
 ",1,NA
-"121","GB203","What is the order of the adnominal collective universal quantifier ('all') and the noun?","## What is the order of the adnominal collective universal quantifier (‘all’) and the noun?
+GB203,What is the order of the adnominal collective universal quantifier ('all') and the noun?,"## What is the order of the adnominal collective universal quantifier (‘all’) and the noun?
 
 ## Summary
 This feature is concerned with the ordering of a universal quantifier (‘all’) and the noun. As with other word order features in this database, this is focused specifically on adnominal quantification in pragmatically unmarked contexts. In languages that do not have a distinction between collective and distributive universal quantifiers (‘all’ vs. ‘every’), a quantifier that could be translated as ‘all’ and has a primarily plural use will be a sufficient target for this feature.
@@ -8791,7 +8791,7 @@ Rajasingh, V. R. 2016. Mūöt (Nicobarese). *Mon-Khmer Studies* 45. 14–52.
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"122","GB204","Do collective ('all') and distributive ('every') universal quantifiers differ in their forms or their syntactic positions?","## Do collective (‘all’) and distributive (‘every’) universal quantifiers differ in their forms or their syntactic positions?
+GB204,Do collective ('all') and distributive ('every') universal quantifiers differ in their forms or their syntactic positions?,"## Do collective (‘all’) and distributive (‘every’) universal quantifiers differ in their forms or their syntactic positions?
 
 ## Summary
 This feature identifies languages that use different forms or syntactic positions for collective universal quantification (e.g. English *all*) versus distributive universal quantification (e.g. English *every*). This contrasts with languages that use both the same form *and* the same word order for these two types of quantification.
@@ -8841,7 +8841,7 @@ Arnott, David Whitehorn. 1970. *The nominal and verbal systems of Fula*. Oxford:
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"123","GB250","Can predicative possession be expressed with a transitive 'habeo' verb?","## Can predicative possession be expressed with a transitive ‘habeo’ verb?
+GB250,Can predicative possession be expressed with a transitive 'habeo' verb?,"## Can predicative possession be expressed with a transitive ‘habeo’ verb?
 
 ## Summary
 This question concerns predicative possession, i.e. clauses that express an ownership relation between a possessor and a possessum. For this feature, we are looking for a verb that expresses predicative possession where the possessor is the subject, the possessum the object and the verb is finite and clearly transitive. The finite element in itself need not be clearly distinct from an existential or locational predicator, the main difference is the argument structure. 
@@ -8881,7 +8881,7 @@ Stassen, Leon. 2013. [Predicative Possession](http://wals.info/chapter/117). In 
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"124","GB252","Can predicative possession be expressed with an S-like possessum and a locative-coded possessor?","## Can predicative possession be expressed with an S-like possessum and a locative-coded possessor?
+GB252,Can predicative possession be expressed with an S-like possessum and a locative-coded possessor?,"## Can predicative possession be expressed with an S-like possessum and a locative-coded possessor?
 
 ## Summary
 This question concerns predicative possession, i.e. clauses that express an ownership relation between a possessor and possessum. This feature is concerned with clauses where the possessum is the subject of an existential/locative predicate and the possessor is in an oblique form marked by an element meaning ‘at/in/on’ (e.g. *the car is on me* to mean ‘I have a car.’ or ‘The car is mine.’). The possessor-NP need not be overtly marked for location, it can be expressed in the verb itself, e.g. with a locative extension. It is necessary for the construction that the possessor is not the subject.
@@ -8931,7 +8931,7 @@ Stassen, Leon. 2013. [Predicative Possession](http://wals.info/chapter/117). In 
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"125","GB253","Can predicative possession be expressed with an S-like possessum and a dative-coded possessor?","## Can predicative possession be expressed with an S-like possessum and a dative-coded possessor?
+GB253,Can predicative possession be expressed with an S-like possessum and a dative-coded possessor?,"## Can predicative possession be expressed with an S-like possessum and a dative-coded possessor?
 
 ## Summary
 This question concerns predicative possession, i.e. clauses that express an ownership relation between a possessor and possessum. This feature concerns clauses where the possessum is the subject of an existential predicate and the possessor is coded as an oblique argument, marked by an element meaning ‘to/for’ or by a dative marker (e.g. *car is to me*, *car is for me*, meaning ‘The car is mine’, or ‘I have a car’). The possessor-NP need not be marked for dative case. The dative meaning can be expressed on the verb itself, e.g. with a benefactive extension.
@@ -8983,7 +8983,7 @@ Stassen, Leon. 2013. [Predicative Possession](http://wals.info/chapter/117). In 
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"126","GB254","Can predicative possession be expressed with an S-like possessum and a possessor that is coded like an adnominal possessor?","## Can predicative possession be expressed with an S-like possessum and a possessor that is coded like an adnominal possessor?
+GB254,Can predicative possession be expressed with an S-like possessum and a possessor that is coded like an adnominal possessor?,"## Can predicative possession be expressed with an S-like possessum and a possessor that is coded like an adnominal possessor?
 
 ## Summary
 This question concerns predicative possession, i.e. clauses that express an ownership relation between a possessor and possessum. This feature concerns clauses where the possessum is the subject and the possessor is construed as a modifier of the possessum (e.g. *my car exists* to mean ‘I have a car’).
@@ -9031,7 +9031,7 @@ Stassen, Leon. 2013. [Predicative Possession](http://wals.info/chapter/117). In:
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"127","GB256","Can predicative possession be expressed with an S-like possessor and a possessum that is coded like a comitative argument?","## Can predicative possession be expressed with a comitative/conjunctional construction?
+GB256,Can predicative possession be expressed with an S-like possessor and a possessum that is coded like a comitative argument?,"## Can predicative possession be expressed with a comitative/conjunctional construction?
 
 ## Summary
 This question concerns predicative possession, i.e. clauses that express an ownership relation between a possessor and a possessum. This feature concerns a clause which features a comitative/conjunctional construction (c.f. Stassen 2000, 2001, 2013). The predicate is an existential/locational/copula and the possessum or possessor is marked by an element marking simultaneity between clauses, or ‘also/too’, or subordinating conjunction (‘when/while’), or coordinating particle (‘and’), or a comitative marker (‘with’). The marker need not be [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence). Both constructions where the possessor and constructions where the possessum is marked by the comitative marker count.
@@ -9072,7 +9072,7 @@ Stassen, Leon. 2013. [Predicative Possession](http://wals.info/chapter/117). In 
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"128","GB257","Can polar interrogation be marked by intonation only?","## Can polar interrogation be marked by intonation only?
+GB257,Can polar interrogation be marked by intonation only?,"## Can polar interrogation be marked by intonation only?
 
 ## Summary
 For this feature, we are looking for polar interrogation marked by intonation, and it should be the only marker in that construction. However, it does not have to be the only construction in the language which can mark polar interrogation. Intonation is our focus and not tone. Intonation is different from tonal marking. Tonal marking is bound to a certain position in the clause (e.g. the final syllable, or a certain constituent). Intonation concerns the whole clause and will have a variation in pitch across sentences and phrases.
@@ -9124,7 +9124,7 @@ Zewen, François-Xavier Nicolas. 1977. *The Marshallese language: A study of its
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"129","GB260","Can polar interrogation be indicated by a special word order?","## Can polar interrogation be indicated by a special word order?
+GB260,Can polar interrogation be indicated by a special word order?,"## Can polar interrogation be indicated by a special word order?
 
 ## Summary
 Can a change in word order mark polar questions? In order for a construction to trigger 1, there should be no other marker in the clause that signals polar interrogation, not even lack of finiteness compared to the affirmative.  This excludes intonation, which may be different between questions and declarative statements.
@@ -9164,7 +9164,7 @@ Brandão, Ana Paula Barros. 2014. *A reference grammar of Paresi-Haliti (Arawak)
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"130","GB262","Is there a clause-initial polar interrogative particle?","## Is there a clause-initial polar interrogative particle?
+GB262,Is there a clause-initial polar interrogative particle?,"## Is there a clause-initial polar interrogative particle?
 
 ## Summary
 In this feature, we are looking for a polar interrogative [particle](https://github.com/grambank/grambank/wiki/Particles) that appears at the beginning of the clause. It is acceptable for a polar interrogative particle to appear in polar interrogatives and content questions, but the polar interrogative particle must be dedicated to marking questions that ask for the equivalent of an affirmative or negative answer (as opposed to content questions).
@@ -9221,7 +9221,7 @@ McGregor, William B. 2004. *The languages of the Kimberley, Western Australia.* 
 ## Patron
 Jay Latarche and Jeremy Collins
 ",0,NA
-"131","GB263","Is there a clause-final polar interrogative particle?","## Is there a clause-final polar interrogative particle?
+GB263,Is there a clause-final polar interrogative particle?,"## Is there a clause-final polar interrogative particle?
 
 ## Summary
 
@@ -9304,7 +9304,7 @@ Wright, Jonathan Michael. 2009. *Hkongso grammar sketch*. Dallas, TX: Graduate I
 ## Patron
 Jay Latarche and Jeremy Collins
 ",0,NA
-"132","GB264","Is there a polar interrogative particle that most commonly occurs neither clause-initially nor clause-finally?","## Is there a polar interrogative particle that most commonly occurs neither clause-initially nor clause-finally?
+GB264,Is there a polar interrogative particle that most commonly occurs neither clause-initially nor clause-finally?,"## Is there a polar interrogative particle that most commonly occurs neither clause-initially nor clause-finally?
 
 ## Summary
 
@@ -9375,7 +9375,7 @@ Tamura, Suzuko. 2000. *The Ainu language*. (ICHEL Linguistic Studies, 2.) Tokyo:
 ## Patron
 Jay Latarche and Jeremy Collins
 ",0,NA
-"133","GB265","Is there a comparative construction that includes a form that elsewhere means 'surpass, exceed'?","## Is there a comparative construction that includes a form that elsewhere means ‘surpass, exceed’?
+GB265,"Is there a comparative construction that includes a form that elsewhere means 'surpass, exceed'?","## Is there a comparative construction that includes a form that elsewhere means ‘surpass, exceed’?
 
 ## Summary
 This feature identifies languages that have a comparative construction that involves a form (usually a verb form) meaning ‘surpass’ or ‘exceed’. Typically, the standard of comparison is the direct object, the object of comparison is the subject, and there are two predicates: one expressing ‘surpass/exceed’, and one carrying relevant lexical information about the property under comparison (e.g. *Ronald exceed be-tall Julia.*, meaning ‘Ronald is taller than Julia.’). 
@@ -9421,7 +9421,7 @@ Feldman, Harry. 1986. *A grammar of Awtuw.* (Pacific Linguistics: Series B, 94.)
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"134","GB266","Is there a comparative construction that employs a marker of the standard which elsewhere has a locational meaning?","## Is there a comparative construction that employs a marker of the standard which elsewhere has a locational meaning?
+GB266,Is there a comparative construction that employs a marker of the standard which elsewhere has a locational meaning?,"## Is there a comparative construction that employs a marker of the standard which elsewhere has a locational meaning?
 
 ## Summary
 This feature identifies comparative constructions that mark the standard of comparison with an element that is otherwise locational or benefactive in meaning. In these constructions a marker that also has a locational (or benefactive) function is invariably found in the standard NP. Please note that benefactive markers are included here, following Stassen’s (1984, 1985) category of locational comparatives. The marker of the property word is irrelevant for this feature (e.g. the English *-er* suffix, as in *tall-er*).
@@ -9457,7 +9457,7 @@ Abdel-Massih, Ernest T. 1979. *A reference grammar of Egyptian Arabic.* (A Compr
 
 ## Patron
 Hannah J. Haynie",NA,NA
-"135","GB270","Can comparatives be expressed using two conjoined clauses?","## Can comparatives be expressed using two conjoined clauses?
+GB270,Can comparatives be expressed using two conjoined clauses?,"## Can comparatives be expressed using two conjoined clauses?
 
 ## Summary
 Is there a comparative construction comprised of two conjoined clauses? Specifically, this construction must involve two conjoined clauses, one containing the standard of comparison and one containing the object of comparison, with no additional, obligatory, special markers of comparison (e.g. English *than*, or *surpass/exceed*). The NPs expressing the standard and object of comparison typically have the same function in the clauses. Note that many languages can juxtapose clauses (e.g. English *She is nice and he is not nice.*), however these sorts of constructions should only be considered for this feature when they are a dedicated way of expressing comparative meaning (e.g. when the structure clearly has a meaning like, ‘She is nicer than he is.’). In other words, we are focused on languages that have a dedicated comparative construction involving conjoined clauses.
@@ -9526,7 +9526,7 @@ Vari-Bogiri, Hannah. 2011. *Phonology and morpho-syntax of Raga, Vanuatu*. Port 
 
 ## Patron
 Hannah J. Haynie",NA,NA
-"136","GB273","Is there a comparative construction with a standard marker that elsewhere has neither a locational meaning nor a 'surpass/exceed' meaning?","## Is there a comparative construction with a standard marker that elsewhere has neither a locational meaning nor a ‘surpass/exceed’ meaning?
+GB273,Is there a comparative construction with a standard marker that elsewhere has neither a locational meaning nor a 'surpass/exceed' meaning?,"## Is there a comparative construction with a standard marker that elsewhere has neither a locational meaning nor a ‘surpass/exceed’ meaning?
 
 ## Summary
 This question is focused on comparative constructions that have a dedicated marker for the standard of comparison that does not fall under the umbrella of the locational comparative ([GB266](https://github.com/grambank/grambank/wiki/GB266)) or surpass/exceed comparative ([GB265](https://github.com/grambank/grambank/wiki/GB265)). Note that a language may have multiple comparative constructions, including a non-locational, non-surpass/exceed comparative as well as constructions that are described by those features.
@@ -9578,7 +9578,7 @@ Groves, Terab’ata R., Gordon W. Groves & Roderick Jacobs. 1985. *Kiribatese: A
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"137","GB275","Is there a bound comparative degree marker on the property word in a comparative construction?","## Is there a bound comparative degree marker on the property word in a comparative construction?
+GB275,Is there a bound comparative degree marker on the property word in a comparative construction?,"## Is there a bound comparative degree marker on the property word in a comparative construction?
 
 ## Summary
 This feature focuses on the presence of a bound marker of comparative degree on the property word in a comparative construction (e.g. *-er* in English *tall-er*). We specifically focus on comparative constructions where the standard of comparison is overtly expressed (e.g. *Maria is taller than John.*) but also count clearly comparative forms where the standard of comparison is null/implied/inferred from context (e.g. *Maria is taller.*) This feature requires the degree marker to be [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) to the property word.
@@ -9623,7 +9623,7 @@ de Angulo, Jaime & Freeland, Lucy S. 1930. The Achumawi language. *International
 ## Patron
 Hannah J. Haynie
 ",1,NA
-"138","GB276","Is there a non-bound comparative degree marker modifying the property word in a comparative construction?","## Is there a non-bound comparative degree marker modifying the property word in a comparative construction?
+GB276,Is there a non-bound comparative degree marker modifying the property word in a comparative construction?,"## Is there a non-bound comparative degree marker modifying the property word in a comparative construction?
 
 ## Summary
 This feature focuses on the presence of a [phonologically free](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) marker of comparative degree that modifies the property word in a comparative construction (e.g. French ***plus** grand*). We specifically focus on comparative constructions where the standard of comparison is overtly expressed (e.g. meanings like ‘Maria is taller than John’) but also count clearly comparative forms where the standard of comparison is null/implied/inferred from the context (e.g. meanings like ‘Maria is taller’). The comparative constructions of interest express superiority (as in the French and English examples above), not inferiority (e.g. meanings like ‘John is less athletic than Maria’).
@@ -9671,7 +9671,7 @@ CIDCA. 1985. *Miskitu Bila Aisanka: Gramática Miskita.* (Serie Lingüística: C
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"139","GB285","Can polar interrogation be marked by a question particle and verbal morphology?","## Can polar interrogation be marked by a question particle and verbal morphology?
+GB285,Can polar interrogation be marked by a question particle and verbal morphology?,"## Can polar interrogation be marked by a question particle and verbal morphology?
 
 ## Summary
 For this feature, we are looking for polar interrogation marked by a question [particle](https://github.com/grambank/grambank/wiki/Particles) and verbal [morphology](https://github.com/grambank/grambank/wiki/%27on-the-verb-noun%27-or-%27by-morphology%27). These should be the only two markers in the construction. However, this does not have to be the only construction in the language which can mark polar interrogation. Nominalizers also count as verbal morphology for the purpose of this question. Tone does not count as a particle here. The intonation of the clause is not relevant to this question. It may be the same as or different from declarative clauses.
@@ -9727,7 +9727,7 @@ Troike, Rudolph C. 1996. Sketch of Coahuilteco, a language isolate of Texas. In 
 
 ## Patron
 Jay Latarche and Jeremy Collins",1,NA
-"140","GB286","Can polar interrogation be indicated by overt verbal morphology only?","## Can polar interrogation be indicated by overt verbal morphology only?
+GB286,Can polar interrogation be indicated by overt verbal morphology only?,"## Can polar interrogation be indicated by overt verbal morphology only?
 
 ## Summary
 
@@ -9777,7 +9777,7 @@ Bradshaw, Robert. 2007. *Fuyug grammar sketch.* (Data Papers on Papua New Guinea
 ## Patron
 Jay Latarche and Jeremy Collins
 ",1,NA
-"141","GB291","Can polar interrogation be marked by tone?","## Can polar interrogation be marked by tone?
+GB291,Can polar interrogation be marked by tone?,"## Can polar interrogation be marked by tone?
 
 ## Summary
 This feature deals with the presence or absence of a construction where the only difference between the interrogative and the declarative is marked by tone. Please note that tone is the focus here, not intonation. Tonal marking is bound to a certain position in the clause (e.g. the final syllable, or a certain constituent). Intonation concerns the whole clause and will have a variation in pitch across sentences and phrases.
@@ -9819,7 +9819,7 @@ Bliese, Loren Frecerick. 1977. *A generative grammar study of Afar*. Arlington: 
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"142","GB296","Is there a phonologically or morphosyntactically definable class of ideophones that includes ideophones depicting imagery beyond sound?","## Is there a phonologically or morphosyntactically definable class of ideophones that includes ideophones depicting imagery beyond sound?
+GB296,Is there a phonologically or morphosyntactically definable class of ideophones that includes ideophones depicting imagery beyond sound?,"## Is there a phonologically or morphosyntactically definable class of ideophones that includes ideophones depicting imagery beyond sound?
 
 ## Summary
 
@@ -9915,7 +9915,7 @@ Whitehead, John. 1899. *Grammar and dictionary of the Bobangi language: as spoke
 ## Patron
 Jakob Lesage
 ",NA,NA
-"143","GB297","Can polar interrogation be indicated by a V-not-V construction?","## Can polar interrogation be indicated by a V-not-V construction?
+GB297,Can polar interrogation be indicated by a V-not-V construction?,"## Can polar interrogation be indicated by a V-not-V construction?
 
 ## Summary
 This feature concerns polar interrogative constructions where the main verb is repeated, once in the affirmative form and again in the negated form, as a pragmatically unmarked way of asking questions. The negated form can also occur before the affirmative form.
@@ -9975,7 +9975,7 @@ Wiedenhof, Jeroen. 2015. *A grammar of Mandarin.* Amsterdam: John Benjamins.
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"144","GB298","Can standard negation be marked by an inflecting word (""auxiliary verb"")?","## Can standard negation be marked by an inflecting word (‘auxiliary verb’)?
+GB298,"Can standard negation be marked by an inflecting word (""auxiliary verb"")?","## Can standard negation be marked by an inflecting word (‘auxiliary verb’)?
 
 ## Summary
 This feature refers to Standard Negation, i.e. the constructions that mark negation of (at least) dynamic (not-stative) verbal predicates in declarative mood. This question aims to capture [phonologically free](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) markers that inflect (i.e. change form depending on TAM, person, number and other categories of the core arguments). These inflecting phonologically free markers are often described as ‘auxiliary verbs’ in the literature, but are also analyzed under other labels by some authors (such as STAMP morphemes (STAM = Subject-Tense-Aspect-Mood-Polarity) or inflecting pronouns). We are interested in grammatical marking, i.e. [dedicated](https://github.com/grambank/grambank/wiki/Dedicated-marking), [productive](https://github.com/grambank/grambank/wiki/Productivity) and [obligatory marking](https://github.com/grambank/grambank/wiki/Obligatoriness). 
@@ -10044,7 +10044,7 @@ Karlsson, Fred. 1999. *Finnish: an essential grammar*. (Routledge Grammars.) Lon
 ## Patron
 Hedvig Skirgård
 ",1,NA
-"145","GB299","Can standard negation be marked by a non-inflecting word (""auxiliary particle"")?","## Can standard negation be marked by a non-inflecting word (‘auxiliary particle’)?
+GB299,"Can standard negation be marked by a non-inflecting word (""auxiliary particle"")?","## Can standard negation be marked by a non-inflecting word (‘auxiliary particle’)?
 
 ## Summary
 This feature refers to Standard Negation, i.e. the constructions that mark negation of (at least) dynamic (not-stative) verbal predicates in declarative mood. This question aims to capture [phonologically free](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) markers that do not inflect (i.e. change form depending on TAM, person, number and other categories of the core arguments). These markers are often described as particles in the literature, but are also analyzed under other labels. We are interested in grammatical marking, i.e. [dedicated](https://github.com/grambank/grambank/wiki/Dedicated-marking), [productive](https://github.com/grambank/grambank/wiki/Productivity) and [obligatory](https://github.com/grambank/grambank/wiki/Obligatoriness) marking. 
@@ -10096,7 +10096,7 @@ Teleman, Ulf, Staffan Hellberg & Andersson, Erik. 1999. *Svenska akademiens gram
 
 ## Patron
 Hedvig Skirgård",0,NA
-"146","GB300","Does the verb for 'give' have suppletive verb forms?","## Does the verb for ‘give’ have suppletive verb forms?
+GB300,Does the verb for 'give' have suppletive verb forms?,"## Does the verb for ‘give’ have suppletive verb forms?
 
 ## Summary
 This question concerns strong suppletion in verbs of giving. Suppletion is a process where a lexeme is changed in such a way that the new form does not resemble the previous when it appears in a different position in the paradigm. So called ‘weak’ suppletion is not included. An example of this is English _went_ and _go_. In this case, the verb is suppletive for tense. 
@@ -10135,7 +10135,7 @@ Churchward, Maxwell C. 1985 [1953]. *Tongan grammar*. Tonga: Vava'u Press.
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"147","GB301","Is there an inclusory construction?","## Is there an inclusory construction?
+GB301,Is there an inclusory construction?,"## Is there an inclusory construction?
 
 ## Summary
 We are looking for a construction where a nonsingular referent is expressed by a nonsingular form (superset) and a singular form (subset). The element expressing the superset could be either [a free pronoun, an index](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) or a plural noun/proper noun. 
@@ -10210,7 +10210,7 @@ Vaa, Anders. 2013. *A grammar of Engdewu: An Oceanic language of Solomon Islands
 ## Patron
 Jay Latarche and Jeremy Collins
 ",NA,NA
-"148","GB302","Is there a phonologically free passive marker (""particle"" or ""auxiliary"")?","## Is there a phonologically free passive marker (‘particle’ or ‘auxiliary’)?
+GB302,"Is there a phonologically free passive marker (""particle"" or ""auxiliary"")?","## Is there a phonologically free passive marker (‘particle’ or ‘auxiliary’)?
 
 ## Summary
 
@@ -10301,8 +10301,8 @@ Smith, Ian & Steve Johnson. 2000. Kugu Nganhcara. In R. M. W. Dixon & Barry Blak
 
 ## Patron
 Jakob Lesage
-",0,"passive"
-"149","GB303","Is there a phonologically free antipassive marker (""particle"" or ""auxiliary"")?","## Is there a phonologically free antipassive marker (‘particle’ or ‘auxiliary’)?
+",0,passive
+GB303,"Is there a phonologically free antipassive marker (""particle"" or ""auxiliary"")?","## Is there a phonologically free antipassive marker (‘particle’ or ‘auxiliary’)?
 
 ## Summary
 
@@ -10393,8 +10393,8 @@ Patz, Elisabeth. 2002. *A grammar of the Kuku Yalanji language of North Queensla
 
 ## Patron
 Jakob Lesage
-",0,"antipassive"
-"150","GB304","Can the agent be expressed overtly in a passive clause?","## Can the agent be expressed overtly in a passive clause?
+",0,antipassive
+GB304,Can the agent be expressed overtly in a passive clause?,"## Can the agent be expressed overtly in a passive clause?
 
 ## Summary
 Passivization is a detransitivizing operation that takes a transitive clause (*The dog bites the man.*) and turns it into an intransitive clause by promoting the [P](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) argument (*the man*) to morphosyntactic [S](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) function. In the resulting intransitive clause, the former [A](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) argument (*the dog*) either vanishes or adopts an oblique function: *The man is bitten (by the dog).* ‘Mediopassives’, ‘anticausatives’ and the sort (e.g. *x breaks the vase* > *the vase breaks*) also count as passives. For languages with multiple passive constructions (e.g. ‘personal’ and ‘impersonal’ passives), this question should be answered 1 if the agent can be overtly expressed in any of these types of passive clauses. If the agent is overtly expressed, it may be unmarked or it may be marked in a number of ways: by case marking or adpositions, word order, etc.
@@ -10479,7 +10479,7 @@ Nichols, Lynn. 1997. *Topics in Zuni syntax*. Cambridge, MA: Harvard University.
 ## Patron
 Jakob Lesage
 ",NA,NA
-"151","GB305","Is there a phonologically independent reflexive pronoun?","## Is there a phonologically independent reflexive marker?
+GB305,Is there a phonologically independent reflexive pronoun?,"## Is there a phonologically independent reflexive marker?
 
 ## Summary
 
@@ -10548,8 +10548,8 @@ van der Wal Anonby, Christina. 2015. *A grammar of Kumzari: a mixed Perso-Arabia
 
 ## Patron
 Jakob Lesage
-",NA,"reflexivity"
-"152","GB306","Is there a phonologically independent non-bipartite reciprocal pronoun?","## Is there a phonologically independent reciprocal marker that does not consist of two quantifiers (e.g. each + other; two + two)?
+",NA,reflexivity
+GB306,Is there a phonologically independent non-bipartite reciprocal pronoun?,"## Is there a phonologically independent reciprocal marker that does not consist of two quantifiers (e.g. each + other; two + two)?
 
 ## Summary
 
@@ -10635,8 +10635,8 @@ Windfuhr, Gernot & John R. Perry. 2009. Persian and Tajik. In Gernot Windfuhr (e
 
 ## Patron
 Jakob Lesage
-",NA,"reciprocity"
-"153","GB309","Are there multiple past or multiple future tenses, distinguishing distance from Time of Reference?","## Are there multiple past or multiple future tenses, distinguishing distance from time of reference?
+",NA,reciprocity
+GB309,"Are there multiple past or multiple future tenses, distinguishing distance from Time of Reference?","## Are there multiple past or multiple future tenses, distinguishing distance from time of reference?
 
 ## Summary
 This question aims to capture productive marking of tense that makes distinctions into remoteness of time in relation to the point of reference or utterance. The actual marking can be tonal, verbal affixation, suppletion or any other means of marking. 
@@ -10725,8 +10725,8 @@ Mithun, Marianne. 1999. *The languages of native North America*. Cambridge: Camb
 
 ## Patron
 Hedvig Skirgård
-",NA,"multipletense"
-"154","GB312","Is there overt morphological marking on the verb dedicated to mood?","## Is there overt morphological marking on the verb dedicated to mood?
+",NA,multipletense
+GB312,Is there overt morphological marking on the verb dedicated to mood?,"## Is there overt morphological marking on the verb dedicated to mood?
 
 ## Summary
 This question is concerned with [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) marking on the verb that indicates grammatical mood. Grammatical mood is concerned with (1) the relationship between an event/state/action expressed in a clause and its actualization in reality (e.g. realis or irrealis) and/or (2) the speaker’s attitude towards the actualization of this event/state/action. This feature covers all grammatical moods, including declarative. The mood marker may be polysemous with other markers.
@@ -10779,8 +10779,8 @@ Dench, Alan. 1994. *Martuthunira: A language of the Pilbara region of Western Au
 
 ## Patron
 Hedvig Skirgård
-",1,"mood"
-"155","GB313","Are there special adnominal possessive pronouns that are not formed by an otherwise regular process?","## Are there special adnominal possessive pronouns that are not formed by an otherwise regular process?
+",1,mood
+GB313,Are there special adnominal possessive pronouns that are not formed by an otherwise regular process?,"## Are there special adnominal possessive pronouns that are not formed by an otherwise regular process?
 
 ## Summary
 This feature identifies phonologically independent possessive pronouns that are not formed by the application of regular possessive morphology or core case marking to more general pronominal forms. Instead, languages that qualify for a 1 code for this feature form at least some possessive pronouns through some process other than the usual possessive marking, or, frequently, with suppletive forms. Note that special adnominal possessive pronouns are most commonly found in the first and second person.
@@ -10883,7 +10883,7 @@ Okoth Okombo, Duncan. 1997. *A functional grammar of Dholuo*. (Nilo-Saharan, 12.
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"156","GB314","Can augmentative meaning be expressed productively by a shift of gender/noun class?","## Can augmentative meaning be expressed productively by a shift of noun class/gender?
+GB314,Can augmentative meaning be expressed productively by a shift of gender/noun class?,"## Can augmentative meaning be expressed productively by a shift of noun class/gender?
 
 ## Summary
 Can augmentative function be marked by a shift of [noun class?](https://github.com/grambank/grambank/wiki/Noun-classes-and-classifiers) This needs to be a [productive](https://github.com/grambank/grambank/wiki/Productivity) pattern. Augmentative marking generally intensifies the noun (in size as well as various other properties). Here the augmentative construction must minimally be used to encode augmented size.
@@ -10944,8 +10944,8 @@ Kawasha, Boniface Kaumba. 2003. *Lunda grammar: A morphosyntactic and semantic a
 
 ## Patron
 Jay Latarche and Jeremy Collins
-",NA,"augmentative"
-"157","GB315","Can diminutive meaning be expressed productively by a shift of gender/noun class?","## Can diminutive meaning be expressed productively by a shift of noun class/gender?
+",NA,augmentative
+GB315,Can diminutive meaning be expressed productively by a shift of gender/noun class?,"## Can diminutive meaning be expressed productively by a shift of noun class/gender?
 
 ## Summary
 Can diminutive function (i.e. smaller size) be marked by a shift of [noun class?](https://github.com/grambank/grambank/wiki/Noun-classes-and-classifiers) We are looking for morphemes in the sentence which vary depending on the noun used, and whether one of these morphemes can be used to change the meaning of a noun by adding the meaning ‘small’. This needs to be a [productive](https://github.com/grambank/grambank/wiki/Productivity) pattern. Diminutive function often also entails other meanings, but it needs to minimally encode smaller size.
@@ -11009,8 +11009,8 @@ Wilbur, Joshua Karl. 2014. *A grammar of Pite Saami*. Berlin: Language Science P
 
 
 ## Patron
-Jay Latarche and Jeremy Collins",NA,"diminutive"
-"158","GB316","Is singular number regularly marked in the noun phrase by a dedicated phonologically free element?","## Is singular number regularly marked in the noun phrase by a phonologically free element?
+Jay Latarche and Jeremy Collins",NA,diminutive
+GB316,Is singular number regularly marked in the noun phrase by a dedicated phonologically free element?,"## Is singular number regularly marked in the noun phrase by a phonologically free element?
 
 ## Summary
 This question concerns regular marking of singular number in the noun phrase by a marker that is not bound to the noun, but free-standing. The marker should occur with an [open set of nouns](https://github.com/grambank/grambank/wiki/Productivity), not with a restricted set. This feature contrasts with [GB042 Is there a productive overt morphological singular marker on nouns?](https://github.com/grambank/Grambank/wiki/GB042), which focuses on the bound marking of singular number. (For more on wordhood and bound marking, please see [this page](https://github.com/grambank/Grambank/wiki/%27on-the-verb-noun%27-or-%27by-morphology%27).)
@@ -11073,8 +11073,8 @@ Mosel, Ulrike & Even Hovdhaugen. 1992. *Samoan reference grammar*. Oslo: The Ins
 
 ## Patron
 Hedvig Skirgård
-",0,"singular"
-"159","GB317","Is dual number regularly marked in the noun phrase by a dedicated phonologically free element?","## Is dual number regularly marked in the noun phrase by a phonologically free element?
+",0,singular
+GB317,Is dual number regularly marked in the noun phrase by a dedicated phonologically free element?,"## Is dual number regularly marked in the noun phrase by a phonologically free element?
 
 ## Summary
 This feature intends to capture dual marking with an [open set of nouns](https://github.com/grambank/grambank/wiki/Productivity), not with a restricted set. Nouns derived from adjectives or verbs are not relevant. This feature contrasts with [GB043	Is there a productive morphological dual marker on nouns?](https://github.com/grambank/Grambank/wiki/GB043) which focuses on bound marking of dual number.
@@ -11139,8 +11139,8 @@ Lynch, John. 1978. *A grammar of Lenakel.* (Pacific linguistics: Series B, 55.) 
 
 ## Patron
 Hedvig Skirgård
-",0,"dual"
-"160","GB318","Is plural number regularly marked in the noun phrase by a dedicated phonologically free element?","## Is plural number regularly marked in the noun phrase by a phonologically free element?
+",0,dual
+GB318,Is plural number regularly marked in the noun phrase by a dedicated phonologically free element?,"## Is plural number regularly marked in the noun phrase by a phonologically free element?
 
 ## Summary
 This question concerns regular marking of plural number in the noun phrase by a marker that is not bound to the noun but free-standing. This marker should occur with an [open set of nouns](https://github.com/grambank/grambank/wiki/Productivity), not with a restricted set. This feature contrasts with [GB044 Is there a productive morphological plural marker on nouns?](https://github.com/grambank/Grambank/wiki/GB044) which focuses on bound marking of plural number. For more on wordhood and bound marking, please see this [page](https://github.com/grambank/Grambank/wiki/%27on-the-verb-noun%27-or-%27by-morphology%27). 
@@ -11207,8 +11207,8 @@ Lim, François. 1997. *Description linguistique du Kare (phonologie-syntaxe)*. P
 
 ## Patron
 Hedvig Skirgård
-",0,"plural"
-"161","GB319","Is trial number regularly marked in the noun phrase by a dedicated phonologically free element?","## Is trial number regularly marked in the noun phrase by a phonologically free element?
+",0,plural
+GB319,Is trial number regularly marked in the noun phrase by a dedicated phonologically free element?,"## Is trial number regularly marked in the noun phrase by a phonologically free element?
 
 ## Summary
 This question concerns regular marking of trial number in the noun phrase by a marker that is not bound to the noun, but [free-standing](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence). The marking should occur with an [open set of nouns](https://github.com/grambank/grambank/wiki/Productivity), not with a restricted set. This feature contrasts with [GB165 Is there a productive morphological trial marker on nouns?](https://github.com/grambank/Grambank/wiki/GB165) which focuses on the bound marking of trial number. For more on wordhood and bound marking, please see [this page](https://github.com/grambank/Grambank/wiki/%27on-the-verb-noun%27-or-%27by-morphology%27). 
@@ -11280,8 +11280,8 @@ Dougherty, Janet W. D. 1983. *West Futuna-Aniwa: An introduction to a Polynesian
 * [GB046 Is there an associative plural marker for nouns?](https://github.com/grambank/Grambank/wiki/GB046)
 
 ## Patron
-Hedvig Skirgård",0,"trial"
-"162","GB320","Is paucal number regularly marked in the noun phrase by a dedicated phonologically free element?","## Is paucal number regularly marked in the noun phrase by a phonologically free element?
+Hedvig Skirgård",0,trial
+GB320,Is paucal number regularly marked in the noun phrase by a dedicated phonologically free element?,"## Is paucal number regularly marked in the noun phrase by a phonologically free element?
 
 ## Summary
 This question concerns regular marking of paucal number in the noun phrase by a marker that is not bound to the noun but [free-standing](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence). This marker should occur with an [open set of nouns](https://github.com/grambank/grambank/wiki/Productivity), not with a restricted set. This feature contrasts with [GB166 Is there a productive morphological paucal marker on nouns?](https://github.com/grambank/Grambank/wiki/GB166)) which focuses on bound marking of paucal number. For more on wordhood and bound marking, please see [this page](https://github.com/grambank/Grambank/wiki/%27on-the-verb-noun%27-or-%27by-morphology%27). 
@@ -11349,8 +11349,8 @@ Lynch, John. 2002. Iaai. In John Lynch, Malcolm Ross & Terry Crowley (eds), *The
 
 ## Patron
 Hedvig Skirgård
-",0,"paucal"
-"163","GB321","Is there a large class of nouns whose gender/noun class is not phonologically or semantically predictable?","## Is there a large class of nouns whose noun class/gender is not phonologically or semantically predictable?
+",0,paucal
+GB321,Is there a large class of nouns whose gender/noun class is not phonologically or semantically predictable?,"## Is there a large class of nouns whose noun class/gender is not phonologically or semantically predictable?
 
 ## Summary
 A noun class/gender system categorizes nouns for the purposes of grammatical [agreement](https://github.com/grambank/grambank/wiki/Agreement) with other constituents in the noun phrase or other inflectional morphology. See the [classification wiki page](https://github.com/grambank/grambank/wiki/Noun-Classes-and-Classifiers) for more information on our definition of noun class/gender. Noun class/gender assignment may be based on one or several factors. This feature asks whether the noun class/gender system of a language includes a large or open class of nouns whose assignment to that class is not predictable based on phonology or semantics. In other words, such a class will appear to be assigned arbitrarily.
@@ -11407,7 +11407,7 @@ Newman, Stanley. 1965. *Zuni grammar.* (University of New Mexico Publications in
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"164","GB322","Is there grammatical marking of direct evidence (perceived with the senses)?","## Is there grammatical marking of direct evidence (perceived with the senses)?
+GB322,Is there grammatical marking of direct evidence (perceived with the senses)?,"## Is there grammatical marking of direct evidence (perceived with the senses)?
 
 ## Summary
 This question is concerned with the marking of evidentiality related to the speaker’s direct sensory evidence for some event or action. Grammatical marking of evidentials involves the use of grammaticalized markers such as affixes or other morphology, evidential particles, or evidential auxiliary verbs to convey the evidential meaning. Grammatical marking contrasts with constructions that express this meaning by means of adverbs (e.g. *John **apparently** ate the cake*) or lexical verbs in multi-clausal constructions (e.g. *I **saw** that John had eaten the cake*). Visual evidence is a common form of information encoded with a direct evidential, however direct evidentiality may also include auditory or other non-visual categories of sensory evidence. This question should be coded 1 if the language has a single direct evidential or any number of sensory evidentials.
@@ -11454,8 +11454,8 @@ McLendon, Sally. 2003. *A brief word list of Eastern Pomo*. Ms.
 
 ## Patron
 Hannah J. Haynie
-",NA,"evidentiality_direct"
-"165","GB323","Is there grammatical marking of indirect evidence (hearsay, inference, etc.)?","## Is there grammatical marking of indirect evidence (hearsay, inference, etc.)?
+",NA,evidentiality_direct
+GB323,"Is there grammatical marking of indirect evidence (hearsay, inference, etc.)?","## Is there grammatical marking of indirect evidence (hearsay, inference, etc.)?
 
 ## Summary
 This question is concerned with the marking of evidentiality related to the speaker's indirect, non-sensory evidence for some event or action. Grammatical marking of evidentials involves the use of grammaticalized markers such as affixes or other morphology, evidential particles, or evidential auxiliary verbs to convey the evidential meaning, in contrast to constructions that create this meaning through the use of adverbs (e.g. *John **reportedly** ate the cake*) or lexical verbs in multi-clause constructions (e.g. *They **say** that John ate the cake*). Indirect evidentiality usually involves inference from physical evidence or second-hand knowledge such as hearsay. This question should be coded 1 if there is a single category of indirect evidentiality or any number of inferential or reportative evidential categories that are marked grammatically.
@@ -11495,8 +11495,8 @@ McLendon, Sally. 1975. *A grammar of Eastern Pomo.* (University of California Pu
 
 ## Patron
 Hannah J. Haynie
-",NA,"evidentiality_indirect"
-"166","GB324","Is there an interrogative verb for content interrogatives (who?, what?, etc.)?","## Is there an interrogative verb for content interrogatives (who?, what?, etc.)?
+",NA,evidentiality_indirect
+GB324,"Is there an interrogative verb for content interrogatives (who?, what?, etc.)?","## Is there an interrogative verb for content interrogatives (who?, what?, etc.)?
 
 ## Summary
 Interrogative verbs are verbs that include a semantic wh-element. In other words, the semantic content of interrogative verb roots includes an element equivalent to a content question, with meanings such as, ‘to do what’ or ‘to be who’. The wh-element must behave like a verb in the language. In English, for example, it would require regular verbal morphology, as in, *You what-ed yesterday?* (meaning, ‘what did you do yesterday?’). The feature does not include verbs of asking (e.g. English *ask*, *inquire*) or interrogative forms created through affixation of interrogative markers to non-interrogative verb roots.
@@ -11590,7 +11590,7 @@ Osumi, Midori. 1995. *Tinrin grammar*. (Oceanic Linguistics Special Publication,
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"167","GB325","Is there a count/mass distinction in interrogative quantifiers?","## Is there a count/mass distinction in interrogative quantifiers?
+GB325,Is there a count/mass distinction in interrogative quantifiers?,"## Is there a count/mass distinction in interrogative quantifiers?
 
 ## Summary
 When interrogatives are used to question quantity, are different interrogative forms used to quantify count nouns and mass nouns? For example, English contrasts *how many* for count nouns (as in, *how many apples?*) and *how much* for mass nouns (as in, *how much sand?*). Languages that have at least one form that means either ‘how much' (of a mass noun) or ‘how many' (of a count noun), but not the alternative, are considered to have a count/mass distinction in interrogative quantifiers. Languages in which any interrogative quantifiers can be used interchangeably with both count and mass nouns do not have the relevant distinction.
@@ -11653,8 +11653,8 @@ Starks, Donna Joy. 1992. *Aspects of Woods Cree syntax*. Winnipeg: University of
 
 ## Patron
 Hannah J. Haynie
-",NA,"count_mass"
-"168","GB326","Do (nominal) content interrogatives normally or frequently occur in situ?","## Do (nominal) content interrogatives normally or frequently occur in situ?
+",NA,count_mass
+GB326,Do (nominal) content interrogatives normally or frequently occur in situ?,"## Do (nominal) content interrogatives normally or frequently occur in situ?
 
 ## Summary
 Is there a commonly used content question construction in which the interrogative pronoun or NP (e.g. English *who* or *which one*) occurs in the normal position for a non-interrogative NP in the same participant role (i.e. ‘in situ’)? Many languages usually place the wh-constituent in situ (e.g. *The man took **what**?*; cf. *The man took **an umbrella**.*), while others require wh-constituents to occur in a specific position (e.g. clause-initially) regardless of the usual position of the corresponding non-interrogative NP (e.g. English ***What** did the man take?*). Here we are interested in identifying languages that frequently or generally use an interrogative construction with nominal wh-constituents in situ. This question should be coded 1 if questions formed with in situ interrogatives are pragmatically unmarked and are used commonly (e.g. not only in restrictive contexts such as echo questions or constructions with multiple interrogatives).
@@ -11721,7 +11721,7 @@ Jeanne, Leanne M. 1978. [*Aspects of Hopi grammar*](http://hdl.handle.net/1721.1
 ## Patron
 Hannah J. Haynie
 ",NA,NA
-"169","GB327","Can the relative clause follow the noun?","## Can the relative clause follow the noun?
+GB327,Can the relative clause follow the noun?,"## Can the relative clause follow the noun?
 
 ## Summary
 
@@ -11816,7 +11816,7 @@ Head, June. 2011. *A grammar of Umbu-Ungu.* Ukarumpa: Ms., SIL.
 
 Jakob Lesage
 ",NA,NA
-"170","GB328","Can the relative clause precede the noun?","## Can the relative clause precede the noun?
+GB328,Can the relative clause precede the noun?,"## Can the relative clause precede the noun?
 
 ## Summary
 
@@ -11901,7 +11901,7 @@ Head, June. 2011. *A grammar of Umbu-Ungu.* Ukarumpa: Ms., SIL.
 
 Jakob Lesage
 ",NA,NA
-"171","GB329","Are there internally-headed relative clauses?","## Are there internally-headed relative clauses that are not correlative relative clauses?
+GB329,Are there internally-headed relative clauses?,"## Are there internally-headed relative clauses that are not correlative relative clauses?
 
 ## Summary
 
@@ -12015,7 +12015,7 @@ Chung, Chan & Kim, Jong-Bok. 2003. [Differences between externally and internall
 ## Patron
 Jakob Lesage
 ",NA,NA
-"172","GB330","Are there correlative relative clauses?","## Are there correlative relative clauses?
+GB330,Are there correlative relative clauses?,"## Are there correlative relative clauses?
 
 ## Summary
 
@@ -12102,7 +12102,7 @@ Srivastav, Veneeta. 1991. The syntax and semantics of correlatives. *Natural Lan
 ## Patron
 Jakob Lesage
 ",NA,NA
-"173","GB331","Are there non-adjacent relative clauses?","## Are there non-adjacent relative clauses?
+GB331,Are there non-adjacent relative clauses?,"## Are there non-adjacent relative clauses?
 
 ## Summary
 Is there a non-correlative relative clause that is not adjacent to its modified noun? For example, in ***[The woman]** is tall **[who has a green hat]***, the noun (*woman*) is not adjacent to its modifying relative clause (*who has a green hat*). It must be possible for the head noun to be any noun, not only an unspecific (pro)noun (e.g. *whoever*). Do not consider correlative relative clauses for this feature (see [GB330](https://github.com/grambank/Grambank/wiki/GB330)).
@@ -12157,7 +12157,7 @@ Quick, Phil. 2007. *A grammar of the Pendau language of central Sulawesi, Indone
 ## Patron
 Jakob Lesage
 ",NA,NA
-"174","GB333","Is there a decimal numeral system?","## Is there a decimal numeral system?
+GB333,Is there a decimal numeral system?,"## Is there a decimal numeral system?
 
 ## Summary
 
@@ -12261,7 +12261,7 @@ Smith, Ellen Louise. 2015. *A grammar of Papapana, with an investigation into la
 ## Patron
 Jakob Lesage
 ",NA,NA
-"175","GB334","Is there synchronic evidence for any element of a quinary numeral system?","## Is there synchronic evidence for any element of a quinary numeral system?
+GB334,Is there synchronic evidence for any element of a quinary numeral system?,"## Is there synchronic evidence for any element of a quinary numeral system?
 
 ## Summary
 Are any numerals above 5 formed with 5 as a base? For example, 6 = 5+1, 7 = 5+2, 8 = 5+3, 9 = 5+4, 11 = 5+5+1, etc.? One example of this is enough for a 1, except if it can be derived from an already existing non-quinary system (e.g. if 10 = 5x2, but other numerals are also formed by doubling, e.g. 4 = 2x2 and 6 = 3x2, this does not count).
@@ -12356,7 +12356,7 @@ Smith, Ellen Louise. 2015. *A grammar of Papapana, with an investigation into la
 ## Patron
 Jakob Lesage
 ",NA,NA
-"176","GB335","Is there synchronic evidence for any element of a vigesimal numeral system?","## Is there synchronic evidence for any element of a vigesimal numeral system?
+GB335,Is there synchronic evidence for any element of a vigesimal numeral system?,"## Is there synchronic evidence for any element of a vigesimal numeral system?
 
 ## Summary
 
@@ -12438,7 +12438,7 @@ The numeral system features:
 ## Patron
 Jakob Lesage
 ",NA,NA
-"177","GB336","Is there a body-part tallying system?","## Is there a body-part tallying system?
+GB336,Is there a body-part tallying system?,"## Is there a body-part tallying system?
 
 ## Summary
 
@@ -12514,7 +12514,7 @@ Comrie, Bernard. n.d. [Typology of numeral systems](https://lingweb.eva.mpg.de/c
 
 Jakob Lesage
 ",NA,NA
-"178","GB400","Are all person categories neutralized in some voice, tense, aspect, mood and/or negation?","## Are all person categories neutralized in some voice, tense, aspect, mood and/or negation?
+GB400,"Are all person categories neutralized in some voice, tense, aspect, mood and/or negation?","## Are all person categories neutralized in some voice, tense, aspect, mood and/or negation?
 
 ## Summary
 This question concerns languages which can [index](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) the person of an [argument (S, A or P)](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) somewhere in the clause (i.e. either on the verb or by clitics). The question asks whether person categories are not distinguished under certain circumstances. In order for there to be neutralization, there needs to be something to ‘neutralize’ to begin with, i.e. languages without person indexing should be coded 0 for this feature. All person categories should be neutralized for the language to be coded as 1. Do not consider [phonologically independent](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) pronouns for this question. Consider only independent clauses. Consider only the moods which allow all person categories of the language to be expressed (that is, ignore imperatives, jussives, etc.)
@@ -12580,7 +12580,7 @@ Zvelebil, Kamil V. 1973. *The Irula language* (vol. 2). Wiesbaden: Harrassowitz.
 ## Patron
 Alena Witzlack-Makarevich
 ",NA,NA
-"179","GB401","Is there a class of patient-labile verbs?","## Is there a class of patient-labile verbs?
+GB401,Is there a class of patient-labile verbs?,"## Is there a class of patient-labile verbs?
 
 ## Summary
 
@@ -12661,7 +12661,7 @@ Quigley, Susan R. 2002. *Awara grammar essentials*. Ukarumpa: SIL.
 ## Patron
 Alena Witzlack-Makarevich
 ",NA,NA
-"180","GB402","Does the verb for 'see' have suppletive verb forms?","## Does the verb for ‘see’ have suppletive verb forms?
+GB402,Does the verb for 'see' have suppletive verb forms?,"## Does the verb for ‘see’ have suppletive verb forms?
 
 ## Summary
 This question concerns strong suppletion in verb(s) of seeing/watching/looking. Suppletion is a process where a lexeme is changed in such a way that the new form does not resemble the previous when it appears in a different position in the paradigm. ‘Weak’ suppletion is not included. An example of this is English _went_ and _go_. In this case, the verb is suppletive for tense. 
@@ -12706,7 +12706,7 @@ Swan, Oscar E. 2002. *A grammar of contemporary Polish*. Bloomington: Slavica.
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"181","GB403","Does the verb for 'come' have suppletive verb forms?","## Does the verb for ‘come’ have suppletive verb forms?
+GB403,Does the verb for 'come' have suppletive verb forms?,"## Does the verb for ‘come’ have suppletive verb forms?
 
 ## Summary
 This question concerns  strong suppletion in verbs of coming. Suppletion is a process where a lexeme is changed in such a way that the new form does not resemble the previous when it appears in a different position in the paradigm. An example of this is English _went_ and _go_. In this case, the verb is suppletive for tense. ‘Weak’ suppletion is not included. 
@@ -12750,7 +12750,7 @@ Milner, George Bertram. 1966. *Samoan dictionary*. Aotearoa, New Zealand: Polyne
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"182","GB408","Is there any accusative alignment of flagging?","## Is there any accusative alignment of flagging?
+GB408,Is there any accusative alignment of flagging?,"## Is there any accusative alignment of flagging?
 
 ## Summary
 Are [P](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) arguments flagged differently from  [S](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) arguments (i.e. do they show accusative alignment)? Flagging covers any kind of argument marking on the argument itself (e.g. by case or adposition marking). The marking can be phonologically free or bound. The marking of [A](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) arguments is not relevant for establishing whether there is any accusative flagging or not, it is the difference between S and P flagging that results in 1. 
@@ -12839,7 +12839,7 @@ Seiler, Walter. 1985. *Imonda, a Papuan Language*. (Pacific Linguistics: Series 
 ## Patron
 Alena Witzlack-Makarevich
 ",NA,NA
-"183","GB409","Is there any ergative alignment of flagging?","## Is there any ergative alignment of flagging?
+GB409,Is there any ergative alignment of flagging?,"## Is there any ergative alignment of flagging?
 
 ## Summary
 Are [A](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) arguments flagged differently from  [S](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) arguments (i.e. do they show ergative alignment)? Flagging covers any kind of argument marking on the argument itself (e.g. by case or adposition marking). The marking can be phonologically free or bound. The marking of [P](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) arguments is not relevant for establishing whether there is any ergative flagging or not, it is the difference between S and A flagging that results in 1. 
@@ -12913,7 +12913,7 @@ Schackow, Diana. 2015. *A grammar of Yakkha*. (Studies in Diversity Linguistics 
 ## Patron
 Alena Witzlack-Makarevich
 ",NA,NA
-"184","GB410","Is there any neutral alignment of flagging?","## Is there any neutral alignment of flagging?
+GB410,Is there any neutral alignment of flagging?,"## Is there any neutral alignment of flagging?
 
 ## Summary
 Are [S, A, and P](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) arguments flagged identically (i.e. are they neutrally aligned)? Flagging covers any kind of argument marking on the argument itself (e.g. by case or adposition marking). The marking can be phonologically free or bound. 
@@ -13033,7 +13033,7 @@ Seiler, Walter. 1985. *Imonda, a Papuan Language*. (Pacific Linguistics: Series 
 ## Patron
 Alena Witzlack-Makarevich
 ",NA,NA
-"185","GB415","Is there a politeness distinction in 2nd person forms?","## Is there a politeness distinction in second person forms?
+GB415,Is there a politeness distinction in 2nd person forms?,"## Is there a politeness distinction in second person forms?
 
 ## Summary
 This feature asks whether there are different second person pronoun forms that are used based on the level of respect accorded by the speaker to the addressee. In some cases polite pronouns are used to indicate a level of formality or unfamiliarity between speaker and addressee. In other cases politeness distinctions are used according to very specific social relationships between speaker and addressee, such as relative age, social status, or kinship. If multiple second person pronoun forms exist in a single number category, and their use is patterned according to the level of intimacy or hierarchy of social relationship between speaker and addressee, this will suffice for a 1 code. The contrastive forms may or may not have other uses (e.g. in French the form *tu* is used only for second person singular informal, while *vous* is used for both second person singular polite and second person plural); a politeness distinction triggers a 1 for this feature regardless of whether the relevant forms have other functions/meanings.
@@ -13079,8 +13079,8 @@ Naughton, James. 2005. *Czech: An essential grammar*. London: London: Routledge.
 
 ## Patron
 Hannah J. Haynie
-",NA,"politeness"
-"186","GB421","Is there a preposed complementizer in complements of verbs of thinking and/or knowing?","## Is there a preposed complementizer for complements of verbs of thinking and/or knowing?
+",NA,politeness
+GB421,Is there a preposed complementizer in complements of verbs of thinking and/or knowing?,"## Is there a preposed complementizer for complements of verbs of thinking and/or knowing?
 
 ## Summary
 
@@ -13115,7 +13115,7 @@ Holmes, Philip & Ian Hinchliffe. 2013. *Swedish: a comprehensive grammar*. Londo
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"187","GB422","Is there a postposed complementizer in complements of verbs of thinking and/or knowing?","## Is there a postposed complementizer for complements of verbs of thinking and/or knowing?
+GB422,Is there a postposed complementizer in complements of verbs of thinking and/or knowing?,"## Is there a postposed complementizer for complements of verbs of thinking and/or knowing?
 
 ## Summary
 
@@ -13154,7 +13154,7 @@ Namai, Kenichi. 1997. *The multiple subject construction in Japanese*.  Washingt
 ## Patron
 Hedvig Skirgård
 ",NA,NA
-"188","GB430","Can adnominal possession be marked by a prefix on the possessor?","## Can adnominal possession be marked by a prefix on the possessor?
+GB430,Can adnominal possession be marked by a prefix on the possessor?,"## Can adnominal possession be marked by a prefix on the possessor?
 
 ## Summary
 This feature targets a specific type of adnominal possessive construction, namely one where a possessor (either nominal or pronominal) is marked with a [prefix or proclitic](https://github.com/grambank/grambank/wiki/Affixes-and-clitics) to indicate possession of an object. This frequently takes the form of a genitive prefix on a possessor, but may also involve other types of prefixes or proclitics. Crucially, the possession must be marked by an element that precedes and is [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) to the possessor nominal/pronominal.
@@ -13202,7 +13202,7 @@ de Dreu, Merijn. 2008. *[The internal structure of the Zulu DP](https://ling.auf
 ## Patron
 Hannah J. Haynie
 ",1,NA
-"189","GB431","Can adnominal possession be marked by a prefix on the possessed noun?","## Can adnominal possession be marked by a prefix on the possessed noun?
+GB431,Can adnominal possession be marked by a prefix on the possessed noun?,"## Can adnominal possession be marked by a prefix on the possessed noun?
 
 ## Summary
 This feature targets a specific type of adnominal possessive construction, namely one where possession is marked by a [prefix or proclitic](https://github.com/grambank/grambank/wiki/Affixes-and-clitics) on the possessed noun. In some cases, the morpheme that marks possession indexes agreement categories of the possessor. Crucially, the possession must be marked by an element that precedes and is [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) to the possessed noun.
@@ -13255,7 +13255,7 @@ Michael, Lev. 2012. [Possession in Nanti](http://linguistics.berkeley.edu/~levmi
 ## Patron
 Hannah J. Haynie
 ",1,NA
-"190","GB432","Can adnominal possession be marked by a suffix on the possessor?","## Can adnominal possession be marked by a suffix on the possessor?
+GB432,Can adnominal possession be marked by a suffix on the possessor?,"## Can adnominal possession be marked by a suffix on the possessor?
 
 ## Summary
 This feature targets a specific type of adnominal possessive construction, namely one where a possessor (either nominal or pronominal) is marked with a [suffix or enclitic](https://github.com/grambank/grambank/wiki/Affixes-and-clitics) to indicate possession of an object. This frequently takes the form of a genitive suffix on a possessor, but may also involve other types of suffixes or enclitics. Crucially, the possession must be marked by an element that follows and is [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) to the possessor noun/pronoun.
@@ -13330,7 +13330,7 @@ Thompson, Sandra A., Joseph Sung-Yul Park & Charles N. Li. 2014. *A reference gr
 ## Patron
 Hannah J. Haynie
 ",1,NA
-"191","GB433","Can adnominal possession be marked by a suffix on the possessed noun?","## Can adnominal possession be marked by a suffix on the possessed noun?
+GB433,Can adnominal possession be marked by a suffix on the possessed noun?,"## Can adnominal possession be marked by a suffix on the possessed noun?
 
 ## Summary
 This feature targets a specific type of adnominal possessive construction, namely one where possession is marked by a [suffix or enclitic](https://github.com/grambank/grambank/wiki/Affixes-and-clitics) on the possessed noun. In some cases, the possessive suffix indexes agreement categories of the possessor. Crucially, the possession must be marked by a [phonologically bound](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) element that follows and is phonologically bound to the possessed noun.
@@ -13382,7 +13382,7 @@ Wagner-Nagy, Beáta. 2014. Possessive constructions in Nganasan. *Томский
 ## Patron
 Hannah J. Haynie
 ",1,NA
-"192","GB519","Can mood be marked by a non-inflecting word (""auxiliary particle"")?","## Can mood be marked by a non-inflecting word (‘auxiliary particle')?
+GB519,"Can mood be marked by a non-inflecting word (""auxiliary particle"")?","## Can mood be marked by a non-inflecting word (‘auxiliary particle')?
 
 ## Summary
 This feature covers all grammatical moods (the relationship between the referred event/state/action and reality and/or speakers' attitude toward what they are saying) and aims to capture [phonologically free](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) elements that do not inflect (i.e. do not change form depending on person, number and other categories of the core arguments). These markers are often described as ‘[particles](https://github.com/grambank/grambank/wiki/Particles)' in the literature, but are also analyzed under other labels. We are interested in grammatical marking, i.e. [dedicated](https://github.com/grambank/grambank/wiki/Dedicated-marking), [productive](https://github.com/grambank/grambank/wiki/Productivity) and [obligatory](https://github.com/grambank/grambank/wiki/Obligatoriness) marking. 
@@ -13446,8 +13446,8 @@ Elbert, Samuel H. & Mary Kawena Pukui. 1979. *Hawaiian grammar*. Honolulu: Unive
 
 ## Patron
 Hedvig Skirgård
-",0,"mood"
-"193","GB520","Can aspect be marked by a non-inflecting word (""auxiliary particle"")?","## Can aspect be marked by a non-inflecting word (‘auxiliary particle’)?
+",0,mood
+GB520,"Can aspect be marked by a non-inflecting word (""auxiliary particle"")?","## Can aspect be marked by a non-inflecting word (‘auxiliary particle’)?
 
 ## Summary
 This feature covers all grammatical aspects (internal temporal constitution of event/action/state) and aims to capture [phonologically free](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) elements that do not inflect (i.e. change form depending on person, number and other categories of the core arguments).  These markers are often described as ‘[particles](https://github.com/grambank/grambank/wiki/Particles)’ in the literature, but are also analyzed under other labels. We are interested in grammatical marking, i.e. [dedicated](https://github.com/grambank/grambank/wiki/Dedicated-marking), [productive](https://github.com/grambank/grambank/wiki/Productivity) and [obligatory](https://github.com/grambank/grambank/wiki/Obligatoriness) marking.  
@@ -13505,8 +13505,8 @@ Mosel, Ulrike & Ainslie So’o. 1997. *Say it in Samoan*. (Pacific Linguistics: 
 
 ## Patron
 Hedvig Skirgård
-",0,"aspect"
-"194","GB521","Can tense be marked by a non-inflecting word (""auxiliary particle"")?","## Can tense be marked by a non-inflecting word (‘auxiliary particle’)?
+",0,aspect
+GB521,"Can tense be marked by a non-inflecting word (""auxiliary particle"")?","## Can tense be marked by a non-inflecting word (‘auxiliary particle’)?
 
 ## Summary
 This feature covers all tenses (present, past and future) and aims to capture [phonologically free](https://github.com/grambank/grambank/wiki/Wordhood-and-phonological-boundness-or-independence) elements that do no inflect (i.e. do not change form depending on person, number and other categories of the core arguments). These markers are often described as ‘[particles](https://github.com/grambank/grambank/wiki/Particles)’ in the literature, but are also analyzed under other labels. We are interested in grammatical marking, i.e. [dedicated](https://github.com/grambank/grambank/wiki/Dedicated-marking), [productive](https://github.com/grambank/grambank/wiki/Productivity) and [obligatory](https://github.com/grambank/grambank/wiki/Obligatoriness) marking. This means that words such as ‘tomorrow’ and ‘yesterday’ do not qualify as productively marking future and hesternal past.
@@ -13572,8 +13572,8 @@ Mosel, Ulrike & So'o, Ainslie. 1997. *Say it in Samoan.* (Pacific Linguistics: S
 
 ## Patron
 Hedvig Skirgård
-",0,"tense"
-"195","GB522","Can the S or A argument be omitted from a pragmatically unmarked clause when the referent is inferrable from context (""pro-drop"" or ""null anaphora"")?","## Can the S or A argument be omitted from a pragmatically unmarked clause when the referent is inferable from context (‘pro-drop’)?
+",0,tense
+GB522,"Can the S or A argument be omitted from a pragmatically unmarked clause when the referent is inferrable from context (""pro-drop"" or ""null anaphora"")?","## Can the S or A argument be omitted from a pragmatically unmarked clause when the referent is inferable from context (‘pro-drop’)?
 
 ## Summary
 This feature identifies languages that do not require a phonologically overt [S or A argument](https://github.com/grambank/grambank/wiki/Core-arguments-(S,-A-and-P)) expressed by a noun phrase or [phonologically independent pronoun](https://github.com/grambank/grambank/wiki/Indexing-vs.-pronouns) when the referent can be inferred from context. These languages are often called ‘pro-drop’ languages, and the phenomenon is generally referred to as ‘null anaphora’ or ‘zero anaphora’. 
