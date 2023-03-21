@@ -33,7 +33,7 @@ for(n in 1:3){
   
   old_fn <- commit_dir_names[n]
   old_fn_files <- list.files(old_fn)
-  new_fn <- exdir_name[n]
+  new_fn <- exdir_names[n]
   
   file.copy(from = paste0(old_fn, old_fn_files),to = new_fn, recursive = T, overwrite = T)
   #remove old dir
