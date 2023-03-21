@@ -6,6 +6,8 @@
 #generate population table (all sociodemographic variables in one dataframe)
 #wrangling EDGE tree
 #generating AUTOTYP areas table
+source("get_external_data.R")
+source("generating_GB_input_file.R")
 source("set_up_general.R") 
 
 #setup for INLA analysis
