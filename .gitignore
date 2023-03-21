@@ -19,3 +19,6 @@ GB_wide_strict.tsv
 *.docx
 *.pdf
 *.jpeg
+
+#folders
+*grambank-analysed/*

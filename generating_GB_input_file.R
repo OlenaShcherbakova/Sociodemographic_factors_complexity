@@ -33,9 +33,9 @@ if (!(file.exists("../../../data_wrangling/glottolog_cldf_wide_df.tsv"))) {
 if (!(file.exists("./../data/GB_wide/parameters.csv"))) {
   cat("Generating parameters table.\n")
   
-  read_csv("../grambank/cldf/parameters.csv", show_col_types = F) %>%
-    dplyr::select(ID, Name, Description, boundness, informativity) %>%
-    write.csv(file = "../../data/GB_wide/parameters.csv")
+  read_csv("../grambank/cldf/parameters.csv", show_col_types = F) %>% 
+    dplyr::select(ID, Name, Description, boundness = Boundness, informativity = Informativity) %>% 
+    write_csv(file = "../../data/GB_wide/parameters.csv")
 }
 
 

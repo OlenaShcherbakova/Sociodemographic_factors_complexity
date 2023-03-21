@@ -16,10 +16,9 @@ GB_wide <-
   dplyr::select(-na_prop)
 
 #read in sheet with scores for whether a feature denotes informativity
-GB_informativity_points <-
-  read_csv(file.path("data", "GB_wide", "parameters.csv"),
-           show_col_types = F) %>%
-  dplyr::select(Parameter_ID = ID, informativity) %>%
+GB_informativity_points <-   read_csv(file.path("data", "GB_wide", "parameters.csv"),
+           show_col_types = F) %>% 
+ dplyr::select(Parameter_ID = ID, informativity) %>%
   mutate(informativity = replace(informativity, Parameter_ID == "GB177", "argumentanimacy")) %>% #manually adding another parameter: assigning the parameter of GB177 ("Can the verb carry a marker of animacy of argument, unrelated to any gender/noun class of the argument visible in the NP domain?") feature to be informative
   filter(!is.na(informativity))
 
@@ -40,7 +39,7 @@ lg_df_informativity_score <- GB_long_for_calc %>%
   mutate(informativity_score = ifelse(sum_informativity >= 1, 1, sum_informativity)) %>%
   ungroup() %>%
   group_by(Language_ID) %>%
-  summarise(`Informativity` = mean(informativity_score, na.rm = T)) %>%
+  summarise(`Informativity` = mean(informativity_score, na.rm = T, .groups = "drop")) %>%
   dplyr::select(Language_ID, `Informativity`)
 
 informativity_st = scale(lg_df_informativity_score$Informativity)
