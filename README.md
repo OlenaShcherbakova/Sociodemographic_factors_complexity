@@ -18,14 +18,14 @@ Zenodo locations:
 
 *   Grambank (v.1.0) <https://doi.org/10.5281/zenodo.7740140>
 *   Grambank-analysed (v1.0) <https://doi.org/10.5281/zenodo.7740822>
-*   Glottolog (v4.5) <https://doi.org/10.5281/zenodo.5772642>
+*   Glottolog-cldf (v4.5) <https://doi.org/10.5281/zenodo.5772649>
 *   AUTOTYP (v1.0.1) <https://doi.org/10.5281/zenodo.6255206>
 
 GitHub locations:
 * EDGE-tree (v1.0.0) <https://github.com/rbouckaert/global-language-tree-pipeline/tree/v1.0.0>
 * Grambank (v1.0) <https://github.com/grambank/grambank/tree/v1.0>
 * Grambank-analysed (v1.0) <https://github.com/grambank/grambank-analysed/tree/v1.0>
-* Glottolog (v4.5) <https://github.com/glottolog/glottolog-cldf/tree/v4.5>
+* Glottolog-cldf (v4.5) <https://github.com/glottolog/glottolog-cldf/tree/v4.5>
 * AUTOTYP (v1.01) <https://github.com/autotyp/autotyp-data/tree/v1.0.1>
 
 In this project, we use git submodules for data access for Grambank,
