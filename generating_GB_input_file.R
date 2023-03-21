@@ -34,7 +34,7 @@ if (!(file.exists("./../data/GB_wide/parameters.csv"))) {
   cat("Generating parameters table.\n")
   
   read_csv("../grambank/cldf/parameters.csv", show_col_types = F) %>%
-    dplyr::select(ID, Name, Description, Boundness, Informativity) %>%
+    dplyr::select(ID, Name, Description, boundness = Boundness, informativity = Informativity) %>%
     write.csv(file = "../../data/GB_wide/parameters.csv")
 }
 
