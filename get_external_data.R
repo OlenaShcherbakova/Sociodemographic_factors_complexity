@@ -1,3 +1,5 @@
+#Script was written by Hedvig Skirgård
+
 source("requirements.R")
 
 #setting up a tempfile path where we can put the zipped files before unzipped to a specific location
