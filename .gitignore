@@ -21,4 +21,4 @@ GB_wide_strict.tsv
 *.jpeg
 
 #folders
-*grambank-analysed/*
+*grambank-analysed*
