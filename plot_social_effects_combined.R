@@ -28,6 +28,16 @@ effs_B$variable <- "fusion"
 effs_2 <- as.data.frame(rbind(effs_B, effs_I))
 effs_2$control <- "no"
 
+effs_1 <- effs_1 %>%
+  rename(lower = 2,
+         upper = 4,
+         mean = 3)
+
+effs_2 <- effs_2 %>%
+  rename(lower = 2,
+         upper = 4,
+         mean = 3)
+
 effs <- as.data.frame(rbind(effs_1, effs_2))
 
 effs_main <- effs %>%
@@ -109,7 +119,7 @@ effs_main_plot_bw = ggplot(eff_main_plot_df,
              position = position_dodge(w = 0.8)) +
   geom_line(position = position_dodge(w = 0.8)) +
   geom_vline(aes(xintercept = 0),
-             lty = 2) +
+             lty = 2, size = 1, alpha = 0.7) +
   scale_color_manual(values = c("black", "red3", "steelblue")) +
   ylab("") +
   xlab("Estimate: 95% credible interval") +
@@ -125,9 +135,20 @@ effs_main_plot_bw = ggplot(eff_main_plot_df,
     legend.key.size = unit(2, 'cm'),
     legend.direction = "horizontal",
     legend.position = "top",
+    axis.line = element_line(size = 1),
+    strip.background = element_rect(color = "black", size = 1),
     panel.spacing.x = unit(15, "mm")
   ) +
   guides(color = "none")
+
+effs_main_plot_bw
+ggsave(
+  file = "output/effects_plot.tiff",
+  plot = effs_main_plot_bw,
+  height = 22,
+  width = 36,
+  dpi = 600
+)
 
 effs_main_plot_bw
 ggsave(
@@ -155,3 +176,5 @@ ggsave(
   width = 36,
   dpi = 300
 )
+
+
