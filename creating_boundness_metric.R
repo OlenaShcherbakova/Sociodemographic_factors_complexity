@@ -33,12 +33,10 @@ if (!file.exists(here(OUTPUTDIR1, "bound_morph_score.tsv"))) {
     reshape2::melt(id.vars = "Language_ID") %>%
     dplyr::rename(Parameter_ID = variable) %>%
     inner_join(GB_fusion_points, by = "Parameter_ID") %>%
-    filter(Fusion != 0) %>%
+    filter(Fusion == 1) %>%
     filter(!is.na(value)) %>%
-    mutate(value_weighted = if_else(Fusion == 0.5 &
-                                      value == 1, 0.5, value)) %>% #replacing all instances of 1 for a feature that is weighted to 0.5 bound morph points to 0.5
     group_by(Language_ID) %>%
-    dplyr::summarise(mean_morph = mean(value_weighted))  %>%
+    dplyr::summarise(mean_morph = mean(value))  %>%
     dplyr::select(Language_ID, boundness = mean_morph)
   
   boundness_st = scale(df_morph_count$boundness)
