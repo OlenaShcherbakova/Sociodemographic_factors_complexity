@@ -15,6 +15,11 @@ GB_wide_strict.tsv
 .xlsx
 *.jpg
 *.svg
+*.tiff
+*.emf
+*.eps
+*.ps
+*.wmf
 *.pptx
 *.docx
 *.pdf
