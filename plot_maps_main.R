@@ -129,6 +129,14 @@ ggsave(
   dpi=300
 )
 
+ggsave(
+  file = "output/map_informativity.tiff",
+  plot = i,
+  width = 10,
+  height = 9, 
+  dpi=600
+)
+
 
 #plotting boundness map
 b <-
@@ -165,6 +173,14 @@ ggsave(
   width = 10,
   height = 9, 
   dpi=300
+)
+
+ggsave(
+  file = "output/map_boundness.tiff",
+  plot = b,
+  width = 10,
+  height = 9, 
+  dpi=600
 )
 
 
@@ -230,6 +246,15 @@ b <-
   labs(fill = "fusion")
 
 two_maps <- b / i
+
+ggsave(
+  file = "output/maps.tiff",
+  plot = two_maps,
+  width = 5,
+  height = 7, 
+  dpi=600
+)
+
 ggsave(
   file = "output/maps.svg",
   plot = two_maps,
