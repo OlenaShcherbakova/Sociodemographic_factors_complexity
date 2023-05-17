@@ -15,7 +15,7 @@ WAIC_0.99 <- read.csv("output_tables_reduced/ waics Boundness_social_models prio
   mutate(prior = "0.99")
 
 sensitivity_B <- as.data.frame(rbind(WAIC_0.1, WAIC_0.01, WAIC_0.5, WAIC_0.99)) %>%
-  mutate(response="boundness")
+  mutate(response="fusion")
 
 
 source('sensitivity_testing_reduced_I_001.R')
