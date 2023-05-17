@@ -13,6 +13,16 @@ effs_B <-
   read.csv("output_tables/ effects Boundness_social_models .csv")
 effs_B$variable <- "fusion"
 
+effs_B <- effs_B %>%
+  rename(lower = 2,
+         upper = 4,
+         mean = 3)
+
+effs_I <- effs_I %>%
+  rename(lower = 2,
+         upper = 4,
+         mean = 3)
+
 effs_1 <- as.data.frame(rbind(effs_B, effs_I))
 
 effs_1$control <- "yes"
@@ -24,6 +34,16 @@ effs_I$variable <- "informativity"
 effs_B <-
   read.csv("output_tables/ effects Boundness_social_only_models .csv")
 effs_B$variable <- "fusion"
+
+effs_B <- effs_B %>%
+  rename(lower = 2,
+         upper = 4,
+         mean = 3)
+
+effs_I <- effs_I %>%
+  rename(lower = 2,
+         upper = 4,
+         mean = 3)
 
 effs_2 <- as.data.frame(rbind(effs_B, effs_I))
 effs_2$control <- "no"
@@ -102,24 +122,24 @@ eff_main_plot_df = effs_main %>%
   )) %>%
   mutate(control = factor(control, levels = c("yes", "no"), ordered = TRUE))
 
-effs_main_plot_bw = ggplot(eff_main_plot_df,
-                           aes(
-                             y = effect,
-                             x = mean,
-                             linetype = control,
-                             color = importance
-                           )) +
+effs_main_plot_bw <- ggplot(eff_main_plot_df,
+                            aes(
+                              y = effect,
+                              x = mean,
+                              linetype = control,
+                              color = importance
+                            )) +
   geom_errorbar(
     aes(xmin = lower, xmax = upper),
     width = 0.6,
     size = 2.5,
-    position = position_dodge(w = 0.8)
+    position = position_dodge(width = 0.8)
   ) +
   geom_point(size = 10,
-             position = position_dodge(w = 0.8)) +
-  geom_line(position = position_dodge(w = 0.8)) +
+             position = position_dodge(width = 0.8)) +
+  geom_line(position = position_dodge(width = 0.8)) +
   geom_vline(aes(xintercept = 0),
-             lty = 2, size = 1, alpha = 0.7) +
+             linetype = 2, size = 1, alpha = 0.7) +
   scale_color_manual(values = c("black", "red3", "steelblue")) +
   ylab("") +
   xlab("Estimate: 95% credible interval") +
@@ -132,14 +152,54 @@ effs_main_plot_bw = ggplot(eff_main_plot_df,
     legend.title = element_text(size = 65),
     strip.text.x = element_text(size = 65),
     legend.spacing.y = unit(2.7, 'cm'),
-    legend.key.size = unit(2, 'cm'),
+    legend.key.width = unit(2, 'cm'),
     legend.direction = "horizontal",
     legend.position = "top",
-    axis.line = element_line(size = 1),
-    strip.background = element_rect(color = "black", size = 1),
+    axis.line = element_line(linewidth = 1),
+    strip.background = element_rect(color = "black", linewidth = 1),
     panel.spacing.x = unit(15, "mm")
   ) +
   guides(color = "none")
+
+
+# effs_main_plot_bw = ggplot(eff_main_plot_df,
+#                            aes(
+#                              y = effect,
+#                              x = mean,
+#                              linetype = control,
+#                              color = importance
+#                            )) +
+#   geom_errorbar(
+#     aes(xmin = lower, xmax = upper),
+#     width = 0.6,
+#     size = 2.5,
+#     position = position_dodge(w = 0.8)
+#   ) +
+#   geom_point(size = 10,
+#              position = position_dodge(w = 0.8)) +
+#   geom_line(position = position_dodge(w = 0.8)) +
+#   geom_vline(aes(xintercept = 0),
+#              lty = 2, size = 1, alpha = 0.7) +
+#   scale_color_manual(values = c("black", "red3", "steelblue")) +
+#   ylab("") +
+#   xlab("Estimate: 95% credible interval") +
+#   theme_classic() +
+#   facet_grid(. ~ variable, scales = "free_x", space = "free") +
+#   theme(
+#     axis.text = element_text(size = 65),
+#     legend.text = element_text(size = 65),
+#     axis.title = element_text(size = 65),
+#     legend.title = element_text(size = 65),
+#     strip.text.x = element_text(size = 65),
+#     legend.spacing.y = unit(2.7, 'cm'),
+#     legend.key.size = unit(2, 'cm'),
+#     legend.direction = "horizontal",
+#     legend.position = "top",
+#     axis.line = element_line(size = 1),
+#     strip.background = element_rect(color = "black", size = 1),
+#     panel.spacing.x = unit(15, "mm")
+#   ) +
+#   guides(color = "none")
 
 effs_main_plot_bw
 ggsave(
