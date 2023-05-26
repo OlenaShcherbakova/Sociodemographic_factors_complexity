@@ -24,6 +24,7 @@ GB_wide_strict.tsv
 *.docx
 *.pdf
 *.jpeg
+*.qs
 
 #folders
 *grambank-analysed*
