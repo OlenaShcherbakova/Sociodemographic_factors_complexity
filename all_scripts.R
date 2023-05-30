@@ -85,3 +85,4 @@ source("plot_spatial_parameters_linear_distances.R") #SI figure for visualizing 
 
 #additional analyses
 source("featurewise_INLA_analysis.R") #modelling the distribution of individual fusion features
+source("grambank_additional_modelling.R")
