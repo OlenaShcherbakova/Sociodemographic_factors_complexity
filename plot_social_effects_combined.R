@@ -165,7 +165,7 @@ facet_grid(. ~ variable, scales = "free_x", space = "free") +
     strip.background = element_rect(color = "black", linewidth = 1),
     panel.spacing.x = unit(15, "mm"),
     panel.grid = element_blank(),
-    panel.border = element_rect(color = "gray 50")
+    panel.border = element_rect(color = "gray 50", fill = NA)
   ) +
   guides(color = "none")
 
