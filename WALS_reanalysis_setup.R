@@ -23,12 +23,13 @@ WALS_df <- WALS %>%
     by = c("ISO_639")
   ) %>%  #discarding languages with no or low numbers of L1 speakers and L2 speakers resulting primarily from language revival efforts
   filter(!is.na(L1_Users)) %>% 
+  dplyr::mutate(L1_Users = log10(L1_Users+1)) %>% 
   dplyr::mutate(L1_Users_scaled = scale(L1_Users)[,1])
 
-formula <- as.formula(paste("roundComp ~", "L1_Users"))
+formula <- as.formula(paste("roundComp ~", "L1_Users_scaled"))
 result <- inla(formula, family = "gaussian", 
                          #control.family = list(hyper = pcprior_hyper), 
                          data = WALS_df, control.compute = list(waic = TRUE)) 
 summary(result)
 
-#mean estimate of L1_Users: -0.019 with credible intervals not crossing zero (-0.032 - -0.005)
+#mean estimate of L1_Users: -0.021 with credible intervals not crossing zero (-0.035 - -0.008)
