@@ -176,7 +176,7 @@ ggsave(
   plot = effs_main_plot_bw,
   height = 22,
   width = 36,
-  dpi = 600
+  dpi = 800
 )
 
 effs_main_plot_bw
@@ -185,7 +185,7 @@ ggsave(
   plot = effs_main_plot_bw,
   height = 22,
   width = 36,
-  dpi = 300
+  dpi = 600
 )
 
 effs_main_plot_bw
@@ -194,7 +194,7 @@ ggsave(
   plot = effs_main_plot_bw,
   height = 22,
   width = 36,
-  dpi = 300
+  dpi = 600
 )
 
 effs_main_plot_bw
@@ -203,5 +203,5 @@ ggsave(
   plot = effs_main_plot_bw,
   height = 22,
   width = 36,
-  dpi = 300
+  dpi = 600
 )
