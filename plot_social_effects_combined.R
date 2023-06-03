@@ -135,8 +135,8 @@ effs_main_plot_bw <- ggplot(eff_main_plot_df,
                             )) +
   geom_errorbar(
     aes(xmin = lower, xmax = upper),
-    width = 1.2,
-    linewidth = 3.5,
+    width = 0.5,
+    linewidth = 3,
     position = position_dodge(width = dodge_width)
   ) +
   geom_point(size = 10,
