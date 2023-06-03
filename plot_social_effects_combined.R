@@ -120,8 +120,11 @@ eff_main_plot_df = effs_main %>%
     importance,
     levels = c("no", "positive", "negative"),
     ordered = TRUE
-  )) %>%
-  mutate(control = factor(control, levels = c("yes", "no"), ordered = TRUE))
+  )) %>% 
+  mutate(control = if_else(control == "yes", "control", "no control")) %>% 
+  mutate(control = factor(control, levels = c("control", "no control"), ordered = TRUE))
+
+dodge_width <- 0.8
 
 effs_main_plot_bw <- ggplot(eff_main_plot_df,
                             aes(
@@ -132,51 +135,62 @@ effs_main_plot_bw <- ggplot(eff_main_plot_df,
                             )) +
   geom_errorbar(
     aes(xmin = lower, xmax = upper),
-    width = 0.6,
-    linewidth = 2.5,
-    position = position_dodge(width = 0.8)
+    width = 1.2,
+    linewidth = 3.5,
+    position = position_dodge(width = dodge_width)
   ) +
   geom_point(size = 10,
-             position = position_dodge(width = 0.8)) +
-  geom_line(position = position_dodge(width = 0.8)) +
+             position = position_dodge(width = dodge_width)) +
+  geom_line(position = position_dodge(width = dodge_width)) +
   geom_vline(
     aes(xintercept = 0),
     linetype = 2,
-    size = 1,
+    linewidth = 1,
     alpha = 0.7
   ) +
   scale_color_manual(values = c("black", "red3", "steelblue")) +
   ylab("") +
   xlab("Estimate: 95% credible interval") +
-  #theme_classic() +
-  theme_minimal() +
+  theme_light() +
+#  theme_minimal() +
 facet_grid(. ~ variable, scales = "free_x", space = "free") +
   theme(
-    axis.text = element_text(size = 65),
-    legend.text = element_text(size = 65),
-    axis.title = element_text(size = 65),
-    legend.title = element_text(size = 65),
-    strip.text.x = element_text(size = 65),
+    text = element_text(size = 55, face = "bold"),
+#    legend.text = element_text(size = 25),
+#    axis.title = element_text(size = 25),
+#    legend.title = element_text(size = 25),
+#    strip.text.x = element_text(size = 25),
     legend.spacing.y = unit(2.7, 'cm'),
     legend.key.width = unit(2, 'cm'),
     legend.direction = "horizontal",
     legend.position = "top",
+    legend.title = element_blank(),
     axis.line = element_line(linewidth = 1),
-    strip.background = element_rect(color = "black", linewidth = 1),
+    strip.background = element_rect(color = "black", linewidth = 2),
     panel.spacing.x = unit(15, "mm"),
-    panel.grid = element_blank(),
+#    panel.grid = element_blank(),
     panel.border = element_rect(color = "gray 50", fill = NA)
   ) +
   guides(color = "none")
 
 
 effs_main_plot_bw
+
+ggsave(
+  file = "output/effects_plot.png",
+  plot = effs_main_plot_bw,
+  height = 24,
+  width = 30,
+  dpi = 400
+)
+
+
 ggsave(
   file = "output/effects_plot.tiff",
   plot = effs_main_plot_bw,
   height = 22,
   width = 36,
-  dpi = 800
+  dpi = 400
 )
 
 effs_main_plot_bw
