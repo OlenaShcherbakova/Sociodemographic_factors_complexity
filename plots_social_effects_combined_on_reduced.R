@@ -35,9 +35,6 @@ effs_B <-
   read.csv("output_tables_reduced/ effects Boundness_social_only_models .csv")
 effs_B$variable <- "fusion"
 
-effs_2 <- as.data.frame(rbind(effs_B, effs_I))
-effs_2$control <- "no"
-
 effs_B <- effs_B %>%
   rename(lower = 2,
          upper = 4,
@@ -47,6 +44,9 @@ effs_I <- effs_I %>%
   rename(lower = 2,
          upper = 4,
          mean = 3)
+
+effs_2 <- as.data.frame(rbind(effs_B, effs_I))
+effs_2$control <- "no"
 
 effs <- as.data.frame(rbind(effs_1, effs_2))
 
@@ -164,4 +164,20 @@ ggsave(
   height = 22,
   width = 36,
   dpi = 300
+)
+
+ggsave(
+  file = "output_reduced/effects_plot.tiff",
+  plot = effs_main_plot_bw,
+  height = 22,
+  width = 36,
+  dpi = 400
+)
+
+ggsave(
+  file = "output_reduced/effects_plot.pdf",
+  plot = effs_main_plot_bw,
+  height = 22,
+  width = 36,
+  dpi = 400
 )
