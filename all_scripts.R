@@ -83,6 +83,9 @@ source("plot_map_Eurasia.R")
 source("plot_heatmap_informativity_Uralic.R") #Uralic tree (informativity) + combined plot with two maps from above
 source("plot_spatial_parameters_linear_distances.R") #SI figure for visualizing how covariance under different kappa and phi parameters corresponds to spatial distances
 
-#additional analyses
-source("featurewise_INLA_analysis.R") #modelling the distribution of individual fusion features
-source("grambank_additional_modelling.R")
+#additional analyses on WALS data
+source("make_ethnologue_SM_for_morphological_complexity_reanalysis.R")
+source("WALS_sparseness.R")
+source("WALS_reanalysis_setup.R")
+source("WALS_reanalysis_controlled_setup.R")
+source("WALS_reanalysis_controlled_setup_high_coverage.R") #analysis + summary table
