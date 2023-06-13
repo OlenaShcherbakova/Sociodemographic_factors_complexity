@@ -151,13 +151,13 @@ effs_main_plot_bw <- ggplot(eff_main_plot_df,
   scale_color_manual(values = c("black", "red3", "steelblue")) +
   ylab("") +
   xlab("Estimate: 95% credible interval") +
-  theme_light() +
-#  theme_minimal() +
+#  theme_light() +
+  theme_minimal() +
 facet_grid(. ~ variable, scales = "free_x", space = "free") +
   theme(
-    text = element_text(size = 55, face = "bold"),
+    text = element_text(size = 55), # face = "bold"),
 #    legend.text = element_text(size = 25),
-#    axis.title = element_text(size = 25),
+    axis.title = element_text(size = 50),
 #    legend.title = element_text(size = 25),
 #    strip.text.x = element_text(size = 25),
     legend.spacing.y = unit(2.7, 'cm'),
@@ -168,7 +168,7 @@ facet_grid(. ~ variable, scales = "free_x", space = "free") +
     axis.line = element_line(linewidth = 1),
     strip.background = element_rect(color = "black", linewidth = 2),
     panel.spacing.x = unit(15, "mm"),
-#    panel.grid = element_blank(),
+    panel.grid = element_blank(),
     panel.border = element_rect(color = "gray 50", fill = NA)
   ) +
   guides(color = "none")
