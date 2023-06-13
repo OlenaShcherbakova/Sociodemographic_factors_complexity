@@ -6,7 +6,7 @@ This project contains all data and all scripts for data-wrangling, analysis and 
 ## Data sources
 
 The data that serves as the input for the analysis comes from Grambank,
-(v1.0, Skirgård et al (in prep)), AUTOTYP (v1.01, Bickel et al (2022)), Glottolog (v4.5), EDGE-tree (v1.0.0, Bouckaert et al (2023)) and Ethnologue (Eberhard et al 2020)).
+(v1.0, Skirgård et al (in prep)), AUTOTYP (v1.01, Bickel et al (2022)), Glottolog (v4.5), EDGE-tree (v1.0.0, Bouckaert et al (2023)), Ethnologue (Eberhard et al 2020)), and WALS (Dryer & Haspelmath 2013).
 
 With the exception of the Ethnologue data, all the data is available
 openly via the science archive Zenodo and/or public GitHub repositories. A
@@ -65,6 +65,7 @@ Running `all_scripts.R` involves the following:
 -   measuring phylogenetic signal in fusion and informativity
 -   generating tables from INLA analyses, including sensitivity analyses
 -   make plots
+-   running additional analyses on WALS-based morphological complexity scores used in Lupyan & Dale's (2010) study (`data/complexity_data_WALS.csv`) (obtained from Gary Lupyan, personal communication 02.06.2023)
 
 Please note: the necessary files, such as metrics scores obtained from the
 Grambank dataset and parameters of metrics (these determine the
@@ -87,6 +88,8 @@ Bromham, Lindell, Russell Dinnage, Hedvig Skirgård, Andrew Ritchie,
 Marcel Cardillo, Felicity Meakins, Simon Greenhill & Xia Hua. 2022.
 Global predictors of language endangerment and the future of linguistic
 diversity. Nature ecology & evolution 6(2). 163--173.
+
+Dryer, Matthew & Martin Haspelmath (eds.). 2013. The World Atlas of Language Structures Online. Leipzig: Max Planck Institute for Evolutionary Anthropology. http://wals.info.
 
 Eberhard, David M., Gary F. Simons & Charles D. Fennig (eds.). 2020.
 Ethnologue: Languages of the World. Dallas, Texas: SIL International.
