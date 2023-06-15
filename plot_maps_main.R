@@ -252,7 +252,7 @@ ggsave(
   plot = two_maps,
   width = 5,
   height = 7, 
-  dpi=800
+  dpi=300
 )
 
 ggsave(
@@ -260,7 +260,7 @@ ggsave(
   plot = two_maps,
   width = 5,
   height = 7, 
-  dpi=600
+  dpi=300
 )
 
 ggsave(
@@ -268,7 +268,7 @@ ggsave(
   plot = two_maps,
   width = 5,
   height = 7, 
-  dpi=600
+  dpi=300
 )
 
 ggsave(
@@ -276,7 +276,7 @@ ggsave(
   plot = two_maps,
   width = 5,
   height = 7, 
-  dpi=600
+  dpi=300
 )
 
 
