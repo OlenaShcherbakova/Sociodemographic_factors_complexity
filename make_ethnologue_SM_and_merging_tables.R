@@ -12,10 +12,14 @@ glottolog_df <- read_tsv("data_wrangling/glottolog_cldf_wide_df.tsv", show_col_t
 GB <- read_tsv("data/GB_wide/GB_wide_strict.tsv", show_col_types = F) %>% 
   dplyr::select(Glottocode = "Language_ID")
 
+colnames(data_ethnologue)
+
 #this script needs the Table_of_languages.tab file to exists, which is only available to people with an SIL lisence
-data_ethnologue <- read_tsv("data/Table_of_Languages.tab", show_col_types = F) %>%
+data_ethnologue <- read_tsv("data/Table_of_LICs.tab", show_col_types = F) %>%
   filter(!is.na(`All_Users`)) %>% #remove rows with missing data for pop of all users
   filter(!is.na(`L1_Users`)) %>% 
+  filter(!is.na(`L2_Users`)) %>% 
+  filter(`L2_Users` > 0) %>% 
   left_join(glottolog_df, by = "ISO_639" ) %>% 
   dplyr::select(-Glottocode) %>% #removing old Glottocode column
   rename(Glottocode = Language_level_ID) %>% 
