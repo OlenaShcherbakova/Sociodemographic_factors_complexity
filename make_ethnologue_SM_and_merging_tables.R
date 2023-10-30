@@ -26,14 +26,13 @@ data_ethnologue <- read_tsv("data/Table_of_LICs.tab", show_col_types = F) %>%
   group_by(Glottocode) %>% 
   summarise(All_Users = sum(All_Users, na.rm = T),
             L1_Users = sum(L1_Users, na.rm = T), 
+            L2_Users = sum(L2_Users, na.rm = T), 
             ISO_639 = paste0(ISO_639, collapse = "; "))
             
 #do some the subsettting to GB and log10 and L2 prop
 data_ethnologue <- data_ethnologue %>% 
   inner_join(GB, by = "Glottocode" ) %>% 
-    dplyr::mutate(L2 = All_Users - L1_Users, 
-                #calculating the number of L2 users by subtracting the number of L1 from All users
-                L2_prop = L2/ All_Users, 
+    dplyr::mutate(L2_prop = L2_Users/ All_Users, 
                 #calculating the proportion of L2 users out of the entire population
                 L1_log10 = log10(L1_Users+1),
                 All_Users_log10 = log10(All_Users+1)) %>% #adding a 1 for cases where pop is 0
