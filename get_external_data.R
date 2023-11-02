@@ -6,7 +6,7 @@ source("requirements.R")
 filepath <- file.path(tempfile())
 
 ##grambank-analysed: downloading, zipping and moving
-grambank_analysed_fn <- c("https://zenodo.org/record/7740822/files/grambank/grambank-analysed-v1.0.zip")
+grambank_analysed_fn <- c("https://zenodo.org/records/7740822/files/grambank/grambank-analysed-v1.0.zip")
 
 utils::download.file(file.path(grambank_analysed_fn), destfile = filepath)
 utils::unzip(zipfile = filepath, exdir = "grambank-analysed")
@@ -23,7 +23,7 @@ unlink(old_fn, recursive = T)
 ## dirs within grambank-analysed
 # for the dirs within grambank-analysed we can fetch them with a for loop
 
-fns_within_grambank_analysed_zip<- c("https://zenodo.org/record/7740140/files/grambank/grambank-v1.0.zip", "https://zenodo.org/record/5772649/files/glottolog/glottolog-cldf-v4.5.zip", "https://zenodo.org/record/6255206/files/autotyp-data-v1.0.1.zip")
+fns_within_grambank_analysed_zip<- c("https://zenodo.org/records/7740140/files/grambank/grambank-v1.0.zip", "https://zenodo.org/record/5772649/files/glottolog/glottolog-cldf-v4.5.zip", "https://zenodo.org/record/6255206/files/autotyp-data-v1.0.1.zip")
 exdir_names <- c("grambank-analysed/grambank", "grambank-analysed/glottolog-cldf", "grambank-analysed/autotyp-data")
 
 commit_dir_names <- c("grambank-analysed/grambank/grambank-grambank-9e0f341/", "grambank-analysed/glottolog-cldf/glottolog-glottolog-cldf-6f1558e/", "grambank-analysed/autotyp-data/autotyp-data-1.0.1/")
