@@ -43,10 +43,17 @@ glottolog_df <- glottolog_df %>%
 #   arrange(value) %>%
 #   .[1:10,]
 
-if(sample == "reduced"){
-  pop_file_fn <- "data_wrangling/pop_reduced.tsv" 
-} else {
+if (sample == "reduced_L2") {
+  pop_file_fn <- "data_wrangling/pop_reduced_L2.tsv"
+} else if (sample == "reduced") {
+  pop_file_fn <- "data_wrangling/pop_reduced.tsv"
+} else if (sample == "full_L2") {
+  pop_file_fn <- "data_wrangling/pop_full_L2.tsv"
+} else if (sample == "full") {
   pop_file_fn <- "data_wrangling/pop_full.tsv"
+} else {
+  "Not appropriate sample specification. Sample can be full, full_L2,
+      reduced or reduced_L2.\n"
 }
 
 metrics_joined <- read_tsv(pop_file_fn, show_col_types = F ) %>% 
@@ -57,13 +64,48 @@ metrics_joined <- read_tsv(pop_file_fn, show_col_types = F ) %>%
   #full_join(hierarchy, by = "Language_ID") %>%
   full_join(areas, by = "Language_ID") 
 
-if(sample == "reduced"){
+if (sample == "reduced_L2") {
   metrics_joined <- metrics_joined %>% 
-    dplyr::select(Language_ID, Name, Family_ID, Macroarea, Latitude, Longitude, boundness_st, informativity_st, boundness, Informativity, L1_log10_st, L2_prop, Education, Official, neighboring_languages_st, AUTOTYP_area)
+    dplyr::select(Language_ID, Name, Family_ID, Macroarea, Latitude, Longitude, 
+                  boundness_st, informativity_st, boundness, Informativity, 
+                  L1_log10_st, L2_prop, Vehicularity, Education, Official, 
+                  neighboring_languages_st, AUTOTYP_area)
+} else if (sample == "reduced") {
+  metrics_joined <- metrics_joined %>% 
+    dplyr::select(Language_ID, Name, Family_ID, Macroarea, Latitude, Longitude, 
+                  boundness_st, informativity_st, boundness, Informativity, 
+                  L1_log10_st, Vehicularity, Education, Official, 
+                  neighboring_languages_st, AUTOTYP_area)
+} else if (sample == "full_L2") {
+  metrics_joined <- metrics_joined %>% 
+    dplyr::select(Language_ID, Name, Family_ID, Macroarea, Latitude, Longitude, 
+                  boundness_st, informativity_st, boundness, Informativity, 
+                  L1_log10_st, Vehicularity, L1_log10, L2_prop, Education, Official, 
+                  neighboring_languages_st, AUTOTYP_area)
+} else if (sample == "full") {
+  metrics_joined <- metrics_joined %>% 
+    dplyr::select(Language_ID, Name, Family_ID, Macroarea, Latitude, Longitude, 
+                  boundness_st, informativity_st, boundness, Informativity, 
+                  L1_log10_st, Vehicularity, L1_log10, Education, Official, 
+                  neighboring_languages_st, AUTOTYP_area)
 } else {
-  metrics_joined <- metrics_joined %>% 
-    dplyr::select(Language_ID, Name, Family_ID, Macroarea, Latitude, Longitude, boundness_st, informativity_st, boundness, Informativity, L1_log10_st, L1_log10, L2_prop, Education, Official, neighboring_languages_st, AUTOTYP_area)
+  "Not appropriate sample specification. Sample can be full, full_L2,
+      reduced or reduced_L2.\n"
 }
+
+# if(sample == "reduced"){
+#   metrics_joined <- metrics_joined %>% 
+#     dplyr::select(Language_ID, Name, Family_ID, Macroarea, Latitude, Longitude, 
+#                   boundness_st, informativity_st, boundness, Informativity, 
+#                   L1_log10_st, L1_log10, Vehicularity, Education, Official, 
+#                   neighboring_languages_st, AUTOTYP_area)
+# } else {
+#   metrics_joined <- metrics_joined %>% 
+#     dplyr::select(Language_ID, Name, Family_ID, Macroarea, Latitude, Longitude, 
+#                   boundness_st, informativity_st, boundness, Informativity, 
+#                   L1_log10_st, Vehicularity, L1_log10, L2_prop, Education, Official, 
+#                   neighboring_languages_st, AUTOTYP_area)
+# }
 
 metrics_joined <- metrics_joined %>% 
   #discarding languages with no or low numbers of L1 speakers and L2 speakers resulting primarily from language revival efforts
