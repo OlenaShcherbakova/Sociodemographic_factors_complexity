@@ -14,12 +14,52 @@ source("set_up_general.R")
 source("install_and_load_INLA.R")
 #choosing whether to use the full dataset (possible only for reviewers and if one has own access to Ethnologue and saved the dataset in the data folder on their own) or to only to the subset of Ethnologue with transformed variables made available in this repostiory after running create_pop_table.R
 
-#sample <- "full"
-sample <- "reduced" #default
+#reanalyses on the small L2 sample 
+sample <- "full_L2"
+#sample <- "reduced_L2" #default
 
 source("make_ethnologue_SM_and_merging_tables.R")
 source("create_pop_table.R")
 source("set_up_inla.R")
+
+#reanalyses: random effects only
+source("models_boundness_L2_phylogenetic_spatial.R")
+source("models_informativity_L2_phylogenetic_spatial.R")
+
+#reanalyses: fixed + random effects 
+source("models_reanalysis_boundness_L2_social.R")
+source("models_reanalysis_informativity_L2_social.R")
+
+#reanalyses: fixed effects only
+source("models_reanalysis_Boundness_L2_social_only.R")
+source("models_reanalysis_Informativity_L2_social_only.R")
+
+#reanalyses on the large sample
+sample <- "full"
+#sample <- "reduced" #default
+
+source("make_ethnologue_SM_and_merging_tables.R")
+source("create_pop_table.R")
+source("set_up_inla.R")
+
+#reanalyses: random effects only
+source("models_boundness_reanalysis_phylogenetic_spatial.R")
+source("models_informativity_reanalysis_phylogenetic_spatial.R")
+
+#reanalyses: fixed + random effects 
+source("models_reanalysis_Boundness_social.R")
+source("models_reanalysis_Informativity_social.R")
+
+#reanalyses: fixed effects only
+source("models_reanalysis_Boundness_social_only.R")
+source("models_reanalysis_Informativity_social_only.R")
+
+#plot the results of the reanalyses
+source("plot_reanalysis_social_effects_combined.R")
+source("plot_reanalysis_L2_social_effects_combined.R")
+
+
+
 
 #run all INLA models + extract main results tables 
 #Note that previously "fusion" was called "boundness", and this is how it is referenced in all scripts
