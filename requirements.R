@@ -147,9 +147,17 @@ OUTPUTDIR_models <- here("output_models")
 # create output dir if it does not exist.		
 if (!dir.exists(OUTPUTDIR_models)) { dir.create(OUTPUTDIR_models) }	
 
+OUTPUTDIR_models_reanalysis <- here("output_models_reanalysis")		
+# create output dir if it does not exist.		
+if (!dir.exists(OUTPUTDIR_models_reanalysis)) { dir.create(OUTPUTDIR_models_reanalysis) }	
+
 OUTPUTDIR_tables <- here("output_tables")		
 # create output dir if it does not exist.		
 if (!dir.exists(OUTPUTDIR_tables)) { dir.create(OUTPUTDIR_tables) }	
+
+OUTPUTDIR_tables_reanalysis <- here("output_tables_reanalysis")		
+# create output dir if it does not exist.		
+if (!dir.exists(OUTPUTDIR_tables_reanalysis)) { dir.create(OUTPUTDIR_tables_reanalysis) }	
 
 OUTPUTDIR_output <- here("output")		
 # create output dir if it does not exist.		
