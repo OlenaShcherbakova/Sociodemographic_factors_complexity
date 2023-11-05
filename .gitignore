@@ -8,6 +8,8 @@
 *.RData
 Table_of_Languages.tab
 ethnologue_pop_full.tsv
+ethnologue_pop_L2_full.tsv
+pop_full_L2.tsv
 pop.tsv
 pop_full.tsv
 GB_wide_strict.tsv
@@ -30,3 +32,4 @@ GB_wide_strict.tsv
 *grambank-analysed*
 data/Table_of_LICs.tab
 data/Table_of_LICs.tab
+
