@@ -41,10 +41,10 @@ data_ethnologue_reanalysis <- data_ethnologue %>%
 
 #this dataset will serve as the basis for the reanalysis on the small sample with available L2           
 data_ethnologue_reanalysis_L2 <- data_ethnologue %>%
-  filter(!is.na(`All_Users`)) %>% #remove rows with missing data for pop of all users
-  filter(!is.na(`L1_Users`)) %>% 
-  filter(!is.na(`L2_Users`)) %>% 
-  filter(`L2_Users` >= 0) %>% 
+  dplyr::filter(!is.na(`All_Users`)) %>% #remove rows with missing data for pop of all users
+  dplyr::filter(!is.na(`L1_Users`)) %>% 
+  dplyr::filter(!is.na(`L2_Users`)) %>% 
+  dplyr::filter(`L2_Users` >= 0) %>% 
   left_join(glottolog_df, by = "ISO_639" ) %>% 
   dplyr::select(-Glottocode) %>% #removing old Glottocode column
   rename(Glottocode = Language_level_ID) %>% 
