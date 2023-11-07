@@ -40,9 +40,22 @@ phylo_prec_mat <- MCMCglmm::inverseA(tree_scaled,
 
 metrics_joined = metrics_joined[order(match(metrics_joined$Language_ID, rownames(phylo_prec_mat))),]
 
+#calculate geo_dists
+lat_long_matrix <- metrics_joined %>% 
+  column_to_rownames("Language_ID") %>% 
+  dplyr::select(Longitude, Latitude) %>% 
+  as.matrix()
+
+rdist.earth_dists <- fields::rdist.earth(lat_long_matrix, miles = FALSE)
+
+rdist.earth_dists[upper.tri(rdist.earth_dists, diag = TRUE)] <- NA
+
+# dists_vector <- as.vector(rdist.earth_dists) 
+dists_vector = rdist.earth_dists[lower.tri(rdist.earth_dists)]
+
 #"local" set of parameters
 ## Create spatial covariance matrix using the matern covariance function
-spatial_covar_mat_1 = varcov.spatial(metrics_joined[,c("Longitude", "Latitude")], 
+spatial_covar_mat_1 = varcov.spatial(dists.lowertri = rdist.earth_dists[lower.tri(rdist.earth_dists)] / 100, 
                                      cov.pars = phi_1, kappa = kappa)$varcov
 # Calculate and standardize by the typical variance
 typical_variance_spatial_1 = exp(mean(log(diag(spatial_covar_mat_1))))
@@ -51,7 +64,8 @@ spatial_prec_mat_1 = solve(spatial_cov_std_1)
 dimnames(spatial_prec_mat_1) = list(metrics_joined$Language_ID, metrics_joined$Language_ID)
 
 #"regional" set of parameters
-spatial_covar_mat_2 = varcov.spatial(metrics_joined[,c("Longitude", "Latitude")], cov.pars = phi_2, kappa = kappa)$varcov
+spatial_covar_mat_2 = varcov.spatial(dists.lowertri = rdist.earth_dists[lower.tri(rdist.earth_dists)] / 100, 
+                                     cov.pars = phi_2, kappa = kappa)$varcov
 typical_variance_spatial_2 = exp(mean(log(diag(spatial_covar_mat_2))))
 spatial_cov_std_2 = spatial_covar_mat_2 / typical_variance_spatial_2
 spatial_prec_mat_2 = solve(spatial_cov_std_2)
