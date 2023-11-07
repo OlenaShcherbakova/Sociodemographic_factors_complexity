@@ -1,6 +1,6 @@
 source("requirements.R")
 
-#Script was written by Hedvig Skirgård
+#Script was written by Hedvig Skirgård, Hannah J. Haynie and Olena Shcherbakova.
 
 #this script necessitates that grambank and glottolog files exist. if they do not, run generate_GB_input_file.R
 #this script generates the Ethnologue file that can be published based on the raw ethnologue file from SIL. The raw file CANNOT be shared publicly, but derived information that cannot be transformed back to the original values can, such as scaled and log-transformed values
