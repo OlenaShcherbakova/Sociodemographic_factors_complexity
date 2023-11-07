@@ -36,22 +36,22 @@ glottolog_df <-
 
 if (sample == "full") {
   data_ethnologue <-
-    read_tsv("data_wrangling/ethnologue_pop_full.tsv")
+    read_tsv("data_wrangling/ethnologue_pop_full.tsv", show_col_types = F)
 }
 
 if (sample == "full_L2") {
   data_ethnologue <-
-    read_tsv("data_wrangling/ethnologue_pop_L2_full.tsv")
+    read_tsv("data_wrangling/ethnologue_pop_L2_full.tsv", show_col_types = F)
 }
 
 if (sample == "reduced") {
   data_ethnologue <-
-    read_tsv("data_wrangling/ethnologue_pop_SM.tsv")
+    read_tsv("data_wrangling/ethnologue_pop_SM.tsv", show_col_types = F)
 }
 
 if (sample == "reduced_L2") {
   data_ethnologue <-
-    read_tsv("data_wrangling/ethnologue_pop_L2_SM.tsv")
+    read_tsv("data_wrangling/ethnologue_pop_L2_SM.tsv", show_col_types = F)
 }
 
 
