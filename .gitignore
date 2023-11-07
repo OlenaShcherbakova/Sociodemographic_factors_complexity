@@ -7,6 +7,8 @@
 
 *.RData
 Table_of_Languages.tab
+Table_of_LICs.tab
+
 ethnologue_pop_full.tsv
 ethnologue_pop_L2_full.tsv
 pop_full_L2.tsv
