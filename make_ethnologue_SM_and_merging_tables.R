@@ -17,7 +17,7 @@ GB <- read_tsv("data/GB_wide/GB_wide_strict.tsv", show_col_types = F) %>%
 #this script needs the Table_of_LICs.tab file to exists, which is only available to people with an SIL lisence
 data_ethnologue <- read_tsv("data/Table_of_LICs.tab", show_col_types = F) %>%
   filter(!is.na(`EGIDS`)) %>%
-  dplyr::mutate(Vehicularity = ifelse(EGIDS == "1" |
+  dplyr::mutate(Vehicularity = ifelse(EGIDS == "0" | EGIDS == "1" |
                                         EGIDS == "2" |
                                         EGIDS == "3", "1", "0")) 
 
