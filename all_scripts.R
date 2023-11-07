@@ -15,6 +15,8 @@ source("install_and_load_INLA.R")
 #choosing whether to use the full dataset (possible only for reviewers and if one has own access to Ethnologue and saved the dataset in the data folder on their own) or to only to the subset of Ethnologue with transformed variables made available in this repostiory after running create_pop_table.R
 
 #reanalyses on the small L2 sample 
+# options : "full", "full_L2", "reduced", "reduced_L2"
+# full contains also data that cannot be shared publicly because of ethnologue license, reduced can be public. "_L2" means that L2 data is included, which subsets the sample.
 sample <- "full_L2"
 #sample <- "reduced_L2" #default
 
