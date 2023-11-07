@@ -25,6 +25,8 @@ data_ethnologue <- read_tsv("data/Table_of_LICs.tab", show_col_types = F) %>%
 data_ethnologue_reanalysis <- data_ethnologue %>%
   filter(!is.na(`All_Users`)) %>% #remove rows with missing data for pop of all users
   filter(!is.na(`L1_Users`)) %>% 
+  filter(`L2_Users` >= 0) %>% 
+#  dplyr::filter(!is.na(`L2_Users`)) %>% 
   left_join(glottolog_df, by = "ISO_639" ) %>% 
   dplyr::select(-Glottocode) %>% #removing old Glottocode column
   rename(Glottocode = Language_level_ID) %>% 
@@ -44,7 +46,6 @@ data_ethnologue_reanalysis_L2 <- data_ethnologue %>%
   dplyr::filter(!is.na(`All_Users`)) %>% #remove rows with missing data for pop of all users
   dplyr::filter(!is.na(`L1_Users`)) %>% 
   dplyr::filter(!is.na(`L2_Users`)) %>% 
-  dplyr::filter(`L2_Users` >= 0) %>% 
   left_join(glottolog_df, by = "ISO_639" ) %>% 
   dplyr::select(-Glottocode) %>% #removing old Glottocode column
   rename(Glottocode = Language_level_ID) %>% 
