@@ -20,6 +20,7 @@ source("install_and_load_INLA.R")
 sample <- "full_L2"
 #sample <- "reduced_L2" #default
 
+if(sample == "full_L2"| sample == "full"){
 source("make_ethnologue_SM_and_merging_tables.R")
 source("create_pop_table.R")
 source("set_up_inla.R")
@@ -40,7 +41,6 @@ source("models_reanalysis_Informativity_L2_social_only.R")
 sample <- "full"
 #sample <- "reduced" #default
 
-source("make_ethnologue_SM_and_merging_tables.R")
 source("create_pop_table.R")
 source("set_up_inla.R")
 
@@ -60,7 +60,7 @@ source("models_reanalysis_Informativity_social_only.R")
 source("plot_reanalysis_social_effects_combined.R")
 source("plot_reanalysis_L2_social_effects_combined.R")
 
-
+}
 
 
 #run all INLA models + extract main results tables 
