@@ -310,8 +310,8 @@ for(i in 1:n_models){
     social_effects_matrix_L2_prop[i, 4] <- predterms_short[[i]]
     social_effects_matrix_L2_prop[i, 5] <- result[[i]]$waic$waic
     
-    marginals_fixed_list_L2_prop[[i]] <- as.data.frame(cbind(result[[i]][["marginals.fixed"]][["Vehicularity"]]))
-    colnames(marginals_fixed_list_L2_prop[[i]]) <- c("x for Vehicularity", "y for Vehicularity")
+    marginals_fixed_list_Vehicularity[[i]] <- as.data.frame(cbind(result[[i]][["marginals.fixed"]][["Vehicularity"]]))
+    colnames(marginals_fixed_list_Vehicularity[[i]]) <- c("x for Vehicularity", "y for Vehicularity")
   }
   
   if(i %in% interaction_element) {
