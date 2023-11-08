@@ -178,21 +178,21 @@ if(sample == "reduced"){
 #   source("plots_social_effects_combined_on_reduced.R")
 # }
 
-#measure phylogenetic signal in two fusion and informativity
-source("measuring_phylosignal.R")
-
-
-#plotting
-source("plot_maps_main.R") #maps of scores
-source("plot_heatmap_B_I.R") #phylogenetic tree with a heatmap 
-source("plot_map_Africa.R")
-source("plot_map_Eurasia.R")
-source("plot_heatmap_informativity_Uralic.R") #Uralic tree (informativity) + combined plot with two maps from above
-source("plot_spatial_parameters_linear_distances.R") #SI figure for visualizing how covariance under different kappa and phi parameters corresponds to spatial distances
-
-#additional analyses on WALS data
-source("make_ethnologue_SM_for_morphological_complexity_reanalysis.R")
-source("WALS_sparseness.R")
-source("WALS_reanalysis_setup.R")
-source("WALS_reanalysis_controlled_setup.R")
-source("WALS_reanalysis_controlled_setup_high_coverage.R") #analysis + summary table
+# #measure phylogenetic signal in two fusion and informativity
+# source("measuring_phylosignal.R")
+# 
+# 
+# #plotting
+# source("plot_maps_main.R") #maps of scores
+# source("plot_heatmap_B_I.R") #phylogenetic tree with a heatmap 
+# source("plot_map_Africa.R")
+# source("plot_map_Eurasia.R")
+# source("plot_heatmap_informativity_Uralic.R") #Uralic tree (informativity) + combined plot with two maps from above
+# source("plot_spatial_parameters_linear_distances.R") #SI figure for visualizing how covariance under different kappa and phi parameters corresponds to spatial distances
+# 
+# #additional analyses on WALS data
+# source("make_ethnologue_SM_for_morphological_complexity_reanalysis.R")
+# source("WALS_sparseness.R")
+# source("WALS_reanalysis_setup.R")
+# source("WALS_reanalysis_controlled_setup.R")
+# source("WALS_reanalysis_controlled_setup_high_coverage.R") #analysis + summary table
