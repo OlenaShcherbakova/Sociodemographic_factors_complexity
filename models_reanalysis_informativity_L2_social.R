@@ -443,7 +443,6 @@ effs_plot <- effs %>%
          upper = 4,
          mean = 3) %>% #mean here refers to 0.5 quantile 
   #filter(!effect == "Intercept") %>%
-  mutate(effect = factor(effect, levels=c("phylogenetic SD", "spatial SD", "Intercept", "social SD:\nL1", "L1", "social SD:\nL2 proportion", "L2 proportion", "Neighbours", "Education", "Official status", "L1*L2 proportion"))) %>%
   mutate(WAIC = round(WAIC, 2)) %>%
   unite("model", model, WAIC, sep = ",\nWAIC: ", remove=FALSE) %>%
   group_by(WAIC) %>%
