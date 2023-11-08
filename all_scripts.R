@@ -14,14 +14,22 @@ source("set_up_general.R")
 source("install_and_load_INLA.R")
 #choosing whether to use the full dataset (possible only for reviewers and if one has own access to Ethnologue and saved the dataset in the data folder on their own) or to only to the subset of Ethnologue with transformed variables made available in this repostiory after running create_pop_table.R
 
-#reanalyses on the small L2 sample 
-# options : "full", "full_L2", "reduced", "reduced_L2"
-# full contains also data that cannot be shared publicly because of ethnologue license, reduced can be public. "_L2" means that L2 data is included, which subsets the sample.
+# before running the following scripts it is important to choose the sample setting
+# options for sample settings: "full", "full_L2", "reduced", "reduced_L2"
+# full contains also data that cannot be shared publicly because of ethnologue license
+# reduced can be public
+# "_L2" means that L2 data is included, which subsets the sample
+
+
+### reanalyses on the small L2 sample ###
 sample <- "full_L2"
 #sample <- "reduced_L2" #default
 
 if(sample == "full_L2"| sample == "full"){
 source("make_ethnologue_SM_and_merging_tables.R")
+}
+
+if(sample == "full_L2"){
 source("create_pop_table.R")
 source("set_up_inla.R")
 
@@ -36,82 +44,139 @@ source("models_reanalysis_informativity_L2_social.R")
 #reanalyses: fixed effects only
 source("models_reanalysis_Boundness_L2_social_only.R")
 source("models_reanalysis_Informativity_L2_social_only.R")
+  
+#plot the results of the reanalyses
+source("plot_reanalysis_L2_social_effects_combined.R")
+}
 
-#reanalyses on the large sample
+
+if(sample == "reduced_L2"){
+  source("create_pop_table.R")
+  source("set_up_inla.R")
+  
+  #reanalyses: random effects only
+  source("models_boundness_L2_phylogenetic_spatial.R")
+  source("models_informativity_L2_phylogenetic_spatial.R")
+  
+  #reanalyses: fixed + random effects 
+  source("models_reanalysis_boundness_L2_social_reduced.R") 
+  source("models_reanalysis_informativity_L2_social_reduced.R")
+  
+  #reanalyses: fixed effects only
+  source("models_reanalysis_Boundness_L2_social_only_reduced.R")
+  source("models_reanalysis_Informativity_L2_social_only_reduced.R")
+  
+  #plot the results of the reanalyses
+  source("plot_reanalysis_L2_social_effects_combined_reduced.R")
+}
+
+
+
+###reanalyses on the large sample###
 sample <- "full"
 #sample <- "reduced" #default
 
-source("create_pop_table.R")
-source("set_up_inla.R")
-
-#reanalyses: random effects only
-source("models_boundness_reanalysis_phylogenetic_spatial.R")
-source("models_informativity_reanalysis_phylogenetic_spatial.R")
-
-#reanalyses: fixed + random effects 
-source("models_reanalysis_Boundness_social.R")
-source("models_reanalysis_Informativity_social.R")
-
-#reanalyses: fixed effects only
-source("models_reanalysis_Boundness_social_only.R")
-source("models_reanalysis_Informativity_social_only.R")
-
-#plot the results of the reanalyses
-source("plot_reanalysis_social_effects_combined.R")
-source("plot_reanalysis_L2_social_effects_combined.R")
-
-}
-
-
-#run all INLA models + extract main results tables 
-#Note that previously "fusion" was called "boundness", and this is how it is referenced in all scripts
-
-#predictors: random effects - phylogenetic and spatial (same scripts for "full" and "reduced" versions)
-source("models_Boundness_phylogenetic_spatial.R")
-source("models_Informativity_phylogenetic_spatial.R")
-
 if(sample == "full"){
+  source("create_pop_table.R")
+  source("set_up_inla.R")
   
-  #predictors: phylogenetic and spatial random effects + sociodemograhic variables as fixed effects
-  source("models_Boundness_social.R")
-  source("models_Informativity_social.R")
+  #reanalyses: random effects only
+  source("models_boundness_reanalysis_phylogenetic_spatial.R")
+  source("models_informativity_reanalysis_phylogenetic_spatial.R")
   
-  #predictors: sociodemographic variables as fixed effects
-  source("models_Boundness_social_only.R")
-  source("models_Informativity_social_only.R") 
+  #reanalyses: fixed + random effects 
+  source("models_reanalysis_Boundness_social.R")
+  source("models_reanalysis_Informativity_social.R")
   
-  #conduct sensitivity testing + extract the corresponding table
-  source("runs_sensitivity.R") 
+  #reanalyses: fixed effects only
+  source("models_reanalysis_Boundness_social_only.R")
+  source("models_reanalysis_Informativity_social_only.R")
   
-  #extract tables from INLA analyses
-  source("table_INLA_summary_all_models_SI.R")
-  source("variance_top_ranking_models.R")
-  
-  #plotting main results
-  source("plot_social_effects_combined.R")
+  #plot the results of the reanalyses
+  source("plot_reanalysis_social_effects_combined.R")
 }
+
 
 if(sample == "reduced"){
+  source("create_pop_table.R")
+  source("set_up_inla.R")
   
-  #predictors: phylogenetic and spatial random effects + sociodemograhic variables as fixed effects 
-  #(on reduced set of social variables: without log10 transformed L1 speakers)
-  source("models_Boundness_reduced_social.R")
-  source("models_Informativity_reduced_social.R")
+  #reanalyses: random effects only
+  source("models_boundness_reanalysis_phylogenetic_spatial.R")
+  source("models_informativity_reanalysis_phylogenetic_spatial.R")
   
-  #predictors: sociodemographic variables as fixed effects
-  source("models_Boundness_reduced_social_only.R")
-  source("models_Informativity_reduced_social_only.R")
+  #reanalyses: fixed + random effects 
+  source("models_reanalysis_Boundness_social_reduced.R") #script done
+  source("models_reanalysis_Informativity_social_reduced.R") #script done
   
-  #conduct sensitivity testing + extract the corresponding table
-  source("runs_sensitivity_on_reduced.R")
+  #reanalyses: fixed effects only
+  source("models_reanalysis_Boundness_social_only_reduced.R") #script done
+  source("models_reanalysis_Informativity_social_only_reduced.R") #script done
   
-  #extract tables from INLA analyses
-  source("table_INLA_summary_all_models_SI_reduced.R")
-  source("variance_top_ranking_models_reduced.R")
-  
-  #plotting main results
-  source("plots_social_effects_combined_on_reduced.R")
+  #plot the results of the reanalyses
+  source("plot_reanalysis_social_effects_combined_reduced.R")
 }
+
+
+
+
+
+
+
+
+
+
+#old 
+
+# #run all INLA models + extract main results tables 
+# #Note that previously "fusion" was called "boundness", and this is how it is referenced in all scripts
+# 
+# #predictors: random effects - phylogenetic and spatial (same scripts for "full" and "reduced" versions)
+# source("models_Boundness_phylogenetic_spatial.R")
+# source("models_Informativity_phylogenetic_spatial.R")
+# 
+# if(sample == "full"){
+#   
+#   #predictors: phylogenetic and spatial random effects + sociodemograhic variables as fixed effects
+#   source("models_Boundness_social.R")
+#   source("models_Informativity_social.R")
+#   
+#   #predictors: sociodemographic variables as fixed effects
+#   source("models_Boundness_social_only.R")
+#   source("models_Informativity_social_only.R") 
+#   
+#   #conduct sensitivity testing + extract the corresponding table
+#   source("runs_sensitivity.R") 
+#   
+#   #extract tables from INLA analyses
+#   source("table_INLA_summary_all_models_SI.R")
+#   source("variance_top_ranking_models.R")
+#   
+#   #plotting main results
+#   source("plot_social_effects_combined.R")
+# }
+# 
+# if(sample == "reduced"){
+#   
+#   #predictors: phylogenetic and spatial random effects + sociodemograhic variables as fixed effects 
+#   #(on reduced set of social variables: without log10 transformed L1 speakers)
+#   source("models_Boundness_reduced_social.R")
+#   source("models_Informativity_reduced_social.R")
+#   
+#   #predictors: sociodemographic variables as fixed effects
+#   source("models_Boundness_reduced_social_only.R")
+#   source("models_Informativity_reduced_social_only.R")
+#   
+#   #conduct sensitivity testing + extract the corresponding table
+#   source("runs_sensitivity_on_reduced.R")
+#   
+#   #extract tables from INLA analyses
+#   source("table_INLA_summary_all_models_SI_reduced.R")
+#   source("variance_top_ranking_models_reduced.R")
+#   
+#   #plotting main results
+#   source("plots_social_effects_combined_on_reduced.R")
+# }
 
 #measure phylogenetic signal in two fusion and informativity
 source("measuring_phylosignal.R")
