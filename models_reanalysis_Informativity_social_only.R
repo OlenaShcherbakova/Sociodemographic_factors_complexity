@@ -171,8 +171,8 @@ names(marginals_fixed_list_Intercept) <- predterms_short
 marginals_fixed_list_L1 <- vector("list", n_models)
 names(marginals_fixed_list_L1) <- predterms_short
 
-marginals_fixed_list_L2_prop <- vector("list", n_models)
-names(marginals_fixed_list_L2_prop) <- predterms_short
+marginals_fixed_list_Vehicularity <- vector("list", n_models)
+names(marginals_fixed_list_Vehicularity) <- predterms_short
 
 marginals_fixed_list_O <- vector("list", n_models)
 names(marginals_fixed_list_O) <- predterms_short
@@ -239,8 +239,8 @@ for(i in 1:n_models){
     social_effects_matrix_L2_prop[i, 4] <- predterms_short[[i]]
     social_effects_matrix_L2_prop[i, 5] <- result[[i]]$waic$waic
     
-    marginals_fixed_list_L2_prop[[i]] <- as.data.frame(cbind(result[[i]][["marginals.fixed"]][["Vehicularity"]]))
-    colnames(marginals_fixed_list_L2_prop[[i]]) <- c("x for Vehicularity", "y for Vehicularity")
+    marginals_fixed_list_Vehicularity[[i]] <- as.data.frame(cbind(result[[i]][["marginals.fixed"]][["Vehicularity"]]))
+    colnames(marginals_fixed_list_Vehicularity[[i]]) <- c("x for Vehicularity", "y for Vehicularity")
   }
   
   if(i %in% interaction_element) {
@@ -390,7 +390,6 @@ effs_plot <- effs %>%
          upper = 4,
          mean = 3) %>% #mean here refers to 0.5 quantile 
   #filter(!effect == "Intercept") %>%
-  mutate(effect = factor(effect, levels=c("Intercept", "social SD:\nL1", "L1", "social SD:\nL2 proportion", "L2 proportion", "Neighbours", "Education", "Official status", "L1*L2 proportion"))) %>%
   mutate(WAIC = round(WAIC, 2)) %>%
   unite("model", model, WAIC, sep = ",\nWAIC: ", remove=FALSE) %>%
   group_by(WAIC) %>%
