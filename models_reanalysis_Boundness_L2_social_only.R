@@ -310,7 +310,7 @@ L2_prop_effects$effect <- "L2 proportion"
 L2_prop_nl_effects$effect <- "social SD:\nL2 proportion"
 interaction_effects$effect <- "L1*L2 proportion"
 
-effs <- as.data.frame(rbind(phy_effects, spa_effects, intercept_effects, L1_effects, L1_nl_effects, L2_prop_effects, L2_prop_nl_effects, interaction_effects))
+effs <- as.data.frame(rbind(intercept_effects, L1_effects, L1_nl_effects, L2_prop_effects, L2_prop_nl_effects, interaction_effects))
 effs <- effs %>%
   mutate(across(.cols=c(1:3, 5), as.numeric)) %>%
   mutate(across(where(is.numeric), round, 2)) %>%
@@ -351,7 +351,6 @@ effs_plot <- effs %>%
          upper = 4,
          mean = 3) %>% #mean here refers to 0.5 quantile 
   #filter(!effect == "Intercept") %>%
-  mutate(effect = factor(effect, levels=c("Intercept", "social SD:\nL1", "L1", "social SD:\nL2 proportion", "L2 proportion", "Neighbours", "Education", "Official status", "L1*L2 proportion"))) %>%
   mutate(WAIC = round(WAIC, 2)) %>%
   unite("model", model, WAIC, sep = ",\nWAIC: ", remove=FALSE) %>%
   group_by(WAIC) %>%
