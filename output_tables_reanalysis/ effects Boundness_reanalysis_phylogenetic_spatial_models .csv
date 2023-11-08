@@ -1,4 +1,5 @@
 "model","2.5%","50%","97.5%","WAIC","effect"
+<<<<<<< Updated upstream
 "Phylogenetic+Spatial: local",1.51,1.73,2,1822.19,"phylogenetic SD"
 "Phylogenetic+Spatial: local",0.28,0.34,0.41,1822.19,"spatial SD"
 "Phylogenetic+Spatial: local",-0.02,0,0.02,1822.19,"Intercept"
@@ -15,4 +16,22 @@
 "Spatial: regional",0.87,1.03,1.21,2424.01,"spatial SD"
 "Spatial: regional",-0.03,0,0.03,2424.01,"Intercept"
 "Areal",0.44,0.58,0.79,2866.67,"areal SD"
+=======
+"Phylogenetic+Spatial: local",1.51,1.73,2,1821.88,"phylogenetic SD"
+"Phylogenetic+Spatial: local",0.28,0.34,0.41,1821.88,"spatial SD"
+"Phylogenetic+Spatial: local",-0.02,0,0.02,1821.88,"Intercept"
+"Phylogenetic",1.99,2.19,2.42,1941.21,"phylogenetic SD"
+"Phylogenetic",-0.03,0,0.03,1941.21,"Intercept"
+"Phylogenetic+Areal",1.79,2.01,2.26,2015.61,"phylogenetic SD"
+"Phylogenetic+Areal",0.09,0.16,0.28,2015.61,"areal SD"
+"Phylogenetic+Areal",-0.06,0.03,0.13,2015.61,"Intercept"
+"Phylogenetic+Spatial: regional",1.23,1.47,1.75,2056.58,"phylogenetic SD"
+"Phylogenetic+Spatial: regional",0.47,0.61,0.79,2056.58,"spatial SD"
+"Phylogenetic+Spatial: regional",-0.03,0,0.03,2056.58,"Intercept"
+"Spatial: local",0.74,0.8,0.85,2259.25,"spatial SD"
+"Spatial: local",-0.02,0,0.03,2259.25,"Intercept"
+"Spatial: regional",0.87,1.03,1.21,2423.66,"spatial SD"
+"Spatial: regional",-0.03,0,0.03,2423.66,"Intercept"
+"Areal",0.44,0.58,0.8,2866.67,"areal SD"
+>>>>>>> Stashed changes
 "Areal",0.08,0.32,0.55,2866.67,"Intercept"
