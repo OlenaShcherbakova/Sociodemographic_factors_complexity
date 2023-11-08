@@ -1,8 +1,8 @@
 "model","WAIC"
-"Phylogenetic+Spatial: local+L1_log10:L2 proportion (linear)",100.78
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",102.13
-"Phylogenetic+Spatial: local+L1 speakers (linear)",102.22
-"Phylogenetic+Spatial: local+L2 proportion (linear)",103.26
-"Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)",103.46
-"Phylogenetic+Spatial: local+L2 proportion (nonlinear)",103.68
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)",103.86
+"Phylogenetic+Spatial: local+L1_log10:L2 proportion (linear)",99.06
+"Phylogenetic+Spatial: local+L1 speakers (linear)",101.35
+"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",101.45
+"Phylogenetic+Spatial: local+L2 proportion (linear)",101.68
+"Phylogenetic+Spatial: local+L2 proportion (nonlinear)",102.54
+"Phylogenetic+Spatial: local+L1 speakers (linear)+L2 proportion (linear)",102.98
+"Phylogenetic+Spatial: local+L1 speakers (nonlinear)+L2 proportion (nonlinear)",103.27
