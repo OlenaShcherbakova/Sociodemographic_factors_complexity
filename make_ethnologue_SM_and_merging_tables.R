@@ -78,6 +78,8 @@ joined_df <- L2_pop_df %>%
 
 #this dataset will serve as the basis for the reanalysis on the large sample
 data_ethnologue_reanalysis <- joined_df %>% 
+  dplyr::filter(!is.na(L1_Users),
+                !is.na(All_Users)) %>%
   dplyr::mutate(L1_log10 = log10(L1_Users+1),
                 All_Users_log10 = log10(All_Users+1)) %>% #adding a 1 for cases where pop is 0
   dplyr::select(Glottocode, L1_log10, L1_Users, All_Users_log10, All_Users, Vehicularity)
@@ -87,6 +89,9 @@ data_ethnologue_reanalysis <- joined_df %>%
 
 #this dataset will serve as the basis for the reanalysis on the small sample with available L2           
 data_ethnologue_reanalysis_L2 <- joined_df %>%
+  dplyr::filter(!is.na(L2_Users),
+                !is.na(All_Users),
+                !is.na(L1_Users)) %>%
   dplyr::mutate(L2_prop = L2_Users/ All_Users, 
                 #calculating the proportion of L2 users out of the entire population
                 L1_log10 = log10(L1_Users+1),
@@ -123,21 +128,21 @@ data_ethnologue_reanalysis_L2$All_Users_log10_scaled <- scale(data_ethnologue_re
 #write to file: Ethnologue data for supplementary materials and merging into "reduced" version of the final dataset with social variables (excluding L1_log10)
 #large sample
 data_ethnologue_reanalysis %>% 
-  dplyr::select(ISO_639, Language_ID=Glottocode, L1_scaled, L1_log10_st=L1_log10_scaled, Vehicularity, All_Users_scaled, All_Users_log10_scaled) %>% 
+  dplyr::select(Language_ID=Glottocode, L1_scaled, L1_log10_st=L1_log10_scaled, Vehicularity, All_Users_scaled, All_Users_log10_scaled) %>% 
   write_tsv("data_wrangling/ethnologue_pop_SM.tsv")
 
 #small L2 sample
 data_ethnologue_reanalysis_L2 %>% 
-  dplyr::select(ISO_639, Language_ID=Glottocode, L2_prop, L1_scaled, L1_log10_st=L1_log10_scaled, Vehicularity, All_Users_scaled, All_Users_log10_scaled) %>% 
+  dplyr::select(Language_ID=Glottocode, L2_prop, L1_scaled, L1_log10_st=L1_log10_scaled, Vehicularity, All_Users_scaled, All_Users_log10_scaled) %>% 
   write_tsv("data_wrangling/ethnologue_pop_L2_SM.tsv")
 
 #write to file: Ethnologue data for merging into "full" version of the final dataset with social variables (including L1_log10) - won't be available to public
 #large sample
 data_ethnologue_reanalysis %>% 
-  dplyr::select(ISO_639, Language_ID=Glottocode, L1_st = L1_scaled, L1_log10_st=L1_log10_scaled, L1_log10, Vehicularity ) %>% 
+  dplyr::select(Language_ID=Glottocode, L1_st = L1_scaled, L1_log10_st=L1_log10_scaled, L1_log10, Vehicularity ) %>% 
   write_tsv("data_wrangling/ethnologue_pop_full.tsv")
 
 #small L2 sample
 data_ethnologue_reanalysis_L2 %>% 
-  dplyr::select(ISO_639, Language_ID=Glottocode, L2_prop, L1_st = L1_scaled, L1_log10_st=L1_log10_scaled, L1_log10, Vehicularity ) %>% 
+  dplyr::select(Language_ID=Glottocode, L2_prop, L1_st = L1_scaled, L1_log10_st=L1_log10_scaled, L1_log10, Vehicularity ) %>% 
   write_tsv("data_wrangling/ethnologue_pop_L2_full.tsv")
