@@ -10,8 +10,8 @@ metrics_joined <- metrics_joined %>%
   filter(!is.na(L1_log10_st)) %>%
   rename(L1_log_st = L1_log10_st) %>%
   mutate(L1_copy = L1_log_st) %>%
-  filter(!is.na(L2_prop)) %>%
-  mutate(L2_copy = L2_prop) %>%
+  # filter(!is.na(L2_prop)) %>%
+  # mutate(L2_copy = L2_prop) %>%
   filter(!is.na(neighboring_languages_st)) %>%
   filter(!is.na(Official)) %>%
   filter(!is.na(Education)) %>%
@@ -37,9 +37,22 @@ phylo_prec_mat <- MCMCglmm::inverseA(tree_scaled,
 
 metrics_joined = metrics_joined[order(match(metrics_joined$Language_ID, rownames(phylo_prec_mat))),]
 
+#calculate geo_dists
+lat_long_matrix <- metrics_joined %>% 
+  column_to_rownames("Language_ID") %>% 
+  dplyr::select(Longitude, Latitude) %>% 
+  as.matrix()
+
+rdist.earth_dists <- fields::rdist.earth(lat_long_matrix, miles = FALSE)
+
+rdist.earth_dists[upper.tri(rdist.earth_dists, diag = TRUE)] <- NA
+
+# dists_vector <- as.vector(rdist.earth_dists) 
+dists_vector = rdist.earth_dists[lower.tri(rdist.earth_dists)]
+
 #"local" set of parameters
 ## Create spatial covariance matrix using the matern covariance function
-spatial_covar_mat_1 = varcov.spatial(metrics_joined[,c("Longitude", "Latitude")], 
+spatial_covar_mat_1 = varcov.spatial(dists.lowertri = rdist.earth_dists[lower.tri(rdist.earth_dists)] / 100, 
                                      cov.pars = phi_1, kappa = kappa)$varcov
 # Calculate and standardize by the typical variance
 typical_variance_spatial_1 = exp(mean(log(diag(spatial_covar_mat_1))))
@@ -58,25 +71,37 @@ pcprior_hyper_0.01 = list(prec =list(prior="pc.prec", param = c(1, 0.01)))
 
 #Preparing the formulas for 10 competing models to be used in inla() call
 listcombo <- list( 
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "L1_log_st"), 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+    "L1_log_st"), 
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(inla.group(L1_copy), model='rw2', scale.model = TRUE)"), 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+    "f(inla.group(L1_copy), model='rw2', scale.model = TRUE)"), 
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "L2_prop"), 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+    "Vehicularity"), 
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(inla.group(L2_copy), model='rw2', scale.model = TRUE)"),
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+    "L1_log_st", "Vehicularity"), 
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(inla.group(L1_copy), model='rw2', scale.model = TRUE)", "f(inla.group(L2_copy), model='rw2', scale.model = TRUE)"),
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+    "L1_log10:Vehicularity"), 
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "L1_log_st", "L2_prop"), 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)",  
+    "neighboring_languages_st"), 
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "L1_log10:L2_prop"),
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+    "Official"),
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)",  "neighboring_languages_st"), 
-  
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "Official"),
-  
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.01)", "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.01)", "Education"))
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+    "Education"))
 
 
 predterms <- lapply(listcombo, function(x) paste(x, collapse="+"))
@@ -90,8 +115,6 @@ predterms_short <- gsub("f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat
 
 predterms_short <- gsub("f(inla.group(L1_copy), model='rw2', scale.model = TRUE)", "L1 speakers (nonlinear)", predterms_short, fixed=TRUE)
 predterms_short <- gsub("L1_log_st", "L1 speakers (linear)", predterms_short, fixed=TRUE)
-predterms_short <- gsub("f(inla.group(L2_copy), model='rw2', scale.model = TRUE)", "L2 proportion (nonlinear)", predterms_short, fixed=TRUE)
-predterms_short <- gsub("L2_prop", "L2 proportion (linear)", predterms_short, fixed=TRUE)
 predterms_short <- gsub("neighboring_languages_st", "Neighbours", predterms_short, fixed=TRUE)
 
 
@@ -119,17 +142,13 @@ L1_nl_element <- data.frame("judgement" = grepl("L1 speakers (nonlinear)", predt
                             number = 1:length(predterms_short))
 L1_nl_element <- L1_nl_element[L1_nl_element$judgement == TRUE,]$number
 
-L2_prop_element <- data.frame("judgement" = grepl("L2 proportion (linear)", predterms_short, fixed=TRUE),
+L2_prop_element <- data.frame("judgement" = grepl("Vehicularity", predterms_short, fixed=TRUE),
                               number = 1:length(predterms_short))
 L2_prop_element <- L2_prop_element[L2_prop_element$judgement == TRUE,]$number
 L2_prop_element <- L2_prop_element[-length(L2_prop_element)] #making sure that the interaction term (introduced below) is not treated as belonging to this isolated element
 
-L2_prop_nl_element <- data.frame("judgement" = grepl("L2 proportion (nonlinear)", predterms_short, fixed=TRUE),
-                                 number = 1:length(predterms_short))
-L2_prop_nl_element <- L2_prop_nl_element[L2_prop_nl_element$judgement == TRUE,]$number
-
 #can use only part of the interaction term within grepl() function
-interaction_element <- data.frame("judgement" = grepl(":L2 proportion", predterms_short),
+interaction_element <- data.frame("judgement" = grepl(":Vehicularity", predterms_short),
                                   number = 1:length(predterms_short))
 interaction_element <- interaction_element[interaction_element$judgement == TRUE,]$number
 
@@ -147,96 +166,88 @@ education_element <- education_element[education_element$judgement == TRUE,]$num
 
 
 
+n_models <- length(listcombo)
 #preparing empty matrices to be filled with effect estimates (quantiles), model name, and WAIC value
-phy_effects_matrix <- matrix(NA, 10, 5)
+phy_effects_matrix <- matrix(NA, n_models, 5)
 colnames(phy_effects_matrix) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-spa_effects_matrix <- matrix(NA, 10, 5)
+spa_effects_matrix <- matrix(NA, n_models, 5)
 colnames(spa_effects_matrix) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
 
-intercept_matrix <- matrix(NA, 10, 5)
+intercept_matrix <- matrix(NA, n_models, 5)
 colnames(intercept_matrix) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
 
-social_effects_matrix_L1 <- matrix(NA, 10, 5)
+social_effects_matrix_L1 <- matrix(NA, n_models, 5)
 colnames(social_effects_matrix_L1) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_L1_nl <- matrix(NA, 10, 5)
+social_effects_matrix_L1_nl <- matrix(NA, n_models, 5)
 colnames(social_effects_matrix_L1_nl) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_L2_prop <- matrix(NA, 10, 5)
+social_effects_matrix_L2_prop <- matrix(NA, n_models, 5)
 colnames(social_effects_matrix_L2_prop) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_L2_prop_nl <- matrix(NA, 10, 5)
-colnames(social_effects_matrix_L2_prop_nl) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_N <- matrix(NA, 10, 5)
+social_effects_matrix_N <- matrix(NA, n_models, 5)
 colnames(social_effects_matrix_N) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_O <- matrix(NA, 10, 5)
+social_effects_matrix_O <- matrix(NA, n_models, 5)
 colnames(social_effects_matrix_O) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_E <- matrix(NA, 10, 5)
+social_effects_matrix_E <- matrix(NA, n_models, 5)
 colnames(social_effects_matrix_E) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
-social_effects_matrix_L1_L2_prop <- matrix(NA, 10, 5)
+social_effects_matrix_L1_L2_prop <- matrix(NA, n_models, 5)
 colnames(social_effects_matrix_L1_L2_prop) <- c("2.5%", "50%", "97.5%", "model", "WAIC")
 
 #fitted values
-fitted_list <- vector("list", 10)
+fitted_list <- vector("list", n_models)
 names(fitted_list) <- predterms_short
 
 #marginals of hyperparameters
-marginals_hyperpar_list_gaussian <- vector("list", 10)
+marginals_hyperpar_list_gaussian <- vector("list", n_models)
 names(marginals_hyperpar_list_gaussian) <- predterms_short
 
-marginals_hyperpar_list_phy <- vector("list", 10)
+marginals_hyperpar_list_phy <- vector("list", n_models)
 names(marginals_hyperpar_list_phy) <- predterms_short
 
-marginals_hyperpar_list_spa <- vector("list", 10)
+marginals_hyperpar_list_spa <- vector("list", n_models)
 names(marginals_hyperpar_list_spa) <- predterms_short
 
-marginals_hyperpar_list_social_L1_nl <- vector("list", 10)
+marginals_hyperpar_list_social_L1_nl <- vector("list", n_models)
 names(marginals_hyperpar_list_social_L1_nl) <- predterms_short
-
-marginals_hyperpar_list_social_L2_prop_nl <- vector("list", 10)
-names(marginals_hyperpar_list_social_L2_prop_nl) <- predterms_short
 
 
 #marginals of fixed effects
-marginals_fixed_list_Intercept <- vector("list", 10)
+marginals_fixed_list_Intercept <- vector("list", n_models)
 names(marginals_fixed_list_Intercept) <- predterms_short
 
-marginals_fixed_list_L1 <- vector("list", 10)
+marginals_fixed_list_L1 <- vector("list", n_models)
 names(marginals_fixed_list_L1) <- predterms_short
 
-marginals_fixed_list_L2_prop <- vector("list", 10)
-names(marginals_fixed_list_L2_prop) <- predterms_short
+marginals_fixed_list_Vehicularity <- vector("list", n_models)
+names(marginals_fixed_list_Vehicularity) <- predterms_short
 
-marginals_fixed_list_O <- vector("list", 10)
+marginals_fixed_list_O <- vector("list", n_models)
 names(marginals_fixed_list_O) <- predterms_short
 
-marginals_fixed_list_N <- vector("list", 10)
+marginals_fixed_list_N <- vector("list", n_models)
 names(marginals_fixed_list_N) <- predterms_short
 
-marginals_fixed_list_E <- vector("list", 10)
+marginals_fixed_list_E <- vector("list", n_models)
 names(marginals_fixed_list_E) <- predterms_short
 
-marginals_fixed_list_L1_L2_prop <- vector("list", 10)
+marginals_fixed_list_L1_L2_prop <- vector("list", n_models)
 names(marginals_fixed_list_L1_L2_prop) <- predterms_short
 
 
 
 
 #summary statistics of random effects
-summary_random_list_phy <- vector("list", 10)
+summary_random_list_phy <- vector("list", n_models)
 names(summary_random_list_phy) <- predterms_short
 
-summary_random_list_spa <- vector("list", 10)
+summary_random_list_spa <- vector("list", n_models)
 names(summary_random_list_spa) <- predterms_short
 
-summary_random_list_social_L1_nl <- vector("list", 10)
+summary_random_list_social_L1_nl <- vector("list", n_models)
 names(summary_random_list_social_L1_nl) <- predterms_short
 
-summary_random_list_social_L2_prop_nl <- vector("list", 10)
-names(summary_random_list_social_L2_prop_nl) <- predterms_short
+coefm <- matrix(NA,n_models,1)
+result <- vector("list",n_models)
 
-
-coefm <- matrix(NA,10,1)
-result <- vector("list",10)
-
-for(i in 1:10){
+for(i in 1:n_models){
   formula <- as.formula(paste("boundness_st ~ ",predterms[[i]]))
   result[[i]] <- inla(formula, family="gaussian", 
                       control.family = list(hyper = pcprior_hyper_0.01), 
@@ -282,15 +293,6 @@ for(i in 1:10){
     social_effects_matrix_L1_nl[i, 5] <- result[[i]]$waic$waic
   } 
   
-  if(i %in% L2_prop_nl_element){
-    social_effects_matrix_L2_prop_nl[i, 1:3] <- inla.tmarginal(function(x) 1/sqrt(x),
-                                                               result[[i]]$marginals.hyperpar$`Precision for inla.group(L2_copy)`,
-                                                               method = "linear") %>%
-      inla.qmarginal(c(0.025, 0.5, 0.975), .)
-    social_effects_matrix_L2_prop_nl[i, 4] <- predterms_short[[i]]
-    social_effects_matrix_L2_prop_nl[i, 5] <- result[[i]]$waic$waic
-  } 
-  
   if(i %in% L1_element) {
     social_effects_matrix_L1[i, 1:3] <- c(result[[i]]$summary.fixed["L1_log_st",]$`0.025quant`, result[[i]]$summary.fixed["L1_log_st",]$`0.5quant`, result[[i]]$summary.fixed["L1_log_st",]$`0.975quant`)
     social_effects_matrix_L1[i, 4] <- predterms_short[[i]]
@@ -301,21 +303,21 @@ for(i in 1:10){
   }
   
   if(i %in% L2_prop_element) {
-    social_effects_matrix_L2_prop[i, 1:3] <- c(result[[i]]$summary.fixed["L2_prop",]$`0.025quant`, result[[i]]$summary.fixed["L2_prop",]$`0.5quant`, result[[i]]$summary.fixed["L2_prop",]$`0.975quant`)
+    social_effects_matrix_L2_prop[i, 1:3] <- c(result[[i]]$summary.fixed["Vehicularity",]$`0.025quant`, result[[i]]$summary.fixed["Vehicularity",]$`0.5quant`, result[[i]]$summary.fixed["Vehicularity",]$`0.975quant`)
     social_effects_matrix_L2_prop[i, 4] <- predterms_short[[i]]
     social_effects_matrix_L2_prop[i, 5] <- result[[i]]$waic$waic
     
-    marginals_fixed_list_L2_prop[[i]] <- as.data.frame(cbind(result[[i]][["marginals.fixed"]][["L2_prop"]]))
-    colnames(marginals_fixed_list_L2_prop[[i]]) <- c("x for L2 proportion", "y for L2 proportion")
+    marginals_fixed_list_Vehicularity[[i]] <- as.data.frame(cbind(result[[i]][["marginals.fixed"]][["Vehicularity"]]))
+    colnames(marginals_fixed_list_Vehicularity[[i]]) <- c("x for Vehicularity", "y for Vehicularity")
   }
   
   if(i %in% interaction_element) {
-    social_effects_matrix_L1_L2_prop[i, 1:3] <- c(result[[i]]$summary.fixed["L1_log10:L2_prop",]$`0.025quant`, result[[i]]$summary.fixed["L1_log10:L2_prop",]$`0.5quant`, result[[i]]$summary.fixed["L1_log10:L2_prop",]$`0.975quant`)
+    social_effects_matrix_L1_L2_prop[i, 1:3] <- c(result[[i]]$summary.fixed["L1_log10:Vehicularity",]$`0.025quant`, result[[i]]$summary.fixed["L1_log10:Vehicularity",]$`0.5quant`, result[[i]]$summary.fixed["L1_log10:Vehicularity",]$`0.975quant`)
     social_effects_matrix_L1_L2_prop[i, 4] <- predterms_short[[i]]
     social_effects_matrix_L1_L2_prop[i, 5] <- result[[i]]$waic$waic
     
-    marginals_fixed_list_L1_L2_prop[[i]] <- as.data.frame(cbind(result[[i]][["marginals.fixed"]][["L1_log10:L2_prop"]]))
-    colnames(marginals_fixed_list_L1_L2_prop[[i]]) <- c("x for L1*L2 proportion", "y for L1*L2 proportion")
+    marginals_fixed_list_L1_L2_prop[[i]] <- as.data.frame(cbind(result[[i]][["marginals.fixed"]][["L1_log10:Vehicularity"]]))
+    colnames(marginals_fixed_list_L1_L2_prop[[i]]) <- c("x for L1*Vehicularity", "y for L1*Vehicularity")
   }
   
   if(i %in% neighbour_element) {
@@ -367,11 +369,6 @@ for(i in 1:10){
     colnames(marginals_hyperpar_list_social_L1_nl[[i]]) <- c("x for inla.group(L1_copy)", "y for inla.group(L1_copy)")
   }
   
-  if(i %in% L2_prop_nl_element){
-    marginals_hyperpar_list_social_L2_prop_nl[[i]] <- as.data.frame(cbind(result[[i]]$marginals.hyperpar[["Precision for inla.group(L2_copy)"]]))
-    colnames(marginals_hyperpar_list_social_L2_prop_nl[[i]]) <- c("x for inla.group(L2_copy)", "y for inla.group(L2_copy)")
-  }
-  
   if(i %in% phylogenetic_element){
     summary_random_list_phy[[i]] <- cbind(result[[i]]$summary.random$phy_id) %>%
       rename(phy_id = ID) %>%
@@ -389,7 +386,7 @@ for(i in 1:10){
 
 #beepr::beep(5)
 
-save(result, file = "output_models/models_Boundness_social_0.01.RData")
+save(result, file = "output_models_reanalysis/models_Boundness_social_0.01.RData")
 
 coefm <- as.data.frame(cbind(predterms_short, coefm))
 colnames(coefm) <- c("model", "WAIC")
@@ -401,7 +398,7 @@ coefm <- coefm %>%
 coefm$WAIC <- as.numeric(coefm$WAIC)
 coefm <- coefm[order(coefm$WAIC),]
 
-coefm_path <- paste("output_tables/", "waics", "Boundness_social_models", "prior_0.01", ".csv", collapse = "")
+coefm_path <- paste("output_tables_reanalysis/", "waics", "Boundness_social_models", "prior_0.01", ".csv", collapse = "")
 write.csv(coefm, coefm_path, row.names=FALSE)
 
 
@@ -411,7 +408,6 @@ intercept_effects <- as.data.frame(intercept_matrix)
 L1_effects <- as.data.frame(social_effects_matrix_L1)
 L1_nl_effects <- as.data.frame(social_effects_matrix_L1_nl)
 L2_prop_effects <- as.data.frame(social_effects_matrix_L2_prop)
-L2_prop_nl_effects <- as.data.frame(social_effects_matrix_L2_prop_nl)
 N_effects<-as.data.frame(social_effects_matrix_N)
 E_effects<-as.data.frame(social_effects_matrix_E)
 O_effects<-as.data.frame(social_effects_matrix_O)
@@ -422,14 +418,13 @@ spa_effects$effect <- "spatial SD"
 intercept_effects$effect <- "Intercept"
 L1_effects$effect <- "L1"
 L1_nl_effects$effect <- "social SD:\nL1"
-L2_prop_effects$effect <- "L2 proportion"
-L2_prop_nl_effects$effect <- "social SD:\nL2 proportion"
+L2_prop_effects$effect <- "Vehicularity"
 N_effects$effect <- "Neighbours"
 E_effects$effect <- "Education"
 O_effects$effect <- "Official status"
-interaction_effects$effect <- "L1*L2 proportion"
+interaction_effects$effect <- "L1*Vehicularity"
 
-effs <- as.data.frame(rbind(phy_effects, spa_effects, intercept_effects, L1_effects, L1_nl_effects, L2_prop_effects, L2_prop_nl_effects, N_effects, O_effects, E_effects, interaction_effects))
+effs <- as.data.frame(rbind(phy_effects, spa_effects, intercept_effects, L1_effects, L1_nl_effects, L2_prop_effects, N_effects, O_effects, E_effects, interaction_effects))
 effs <- effs %>%
   mutate(across(.cols=c(1:3, 5), as.numeric)) %>%
   mutate(across(where(is.numeric), round, 2)) %>%
@@ -437,5 +432,6 @@ effs <- effs %>%
   arrange(WAIC) %>%
   relocate(model)
 
-effs_path <- paste("output_tables/", "effects", "Boundness_social_models", "prior_0.01", ".csv", collapse = "")
+
+effs_path <- paste("output_tables_reanalysis/", "effects", "Boundness_social_models", "prior_0.01", ".csv", collapse = "")
 write.csv(effs, effs_path, row.names=FALSE)
