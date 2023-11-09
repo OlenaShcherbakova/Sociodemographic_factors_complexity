@@ -99,6 +99,9 @@ if(sample == "full"){
   source("variance_top_ranking_models_reanalysis.R")
   source("table_INLA_summary_all_models_SI_reanalysis.R")
   source("measuring_phylosignal.R")
+  
+  #conduct sensitivity testing + extract the corresponding table
+  source("runs_sensitivity_reanalysis.R")
 }
 
 
@@ -125,6 +128,9 @@ if(sample == "reduced"){
   source("variance_top_ranking_models_reanalysis_reduced.R")
   source("table_INLA_summary_all_models_SI_reduced_reanalysis.R")
   source("measuring_phylosignal.R")
+  
+  #conduct sensitivity testing + extract the corresponding table
+  source("runs_sensitivity_reanalysis_on_reduced.R")
 }
 
 #additional analyses on WALS data
