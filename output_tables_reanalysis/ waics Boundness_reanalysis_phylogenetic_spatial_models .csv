@@ -1,17 +1,8 @@
 "model","WAIC"
-<<<<<<< Updated upstream
-"Phylogenetic+Spatial: local",1822.19
-"Phylogenetic",1940.91
-"Phylogenetic+Areal",2014.99
-"Phylogenetic+Spatial: regional",2056.73
-"Spatial: local",2259.65
-"Spatial: regional",2424.01
-=======
 "Phylogenetic+Spatial: local",1821.88
 "Phylogenetic",1941.21
 "Phylogenetic+Areal",2015.61
 "Phylogenetic+Spatial: regional",2056.58
 "Spatial: local",2259.25
 "Spatial: regional",2423.66
->>>>>>> Stashed changes
 "Areal",2866.67
