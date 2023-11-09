@@ -71,36 +71,36 @@ pcprior_hyper_0.5 = list(prec =list(prior="pc.prec", param = c(1, 0.5)))
 
 #Preparing the formulas for 10 competing models to be used in inla() call
 listcombo <- list( 
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
-    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.5)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.5)", 
     "L1_log_st"), 
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
-    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.5)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.5)", 
     "f(inla.group(L1_copy), model='rw2', scale.model = TRUE)"), 
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
-    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.5)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.5)", 
     "Vehicularity"), 
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
-    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.5)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.5)", 
     "L1_log_st", "Vehicularity"), 
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
-    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.5)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.5)", 
     "L1_log10:Vehicularity"), 
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
-    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)",  
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.5)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.5)",  
     "neighboring_languages_st"), 
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
-    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.5)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.5)", 
     "Official"),
   
-  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper)", 
-    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper)", 
+  c("f(phy_id, model = 'generic0', Cmatrix = phylo_prec_mat, constr = TRUE, hyper = pcprior_hyper_0.5)", 
+    "f(sp_id, model = 'generic0', Cmatrix = spatial_prec_mat_1, constr = TRUE, hyper = pcprior_hyper_0.5)", 
     "Education"))
 
 
