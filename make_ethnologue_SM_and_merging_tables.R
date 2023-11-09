@@ -76,18 +76,7 @@ joined_df <- L2_pop_df %>%
   
 
 #this dataset will serve as the basis for the reanalysis on the large sample
-data_ethnologue_reanalysis <- data_ethnologue %>%
-  filter(!is.na(`All_Users`)) %>% #remove rows with missing data for pop of all users
-  filter(!is.na(`L1_Users`)) %>% 
-  left_join(glottolog_df, by = "ISO_639" ) %>% 
-  dplyr::select(-Glottocode) %>% #removing old Glottocode column
-  rename(Glottocode = Language_level_ID) %>% 
-  group_by(Glottocode) %>% 
-  summarise(All_Users = sum(All_Users),
-            L1_Users = sum(L1_Users), 
-            ISO_639 = paste0(ISO_639, collapse = "; "),
-            Vehicularity = max(as.numeric(Vehicularity))) %>% 
-  ungroup() %>% 
+data_ethnologue_reanalysis <- joined_df %>% 
   inner_join(GB, by = "Glottocode" ) %>% 
   dplyr::mutate(L1_log10 = log10(L1_Users+1),
                 All_Users_log10 = log10(All_Users+1)) %>% #adding a 1 for cases where pop is 0
@@ -97,21 +86,7 @@ data_ethnologue_reanalysis <- data_ethnologue %>%
 
 
 #this dataset will serve as the basis for the reanalysis on the small sample with available L2           
-data_ethnologue_reanalysis_L2 <- data_ethnologue %>%
-  dplyr::filter(!is.na(`All_Users`)) %>% #remove rows with missing data for pop of all users
-  dplyr::filter(!is.na(`L1_Users`)) %>% 
-  dplyr::filter(!is.na(`L2_Users`)) %>% 
-  dplyr::filter(`L2_Users` >= 0) %>% 
-  left_join(glottolog_df, by = "ISO_639" ) %>% 
-  dplyr::select(-Glottocode) %>% #removing old Glottocode column
-  rename(Glottocode = Language_level_ID) %>% 
-  group_by(Glottocode) %>% 
-  summarise(All_Users = sum(All_Users),
-            L1_Users = sum(L1_Users), 
-            L2_Users = sum(L2_Users), 
-            ISO_639 = paste0(ISO_639, collapse = "; "),
-            Vehicularity = max(as.numeric(Vehicularity))) %>% 
-  ungroup() %>%
+data_ethnologue_reanalysis_L2 <- joined_df %>%
   inner_join(GB, by = "Glottocode" ) %>% 
   dplyr::mutate(L2_prop = L2_Users/ All_Users, 
                 #calculating the proportion of L2 users out of the entire population
