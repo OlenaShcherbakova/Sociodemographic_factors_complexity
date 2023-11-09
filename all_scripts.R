@@ -127,6 +127,12 @@ if(sample == "reduced"){
   source("measuring_phylosignal.R")
 }
 
+#additional analyses on WALS data
+source("make_ethnologue_SM_for_morphological_complexity_reanalysis.R")
+source("WALS_sparseness.R")
+source("WALS_reanalysis_setup.R")
+source("WALS_reanalysis_controlled_setup.R")
+source("WALS_reanalysis_controlled_setup_high_coverage.R") #analysis + summary table
 
 
 
