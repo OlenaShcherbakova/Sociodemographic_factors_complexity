@@ -47,9 +47,18 @@ effs_B_L2 <-
 
 
 
-effs_I_SP <- read.csv("output_tables_reanalysis/ effects Informativity_reanalysis_phylogenetic_spatial_models .csv")
-effs_I_social <- read.csv("output_tables_reanalysis_reduced/ effects Informativity_reanalysis_social_models .csv")
-effs_I_social_only <- read.csv("output_tables_reanalysis_reduced/ effects Informativity_reanalysis_social_only_models .csv")
+effs_I_SP <- read.csv("output_tables_reanalysis/ effects Informativity_reanalysis_phylogenetic_spatial_models .csv") %>% 
+  rename(lower = 2,
+         upper = 4,
+         mean = 3)
+effs_I_social <- read.csv("output_tables_reanalysis_reduced/ effects Informativity_reanalysis_social_models .csv") %>% 
+  rename(lower = 2,
+         upper = 4,
+         mean = 3)
+effs_I_social_only <- read.csv("output_tables_reanalysis_reduced/ effects Informativity_reanalysis_social_only_models .csv") %>% 
+  rename(lower = 2,
+         upper = 4,
+         mean = 3)
 
 effs_I <-
   as.data.frame(rbind(effs_I_SP, effs_I_social, effs_I_social_only)) %>%
