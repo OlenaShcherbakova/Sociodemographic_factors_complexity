@@ -144,7 +144,11 @@ source("WALS_reanalysis_controlled_setup_high_coverage.R") #analysis + summary t
 #plots
 if(sample == "full" | sample == "reduced"){
   source("plot_maps_main.R") #maps of scores
-  
+  source("plot_heatmap_B_I.R") #phylogenetic tree with a heatmap 
+  # source("plot_map_Africa.R")
+  # source("plot_map_Eurasia.R")
+  # source("plot_heatmap_informativity_Uralic.R") #Uralic tree (informativity) + combined plot with two maps from above
+  source("plot_spatial_parameters_linear_distances.R") #SI figure for visualizing how covariance under different kappa and phi parameters corresponds to spatial distances
 }
 
 
