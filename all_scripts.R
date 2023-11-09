@@ -97,6 +97,7 @@ if(sample == "full"){
   
   #generate tables
   source("variance_top_ranking_models_reanalysis.R")
+  source("table_INLA_summary_all_models_SI_reanalysis.R")
   source("measuring_phylosignal.R")
 }
 
@@ -122,6 +123,7 @@ if(sample == "reduced"){
   
   #generate tables
   source("variance_top_ranking_models_reanalysis_reduced.R")
+  source("table_INLA_summary_all_models_SI_reduced_reanalysis.R")
   source("measuring_phylosignal.R")
 }
 
