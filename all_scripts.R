@@ -22,8 +22,8 @@ source("install_and_load_INLA.R")
 
 
 ### reanalyses on the small L2 sample ###
-sample <- "full_L2"
-#sample <- "reduced_L2" #default
+#sample <- "full_L2"
+sample <- "reduced_L2" #default
 
 if(sample == "full_L2"| sample == "full"){
 source("make_ethnologue_SM_and_merging_tables.R")
@@ -73,8 +73,8 @@ if(sample == "reduced_L2"){
 
 
 ###reanalyses on the large sample###
-sample <- "full"
-#sample <- "reduced" #default
+#sample <- "full"
+sample <- "reduced" #default
 
 if(sample == "full"){
   source("create_pop_table.R")
