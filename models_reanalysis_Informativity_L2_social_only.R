@@ -269,7 +269,7 @@ for(i in 1:n_models){
   }
 }
 
-beepr::beep(5)
+#beepr::beep(5)
 
 save(result, file = "output_models_reanalysis/models_Informativity_L2_social_only.RData")
 load("output_models_reanalysis/models_Informativity_L2_social_only.RData")
