@@ -97,6 +97,7 @@ if(sample == "full"){
   
   #generate tables
   source("variance_top_ranking_models_reanalysis.R")
+  source("measuring_phylosignal.R")
 }
 
 
@@ -121,6 +122,7 @@ if(sample == "reduced"){
   
   #generate tables
   source("variance_top_ranking_models_reanalysis_reduced.R")
+  source("measuring_phylosignal.R")
 }
 
 
