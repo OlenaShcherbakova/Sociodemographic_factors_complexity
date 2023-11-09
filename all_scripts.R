@@ -94,6 +94,9 @@ if(sample == "full"){
   
   #plot the results of the reanalyses
   source("plot_reanalysis_social_effects_combined.R")
+  
+  #generate tables
+  source("variance_top_ranking_models_reanalysis.R")
 }
 
 
@@ -115,6 +118,9 @@ if(sample == "reduced"){
   
   #plot the results of the reanalyses
   source("plot_reanalysis_social_effects_combined_reduced.R")
+  
+  #generate tables
+  source("variance_top_ranking_models_reanalysis_reduced.R")
 }
 
 
