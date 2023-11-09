@@ -141,7 +141,11 @@ source("WALS_reanalysis_controlled_setup.R")
 source("WALS_reanalysis_controlled_setup_high_coverage.R") #analysis + summary table
 
 
-
+#plots
+if(sample == "full" | sample == "reduced"){
+  source("plot_maps_main.R") #maps of scores
+  
+}
 
 
 
