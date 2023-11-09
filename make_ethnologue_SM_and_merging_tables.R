@@ -19,7 +19,61 @@ data_ethnologue <- read_tsv("data/Table_of_LICs.tab", show_col_types = F) %>%
   filter(!is.na(`EGIDS`)) %>%
   dplyr::mutate(Vehicularity = ifelse(EGIDS == "0" | EGIDS == "1" |
                                         EGIDS == "2" |
-                                        EGIDS == "3", "1", "0")) 
+                                        EGIDS == "3", "1", "0")) %>% 
+  left_join(glottolog_df, by = "ISO_639" ) %>% 
+  dplyr::select(-Glottocode) %>% #removing old Glottocode column
+  rename(Glottocode = Language_level_ID) 
+
+#Making different df's for each count. This is because sometimes there is missing values for a language in a country for L1 OR L2, so it's better to calcualte them separately and then join them
+L2_pop_df <- data_ethnologue %>%
+  filter(!is.na(L2_Users)) %>% 
+  dplyr::filter(L2_Users >= 0) %>% 
+  group_by(Glottocode) %>% 
+  summarise(
+  ISO_639_l2 = paste0(ISO_639, collapse = "; "),
+L2_Users = sum(L2_Users), 
+.groups = "drop"
+)
+
+L1_pop_df <- data_ethnologue %>%
+  filter(!is.na(L1_Users)) %>% 
+  dplyr::filter(L1_Users >= 0) %>% 
+  group_by(Glottocode) %>% 
+  summarise(
+    ISO_639_L1 = paste0(ISO_639, collapse = "; "),
+    L1_Users = sum(L1_Users), 
+    .groups = "drop"
+  )
+
+All_pop_df <- data_ethnologue %>%
+  filter(!is.na(All_Users)) %>% 
+  dplyr::filter(All_Users >= 0) %>% 
+  group_by(Glottocode) %>% 
+  summarise(
+    ISO_639_all = paste0(ISO_639, collapse = "; "),
+    All_Users = sum(All_Users), 
+    .groups = "drop"
+  )
+
+Vehicularity_df  <- data_ethnologue %>%
+  filter(!is.na(Vehicularity)) %>% 
+  group_by(Glottocode) %>% 
+  summarise(
+    ISO_639_vehic = paste0(ISO_639, collapse = "; "),
+    Vehicularity = max(as.numeric(Vehicularity)), 
+      .groups = "drop") 
+
+
+###
+
+joined_df <- L2_pop_df %>% 
+  full_join(L1_pop_df, by = "Glottocode") %>% 
+  full_join(All_pop_df, by = "Glottocode") %>% 
+  full_join(Vehicularity_df, by = "Glottocode")
+
+
+
+  
 
 #this dataset will serve as the basis for the reanalysis on the large sample
 data_ethnologue_reanalysis <- data_ethnologue %>%
@@ -39,6 +93,9 @@ data_ethnologue_reanalysis <- data_ethnologue %>%
                 All_Users_log10 = log10(All_Users+1)) %>% #adding a 1 for cases where pop is 0
   dplyr::select(Glottocode, ISO_639, L1_log10, L1_Users, All_Users_log10, All_Users, Vehicularity)
 
+
+
+
 #this dataset will serve as the basis for the reanalysis on the small sample with available L2           
 data_ethnologue_reanalysis_L2 <- data_ethnologue %>%
   dplyr::filter(!is.na(`All_Users`)) %>% #remove rows with missing data for pop of all users
@@ -54,7 +111,7 @@ data_ethnologue_reanalysis_L2 <- data_ethnologue %>%
             L2_Users = sum(L2_Users), 
             ISO_639 = paste0(ISO_639, collapse = "; "),
             Vehicularity = max(as.numeric(Vehicularity))) %>% 
-  ungroup() %>% 
+  ungroup() %>%
   inner_join(GB, by = "Glottocode" ) %>% 
   dplyr::mutate(L2_prop = L2_Users/ All_Users, 
                 #calculating the proportion of L2 users out of the entire population
