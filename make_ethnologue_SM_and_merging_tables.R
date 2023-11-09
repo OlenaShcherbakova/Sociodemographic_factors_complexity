@@ -27,7 +27,7 @@ data_ethnologue <- read_tsv("data/Table_of_LICs.tab", show_col_types = F) %>%
 #Making different df's for each count. This is because sometimes there is missing values for a language in a country for L1 OR L2, so it's better to calcualte them separately and then join them
 L2_pop_df <- data_ethnologue %>%
   filter(!is.na(L2_Users)) %>% 
-  dplyr::filter(L2_Users >= 0) %>% 
+  dplyr::filter(L2_Users >= 0) %>%
   group_by(Glottocode) %>% 
   summarise(
   ISO_639_l2 = paste0(ISO_639, collapse = "; "),
@@ -69,15 +69,15 @@ Vehicularity_df  <- data_ethnologue %>%
 joined_df <- L2_pop_df %>% 
   full_join(L1_pop_df, by = "Glottocode") %>% 
   full_join(All_pop_df, by = "Glottocode") %>% 
-  full_join(Vehicularity_df, by = "Glottocode")
-
+  full_join(Vehicularity_df, by = "Glottocode") %>% 
+  inner_join(GB, by = "Glottocode" )
+  
 
 
   
 
 #this dataset will serve as the basis for the reanalysis on the large sample
 data_ethnologue_reanalysis <- joined_df %>% 
-  inner_join(GB, by = "Glottocode" ) %>% 
   dplyr::mutate(L1_log10 = log10(L1_Users+1),
                 All_Users_log10 = log10(All_Users+1)) %>% #adding a 1 for cases where pop is 0
   dplyr::select(Glottocode, L1_log10, L1_Users, All_Users_log10, All_Users, Vehicularity)
@@ -87,7 +87,6 @@ data_ethnologue_reanalysis <- joined_df %>%
 
 #this dataset will serve as the basis for the reanalysis on the small sample with available L2           
 data_ethnologue_reanalysis_L2 <- joined_df %>%
-  inner_join(GB, by = "Glottocode" ) %>% 
   dplyr::mutate(L2_prop = L2_Users/ All_Users, 
                 #calculating the proportion of L2 users out of the entire population
                 L1_log10 = log10(L1_Users+1),
