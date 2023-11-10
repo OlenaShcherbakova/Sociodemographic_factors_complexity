@@ -192,8 +192,8 @@ effs_main_plot_bw
 ggsave(
   file = "output_reanalysis/effects_plot.pdf",
   plot = effs_main_plot_bw,
-  height = 22,
-  width = 36,
+  height = 24, #22
+  width = 30, #36
   dpi = 600
 )
 
@@ -201,7 +201,7 @@ effs_main_plot_bw
 ggsave(
   file = "output_reanalysis/effects_plot.jpeg",
   plot = effs_main_plot_bw,
-  height = 22,
-  width = 36,
+  height = 24, #22
+  width = 30, #36
   dpi = 600
 )
