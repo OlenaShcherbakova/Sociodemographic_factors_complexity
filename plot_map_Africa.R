@@ -248,7 +248,7 @@ b_labelled <-
 b_labelled
 
 ggsave(
-  file = "output/map_boundness_labelled.svg",
+  file = "output_reanalysis/map_boundness_labelled.svg",
   plot = b_labelled,
   width = 10,
   height = 9, 
