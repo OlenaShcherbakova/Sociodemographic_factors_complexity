@@ -23,7 +23,7 @@ data_ethnologue <- read_tsv("data/Table_of_LICs.tab", show_col_types = F) %>%
   left_join(glottolog_df, by = "ISO_639" ) %>% 
   dplyr::select(-Glottocode) %>% #removing old Glottocode column
   rename(Glottocode = Language_level_ID) %>% 
-  dplyr::distinct(Glottocode, All_Users, L1_Users, L2_Users, ISO_639, Country_Code)
+  dplyr::distinct(Glottocode, All_Users, L1_Users, L2_Users, ISO_639, Country_Code, Vehicularity)
 
 #Making different df's for each count. This is because sometimes there is missing values for a language in a country for L1 OR L2, so it's better to calcualte them separately and then join them
 L2_pop_df <- data_ethnologue %>%
