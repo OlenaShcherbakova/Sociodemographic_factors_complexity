@@ -107,7 +107,7 @@ Since we divide `rdist.earth_dists` by 100 (originally calculated in
 kilometers using `fields::rdist.earth`), the distances supplied to
 `varcov.spatial` (from `geoR` package) are in 100's of kilometers rather
 than kilometers. This approach allows to capture the spatial covariance
-between languages based on the Euclidean distance between them.
+between languages based on the Euclidean distance between them. This approach correctly calculates the distances between all language pairs, including language pairs across the 180th meridian which was not implemented in the `varcov.spatial` function when latitude and longitude values were directly supplied to the function.
 
 `varcov.spatial(dists.lowertri = rdist.earth_dists[lower.tri(rdist.earth_dists)] / 100, cov.pars = phi_1, kappa = kappa)$varcov`
 
