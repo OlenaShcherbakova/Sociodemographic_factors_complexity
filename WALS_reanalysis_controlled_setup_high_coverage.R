@@ -193,3 +193,12 @@ rownames(effects_morph_comp) <- NULL
 
 effects_morph_comp %>% 
   write_csv("output_tables/WALS_morph_compl_effects.csv")
+
+
+effects_morph_comp_flex <- effects_morph_comp %>%
+  flextable() %>%
+  autofit() %>%
+  fix_border_issues()
+
+save_as_docx("Reanalysis of WALS morphological complexity" = effects_morph_comp_flex,
+             path = "output_tables_reanalysis/Table_WALS_reanalysis.docx")
