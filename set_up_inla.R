@@ -110,6 +110,9 @@ if (sample == "reduced_L2") {
 metrics_joined <- metrics_joined %>% 
   #discarding languages with no or low numbers of L1 speakers and L2 speakers resulting primarily from language revival efforts
   filter(!Language_ID == "gami1243") %>%
+  filter(!Language_ID == "kaur1267") %>% 
+  filter(!Language_ID == "klam1254") %>% 
+  filter(!Language_ID == "waka1274") %>% 
   filter(!Language_ID == "tuni1252") %>%
   filter(!Language_ID == "yuch1247") %>%
   filter(!Language_ID == "mari1424") %>%
