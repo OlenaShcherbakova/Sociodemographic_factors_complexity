@@ -97,8 +97,8 @@ eff_main_plot_df = effs_main %>%
     effect,
     levels = c(
       "Education",
-      "Official status",
       "Neighbours",
+      "Official status",
       "L1*L2",
       "L2 (combined)",
       "L1 (combined)",
