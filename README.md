@@ -68,19 +68,31 @@ Running `all_scripts.R` involves the following:
 -   generating population table (all sociodemographic variables in one
     dataframe): data from Ethnologue e24 (Eberhard et al. 2020) and
     Supplementary Materials in `data\lang_endangerment_predictors.xlsx`
-    from Bromham et al. (2022). Based on data availability, within
-    `set_up_inla.R`, it is necessary to specify whether `sample` is
-    `"full"` (full access to both Ethnologue variables in transformed
-    and non-transformed form and running all models; possible only for
-    users with their own access to Ethnologue) and `"reduced"` (access
-    to both Ethnologue variables - the number of L1 speakers and the
-    proportion of L2 speakers - in transformed form (logged and
-    standardized number of L1 speakers and the proportion of L2 speakers
-    than than raw numbers) and running all models except for one
-    including the interaction between the number of L1 speakers and L2
-    proportion; the dataset is already provided within the repository).
+    from Bromham et al. (2022). Based on data availability, before
+    running `set_up_inla.R`, it is necessary to specify `sample`
+    settings. These are specified in `all_scripts.R` but can be changed
+    if necessary.\
+    The `sample` settings include:
+    -   `"full"`: works only with full access to Ethnologue and derived
+        variables in transformed and non-transformed form and running
+        all models; possible only for users with their own access to
+        Ethnologue;
+    -   `"reduced"`: works with access to the number of L1 speakers in
+        transformed form (logged and standardized number of L1 speakers)
+        and enables running all models except for one including the
+        interaction between the number of L1 speakers and Vehicularity;
+        the dataset is already provided within the repository;
+    -   `"full_L2"` is same as `"full"` but runs the analyses on the
+        smaller sample for which the information on the number of
+        L2_Users in Ethnologue is available
+    -   `"reduced_L2"` is the same as `"reduced"` but runs the analyses
+        on the smaller sample for which the information on the number of
+        L2_Users in Ethnologue is available and, unlike `"full_L2"`,
+        runs all models except for one including the interaction between
+        the number of L1 speakers and L2 proportion; the dataset is
+        already provided within the repository;
 -   wrangling global phylogeny - EDGE-tree (v1.0.0, Bouckaert et al
-    2023)
+    2023) 
 -   generating AUTOTYP-areas table (v.1.0.1, Bickel et al. 2020)
 -   prepare everything for and run INLA analysis, including sensitivity
     analyses
@@ -100,7 +112,6 @@ folder `grambank_analysed` which incorporates data from Grambank v.1.0,
 AUTOTYP (v1.0.1) and Glottolog v.4.5. To run this script, one needs to
 first clone the repository and then run the R-script
 `get_external_data.R`.
-
 
 # References
 
