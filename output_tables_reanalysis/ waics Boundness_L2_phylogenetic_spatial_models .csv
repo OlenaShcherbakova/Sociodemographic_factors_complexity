@@ -1,8 +1,8 @@
 "model","WAIC"
-"Phylogenetic+Spatial: local",99.56
-"Spatial: local",146.04
-"Spatial: regional",221.59
-"Phylogenetic+Spatial: regional",221.95
-"Areal",239.92
-"Phylogenetic+Areal",241.99
-"Phylogenetic",257.9
+"Phylogenetic+Spatial: local",93.94
+"Spatial: local",141.91
+"Phylogenetic+Spatial: regional",225.46
+"Spatial: regional",226.39
+"Areal",249.95
+"Phylogenetic+Areal",251.58
+"Phylogenetic",275.97

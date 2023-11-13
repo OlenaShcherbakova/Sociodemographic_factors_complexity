@@ -1,9 +1,9 @@
 "","response","sociodemographic predictor(s)","variance for the Gaussian observations in %","variance for phy_id in %","variance for sp_id in %","WAIC"
-"1","fusion","L1 speakers",4,92,3,1796.34
-"2","fusion","L1 speakers + Vehicularity",4,92,4,1798.71
+"1","fusion","L1 speakers",4,92,4,1796.34
+"2","fusion","L1 speakers + Vehicularity",4,92,3,1798.71
 "3","fusion","L1 speakers*Vehicularity",4,92,4,1814.65
 "4","fusion","Vehicularity",5,92,4,1814.82
-"5","informativity","L1 speakers + Vehicularity",23,68,9,3128.92
-"6","informativity","L1 speakers",22,69,9,3132.73
-"7","informativity","L1 speakers*Vehicularity",24,66,10,3135.58
-"8","informativity","Vehicularity",24,66,10,3136.39
+"5","informativity","L1 speakers + Vehicularity",23,68,9,3128.91
+"6","informativity","L1 speakers",22,70,9,3132.76
+"7","informativity","L1 speakers*Vehicularity",25,66,10,3135.58
+"8","informativity","Vehicularity",23,68,9,3136.39

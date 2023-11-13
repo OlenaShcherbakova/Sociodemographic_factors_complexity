@@ -3,10 +3,10 @@
 "Phylogenetic+Spatial: local+L1 speakers (linear)",0.28,0.34,0.41,1796.34,"spatial SD"
 "Phylogenetic+Spatial: local+L1 speakers (linear)",-0.02,0,0.02,1796.34,"Intercept"
 "Phylogenetic+Spatial: local+L1 speakers (linear)",0.03,0.07,0.12,1796.34,"L1"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",1.53,1.75,2.02,1797.16,"phylogenetic SD"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",0.28,0.34,0.41,1797.16,"spatial SD"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",-0.02,0,0.03,1797.16,"Intercept"
-"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",0,0.01,0.03,1797.16,"social SD:
+"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",1.53,1.75,2.02,1797.2,"phylogenetic SD"
+"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",0.28,0.34,0.41,1797.2,"spatial SD"
+"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",-0.02,0,0.03,1797.2,"Intercept"
+"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",0,0.01,0.03,1797.2,"social SD:
 L1"
 "Phylogenetic+Spatial: local+L1 speakers (linear)+Vehicularity",1.53,1.75,2.02,1798.71,"phylogenetic SD"
 "Phylogenetic+Spatial: local+L1 speakers (linear)+Vehicularity",0.27,0.34,0.4,1798.71,"spatial SD"

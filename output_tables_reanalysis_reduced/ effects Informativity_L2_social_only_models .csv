@@ -1,19 +1,19 @@
 "model","2.5%","50%","97.5%","WAIC","effect"
-"L2 proportion (nonlinear)",0,0.22,0.44,297.25,"Intercept"
-"L2 proportion (nonlinear)",0,0.01,0.03,297.25,"social SD:
-L2 proportion"
-"L2 proportion (linear)",-0.12,0.08,0.28,297.28,"Intercept"
-"L2 proportion (linear)",-0.32,0.32,0.96,297.28,"L2 proportion"
-"L1 speakers (nonlinear)",0,0.16,0.32,297.9,"Intercept"
-"L1 speakers (nonlinear)",0,0.01,0.03,297.9,"social SD:
+"L1 speakers (nonlinear)",-0.05,0.12,0.29,309.88,"Intercept"
+"L1 speakers (nonlinear)",0,0.01,0.03,309.88,"social SD:
 L1"
-"L1 speakers (linear)",0,0.15,0.3,298.14,"Intercept"
-"L1 speakers (linear)",-0.21,-0.03,0.15,298.14,"L1"
-"L1 speakers (linear)+L2 proportion (linear)",-0.12,0.08,0.28,299.04,"Intercept"
-"L1 speakers (linear)+L2 proportion (linear)",-0.22,-0.03,0.15,299.04,"L1"
-"L1 speakers (linear)+L2 proportion (linear)",-0.32,0.33,0.97,299.04,"L2 proportion"
-"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0.01,0.24,0.46,299.05,"Intercept"
-"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0,0.01,0.03,299.05,"social SD:
-L1"
-"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0,0.01,0.03,299.05,"social SD:
+"L1 speakers (linear)",-0.03,0.13,0.28,310.09,"Intercept"
+"L1 speakers (linear)",-0.16,0.03,0.22,310.09,"L1"
+"L2 proportion (nonlinear)",-0.13,0.1,0.33,310.48,"Intercept"
+"L2 proportion (nonlinear)",0,0.01,0.03,310.48,"social SD:
 L2 proportion"
+"L2 proportion (linear)",-0.05,0.15,0.36,310.89,"Intercept"
+"L2 proportion (linear)",-0.83,-0.13,0.58,310.89,"L2 proportion"
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",-0.14,0.09,0.33,312.53,"Intercept"
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0,0.01,0.03,312.53,"social SD:
+L1"
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0,0.01,0.03,312.53,"social SD:
+L2 proportion"
+"L1 speakers (linear)+L2 proportion (linear)",-0.05,0.15,0.36,312.71,"Intercept"
+"L1 speakers (linear)+L2 proportion (linear)",-0.16,0.03,0.22,312.71,"L1"
+"L1 speakers (linear)+L2 proportion (linear)",-0.83,-0.12,0.59,312.71,"L2 proportion"
