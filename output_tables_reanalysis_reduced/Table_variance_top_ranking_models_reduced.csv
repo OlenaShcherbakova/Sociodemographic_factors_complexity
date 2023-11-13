@@ -1,0 +1,7 @@
+"","response","sociodemographic predictor(s)","variance for the Gaussian observations in %","variance for phy_id in %","variance for sp_id in %","WAIC"
+"1","fusion","L1 speakers",4,92,4,1796.34
+"2","fusion","L1 speakers + Vehicularity",4,92,3,1798.71
+"3","fusion","Vehicularity",4,92,4,1814.82
+"4","informativity","L1 speakers + Vehicularity",23,69,9,3128.92
+"5","informativity","L1 speakers",21,71,8,3132.73
+"6","informativity","Vehicularity",24,65,10,3136.39

@@ -61,7 +61,7 @@ WALS_df <- WALS %>%
 
 tree <- read.tree(file.path("data_wrangling/wrangled.tree"))
 
-#dropping tips not in Grambank
+#dropping tips not in WALS
 WALS_df <- WALS_df[WALS_df$Language_ID %in% tree$tip.label,]
 tree <- keep.tip(tree, WALS_df$Language_ID)
 
@@ -83,9 +83,23 @@ phylo_prec_mat <- MCMCglmm::inverseA(tree_scaled,
 
 WALS_df = WALS_df[order(match(WALS_df$Language_ID, rownames(phylo_prec_mat))), ]
 
+#calculate geo_dists
+lat_long_matrix <- WALS_df %>% 
+  column_to_rownames("Language_ID") %>% 
+  dplyr::select(Longitude, Latitude) %>% 
+  as.matrix()
+
+rdist.earth_dists <- fields::rdist.earth(lat_long_matrix, miles = FALSE)
+
+rdist.earth_dists[upper.tri(rdist.earth_dists, diag = TRUE)] <- NA
+
+# dists_vector <- as.vector(rdist.earth_dists) 
+dists_vector = rdist.earth_dists[lower.tri(rdist.earth_dists)]
+
+
 #"local" set of parameters
 ## Create spatial covariance matrix using the matern covariance function
-spatial_covar_mat_1 = varcov.spatial(WALS_df[, c("Longitude", "Latitude")],
+spatial_covar_mat_1 = varcov.spatial(dists.lowertri = rdist.earth_dists[lower.tri(rdist.earth_dists)] / 100,
                                      cov.pars = phi_1, kappa = kappa)$varcov
 # Calculate and standardize by the typical variance
 typical_variance_spatial_1 = exp(mean(log(diag(

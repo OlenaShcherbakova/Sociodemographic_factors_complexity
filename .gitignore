@@ -10,6 +10,8 @@ Table_of_Languages.tab
 Table_of_LICs.tab
 
 ethnologue_pop_full.tsv
+ethnologue_pop_L2_full.tsv
+pop_full_L2.tsv
 pop.tsv
 pop_full.tsv
 GB_wide_strict.tsv
@@ -30,5 +32,7 @@ GB_wide_strict.tsv
 
 #folders
 *grambank-analysed*
+data/Table_of_LICs.tab
+
 data_wrangling/ethnologue_pop_L2_full.tsv
 data_wrangling/pop_full_L2.tsv

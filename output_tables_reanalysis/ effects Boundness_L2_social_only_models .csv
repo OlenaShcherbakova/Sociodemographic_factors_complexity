@@ -1,0 +1,21 @@
+"model","2.5%","50%","97.5%","WAIC","effect"
+"L1 speakers (linear)",0.27,0.41,0.54,272.91,"Intercept"
+"L1 speakers (linear)",-0.01,0.16,0.32,272.91,"L1"
+"L1 speakers (nonlinear)",0.22,0.36,0.51,272.96,"Intercept"
+"L1 speakers (nonlinear)",0,0.01,0.03,272.96,"social SD:
+L1"
+"L1 speakers (linear)+L2 proportion (linear)",0.22,0.4,0.58,275.12,"Intercept"
+"L1 speakers (linear)+L2 proportion (linear)",-0.01,0.16,0.32,275.12,"L1"
+"L1 speakers (linear)+L2 proportion (linear)",-0.54,0.04,0.62,275.12,"L2 proportion"
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0.17,0.37,0.58,275.32,"Intercept"
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0,0.01,0.03,275.32,"social SD:
+L1"
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",0,0.01,0.03,275.32,"social SD:
+L2 proportion"
+"L1_log10:L2 proportion (linear)",0.17,0.35,0.53,275.84,"Intercept"
+"L1_log10:L2 proportion (linear)",-0.05,0.05,0.16,275.84,"L1*L2 proportion"
+"L2 proportion (nonlinear)",0.22,0.42,0.62,276.27,"Intercept"
+"L2 proportion (nonlinear)",0,0.01,0.03,276.27,"social SD:
+L2 proportion"
+"L2 proportion (linear)",0.21,0.39,0.57,276.5,"Intercept"
+"L2 proportion (linear)",-0.51,0.07,0.66,276.5,"L2 proportion"

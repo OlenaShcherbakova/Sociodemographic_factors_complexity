@@ -2,6 +2,8 @@
 
 source("requirements.R")
 
+if(!dir.exists("grambank-analysed")) {
+
 #setting up a tempfile path where we can put the zipped files before unzipped to a specific location
 filepath <- file.path(tempfile())
 
@@ -20,8 +22,12 @@ file.copy(from = paste0(old_fn, old_fn_files),to = new_fn, recursive = T, overwr
 #remove old dir
 unlink(old_fn, recursive = T)
 
+}
 ## dirs within grambank-analysed
 # for the dirs within grambank-analysed we can fetch them with a for loop
+
+if(!dir.exists("grambank-analysed/glottolog-cldf")) {
+  
 
 fns_within_grambank_analysed_zip<- c("https://zenodo.org/records/7740140/files/grambank/grambank-v1.0.zip", "https://zenodo.org/records/5772649/files/glottolog/glottolog-cldf-v4.5.zip", "https://zenodo.org/records/6255206/files/autotyp-data-v1.0.1.zip")
 exdir_names <- c("grambank-analysed/grambank", "grambank-analysed/glottolog-cldf", "grambank-analysed/autotyp-data")
@@ -43,4 +49,5 @@ for(n in 1:3){
   
 }
 
+}
 

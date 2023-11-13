@@ -36,16 +36,32 @@ glottolog_df <-
 
 if (sample == "full") {
   data_ethnologue <-
-    read_tsv("data_wrangling/ethnologue_pop_full.tsv")
+    read_tsv("data_wrangling/ethnologue_pop_full.tsv", show_col_types = F)
+}
+
+if (sample == "full_L2") {
+  data_ethnologue <-
+    read_tsv("data_wrangling/ethnologue_pop_L2_full.tsv", show_col_types = F)
 }
 
 if (sample == "reduced") {
-  #double check if the file below needs to be changed
   data_ethnologue <-
-    read_tsv("data_wrangling/ethnologue_pop_SM.tsv", show_col_types = F) %>%
-    rename(L1_log10_st = L1_log10_scaled) %>%
-    dplyr::select(ISO_639, Language_ID, L1_log10_st, L2_prop)
+    read_tsv("data_wrangling/ethnologue_pop_SM.tsv", show_col_types = F)
 }
+
+if (sample == "reduced_L2") {
+  data_ethnologue <-
+    read_tsv("data_wrangling/ethnologue_pop_L2_SM.tsv", show_col_types = F)
+}
+
+
+
+# if (sample == "reduced") {
+#   #double check if the file below needs to be changed
+#   data_ethnologue <-
+#     read_tsv("data_wrangling/ethnologue_pop_SM.tsv", show_col_types = F) %>%
+#     dplyr::select(ISO_639, Language_ID, L1_log10_st, L2_prop)
+# }
 
 social_vars <-
   readxl::read_xlsx(
@@ -74,30 +90,90 @@ social_vars <-
   #dplyr::mutate(neighboring_languages_log10_st  = scale(neighboring_languages_log10)[,1]) %>%
   dplyr::select(Language_ID, Education, Official, neighboring_languages_st)
 
-if (sample == "full") {
+
+if (sample == "reduced_L2") {
+  social_vars  %>%
+    left_join(data_ethnologue, by = c("Language_ID")) %>%
+    dplyr::select(
+      Language_ID,
+      L1_log10_st,
+      Vehicularity,
+      L2_prop,
+      Education,
+      Official,
+      neighboring_languages_st
+    ) %>%
+    write_tsv(here(OUTPUTDIR_data_wrangling, "pop_reduced_L2.tsv"))
+} else if (sample == "reduced") {
+  social_vars  %>%
+    left_join(data_ethnologue, by = c("Language_ID")) %>%
+    dplyr::select(
+      Language_ID,
+      L1_log10_st,
+      Vehicularity,
+      Education,
+      Official,
+      neighboring_languages_st
+    ) %>%
+    write_tsv(here(OUTPUTDIR_data_wrangling, "pop_reduced.tsv"))
+} else if (sample == "full_L2") {
   social_vars  %>%
     left_join(data_ethnologue, by = c("Language_ID")) %>%
     dplyr::select(
       Language_ID,
       L1_log10_st,
       L1_log10,
+      Vehicularity,
       L2_prop,
       Education,
       Official,
       neighboring_languages_st
     ) %>%
-    write_tsv(here(OUTPUTDIR_data_wrangling, "pop_full.tsv"))
-}	else{
+    write_tsv(here(OUTPUTDIR_data_wrangling, "pop_full_L2.tsv"))
+} else if (sample == "full") {
   social_vars  %>%
     left_join(data_ethnologue, by = c("Language_ID")) %>%
-    dplyr::select(Language_ID,
-                  L1_log10_st,
-                  L2_prop,
-                  Education,
-                  Official,
-                  neighboring_languages_st) %>%
-    write_tsv(here(OUTPUTDIR_data_wrangling, "pop_reduced.tsv"))
+    dplyr::select(
+      Language_ID,
+      L1_log10_st,
+      L1_log10,
+      Vehicularity,
+      Education,
+      Official,
+      neighboring_languages_st
+    ) %>%
+    write_tsv(here(OUTPUTDIR_data_wrangling, "pop_full.tsv"))
+} else {
+  cat("Not appropriate sample specification. Sample can be full, full_L2,
+      reduced or reduced_L2.\n")
 }
+
+
+
+# if (sample == "full") {
+#   social_vars  %>%
+#     left_join(data_ethnologue, by = c("Language_ID")) %>%
+#     dplyr::select(
+#       Language_ID,
+#       L1_log10_st,
+#       L1_log10,
+#       L2_prop,
+#       Education,
+#       Official,
+#       neighboring_languages_st
+#     ) %>%
+#     write_tsv(here(OUTPUTDIR_data_wrangling, "pop_full.tsv"))
+# }	else{
+#   social_vars  %>%
+#     left_join(data_ethnologue, by = c("Language_ID")) %>%
+#     dplyr::select(Language_ID,
+#                   L1_log10_st,
+#                   L2_prop,
+#                   Education,
+#                   Official,
+#                   neighboring_languages_st) %>%
+#     write_tsv(here(OUTPUTDIR_data_wrangling, "pop_reduced.tsv"))
+# }
 
 glottolog_df_ISO <- glottolog_df %>% 
 dplyr::select("Language_ID", "ISO_639")
@@ -107,11 +183,26 @@ if (sample == "reduced") {
     left_join(data_ethnologue, by = c("Language_ID")) %>%
     dplyr::select(Language_ID,
                   L1_log10_st,
-                  L2_prop,
+                  Vehicularity,
                   Education,
                   Official,
                   neighboring_languages_st) %>%
     left_join(glottolog_df_ISO,
               by = c("Language_ID")) %>%
     write_tsv(here(OUTPUTDIR_data_wrangling, "pop_reduced_with_ISO.tsv"))
+}
+
+if (sample == "reduced_L2") {
+  social_vars  %>%
+    left_join(data_ethnologue, by = c("Language_ID")) %>%
+    dplyr::select(Language_ID,
+                  L1_log10_st,
+                  Vehicularity,
+                  L2_prop,
+                  Education,
+                  Official,
+                  neighboring_languages_st) %>%
+    left_join(glottolog_df_ISO,
+              by = c("Language_ID")) %>%
+    write_tsv(here(OUTPUTDIR_data_wrangling, "pop_L2_reduced_with_ISO.tsv"))
 }

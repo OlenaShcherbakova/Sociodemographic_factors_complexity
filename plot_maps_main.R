@@ -5,14 +5,19 @@ metrics_joined <- metrics_joined %>%
   filter(!is.na(L1_log10_st)) %>%
   rename(L1_log_st = L1_log10_st) %>%
   mutate(L1_copy = L1_log_st) %>%
-  filter(!is.na(L2_prop)) %>%
-  dplyr::mutate(L2_prop  = scale(L2_prop)[, 1]) %>%
-  mutate(L2_copy = L2_prop) %>%
+  # filter(!is.na(L2_prop)) %>%
+  # dplyr::mutate(L2_prop  = scale(L2_prop)[, 1]) %>%
+  # mutate(L2_copy = L2_prop) %>%
   filter(!is.na(neighboring_languages_st)) %>%
   filter(!is.na(Official)) %>%
   filter(!is.na(Education)) %>%
   filter(!is.na(boundness_st)) %>%
   filter(!is.na(informativity_st))
+
+#dropping tips not in Grambank
+metrics_joined <-
+  metrics_joined[metrics_joined$Language_ID %in% tree$tip.label,]
+tree <- keep.tip(tree, metrics_joined$Language_ID)
 
 #an overview of area and family coverage
 tab_areas <- as.data.frame(table(metrics_joined$AUTOTYP_area)) %>%
@@ -20,12 +25,6 @@ tab_areas <- as.data.frame(table(metrics_joined$AUTOTYP_area)) %>%
 
 tab_families <- as.data.frame(table(metrics_joined$Family_ID)) %>%
   arrange(desc(Freq))
-
-
-#dropping tips not in Grambank
-metrics_joined <-
-  metrics_joined[metrics_joined$Language_ID %in% tree$tip.label,]
-tree <- keep.tip(tree, metrics_joined$Language_ID)
 
 x <-
   assert_that(all(tree$tip.label %in% metrics_joined$Language_ID), msg = "The data and phylogeny taxa do not match")
@@ -110,9 +109,9 @@ i <-
                         guide = "none",
                         direction = -1) +
   theme(
-    plot.title = element_text(size = 15),
-    legend.title = element_text(size = 15),
-    legend.text = element_text(size = 15),
+    plot.title = element_text(size = 14),
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 14),
     legend.key.size = unit(0.5, units = "cm"),
     legend.direction = "horizontal",
     legend.position = c(.4, .07)
@@ -122,7 +121,7 @@ i <-
 i
 
 ggsave(
-  file = "output/map_informativity.svg",
+  file = "output_reanalysis/map_informativity.svg",
   plot = i,
   width = 10,
   height = 9, 
@@ -130,7 +129,7 @@ ggsave(
 )
 
 ggsave(
-  file = "output/map_informativity.tiff",
+  file = "output_reanalysis/map_informativity.tiff",
   plot = i,
   width = 10,
   height = 9, 
@@ -157,9 +156,9 @@ b <-
                         guide = "none",
                         direction = -1) +
   theme(
-    plot.title = element_text(size = 15),
-    legend.title = element_text(size = 15),
-    legend.text = element_text(size = 15),
+    plot.title = element_text(size = 14),
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 14),
     legend.key.size = unit(0.5, units = "cm"),
     legend.direction = "horizontal",
     legend.position = c(.4, .07)
@@ -168,7 +167,7 @@ b <-
   labs(title = "Boundness", fill = "score")
 
 ggsave(
-  file = "output/map_boundness.svg",
+  file = "output_reanalysis/map_boundness.svg",
   plot = b,
   width = 10,
   height = 9, 
@@ -176,7 +175,7 @@ ggsave(
 )
 
 ggsave(
-  file = "output/map_boundness.tiff",
+  file = "output_reanalysis/map_boundness.tiff",
   plot = b,
   width = 10,
   height = 9, 
@@ -206,8 +205,8 @@ i <-
   scale_fill_viridis_c(option = "viridis", direction = -1) +
   scale_color_viridis_c(option = "viridis", direction = -1) +
   theme(
-    text = element_text(size = 15),
-    legend.text = element_text(size = 15),
+    text = element_text(size = 14),
+    legend.text = element_text(size = 14),
     legend.key.size = unit(0.5, units = "cm"),
     legend.direction = "horizontal",
     legend.position = c(.4, .07)
@@ -236,8 +235,8 @@ b <-
   scale_fill_viridis_c(option = "magma", direction = -1) +
   scale_color_viridis_c(option = "magma", direction = -1) +
   theme(
-    text = element_text(size = 15),
-    legend.text = element_text(size = 15),
+    text = element_text(size = 14),
+    legend.text = element_text(size = 14),
     legend.key.size = unit(0.5, units = "cm"),
     legend.direction = "horizontal",
     legend.position = c(.4, .07)
@@ -248,7 +247,7 @@ b <-
 two_maps <- b / i
 
 ggsave(
-  file = "output/maps.tiff",
+  file = "output_reanalysis/maps.tiff",
   plot = two_maps,
   width = 5,
   height = 7, 
@@ -256,7 +255,7 @@ ggsave(
 )
 
 ggsave(
-  file = "output/maps.svg",
+  file = "output_reanalysis/maps.svg",
   plot = two_maps,
   width = 5,
   height = 7, 
@@ -264,7 +263,7 @@ ggsave(
 )
 
 ggsave(
-  file = "output/maps.pdf",
+  file = "output_reanalysis/maps.pdf",
   plot = two_maps,
   width = 5,
   height = 7, 
@@ -272,7 +271,7 @@ ggsave(
 )
 
 ggsave(
-  file = "output/maps.jpeg",
+  file = "output_reanalysis/maps.jpeg",
   plot = two_maps,
   width = 5,
   height = 7, 
