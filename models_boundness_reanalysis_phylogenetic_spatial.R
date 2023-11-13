@@ -55,6 +55,8 @@ dists_vector = rdist.earth_dists[lower.tri(rdist.earth_dists)]
 
 #"local" set of parameters
 ## Create spatial covariance matrix using the matern covariance function
+#division by 100 achieves the similarity of matrices between the current approach using dists.lowertri as input
+#and the previous approach using Latitude and Longitude coordinates as input
 spatial_covar_mat_1 = varcov.spatial(dists.lowertri = rdist.earth_dists[lower.tri(rdist.earth_dists)] / 100, 
                                      cov.pars = phi_1, kappa = kappa)$varcov
 # Calculate and standardize by the typical variance
