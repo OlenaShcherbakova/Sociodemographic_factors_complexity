@@ -1,8 +1,8 @@
 "model","WAIC"
-"L1_log10:L2 proportion (linear)",296.98
-"L2 proportion (nonlinear)",297.25
-"L2 proportion (linear)",297.28
-"L1 speakers (nonlinear)",297.9
-"L1 speakers (linear)",298.14
-"L1 speakers (linear)+L2 proportion (linear)",299.04
-"L1 speakers (nonlinear)+L2 proportion (nonlinear)",299.05
+"L1 speakers (nonlinear)",309.88
+"L1 speakers (linear)",310.09
+"L2 proportion (nonlinear)",310.48
+"L1_log10:L2 proportion (linear)",310.49
+"L2 proportion (linear)",310.89
+"L1 speakers (nonlinear)+L2 proportion (nonlinear)",312.53
+"L1 speakers (linear)+L2 proportion (linear)",312.71

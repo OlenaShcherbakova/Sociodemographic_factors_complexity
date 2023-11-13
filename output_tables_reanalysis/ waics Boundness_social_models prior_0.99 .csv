@@ -1,0 +1,9 @@
+"model","WAIC"
+"Phylogenetic+Spatial: local+L1 speakers (linear)",1788.29
+"Phylogenetic+Spatial: local+L1 speakers (nonlinear)",1789.44
+"Phylogenetic+Spatial: local+L1 speakers (linear)+Vehicularity",1790.5
+"Phylogenetic+Spatial: local+L1_log10:Vehicularity",1806.72
+"Phylogenetic+Spatial: local+Vehicularity",1806.9
+"Phylogenetic+Spatial: local+Neighbours",1810.73
+"Phylogenetic+Spatial: local+Official",1812.7
+"Phylogenetic+Spatial: local+Education",1813.63
