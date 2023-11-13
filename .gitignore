@@ -33,5 +33,6 @@ GB_wide_strict.tsv
 #folders
 *grambank-analysed*
 data/Table_of_LICs.tab
-data/Table_of_LICs.tab
 
+data_wrangling/ethnologue_pop_L2_full.tsv
+data_wrangling/pop_full_L2.tsv
