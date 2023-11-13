@@ -61,7 +61,7 @@ WALS_df <- WALS %>%
 
 tree <- read.tree(file.path("data_wrangling/wrangled.tree"))
 
-#dropping tips not in Grambank
+#dropping tips not in WALS
 WALS_df <- WALS_df[WALS_df$Language_ID %in% tree$tip.label,]
 tree <- keep.tip(tree, WALS_df$Language_ID)
 
