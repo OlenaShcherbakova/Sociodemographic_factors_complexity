@@ -145,14 +145,14 @@ data_ethnologue <-
   dplyr::select(-Glottocode) %>% #removing old Glottocode column
   rename(Glottocode = Language_level_ID) %>%
   group_by(Glottocode) %>%
-  # summarise(All_Users = sum(All_Users, na.rm = T),
-  #           L1_Users = sum(L1_Users, na.rm = T),
-  #           ISO_639 = paste0(ISO_639, collapse = "; "))
-  summarise(
-    All_Users = sum(All_Users),
-    L1_Users = sum(L1_Users),
-    ISO_639 = paste0(ISO_639, collapse = "; ")
-  )
+  summarise(All_Users = sum(All_Users, na.rm = T),
+            L1_Users = sum(L1_Users, na.rm = T),
+            ISO_639 = paste0(ISO_639, collapse = "; "))
+  # summarise(
+  #   All_Users = sum(All_Users),
+  #   L1_Users = sum(L1_Users),
+  #   ISO_639 = paste0(ISO_639, collapse = "; ")
+  # )
 
 
 #do some the subsettting to GB and log10 and L2 prop
