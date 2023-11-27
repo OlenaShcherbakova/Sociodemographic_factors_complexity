@@ -1,4 +1,4 @@
-
+#comparisons of samples
 
 ### Currect approach ###
 glottolog_df <-
@@ -321,8 +321,14 @@ old <- old %>%
 old <- old[old$Language_ID %in% tree$tip.label,]
 
 old <- old %>%
-  dplyr::mutate(used_in_old_analysis = "yes") %>%
-  dplyr::select(Language_ID, ISO_639, used_in_old_analysis)
+  dplyr::select(Language_ID, ISO_639)
 
 both <- current %>%
-  full_join(old, by = "Language_ID")
+  full_join(old, by = "Language_ID") %>% 
+  dplyr::mutate(used_in_reanalysis = ifelse(is.na(used_in_reanalysis), "no", 
+                                            used_in_reanalysis)) %>% 
+  dplyr::select(-ISO_639.x) %>%  #removing the column containing missing ISO_639 
+  dplyr::rename(ISO_639 = ISO_639.y)
+              
+both %>% 
+  write_csv("data_wrangling/samples_compared.csv")
