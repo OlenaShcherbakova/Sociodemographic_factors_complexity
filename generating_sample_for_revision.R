@@ -326,6 +326,7 @@ old <- old[old$Language_ID %in% tree$tip.label,]
 old <- old %>%
   dplyr::select(Language_ID, ISO_639)
 
+#comparison
 both <- current %>%
   full_join(old, by = "Language_ID") %>% 
   dplyr::mutate(used_in_reanalysis = ifelse(is.na(used_in_reanalysis), "no", 
@@ -334,4 +335,5 @@ both <- current %>%
   dplyr::rename(ISO_639 = ISO_639.y)
               
 both %>% 
+  mutate(used_in_original_analysis = "Yes") %>% 
   write_csv("data_wrangling/samples_compared.csv")
