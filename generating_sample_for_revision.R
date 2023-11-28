@@ -1,4 +1,7 @@
+
 #comparisons of samples
+library(tidyverse)
+library(ape)
 
 ### Currect approach ###
 glottolog_df <-
