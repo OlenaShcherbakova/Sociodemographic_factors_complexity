@@ -1,4 +1,4 @@
 model,2.5%,50%,97.5%,sample size,feature coverage threshold
-morphological complexity ~ L1,-0.02,0,0.01,467,default (~10%)
-morphological complexity ~ L1 + phylogenetic effect + spatial effect,-0.04,-0.02,0.01,460,default (~10%)
-morphological complexity ~ L1 + phylogenetic effect + spatial effect,-0.04,0.01,0.05,52,35%
+morphological complexity ~ L1,-0.03,-0.01,0.01,448,default (~10%)
+morphological complexity ~ L1 + phylogenetic effect + spatial effect,-0.05,-0.02,0,441,default (~10%)
+morphological complexity ~ L1 + phylogenetic effect + spatial effect,-0.07,-0.03,0.02,77,35%
