@@ -63,7 +63,7 @@ end_column <- "76A"
 wals_selected_na <- wals_selected %>%
   rowwise() %>%
   mutate(na_proportion = mean(is.na(c_across(starts_with(start_column):starts_with(end_column))))) %>% 
-  filter(na_proportion <= 0.35)
+  filter(na_proportion <= 0.65) #at least 35% of features need to be available
 
 wals_selected_na %>%
   write_csv("output_tables/WALS_high_coverage.csv")
