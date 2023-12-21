@@ -14,7 +14,7 @@ GB <- read_tsv("data/GB_wide/GB_wide_strict.tsv", show_col_types = F) %>%
   dplyr::select(Glottocode = "Language_ID")
 
 data_ethnologue <- read_tsv("data/Table_of_LICs.tab", show_col_types = F) %>%
-  filter(!is.na(`EGIDS`)) %>%
+  #filter(!is.na(`EGIDS`)) %>%
   dplyr::select(ISO_639, L1_Users, All_Users)
 
 
